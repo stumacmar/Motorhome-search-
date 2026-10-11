@@ -11,6 +11,9 @@ import { randomUUID } from 'node:crypto';
 export const SEARCH_BASE = 'https://www.autotrader.co.uk/motorhome-search';
 const GATEWAY = 'https://www.autotrader.co.uk/at-gateway?opname=SearchResultsListingsGridQuery';
 const REQUEST_TIMEOUT_MS = 30_000;
+const AT_MAX_PAGES = 100; // Autotrader serves at most 100 pages (2,000 adverts) per search
+const AT_MAX_RESULTS = AT_MAX_PAGES * 20;
+const DEFAULT_MAX_PRICE = 250_000;
 const CHALLENGE_WAIT_MS = 30_000;
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
@@ -347,7 +350,8 @@ export class BrowserTransport {
       viewport: { width: 1280, height: 900 },
     });
     this.page = await context.newPage();
-    await this.page.goto(`${SEARCH_BASE}?postcode=SW1A1AA`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await this.page.goto(`${SEARCH_BASE}?postcode=SW1A1AA`, { waitUntil: 'load', timeout: 60000 });
+    await this.page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
 
     // Cloudflare's "Just a moment..." challenge usually clears itself within a
     // few seconds in a real browser. Give it a chance before we give up.
@@ -364,9 +368,26 @@ export class BrowserTransport {
     }
   }
 
-  async fetchPage(filters, sortBy, page, searchId) {
+  async fetchPage(filters, sortBy, page, searchId, attempt = 0) {
     const body = gatewayBody(filters, sortBy, page, searchId);
-    const result = await withTimeout(this.page.evaluate(
+    let result;
+    try {
+      result = await this._evaluate(body);
+    } catch (err) {
+      // The search page reloads itself once shortly after loading; retry if we raced it.
+      if (attempt < 2 && /Execution context was destroyed|navigation/i.test(err.message)) {
+        await this.page.waitForLoadState('load').catch(() => {});
+        await this.page.waitForTimeout(2000);
+        return this.fetchPage(filters, sortBy, page, searchId, attempt + 1);
+      }
+      throw err;
+    }
+    if (result.status !== 200) throw new Error(`Gateway HTTP ${result.status} (browser): ${result.text.slice(0, 120).replace(/\s+/g, ' ')}`);
+    return extractPage(JSON.parse(result.text));
+  }
+
+  _evaluate(body) {
+    return withTimeout(this.page.evaluate(
       async ({ url, body, timeout }) => {
         const res = await fetch(url, {
           method: 'POST',
@@ -382,8 +403,6 @@ export class BrowserTransport {
       },
       { url: GATEWAY, body, timeout: REQUEST_TIMEOUT_MS },
     ), REQUEST_TIMEOUT_MS + 5000, 'browser gateway request');
-    if (result.status !== 200) throw new Error(`Gateway HTTP ${result.status} (browser): ${result.text.slice(0, 120).replace(/\s+/g, ' ')}`);
-    return extractPage(JSON.parse(result.text));
   }
 
   async stop() {
@@ -391,43 +410,77 @@ export class BrowserTransport {
   }
 }
 
-/**
- * Fetch every page of a search (up to maxPages). Tries the direct transport
- * first and switches to the browser transport if that is blocked.
- */
-export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPages = 10, transport = {}, log = console } = {}) {
+/** Is this the kind of failure a real browser might get past? */
+const isBlock = (err) => /HTTP 403|HTTP 429|HTTP 503|non-JSON|Cloudflare|timed out|fetch failed|aborted/i.test(err.message);
+
+function priceBounds(filters) {
+  const get = (name) => Number(filters.find((f) => f.filter === name)?.selected?.[0]);
+  const lo = Number.isFinite(get('min_price')) ? get('min_price') : 0;
+  const hi = Number.isFinite(get('max_price')) ? get('max_price') : DEFAULT_MAX_PRICE;
+  return [lo, hi];
+}
+
+function withPrice(filters, lo, hi) {
+  const rest = filters.filter((f) => f.filter !== 'min_price' && f.filter !== 'max_price');
+  return [...rest, { filter: 'min_price', selected: [String(lo)] }, { filter: 'max_price', selected: [String(hi)] }].sort((a, b) =>
+    a.filter.localeCompare(b.filter),
+  );
+}
+
+/** Read the pages of one (possibly price-banded) search. */
+async function fetchPages(filters, sortBy, { maxPages, transport, log, canSplit }) {
   const searchId = randomUUID();
   const all = new Map();
   let totalResults = 0;
   let pageCount = 1;
-  let usedBrowser = false;
+  const limit = () => Math.min(pageCount, maxPages, AT_MAX_PAGES);
 
-  for (let page = 1; page <= Math.min(pageCount, maxPages); page++) {
+  for (let page = 1; page <= limit(); page++) {
     let result;
     try {
-      result = transport?.browser
+      result = transport.browser
         ? await transport.browser.fetchPage(filters, sortBy, page, searchId)
         : await fetchPageDirect(filters, sortBy, page, searchId);
     } catch (err) {
-      if (transport?.browser) throw err;
+      if (transport.browser || !isBlock(err)) throw err;
       log.warn(`  direct request failed (${err.message}); retrying through a headless browser`);
-      const browser = new BrowserTransport();
-      transport.browser = browser; // caller owns it from here and must call stop()
-      await browser.start(log);
-      usedBrowser = true;
-      result = await browser.fetchPage(filters, sortBy, page, searchId);
+      transport.browser = new BrowserTransport();
+      await transport.browser.start(log);
+      result = await transport.browser.fetchPage(filters, sortBy, page, searchId);
     }
     pageCount = result.pageCount;
     totalResults = result.totalResults;
+    if (page === 1 && canSplit && totalResults > AT_MAX_RESULTS) return { needsSplit: true, totalResults };
     for (const l of result.listings) all.set(l.id, l);
-    log.info(`  page ${page}/${Math.min(pageCount, maxPages)}: ${result.listings.length} adverts (${totalResults} total)`);
-    if (page < Math.min(pageCount, maxPages)) await sleep(1500 + Math.random() * 1500);
+    log.info(`  page ${page}/${limit()}: ${result.listings.length} adverts (${totalResults} total)`);
+    if (page < limit()) await sleep(1200 + Math.random() * 1200);
+  }
+  return { listings: [...all.values()], totalResults, truncated: pageCount > limit() };
+}
+
+/**
+ * Fetch every advert of a search. Autotrader serves at most 2,000 results per
+ * search, so a bigger one is split into price bands until each band fits.
+ * Tries the direct transport first and switches to the browser if blocked.
+ */
+export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPages = 10, transport = {}, log = console } = {}) {
+  const opts = { maxPages, transport, log };
+  const usedBrowserBefore = !!transport.browser;
+
+  async function band(bandFilters, depth) {
+    const [lo, hi] = priceBounds(bandFilters);
+    const canSplit = depth < 8 && hi - lo >= 1000;
+    const r = await fetchPages(bandFilters, sortBy, { ...opts, canSplit });
+    if (!r.needsSplit) return r;
+    const mid = Math.max(lo + 500, Math.round((lo + hi) / 2 / 500) * 500);
+    log.info(`  ${r.totalResults} results is over Autotrader's 2,000 limit; splitting at £${mid.toLocaleString('en-GB')} (£${lo.toLocaleString('en-GB')} to £${hi.toLocaleString('en-GB')})`);
+    const a = await band(withPrice(bandFilters, lo, mid), depth + 1);
+    const b = await band(withPrice(bandFilters, mid + 1, hi), depth + 1);
+    const merged = new Map();
+    for (const l of [...a.listings, ...b.listings]) merged.set(l.id, l);
+    return { listings: [...merged.values()], totalResults: a.totalResults + b.totalResults, truncated: a.truncated || b.truncated };
   }
 
-  return {
-    listings: [...all.values()],
-    totalResults,
-    truncated: pageCount > maxPages,
-    usedBrowser,
-  };
+  const result = await band(filters, 0);
+  return { ...result, usedBrowser: !usedBrowserBefore && !!transport.browser };
 }
