@@ -11,7 +11,7 @@ import { fetchSearch, filtersFromUrl, filtersFromCriteria, urlFromFilters } from
 import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearches } from './store.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
-import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
+import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
 import { BrowserTransport } from './autotrader.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -79,14 +79,18 @@ async function enrich(store, config, transport) {
   }
   if (pending.length) console.info(`  fetched ${fetched}, failed ${failed}`);
 
+  const lengthRule = config.length || {};
   for (const advert of Object.values(store.adverts)) {
     if (!advert.listedDate) advert.listedDate = listedDateFromId(advert.id) || advert.firstSeen;
+    advert.length = inferLength(advert);
+    delete advert.excluded;
+    const tooShort = lengthExclusion(advert, lengthRule);
+    if (tooShort) advert.excluded = tooShort;
     if (!advert.details) continue;
     advert.specs = matchSpecs(advert.details, compiled);
     advert.redFlags = matchRedFlags(advert.details, compiledFlags);
     const berth = Number(advert.details.keySpec?.Berth);
-    if (minBerth && Number.isFinite(berth) && berth > 0 && berth < minBerth) advert.excluded = `${berth} berth`;
-    else delete advert.excluded;
+    if (!advert.excluded && minBerth && Number.isFinite(berth) && berth > 0 && berth < minBerth) advert.excluded = `${berth} berth`;
   }
   const values = compareWithSimilar(Object.values(store.adverts), dealConfig);
   for (const advert of Object.values(store.adverts)) {
@@ -101,10 +105,12 @@ const dryRun = process.argv.includes('--dry-run');
 const configPath = process.argv.find((a) => a.endsWith('.json')) || 'search.config.json';
 const today = new Date().toISOString().slice(0, 10);
 
+const wordRe = (k) => new RegExp(`(^|[^a-z0-9])${k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^a-z0-9])`, 'i');
+
 function matchesText(advert, { mustContain = [], mustNotContain = [] }) {
-  const hay = [advert.title, advert.subTitle, advert.attentionGrabber].filter(Boolean).join(' ').toLowerCase();
-  if (mustContain.length && !mustContain.every((k) => hay.includes(k.toLowerCase()))) return false;
-  if (mustNotContain.some((k) => hay.includes(k.toLowerCase()))) return false;
+  const hay = [advert.title, advert.subTitle, advert.attentionGrabber, advert.make, advert.model].filter(Boolean).join(' ');
+  if (mustContain.length && !mustContain.every((k) => wordRe(k).test(hay))) return false;
+  if (mustNotContain.some((k) => wordRe(k).test(hay))) return false;
   return true;
 }
 

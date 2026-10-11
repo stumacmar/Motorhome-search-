@@ -222,3 +222,94 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     isDeal: (underpriced || highSpec || motivated) && redFlags === 0,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Vehicle length. Autotrader's own length field is often empty, so we work it
+// out from the advert: a stated figure, Autotrader's spec sheet, or the base
+// vehicle and wheelbase code. Lengths in metres.
+
+const SHORT_VANS = [
+  // Anything built on these is well under 6 m.
+  { re: /\b(transporter|t5|t6(\.1)?|t7|california|caddy|multivan|id\.? ?buzz|caravelle|shuttle)\b/i, m: 5.0, name: 'VW Transporter class' },
+  { re: /\b(vito|viano|marco polo|v[\s-]?class|eqv)\b/i, m: 5.1, name: 'Mercedes Vito class' },
+  { re: /\b(trafic|vivaro|talento|primastar|nv300|expert|dispatch|proace|scudo|jumpy|zafira life|spacetourer)\b/i, m: 5.3, name: 'Trafic/Vivaro class' },
+  { re: /\b(transit custom|tourneo custom|nugget)\b/i, m: 5.3, name: 'Transit Custom' },
+  { re: /\b(berlingo|rifter|combo|partner|doblo|kangoo|townstar|nv200|e-nv200|bipper|nemo|fiorino|hi[\s-]?ace|bongo|freeda|elgrand|serena|noah|voxy|alphard|vellfire|delica|stepwagon|step ?wgn)\b/i, m: 4.8, name: 'small van / MPV' },
+];
+
+// Base-vehicle length by wheelbase code. Keys are lower-case chassis names.
+const WHEELBASE = {
+  ducato: { l1: 4.96, l2: 5.41, l3: 5.99, l4: 6.36, swb: 4.96, mwb: 5.41, lwb: 5.99, xlwb: 6.36, elwb: 6.36, 'extra long': 6.36 },
+  boxer: 'ducato', relay: 'ducato', jumper: 'ducato', movano: 'ducato', master: { swb: 5.05, mwb: 5.55, lwb: 6.2, elwb: 6.85, xlwb: 6.85, l1: 5.05, l2: 5.55, l3: 6.2, l4: 6.85 },
+  transit: { l2: 5.53, l3: 5.98, l4: 6.7, mwb: 5.53, lwb: 5.98, jumbo: 6.7, elwb: 6.7, xlwb: 6.7, 'extra long': 6.7 },
+  sprinter: { swb: 5.27, mwb: 5.93, lwb: 6.97, elwb: 7.37, xlwb: 7.37, l1: 5.27, l2: 5.93, l3: 6.97, l4: 7.37, 'extra long': 7.37 },
+  crafter: { mwb: 5.99, lwb: 6.84, xlwb: 7.39, elwb: 7.39, l3: 5.99, l4: 6.84, l5: 7.39, 'extra long': 7.39 },
+  tge: 'crafter',
+  daily: { swb: 5.08, mwb: 6.0, lwb: 7.0, elwb: 7.5, xlwb: 7.5, l3: 6.0, l4: 7.0, l5: 7.5, 'extra long': 7.5 },
+  iveco: 'daily',
+};
+
+function wheelbaseTable(name) {
+  let t = WHEELBASE[name];
+  while (typeof t === 'string') t = WHEELBASE[t];
+  return t || null;
+}
+
+/**
+ * Best estimate of the vehicle's overall length.
+ * Returns { metres, source } or null if unknown.
+ */
+export function inferLength(advert) {
+  const d = advert.details || {};
+  const text = [advert.title, advert.subTitle, advert.attentionGrabber, advert.model, ...(d.features || []), d.description || ''].filter(Boolean).join('\n');
+  const lower = text.toLowerCase();
+
+  // 1. Autotrader's own spec sheet.
+  for (const [k, v] of Object.entries(d.specs || {})) {
+    if (/length/i.test(k)) {
+      const n = parseFloat(String(v).replace(/,/g, ''));
+      if (n > 1000 && n < 12000) return { metres: Math.round(n / 10) / 100, source: 'spec sheet' };
+      if (n > 3 && n < 12) return { metres: Math.round(n * 100) / 100, source: 'spec sheet' };
+    }
+  }
+
+  // 2. A stated length in the text ("length 6.36m", "6.99 metres long", "overall length: 7,400mm").
+  const stated = [];
+  const re = /(?:length|long)[^\n\d]{0,25}?(\d(?:[.,]\d{1,2})?)\s?(m\b|metres?|meters?|mtrs?)|(\d(?:[.,]\d{1,2})?)\s?(m\b|metres?|meters?|mtrs?)[^\n\d]{0,20}?(?:long|length|overall)|(?:length|long)[^\n\d]{0,25}?(\d{4})\s?mm|(\d{4})\s?mm[^\n\d]{0,20}?(?:long|length)/gi;
+  let m;
+  while ((m = re.exec(lower))) {
+    const metres = m[1] || m[3] ? parseFloat((m[1] || m[3]).replace(',', '.')) : parseInt(m[5] || m[6], 10) / 1000;
+    if (metres >= 4 && metres <= 12) stated.push(metres);
+  }
+  if (stated.length) return { metres: Math.round(stated[0] * 100) / 100, source: 'stated in advert' };
+
+  // 3. Known short base vehicles.
+  for (const s of SHORT_VANS) {
+    if (s.re.test(text)) return { metres: s.m, source: s.name };
+  }
+
+  // 4. Base vehicle plus wheelbase code.
+  const chassis = `${d.chassis || ''} ${advert.make || ''} ${advert.title || ''} ${advert.subTitle || ''}`.toLowerCase();
+  for (const name of Object.keys(WHEELBASE)) {
+    if (!new RegExp(`\\b${name}\\b`).test(chassis)) continue;
+    const table = wheelbaseTable(name);
+    if (!table) continue;
+    const codes = Object.keys(table).sort((a, b) => b.length - a.length);
+    for (const code of codes) {
+      const codeRe = new RegExp(`\\b${code.replace(/\s/g, '[\\s-]?')}(\\b|h\\d)`, 'i');
+      if (codeRe.test(lower)) return { metres: table[code], source: `${name} ${code.toUpperCase()}` };
+    }
+    break;
+  }
+  return null;
+}
+
+/** Apply a length rule. Returns an exclusion reason, or null to keep. */
+export function lengthExclusion(advert, { minMetres, maxMetres, hideUnknown = false } = {}) {
+  if (minMetres == null && maxMetres == null) return null;
+  const len = advert.length;
+  if (!len) return hideUnknown ? 'length unknown' : null;
+  if (minMetres != null && len.metres < minMetres - 0.05) return `${len.metres} m (${len.source})`;
+  if (maxMetres != null && len.metres > maxMetres + 0.05) return `${len.metres} m (${len.source})`;
+  return null;
+}

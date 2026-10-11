@@ -111,6 +111,7 @@
       <option value="value">Best value vs similar</option>
       <option value="spec">Most wanted kit</option>
       <option value="listed">Longest listed</option>
+      <option value="length">Length</option>
       <option value="drops">Most price drops</option>
       <option value="year">Year: newest</option>
       <option value="mileage">Mileage: lowest</option>
@@ -130,6 +131,7 @@
     <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
     <label class="check"><input type="checkbox" id="private"> Private sellers only</label>
     <label class="check"><input type="checkbox" id="noflags" checked> Hide red flags</label>
+    <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
   </div>
   <p class="count" id="count"></p>
   <div class="grid" id="grid"></div>
@@ -196,7 +198,7 @@
   const sel = document.getElementById('search');
   for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
 
-  const state = { q: '', search: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true };
+  const state = { q: '', search: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false };
   const PAGE = 48;
   let shown = PAGE;
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
@@ -205,6 +207,7 @@
   document.getElementById('pmax').value = state.pmax;
   document.getElementById('private').checked = !!state.privateOnly;
   document.getElementById('noflags').checked = state.noFlags !== false;
+  document.getElementById('knownlen').checked = !!state.knownLen;
   document.getElementById('sort').value = state.sort;
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
   document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.show === state.show)));
@@ -257,6 +260,7 @@
           ${a.mileageText ? `<span>${esc(a.mileageText)}</span>` : ''}
           ${a.location ? `<span>${esc(a.location)}</span>` : ''}
           ${a.sellerType ? `<span>${a.sellerType === 'PRIVATE' ? 'Private' : 'Trade'}</span>` : ''}
+          ${a.length ? `<span title="Length from: ${esc(a.length.source)}">${a.length.metres.toFixed(2)} m</span>` : '<span title="No length in the advert, spec sheet or model name">length unknown</span>'}
         </div>
         ${flagLine}
         ${chips}
@@ -285,6 +289,7 @@
       if (state.pmax && !(a._last <= Number(state.pmax))) return false;
       if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
       if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
+      if (state.knownLen && !a.length) return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
       return true;
@@ -297,6 +302,7 @@
       value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
       spec: (x, y) => y._wanted - x._wanted || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
       listed: (x, y) => y._listed - x._listed,
+      length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
       drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
       year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
       mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
@@ -315,6 +321,7 @@
   document.getElementById('pmax').addEventListener('change', resetAnd((e) => { state.pmax = e.target.value; }));
   document.getElementById('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
   document.getElementById('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
+  document.getElementById('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
   document.getElementById('grid').addEventListener('click', (e) => {
     const star = e.target.closest('button[data-star]');
     const hide = e.target.closest('button[data-hide]');

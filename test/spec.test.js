@@ -107,3 +107,33 @@ test('advert page parser', () => {
   assert.equal(d.historyCheck, 'PASSED (10 checks passed)');
   assert.throws(() => parseAdvertHtml('<title>Just a moment...</title>'), /Cloudflare/);
 });
+
+test('length inference', async () => {
+  const { inferLength, lengthExclusion } = await import('../src/spec.js');
+  const rule = { minMetres: 6.25, maxMetres: 7 };
+  const cases = [
+    [{ title: 'Volkswagen Transporter', subTitle: '2.0 TDI T30 Campervan SWB' }, 5.0, 'VW Transporter class'],
+    [{ title: 'Fiat Ducato', subTitle: '2.3 Multijet L4H2 Campervan' }, 6.36, 'ducato L4'],
+    [{ title: 'Peugeot Boxer', subTitle: 'L3 H2 Camper' }, 5.99, 'boxer L3'],
+    [{ title: 'Mercedes-Benz Sprinter', subTitle: '314 CDI LWB Camper' }, 6.97, 'sprinter LWB'],
+    [{ title: 'Auto-Sleepers Kingham', details: { specs: { 'Exterior length': '6,360mm' } } }, 6.36, 'spec sheet'],
+    [{ title: 'Swift Escape 694', details: { description: 'Overall length 7.49m, 4 berth.' } }, 7.49, 'stated in advert'],
+    [{ title: 'Adria Twin 640', details: { description: 'This van is 6.36 metres long and sleeps two.' } }, 6.36, 'stated in advert'],
+    [{ title: 'Ford Transit', subTitle: '2.0 EcoBlue 350 L4 H3 Camper' }, 6.7, 'transit L4'],
+    [{ title: 'Hymer Free 600', subTitle: 'Campervan', details: { chassis: 'Fiat Ducato' } }, null, null],
+  ];
+  for (const [advert, metres, source] of cases) {
+    const r = inferLength(advert);
+    if (metres == null) assert.equal(r, null, advert.title);
+    else {
+      assert.ok(r, `no length for ${advert.title}`);
+      assert.equal(r.metres, metres, `${advert.title}: ${JSON.stringify(r)}`);
+      assert.equal(r.source, source, advert.title);
+    }
+  }
+  assert.equal(lengthExclusion({ length: { metres: 5.0, source: 'x' } }, rule), '5 m (x)');
+  assert.equal(lengthExclusion({ length: { metres: 6.36, source: 'x' } }, rule), null);
+  assert.equal(lengthExclusion({ length: { metres: 7.49, source: 'x' } }, rule), '7.49 m (x)');
+  assert.equal(lengthExclusion({}, rule), null);
+  assert.equal(lengthExclusion({}, { ...rule, hideUnknown: true }), 'length unknown');
+});

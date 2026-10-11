@@ -23,6 +23,7 @@ The search results only carry the headline facts, so after each run the job also
 - **Days on market and price drops.** Autotrader advert ids start with the listing date, so the dashboard shows how long each advert has been up even on the first run, plus how many times and how far its price has dropped since the job started watching it.
 - **Red flags.** Left-hand drive, imported, damp mentioned, write-off category, spares or repair, four or more owners, a failed history check. Shown on the card and they keep an advert out of the worth-a-look list.
 - **Unconverted vans.** Autotrader's motorhome channel contains plain panel vans. Anything whose page says fewer than `details.excludeIfBerthBelow` berths is hidden.
+- **Length.** Autotrader's own length filter only catches adverts where the seller filled the length in, which is a minority of van conversions. So the job also works out length itself from the spec sheet, a figure stated in the advert, or the base vehicle and wheelbase code (Ducato L4 is 6.36 m, Sprinter LWB 6.97 m, a VW Transporter about 5 m) and hides anything outside `length.minMetres` to `length.maxMetres`. Adverts whose length cannot be worked out stay visible and are marked "length unknown"; set `length.hideUnknown` to hide them too.
 
 An advert is flagged **worth a look** when it has at least `deals.minWantedSpecs` of your wanted kit, or is at least `deals.underpricedPercent` below similar adverts, or the seller looks motivated (listed `deals.staleDays` or more with a price drop, or two drops), and it has no red flags. Those lead the notification.
 
@@ -102,7 +103,7 @@ A criteria value can be a list to allow several, for example `"bodyType": ["Van 
 | `sort` | datedesc (newest first, recommended), price-asc, price-desc, distance, mileage, year-desc, year-asc |
 | `keywords` | Autotrader's own keyword search, which also looks inside the advert description |
 
-Two extra per-search options filter locally on the advert title and subtitle only (the description is not downloaded):
+Two extra per-search options filter locally on the advert title, subtitle, make and model, matching whole words:
 
 ```json
 "mustContain": ["lwb"],
