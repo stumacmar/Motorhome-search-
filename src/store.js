@@ -1,7 +1,7 @@
 // The "seen adverts" store. Lives at docs/data/listings.json so the GitHub
 // Pages dashboard can read the same file the job commits back to the repo.
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
 export const STORE_PATH = 'docs/data/listings.json';
@@ -21,7 +21,10 @@ export async function loadStore(path = STORE_PATH) {
 
 export async function saveStore(store, path = STORE_PATH) {
   await mkdir(dirname(path), { recursive: true });
-  await writeFile(path, JSON.stringify(store, null, 1) + '\n');
+  // Write to a temporary file and rename so a crash mid-write cannot leave a truncated store.
+  const tmp = `${path}.tmp`;
+  await writeFile(tmp, JSON.stringify(store, null, 1) + '\n');
+  await rename(tmp, path);
 }
 
 /**

@@ -43,7 +43,7 @@ export function summariseAdvert(a) {
 
   return {
     fetchedAt: new Date().toISOString().slice(0, 10),
-    description: description.slice(0, 1500),
+    description: Array.from(description).slice(0, 1500).join(''), // Array.from keeps emoji pairs whole
     descriptionLength: description.length,
     features: [...new Set(features)],
     keySpec,
