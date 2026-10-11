@@ -11,7 +11,7 @@ import { fetchSearch, filtersFromUrl, filtersFromCriteria, urlFromFilters } from
 import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearches } from './store.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
-import { compileSpecs, matchSpecs, compareWithSimilar, scoreDeal, DEFAULT_SPECS } from './spec.js';
+import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
 import { BrowserTransport } from './autotrader.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -21,9 +21,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  * capped per run), then recompute specs, price-vs-similar and deal flags.
  */
 async function enrich(store, config, transport) {
-  const maxFetches = config.details?.maxFetchesPerRun ?? 80;
+  const maxFetches = config.details?.maxFetchesPerRun ?? 300;
   const retryAfterDays = config.details?.retryFailedAfterDays ?? 3;
+  const delayMs = config.details?.delayMs ?? 900;
+  const minBerth = config.details?.excludeIfBerthBelow ?? 2;
   const compiled = compileSpecs(config.specs || DEFAULT_SPECS);
+  const compiledFlags = compileSpecs(config.redFlags || DEFAULT_RED_FLAGS);
   const dealConfig = config.deals || {};
   const todayMs = Date.now();
 
@@ -36,7 +39,10 @@ async function enrich(store, config, transport) {
   if (pending.length) console.info(`\nFetching details for ${pending.length} advert(s)`);
   let fetched = 0;
   let failed = 0;
-  for (const advert of pending) {
+  let consecutiveFailures = 0;
+  const started = Date.now();
+  for (const [i, advert] of pending.entries()) {
+    if (i > 0 && i % 100 === 0) console.info(`  …${i}/${pending.length} after ${Math.round((Date.now() - started) / 60000)} min`);
     try {
       let details;
       if (!transport.browser) {
@@ -58,21 +64,29 @@ async function enrich(store, config, transport) {
       advert.details = details;
       delete advert.detailsError;
       fetched++;
+      consecutiveFailures = 0;
     } catch (err) {
       failed++;
+      consecutiveFailures++;
       advert.detailsError = { date: new Date().toISOString(), message: err.message };
       console.warn(`  ${advert.id} ${advert.title}: ${err.message}`);
-      if (failed >= 5 && fetched === 0) {
-        console.warn('  giving up on detail pages for this run');
+      if (consecutiveFailures >= 8) {
+        console.warn('  eight failures in a row; giving up on detail pages for this run');
         break;
       }
     }
-    await sleep(1000 + Math.random() * 1500);
+    await sleep(delayMs * (0.7 + Math.random() * 0.6));
   }
   if (pending.length) console.info(`  fetched ${fetched}, failed ${failed}`);
 
   for (const advert of Object.values(store.adverts)) {
-    if (advert.details) advert.specs = matchSpecs(advert.details, compiled);
+    if (!advert.listedDate) advert.listedDate = listedDateFromId(advert.id) || advert.firstSeen;
+    if (!advert.details) continue;
+    advert.specs = matchSpecs(advert.details, compiled);
+    advert.redFlags = matchRedFlags(advert.details, compiledFlags);
+    const berth = Number(advert.details.keySpec?.Berth);
+    if (minBerth && Number.isFinite(berth) && berth > 0 && berth < minBerth) advert.excluded = `${berth} berth`;
+    else delete advert.excluded;
   }
   const values = compareWithSimilar(Object.values(store.adverts), dealConfig);
   for (const advert of Object.values(store.adverts)) {

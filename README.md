@@ -18,14 +18,19 @@ It runs on GitHub Actions, so nothing needs to be switched on at home.
 
 The search results only carry the headline facts, so after each run the job also opens every new advert's own page once and reads the seller's features list, description, owner count, service history and history check. From that it works out two things, shown on the dashboard and in notifications:
 
-- **Kit.** Each advert is matched against a list of equipment (air conditioning, self-levelling, rear air suspension, 360° camera, reversing camera, automatic, solar, lithium, inverter, cruise control, tow bar, awning, satellite TV, full service history). The ones you care about go in `deals.wantedSpecs` in `search.config.json` and are highlighted.
-- **Price against similar adverts.** Each advert is compared with the median price of live adverts of the same make and model within two years of its age (falling back to the same make within one year when there are not enough). "−14% vs 7 similar" means it is 14% cheaper than the median of seven comparable adverts. The more adverts your searches cover, the better these comparisons get, so a broad search with a high `maxPages` helps here even if you only want to be told about a narrow one.
+- **Kit.** Each advert is matched against a list of equipment: habitation air conditioning (a Truma or Dometic roof unit, as opposed to cab air con, which is listed separately and worth nothing), self-levelling, rear air suspension, 360° camera, reversing camera, automatic, solar, lithium, inverter, diesel heater, cruise control, tow bar, awning, satellite TV, full service history. Each item carries a rough fitted value in pounds. The ones you care about go in `deals.wantedSpecs` in `search.config.json` and are highlighted.
+- **Price against similar adverts, net of kit.** The kit values are subtracted from every price, then each advert is compared with similar live adverts: same make and model within two years of its age; failing that the same chassis, body type and berth count; failing that the same make within one year. With eight or more comparables the expected price is adjusted for age and mileage by a small regression, otherwise the median is used. "−14% vs 12 similar, £6,000 of kit" means that after allowing for its kit the van is 14% cheaper than twelve comparable adverts predict. The more adverts your searches cover, the better this gets, which is why the example search reads the whole market.
+- **Days on market and price drops.** Autotrader advert ids start with the listing date, so the dashboard shows how long each advert has been up even on the first run, plus how many times and how far its price has dropped since the job started watching it.
+- **Red flags.** Left-hand drive, imported, damp mentioned, write-off category, spares or repair, four or more owners, a failed history check. Shown on the card and they keep an advert out of the worth-a-look list.
+- **Unconverted vans.** Autotrader's motorhome channel contains plain panel vans. Anything whose page says fewer than `details.excludeIfBerthBelow` berths is hidden.
 
-An advert is flagged **worth a look** when it has at least `deals.minWantedSpecs` of your wanted kit, or is at least `deals.underpricedPercent` below similar adverts. Those lead the notification.
+An advert is flagged **worth a look** when it has at least `deals.minWantedSpecs` of your wanted kit, or is at least `deals.underpricedPercent` below similar adverts, or the seller looks motivated (listed `deals.staleDays` or more with a price drop, or two drops), and it has no red flags. Those lead the notification.
 
 Sellers describe kit in their own words, so the matcher looks for common phrasings ("air con", "cab air conditioning", "E&P levelling", "VB air suspension", "360 degree camera"). You can add or change patterns with a top-level `"specs"` list in the config, each entry being `{ "label": "...", "pattern": "<regular expression>" }`; the defaults are in `src/spec.js`.
 
-Reading advert pages adds one request per new advert, so `details.maxFetchesPerRun` caps it (default 80); the rest are read on later runs.
+Reading advert pages adds one request per new advert at about one a second, so a first run over a 2,000-advert search takes around 40 minutes; after that only new adverts are read. `details.maxFetchesPerRun` caps it and `details.delayMs` sets the pace.
+
+On the dashboard you can star adverts into a shortlist, add notes and hide ones you have ruled out. Those live in your browser only, so they do not follow you between phone and laptop.
 
 ## Where it runs
 

@@ -71,6 +71,21 @@
   .chip { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
   .chip.want { border-color: var(--accent); color: var(--accent); font-weight: 600; }
   .desc { white-space: pre-wrap; margin-top: 4px; }
+  .tag.red { background: var(--drop); color: #fff; }
+  .tag.motivated { background: #5b4bb5; color: #fff; }
+  .tag.star { background: #c98a00; color: #fff; }
+  .flagline { color: var(--drop); font-size: 13px; }
+  .cardtools { display: flex; gap: 6px; margin-left: auto; }
+  .cardtools button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; padding: 2px 8px; font: inherit; font-size: 13px; cursor: pointer; }
+  .cardtools button[aria-pressed="true"] { background: #c98a00; border-color: #c98a00; color: #fff; }
+  .titlerow { display: flex; align-items: flex-start; gap: 8px; }
+  .titlerow .title { flex: 1; }
+  textarea.note { width: 100%; min-height: 44px; margin-top: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; font-size: 13px; padding: 6px 8px; resize: vertical; }
+  .range { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
+  .range input { width: 92px; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
+  .more { display: block; margin: 20px auto 0; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; cursor: pointer; }
+  .count { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  label.check { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
   details { font-size: 13px; color: var(--muted); }
   details summary { cursor: pointer; }
   .empty { color: var(--muted); padding: 40px 0; text-align: center; }
@@ -95,6 +110,8 @@
       <option value="drop">Biggest price drop</option>
       <option value="value">Best value vs similar</option>
       <option value="spec">Most wanted kit</option>
+      <option value="listed">Longest listed</option>
+      <option value="drops">Most price drops</option>
       <option value="year">Year: newest</option>
       <option value="mileage">Mileage: lowest</option>
       <option value="distance">Distance: nearest</option>
@@ -102,13 +119,22 @@
     <div class="toggle" role="group" aria-label="Show">
       <button data-show="active" aria-pressed="true">Live</button>
       <button data-show="deals" aria-pressed="false">Worth a look</button>
+      <button data-show="under" aria-pressed="false">Underpriced</button>
+      <button data-show="motivated" aria-pressed="false">Motivated</button>
+      <button data-show="shortlist" aria-pressed="false">★ Shortlist</button>
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
       <button data-show="gone" aria-pressed="false">Gone</button>
+      <button data-show="hidden" aria-pressed="false">Hidden</button>
     </div>
+    <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
+    <label class="check"><input type="checkbox" id="private"> Private sellers only</label>
+    <label class="check"><input type="checkbox" id="noflags" checked> Hide red flags</label>
   </div>
+  <p class="count" id="count"></p>
   <div class="grid" id="grid"></div>
   <p class="empty" id="empty" hidden>Nothing matches.</p>
+  <button class="more" id="more" hidden>Show more</button>
 </main>
 <footer>Data is refreshed once a day by a GitHub Actions job. Adverts link to Autotrader; prices and availability are theirs, not ours.</footer>
 <script>
@@ -138,19 +164,27 @@
     a._recentDrop = h.length > 1 && daysAgo(h.at(-1).date) <= 7 && h.at(-1).price < h.at(-2).price;
     a._isNew = daysAgo(a.firstSeen) <= 7;
     a._wanted = (a.specs || []).filter((s) => wantedSpecs.has(s.label)).length;
+    a._listed = a.deal?.daysListed ?? (a.listedDate ? daysAgo(a.listedDate) : daysAgo(a.firstSeen));
+    a._drops = a.deal?.drops ?? 0;
+    a._flags = (a.redFlags || []).length;
   }
+  let mine = { stars: {}, notes: {}, hidden: {} };
+  try { mine = Object.assign(mine, JSON.parse(localStorage.getItem('mh-mine') || '{}')); } catch {}
+  const saveMine = () => { try { localStorage.setItem('mh-mine', JSON.stringify(mine)); } catch {} };
 
   const gen = data.generatedAt ? new Date(data.generatedAt) : null;
   document.getElementById('updated').textContent = gen
     ? 'Last checked ' + gen.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
     : '';
 
-  const live = adverts.filter((a) => a.status === 'active');
+  const live = adverts.filter((a) => a.status === 'active' && !a.excluded);
   const stats = [
     ['live', live.length, 'live adverts'],
     ['new', live.filter((a) => a._isNew).length, 'new this week'],
     ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week'],
     ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look'],
+    ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced'],
+    ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers'],
     ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week'],
   ];
   document.getElementById('stats').innerHTML = stats.map(([c, n, l]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join('');
@@ -162,9 +196,15 @@
   const sel = document.getElementById('search');
   for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
 
-  const state = { q: '', search: '', sort: 'newest', show: 'active' };
+  const state = { q: '', search: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true };
+  const PAGE = 48;
+  let shown = PAGE;
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
   document.getElementById('q').value = state.q;
+  document.getElementById('pmin').value = state.pmin;
+  document.getElementById('pmax').value = state.pmax;
+  document.getElementById('private').checked = !!state.privateOnly;
+  document.getElementById('noflags').checked = state.noFlags !== false;
   document.getElementById('sort').value = state.sort;
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
   document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.show === state.show)));
@@ -174,13 +214,25 @@
     if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
     else if (a._isNew) tags.push(`<span class="tag new">new ${a.firstSeen === today ? 'today' : daysAgo(a.firstSeen) + 'd ago'}</span>`);
     if (a._recentDrop) tags.push(`<span class="tag drop">price drop</span>`);
-    if (a.deal?.isDeal) tags.push(`<span class="tag deal">${a.deal.underpriced ? 'underpriced' : 'high spec'}</span>`);
-    if (a.value) tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="Median ${gbp(a.value.median)} across ${a.value.comps} live ${a.value.basis === 'model' ? 'same-model' : 'same-make'} adverts of a similar age">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar</span>`);
+    if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
+    if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
+    if (a.deal?.highSpec) tags.push(`<span class="tag deal">high spec</span>`);
+    if (a.deal?.motivated) tags.push(`<span class="tag motivated">motivated seller</span>`);
+    if (a.value) {
+      const basis = { model: 'same-model', chassis: 'same-chassis, berth and body', make: 'same-make' }[a.value.basis] || a.value.basis;
+      const kit = a.price != null && a.value.net != null ? a.price - a.value.net : 0;
+      const tip = `Expected ${gbp(a.value.expected)} net of kit from ${a.value.comps} live ${basis} adverts of a similar age${a.value.adjusted ? ', adjusted for age and mileage' : ''}${kit >= 500 ? '. Kit allowed for: ' + gbp(kit) : ''}`;
+      tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="${esc(tip)}">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit >= 1000 ? ' · ' + gbp(kit) + ' kit' : ''}</span>`);
+    }
+    if (a.status === 'active') tags.push(`<span class="tag" title="Listed on Autotrader ${esc(a.listedDate || a.firstSeen)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd'}</span>`);
+    if (a._drops) tags.push(`<span class="tag" title="Price drops since we started watching">${a._drops} drop${a._drops > 1 ? 's' : ''} (${a.deal?.totalDropPct ?? ''}%)</span>`);
+    if (a.excluded) tags.push(`<span class="tag gone">hidden: ${esc(a.excluded)}</span>`);
     for (const s of a.searches || []) tags.push(`<span class="tag">${esc(s)}</span>`);
     const specs = (a.specs || []).slice().sort((x, y) => (wantedSpecs.has(y.label) ? 1 : 0) - (wantedSpecs.has(x.label) ? 1 : 0));
     const chips = specs.length ? `<div class="chips">${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(s.evidence)}">${esc(s.label)}</span>`).join('')}</div>` : '';
     const d = a.details;
     const facts = d ? [d.chassis, d.keySpec?.Berth ? d.keySpec.Berth + ' berth' : null, d.keySpec?.Gearbox, d.owners ? d.owners + ' owner' + (d.owners === 1 ? '' : 's') : null, d.serviceHistory, d.historyCheck ? 'History check ' + d.historyCheck.toLowerCase() : null].filter(Boolean) : [];
+    const flagLine = (a.redFlags || []).length ? `<div class="flagline" title="${esc(a.redFlags.map((f) => f.evidence).join(' | '))}">⚠ ${esc(a.redFlags.map((f) => f.label).join(', '))}</div>` : '';
     const detailsBlock = d
       ? `<details><summary>Details</summary>${esc(facts.join(' · '))}${d.description ? `<div class="desc">${esc(d.description)}${d.descriptionLength > d.description.length ? '…' : ''}</div>` : ''}</details>`
       : (a.status === 'active' ? `<details><summary>Details</summary>${a.detailsError ? 'Could not read the advert page: ' + esc(a.detailsError.message) : 'Not read yet; picked up on a later run.'}</details>` : '');
@@ -191,7 +243,13 @@
     return `<article class="card ${a.status === 'gone' ? 'gone' : ''}">
       ${a.image ? `<a href="${esc(a.url)}" target="_blank" rel="noopener"><img src="${esc(a.image)}" alt="" loading="lazy"></a>` : '<div class="noimg">No photo</div>'}
       <div class="body">
-        <div class="title"><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></div>
+        <div class="titlerow">
+          <div class="title"><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></div>
+          <div class="cardtools">
+            <button data-star="${a.id}" aria-pressed="${mine.stars[a.id] ? 'true' : 'false'}" title="Shortlist">★</button>
+            <button data-hide="${a.id}" title="${mine.hidden[a.id] ? 'Unhide' : 'Hide'}">${mine.hidden[a.id] ? '↺' : '✕'}</button>
+          </div>
+        </div>
         ${a.subTitle ? `<div class="subtitle">${esc(a.subTitle)}</div>` : ''}
         <div class="price">${gbp(a._last)} ${delta}</div>
         <div class="meta">
@@ -200,9 +258,11 @@
           ${a.location ? `<span>${esc(a.location)}</span>` : ''}
           ${a.sellerType ? `<span>${a.sellerType === 'PRIVATE' ? 'Private' : 'Trade'}</span>` : ''}
         </div>
+        ${flagLine}
         ${chips}
         ${hist}
         ${detailsBlock}
+        ${mine.stars[a.id] || mine.notes[a.id] ? `<textarea class="note" data-note="${a.id}" placeholder="Your notes…">${esc(mine.notes[a.id] || '')}</textarea>` : ''}
         <div class="tags">${tags.join('')}</div>
       </div>
     </article>`;
@@ -211,11 +271,20 @@
   function render() {
     const q = state.q.trim().toLowerCase();
     let list = adverts.filter((a) => {
+      if (state.show === 'hidden') return !!mine.hidden[a.id];
+      if (mine.hidden[a.id]) return false;
       if (state.show === 'gone') { if (a.status !== 'gone') return false; }
-      else if (a.status !== 'active') return false;
+      else if (a.status !== 'active' || a.excluded) return false;
       if (state.show === 'new' && !a._isNew) return false;
       if (state.show === 'drops' && !a._recentDrop) return false;
       if (state.show === 'deals' && !a.deal?.isDeal) return false;
+      if (state.show === 'under' && !a.deal?.underpriced) return false;
+      if (state.show === 'motivated' && !a.deal?.motivated) return false;
+      if (state.show === 'shortlist' && !mine.stars[a.id]) return false;
+      if (state.pmin && !(a._last >= Number(state.pmin))) return false;
+      if (state.pmax && !(a._last <= Number(state.pmax))) return false;
+      if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
+      if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
       return true;
@@ -227,21 +296,44 @@
       drop: (x, y) => y._drop - x._drop,
       value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
       spec: (x, y) => y._wanted - x._wanted || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
+      listed: (x, y) => y._listed - x._listed,
+      drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
       year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
       mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
       distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
     };
     list.sort(by[state.sort] || by.newest);
-    document.getElementById('grid').innerHTML = list.map(card).join('');
+    document.getElementById('count').textContent = list.length ? `${list.length} advert${list.length === 1 ? '' : 's'}${list.length > shown ? ', showing ' + shown : ''}` : '';
+    document.getElementById('grid').innerHTML = list.slice(0, shown).map(card).join('');
     document.getElementById('empty').hidden = list.length > 0;
+    document.getElementById('more').hidden = list.length <= shown;
     try { localStorage.setItem('mh-view', JSON.stringify(state)); } catch {}
   }
+  const resetAnd = (fn) => (e) => { fn(e); shown = PAGE; render(); };
+  document.getElementById('more').addEventListener('click', () => { shown += PAGE; render(); });
+  document.getElementById('pmin').addEventListener('change', resetAnd((e) => { state.pmin = e.target.value; }));
+  document.getElementById('pmax').addEventListener('change', resetAnd((e) => { state.pmax = e.target.value; }));
+  document.getElementById('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
+  document.getElementById('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
+  document.getElementById('grid').addEventListener('click', (e) => {
+    const star = e.target.closest('button[data-star]');
+    const hide = e.target.closest('button[data-hide]');
+    if (star) { const id = star.dataset.star; if (mine.stars[id]) delete mine.stars[id]; else mine.stars[id] = 1; saveMine(); render(); }
+    if (hide) { const id = hide.dataset.hide; if (mine.hidden[id]) delete mine.hidden[id]; else mine.hidden[id] = 1; saveMine(); render(); }
+  });
+  document.getElementById('grid').addEventListener('input', (e) => {
+    const note = e.target.closest('textarea[data-note]');
+    if (!note) return;
+    if (note.value.trim()) mine.notes[note.dataset.note] = note.value; else delete mine.notes[note.dataset.note];
+    saveMine();
+  });
 
-  document.getElementById('q').addEventListener('input', (e) => { state.q = e.target.value; render(); });
-  sel.addEventListener('change', (e) => { state.search = e.target.value; render(); });
-  document.getElementById('sort').addEventListener('change', (e) => { state.sort = e.target.value; render(); });
+  document.getElementById('q').addEventListener('input', resetAnd((e) => { state.q = e.target.value; }));
+  sel.addEventListener('change', resetAnd((e) => { state.search = e.target.value; }));
+  document.getElementById('sort').addEventListener('change', resetAnd((e) => { state.sort = e.target.value; }));
   document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => {
     state.show = b.dataset.show;
+    shown = PAGE;
     document.querySelectorAll('.toggle button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
     render();
   }));

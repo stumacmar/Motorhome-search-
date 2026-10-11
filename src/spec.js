@@ -1,46 +1,86 @@
-// Spec matching and "is this underpriced?" scoring.
+// Spec matching, kit pricing and "is this underpriced?" scoring.
 
 import { advertText } from './advert.js';
 
 /**
  * Kit worth knowing about. Each entry is matched (case-insensitively) against
- * the advert's features list, description and specs. Add to or override this
- * list with "specs" in search.config.json.
+ * the advert's features list, description and specs. `value` is a rough
+ * fitted cost in pounds, used to compare prices net of kit. Override or extend
+ * with "specs" in search.config.json.
  */
 export const DEFAULT_SPECS = [
-  { label: 'Air conditioning', pattern: 'air[\\s-]?con(ditioning)?\\b|\\ba\\/c\\b|climate control' },
-  { label: 'Self-levelling', pattern: 'self[\\s-]?levell?ing|levell?ing (system|jacks|legs)|hydraulic (jacks|levell?ing)|\\be\\s?&\\s?p\\b' },
-  { label: 'Rear air suspension', pattern: 'air[\\s-]?suspension|air[\\s-]?ride|\\bvb[\\s-]?air|goldschmitt|semi[\\s-]?air' },
-  { label: '360° camera', pattern: '\\b360\\s*(°|degree|cam)|surround[\\s-]?view|bird\'?s[\\s-]?eye' },
-  { label: 'Reversing camera', pattern: 'revers(e|ing)[\\s-]?cam|rear[\\s-]?(view[\\s-]?)?cam' },
-  { label: 'Automatic', pattern: '^gearbox: auto|\\bautomatic gearbox\\b|\\bauto(matic)? trans' },
-  { label: 'Solar panel', pattern: 'solar' },
-  { label: 'Lithium battery', pattern: 'lithium' },
-  { label: 'Inverter', pattern: 'inverter' },
-  { label: 'Cruise control', pattern: 'cruise' },
-  { label: 'Tow bar', pattern: 'tow[\\s-]?bar' },
-  { label: 'Awning', pattern: 'awning|wind[\\s-]?out canopy' },
-  { label: 'Satellite TV', pattern: 'sat(ellite)?[\\s-]?(dish|dome|system|tv)|oyster' },
-  { label: 'Full service history', pattern: 'full (service|main dealer) history|\\bfsh\\b|^service history: full' },
+  { label: 'Habitation air conditioning', value: 2200, pattern: 'truma aventa|dometic (freshjet|freshlight|fj\\d|harrier|b\\d{4})|roof[\\s-]?(mounted[\\s-]?)?air[\\s-]?con|habitation air[\\s-]?con|air[\\s-]?con(ditioning)? (unit )?(in|to|for) (the )?(habitation|living|rear|lounge|bedroom)|rear air[\\s-]?con|air[\\s-]?con(ditioning)? unit|(roof|habitation)[\\s-]?a\\/c' },
+  { label: 'Cab air conditioning', value: 0, pattern: 'air[\\s-]?con(ditioning)?\\b|\\ba\\/c\\b|climate control' },
+  { label: 'Self-levelling', value: 5500, pattern: 'self[\\s-]?levell?ing|levell?ing (system|jacks|legs)|hydraulic (jacks|levell?ing)|\\be\\s?&\\s?p\\b|e&amp;p' },
+  { label: 'Rear air suspension', value: 2000, pattern: 'air[\\s-]?suspension|air[\\s-]?ride|\\bvb[\\s-]?air|goldschmitt|semi[\\s-]?air|dunlop air' },
+  { label: '360° camera', value: 450, pattern: '\\b360\\s*(°|degree|deg\\b|cam)|surround[\\s-]?view|bird\'?s[\\s-]?eye' },
+  { label: 'Reversing camera', value: 200, pattern: 'revers(e|ing)[\\s-]?cam|rear[\\s-]?(view[\\s-]?)?cam' },
+  { label: 'Automatic', value: 1500, pattern: '^gearbox: auto|\\bautomatic gearbox\\b|\\bauto(matic)? trans|\\bdsg\\b|9[\\s-]?speed auto' },
+  { label: 'Solar panel', value: 500, pattern: 'solar' },
+  { label: 'Lithium battery', value: 1200, pattern: 'lithium|lifepo' },
+  { label: 'Inverter', value: 300, pattern: 'inverter' },
+  { label: 'Diesel heater', value: 0, pattern: 'diesel (heater|heating)|truma combi d|webasto|eberspa' },
+  { label: 'Cruise control', value: 0, pattern: 'cruise' },
+  { label: 'Tow bar', value: 500, pattern: 'tow[\\s-]?bar' },
+  { label: 'Awning', value: 600, pattern: 'awning|wind[\\s-]?out canopy' },
+  { label: 'Satellite TV', value: 800, pattern: 'sat(ellite)?[\\s-]?(dish|dome|system|tv)|oyster' },
+  { label: 'Full service history', value: 0, pattern: 'full (service|main dealer|dealer) history|\\bfsh\\b|^service history: full' },
+];
+
+/** Things that should make you cautious. Matched the same way. */
+export const DEFAULT_RED_FLAGS = [
+  { label: 'Left-hand drive', pattern: 'left[\\s-]?hand[\\s-]?drive|\\blhd\\b|^driver position: left' },
+  { label: 'Imported', pattern: '\\bimport(ed)?\\b' },
+  { label: 'Damp mentioned', pattern: '\\bdamp\\b' },
+  { label: 'Write-off category', pattern: '\\bcat(egory)?[\\s-]?(s|n|c|d)\\b' },
+  { label: 'Spares or repair', pattern: 'spares or repair|non[\\s-]?runner' },
 ];
 
 export function compileSpecs(specs = DEFAULT_SPECS) {
-  return specs.map((s) => ({ label: s.label, re: new RegExp(s.pattern, 'im') }));
+  return specs.map((s) => ({ label: s.label, value: s.value || 0, re: new RegExp(s.pattern, 'im') }));
+}
+
+function evidenceFor(text, m) {
+  const start = Math.max(0, text.lastIndexOf('\n', m.index) + 1);
+  const end = text.indexOf('\n', m.index);
+  const line = text.slice(start, end === -1 ? undefined : end).trim();
+  if (line.length <= 90) return line;
+  const at = m.index - start;
+  return '…' + line.slice(Math.max(0, at - 40), at + 50).trim() + '…';
 }
 
 /** Which of the specs an advert has, with a short piece of evidence for each. */
 export function matchSpecs(details, compiled) {
   const text = advertText(details);
   const matched = [];
-  for (const { label, re } of compiled) {
+  for (const { label, value, re } of compiled) {
     const m = re.exec(text);
-    if (!m) continue;
-    const start = Math.max(0, text.lastIndexOf('\n', m.index) + 1);
-    const end = text.indexOf('\n', m.index);
-    const line = text.slice(start, end === -1 ? undefined : end).trim();
-    matched.push({ label, evidence: line.length > 90 ? line.slice(Math.max(0, m.index - start - 40), m.index - start + 50).trim() + '…' : line });
+    if (m) matched.push({ label, value, evidence: evidenceFor(text, m) });
+  }
+  // A generic "air con" mention counts as cab air con only when nothing points at a habitation unit.
+  const hab = matched.find((s) => s.label === 'Habitation air conditioning');
+  const cab = matched.find((s) => s.label === 'Cab air conditioning');
+  if (hab && cab && /^cab air/i.test(cab.evidence) === false && hab.evidence === cab.evidence) {
+    matched.splice(matched.indexOf(cab), 1);
   }
   return matched;
+}
+
+export function matchRedFlags(details, compiledFlags) {
+  const text = advertText(details);
+  const flags = [];
+  for (const { label, re } of compiledFlags) {
+    const m = re.exec(text);
+    if (m) flags.push({ label, evidence: evidenceFor(text, m) });
+  }
+  if (details.owners >= 4) flags.push({ label: `${details.owners} owners`, evidence: `${details.owners} previous owners` });
+  if (details.historyCheck && !/^PASSED/.test(details.historyCheck)) flags.push({ label: 'History check', evidence: details.historyCheck });
+  return flags;
+}
+
+/** Pounds of fitted kit an advert carries, by the values in the spec list. */
+export function kitValue(advert) {
+  return (advert.specs || []).reduce((sum, s) => sum + (s.value || 0), 0);
 }
 
 const norm = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -52,51 +92,133 @@ function median(nums) {
 }
 
 /**
- * Compare each live advert's price with similar live adverts.
- * Tier 1: same make and model, year within 2. Tier 2: same make, year within 1.
- * Returns a map id -> { pct, median, comps, basis } (pct negative = cheaper).
+ * Least-squares fit of y = a + b*age + c*miles over the comparables, with a
+ * light ridge penalty so a handful of points cannot produce silly slopes.
+ * Returns a predictor, or null if the fit is not trustworthy.
  */
-export function compareWithSimilar(adverts, { minComparables = 3, minLooseComparables = 6 } = {}) {
-  const live = adverts.filter((a) => a.status === 'active' && a.price != null && a.year != null);
-  const byModel = new Map();
-  const byMake = new Map();
+function fitPrice(comps) {
+  const n = comps.length;
+  if (n < 8) return null;
+  const mAge = comps.reduce((s, c) => s + c.age, 0) / n;
+  const mMi = comps.reduce((s, c) => s + c.miles, 0) / n;
+  const mY = comps.reduce((s, c) => s + c.y, 0) / n;
+  let saa = 0, smm = 0, sam = 0, say = 0, smy = 0;
+  for (const c of comps) {
+    const a = c.age - mAge, m = c.miles - mMi, y = c.y - mY;
+    saa += a * a; smm += m * m; sam += a * m; say += a * y; smy += m * y;
+  }
+  saa *= 1 + 1e-6; smm *= 1 + 1e-6; // tiny per-variable ridge so a flat predictor cannot blow up
+  saa += 1e-9; smm += 1e-9;
+  const det = saa * smm - sam * sam;
+  if (Math.abs(det) < 1e-9) return null;
+  let b = (say * smm - smy * sam) / det;
+  let c = (smy * saa - say * sam) / det;
+  // Sanity: prices should not rise with age or mileage. Clamp rather than trust noise.
+  b = Math.min(0, Math.max(b, -0.15 * mY));        // at most 15% of mean price per year
+  c = Math.min(0, Math.max(c, -0.5));             // at most 50p per mile
+  return (age, miles) => mY + b * (age - mAge) + c * (miles - mMi);
+}
+
+function comparableKeys(a) {
+  const d = a.details || {};
+  const keys = [];
+  if (a.make && a.model) keys.push({ basis: 'model', key: `model|${norm(a.make)}|${norm(a.model)}`, span: 2, min: 3 });
+  if (d.chassis && d.keySpec?.Berth) keys.push({ basis: 'chassis', key: `chassis|${norm(d.chassis)}|${norm(d.bodyType)}|${d.keySpec.Berth}`, span: 2, min: 5 });
+  if (a.make) keys.push({ basis: 'make', key: `make|${norm(a.make)}`, span: 1, min: 6 });
+  return keys;
+}
+
+/**
+ * Compare each live advert's price, net of kit, with similar live adverts.
+ * Tiers: same make+model (year within 2); same chassis, body type and berth
+ * (year within 2); same make (year within 1). With enough comparables the
+ * expected price is adjusted for age and mileage, otherwise a median is used.
+ * Returns id -> { pct, expected, comps, basis, adjusted } (pct < 0 = cheaper).
+ */
+export function compareWithSimilar(adverts, { minComparables = 3 } = {}) {
+  const thisYear = new Date().getFullYear();
+  const live = adverts.filter((a) => a.status === 'active' && !a.excluded && a.price != null && a.year != null);
+  const groups = new Map();
+  const point = (a) => ({ id: a.id, year: a.year, age: thisYear - a.year, miles: a.mileage ?? 30000, y: a.price - kitValue(a) });
   for (const a of live) {
-    const mk = norm(a.make);
-    const md = norm(a.model);
-    if (!mk) continue;
-    if (md) {
-      const key = `${mk}|${md}`;
-      if (!byModel.has(key)) byModel.set(key, []);
-      byModel.get(key).push(a);
+    for (const k of comparableKeys(a)) {
+      if (!groups.has(k.key)) groups.set(k.key, []);
+      groups.get(k.key).push(point(a));
     }
-    if (!byMake.has(mk)) byMake.set(mk, []);
-    byMake.get(mk).push(a);
   }
 
   const result = {};
   for (const a of live) {
-    const tiers = [
-      { pool: byModel.get(`${norm(a.make)}|${norm(a.model)}`) || [], span: 2, min: minComparables, basis: 'model' },
-      { pool: byMake.get(norm(a.make)) || [], span: 1, min: minLooseComparables, basis: 'make' },
-    ];
-    for (const t of tiers) {
-      const comps = t.pool.filter((b) => b.id !== a.id && Math.abs(b.year - a.year) <= t.span).map((b) => b.price);
-      if (comps.length < t.min) continue;
-      const med = median(comps);
-      result[a.id] = { pct: Math.round(((a.price - med) / med) * 1000) / 10, median: Math.round(med), comps: comps.length, basis: t.basis };
+    const me = point(a);
+    for (const k of comparableKeys(a)) {
+      const min = k.basis === 'model' ? minComparables : k.min;
+      const comps = (groups.get(k.key) || []).filter((p) => p.id !== a.id && Math.abs(p.year - a.year) <= k.span);
+      if (comps.length < min) continue;
+      const predictor = fitPrice(comps);
+      const expected = predictor ? predictor(me.age, me.miles) : median(comps.map((p) => p.y));
+      if (!(expected > 1000)) continue;
+      result[a.id] = {
+        pct: Math.round(((me.y - expected) / expected) * 1000) / 10,
+        expected: Math.round(expected),
+        net: Math.round(me.y),
+        comps: comps.length,
+        basis: k.basis,
+        adjusted: !!predictor,
+      };
       break;
     }
   }
   return result;
 }
 
+/** Listing date encoded in Autotrader advert ids (YYYYMMDD + sequence). */
+export function listedDateFromId(id, today = new Date()) {
+  const m = /^(20\d{2})(\d{2})(\d{2})\d{5,}$/.exec(String(id));
+  if (!m) return null;
+  const iso = `${m[1]}-${m[2]}-${m[3]}`;
+  const d = new Date(iso + 'T00:00:00Z');
+  if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
+  if (d.getTime() > today.getTime() + 864e5 || m[1] < 2015) return null;
+  return iso;
+}
+
+export function daysBetween(fromIso, toIso) {
+  return Math.round((new Date(toIso + 'T00:00:00Z') - new Date(fromIso + 'T00:00:00Z')) / 864e5);
+}
+
+/** Price-drop summary from the recorded history. */
+export function priceDrops(advert) {
+  const h = advert.priceHistory || [];
+  let drops = 0;
+  for (let i = 1; i < h.length; i++) if (h[i].price < h[i - 1].price) drops++;
+  const first = h[0]?.price ?? advert.price;
+  const last = h.at(-1)?.price ?? advert.price;
+  return { drops, totalDropPct: first ? Math.round(((last - first) / first) * 1000) / 10 : 0 };
+}
+
 /** Decide whether an advert is worth a look, per the "deals" config. */
-export function scoreDeal(advert, dealConfig) {
+export function scoreDeal(advert, dealConfig, today = new Date().toISOString().slice(0, 10)) {
   const wanted = new Set(dealConfig.wantedSpecs || []);
   const have = (advert.specs || []).map((s) => s.label);
   const wantedHits = have.filter((l) => wanted.has(l));
   const v = advert.value;
   const underpriced = !!v && v.pct <= -(dealConfig.underpricedPercent ?? 10);
   const highSpec = wantedHits.length >= (dealConfig.minWantedSpecs ?? 2);
-  return { underpriced, highSpec, wantedHits, isDeal: underpriced || highSpec };
+  const listed = advert.listedDate || advert.firstSeen;
+  const daysListed = listed ? daysBetween(listed, today) : null;
+  const { drops, totalDropPct } = priceDrops(advert);
+  const staleDays = dealConfig.staleDays ?? 60;
+  const motivated = (daysListed != null && daysListed >= staleDays && drops >= 1) || drops >= 2;
+  const redFlags = (advert.redFlags || []).length;
+  return {
+    underpriced,
+    highSpec,
+    motivated,
+    wantedHits,
+    daysListed,
+    drops,
+    totalDropPct,
+    redFlags,
+    isDeal: (underpriced || highSpec || motivated) && redFlags === 0,
+  };
 }

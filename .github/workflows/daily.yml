@@ -22,7 +22,7 @@ jobs:
     # on a self-hosted runner. Set a repository variable RUNNER_LABEL (for example
     # "self-hosted") to pick it; see README "Where it runs".
     runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
-    timeout-minutes: 20
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
 

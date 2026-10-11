@@ -10,7 +10,17 @@ function esc(s) {
 function valueText(a) {
   if (!a.value) return null;
   const sign = a.value.pct <= 0 ? '−' : '+';
-  return `${sign}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar`;
+  const kit = a.value.net != null && a.price != null && a.price - a.value.net >= 1000 ? `, ${gbp(a.price - a.value.net)} of kit` : '';
+  return `${sign}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit}`;
+}
+
+function marketText(a) {
+  const d = a.deal;
+  if (!d) return null;
+  const bits = [];
+  if (d.daysListed != null) bits.push(d.daysListed === 0 ? 'listed today' : `listed ${d.daysListed}d`);
+  if (d.drops) bits.push(`${d.drops} drop${d.drops > 1 ? 's' : ''} (${d.totalDropPct}%)`);
+  return bits.join(', ') || null;
 }
 
 function specText(a, wantedSpecs) {
@@ -30,13 +40,17 @@ function advertLine(a, wantedSpecs = []) {
   const flags = [];
   if (a.deal?.underpriced) flags.push('💰 ' + valueText(a));
   else if (a.value) flags.push(valueText(a));
+  if (a.deal?.motivated) flags.push('⏳ ' + marketText(a));
+  else if (marketText(a) && a.deal?.daysListed > 0) flags.push(marketText(a));
   const specs = specText(a, wantedSpecs);
   if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
   if (a.details?.owners) flags.push(`${a.details.owners} owner${a.details.owners === 1 ? '' : 's'}`);
+  const red = (a.redFlags || []).map((f) => f.label);
   return (
     `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}` +
     (flags.length ? `\n${esc(flags.join(' · '))}` : '') +
-    (specs ? `\n${esc(specs)}` : '')
+    (specs ? `\n${esc(specs)}` : '') +
+    (red.length ? `\n⚠️ ${esc(red.join(', '))}` : '')
   );
 }
 
@@ -55,7 +69,7 @@ export function buildReport(results, { maxPerSection = 25, wantedSpecs = [] } = 
     const dealIds = new Set(deals.map((a) => a.id));
     if (deals.length) {
       parts.push(
-        `⭐ <b>${deals.length} worth a look</b> (underpriced or high spec)\n` +
+        `⭐ <b>${deals.length} worth a look</b> (underpriced, high spec or motivated seller)\n` +
           deals.slice(0, maxPerSection).map((a) => advertLine(a, wantedSpecs)).join('\n\n'),
       );
     }

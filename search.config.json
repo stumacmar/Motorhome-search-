@@ -1,25 +1,37 @@
 {
   "_comment": "Edit this file to set your searches. Each search needs either a pasted Autotrader motorhome-search URL or a criteria block. See README.md for every supported key.",
   "dashboardUrl": "https://stumacmar.github.io/Motorhome-search-/",
-  "maxPages": 10,
+  "maxPages": 200,
   "keepGoneDays": 90,
   "details": {
-    "_comment": "Each new advert's page is fetched once to read its features and description. This caps how many per run; the rest are picked up on later runs.",
-    "maxFetchesPerRun": 80
+    "_comment": "Each new advert's page is fetched once to read its features and description. maxFetchesPerRun caps how many per run; delayMs is the pause between requests; adverts whose page says fewer berths than excludeIfBerthBelow are treated as unconverted vans and hidden.",
+    "maxFetchesPerRun": 3000,
+    "delayMs": 900,
+    "excludeIfBerthBelow": 2,
+    "retryFailedAfterDays": 3
   },
   "deals": {
-    "_comment": "An advert is 'worth a look' if it has at least minWantedSpecs of the wantedSpecs, or is underpricedPercent below the median of similar live adverts (same make and model, year within 2, at least minComparables of them).",
-    "wantedSpecs": ["Air conditioning", "Self-levelling", "Rear air suspension", "360° camera"],
+    "_comment": "An advert is 'worth a look' if it has at least minWantedSpecs of wantedSpecs, or its price net of kit is underpricedPercent below similar live adverts (adjusted for age and mileage when there are enough), or the seller looks motivated (listed staleDays+ with a price drop, or two drops). Any red flag removes it from the list.",
+    "wantedSpecs": [
+      "Habitation air conditioning",
+      "Self-levelling",
+      "Rear air suspension",
+      "360° camera"
+    ],
     "minWantedSpecs": 2,
     "underpricedPercent": 10,
-    "minComparables": 3
+    "minComparables": 3,
+    "staleDays": 60
   },
   "searches": [
     {
       "name": "Van conversions and campervans 2016+ £25k–£70k",
       "criteria": {
         "postcode": "SW1A 1AA",
-        "bodyType": ["Van Conversion", "Campervan"],
+        "bodyType": [
+          "Van Conversion",
+          "Campervan"
+        ],
         "yearFrom": 2016,
         "priceFrom": 25000,
         "priceTo": 70000,
@@ -27,8 +39,13 @@
         "excludeWriteOffs": true,
         "sort": "datedesc"
       },
-      "maxPages": 40,
-      "mustNotContain": ["spares or repair", "cat s", "cat n", "panel van"]
+      "maxPages": 200,
+      "mustNotContain": [
+        "spares or repair",
+        "cat s",
+        "cat n",
+        "panel van"
+      ]
     }
   ]
 }
