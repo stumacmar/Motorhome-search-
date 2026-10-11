@@ -10,6 +10,7 @@ import { randomUUID } from 'node:crypto';
 
 export const SEARCH_BASE = 'https://www.autotrader.co.uk/motorhome-search';
 const GATEWAY = 'https://www.autotrader.co.uk/at-gateway?opname=SearchResultsListingsGridQuery';
+const REQUEST_TIMEOUT_MS = 30_000;
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
@@ -290,6 +291,14 @@ function gatewayBody(filters, sortBy, page, searchId) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+function withTimeout(promise, ms, what) {
+  let timer;
+  const bomb = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${what} timed out after ${ms / 1000}s`)), ms);
+  });
+  return Promise.race([promise, bomb]).finally(() => clearTimeout(timer));
+}
+
 /** Direct HTTP transport: plain fetch to the gateway. */
 export async function fetchPageDirect(filters, sortBy, page, searchId) {
   const res = await fetch(GATEWAY, {
@@ -303,9 +312,10 @@ export async function fetchPageDirect(filters, sortBy, page, searchId) {
       'x-sauron-app-name': 'sauron-search-results-app',
     },
     body: gatewayBody(filters, sortBy, page, searchId),
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
   });
-  if (!res.ok) throw new Error(`Gateway HTTP ${res.status}`);
   const text = await res.text();
+  if (!res.ok) throw new Error(`Gateway HTTP ${res.status}: ${text.slice(0, 120).replace(/\s+/g, ' ')}`);
   let json;
   try {
     json = JSON.parse(text);
@@ -335,8 +345,8 @@ export class BrowserTransport {
 
   async fetchPage(filters, sortBy, page, searchId) {
     const body = gatewayBody(filters, sortBy, page, searchId);
-    const result = await this.page.evaluate(
-      async ({ url, body }) => {
+    const result = await withTimeout(this.page.evaluate(
+      async ({ url, body, timeout }) => {
         const res = await fetch(url, {
           method: 'POST',
           headers: {
@@ -345,12 +355,13 @@ export class BrowserTransport {
             'x-sauron-app-name': 'sauron-search-results-app',
           },
           body,
+          signal: AbortSignal.timeout(timeout),
         });
         return { status: res.status, text: await res.text() };
       },
-      { url: GATEWAY, body },
-    );
-    if (result.status !== 200) throw new Error(`Gateway HTTP ${result.status} (browser)`);
+      { url: GATEWAY, body, timeout: REQUEST_TIMEOUT_MS },
+    ), REQUEST_TIMEOUT_MS + 5000, 'browser gateway request');
+    if (result.status !== 200) throw new Error(`Gateway HTTP ${result.status} (browser): ${result.text.slice(0, 120).replace(/\s+/g, ' ')}`);
     return extractPage(JSON.parse(result.text));
   }
 
