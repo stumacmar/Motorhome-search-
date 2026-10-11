@@ -1,0 +1,17 @@
+{
+  "name": "motorhome-search",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daily Autotrader motorhome search: reports new adverts and price drops, keeps a dashboard on GitHub Pages.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "run": "node src/run.js",
+    "dry-run": "node src/run.js --dry-run",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.6",
+    "playwright": "1.56.1"
+  }
+}

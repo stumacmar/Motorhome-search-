@@ -1,0 +1,24 @@
+{
+  "_comment": "Edit this file to set your searches. Each search needs either a pasted Autotrader motorhome-search URL or a criteria block. See README.md for every supported key.",
+  "dashboardUrl": "https://stumacmar.github.io/Motorhome-search-/",
+  "maxPages": 10,
+  "keepGoneDays": 90,
+  "searches": [
+    {
+      "name": "Auto-Sleepers 2015+ under £40k",
+      "criteria": {
+        "postcode": "SW1A 1AA",
+        "make": "Auto-Sleepers",
+        "yearFrom": 2015,
+        "priceTo": 40000,
+        "excludeWriteOffs": true,
+        "sort": "datedesc"
+      }
+    },
+    {
+      "name": "2-berth van conversions within 150 miles",
+      "url": "https://www.autotrader.co.uk/motorhome-search?postcode=SW1A1AA&radius=150&berth=2&body-type=Van%20Conversion&year-from=2016&price-to=45000&maximum-mileage=60000&exclude-writeoff-categories=on&sort=datedesc",
+      "mustNotContain": ["spares or repair", "cat s", "cat n"]
+    }
+  ]
+}

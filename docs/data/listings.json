@@ -1,0 +1,1986 @@
+{
+ "version": 1,
+ "generatedAt": "2026-10-11T21:12:35.761Z",
+ "searches": {
+  "Auto-Sleepers 2015+ under £40k": {
+   "name": "Auto-Sleepers 2015+ under £40k",
+   "url": "https://www.autotrader.co.uk/motorhome-search?exclude-writeoff-categories=on&make=Auto-Sleepers&price-to=40000&year-from=2015&postcode=SW1A1AA&sort=datedesc",
+   "lastRun": "2026-10-11",
+   "total": 20,
+   "read": 20,
+   "truncated": false,
+   "error": null
+  },
+  "2-berth van conversions within 150 miles": {
+   "name": "2-berth van conversions within 150 miles",
+   "url": "https://www.autotrader.co.uk/motorhome-search?berth=2&body-type=Van+Conversion&radius=150&exclude-writeoff-categories=on&maximum-mileage=60000&price-to=45000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
+   "lastRun": "2026-10-11",
+   "total": 38,
+   "read": 38,
+   "truncated": false,
+   "error": null
+  }
+ },
+ "adverts": {
+  "202610116890866": {
+   "id": "202610116890866",
+   "title": "Auto-Sleepers Nuevo Es",
+   "subTitle": "2.2",
+   "attentionGrabber": "Compact, 4 berth Luxury!",
+   "make": "Auto-Sleepers",
+   "model": "Nuevo ES",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (15 reg)",
+   "mileageText": "33,000 miles",
+   "mileage": 33000,
+   "price": 35999,
+   "priceText": "£35,999",
+   "location": "Bristol (104 miles)",
+   "distanceMiles": 104,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c5792eb26df747fab845ffda631be636.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610116890866",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 35999
+    }
+   ]
+  },
+  "202610096827269": {
+   "id": "202610096827269",
+   "title": "Auto-Sleepers Broadway EK",
+   "subTitle": null,
+   "attentionGrabber": "Full service history 24,000 mi",
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016",
+   "mileageText": "24,000 miles",
+   "mileage": 24000,
+   "price": 39000,
+   "priceText": "£39,000",
+   "location": "Taunton (135 miles)",
+   "distanceMiles": 135,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/a9f424ec4c2e4e639ead8c517dfc3cd4.jpg",
+   "imageCount": 72,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610096827269",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39000
+    }
+   ]
+  },
+  "202610076755447": {
+   "id": "202610076755447",
+   "title": "Auto-Sleepers Symbol",
+   "subTitle": "2.2",
+   "attentionGrabber": "2 BERTH 3 BELTS SOLAR PANEL",
+   "make": "Auto-Sleepers",
+   "model": "Symbol",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016",
+   "mileageText": "30,100 miles",
+   "mileage": 30100,
+   "price": 38999,
+   "priceText": "£38,999",
+   "location": "Belfast (320 miles)",
+   "distanceMiles": 320,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6103398be58e44a7b64e451063fd6070.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610076755447",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 38999
+    }
+   ]
+  },
+  "202610066725658": {
+   "id": "202610066725658",
+   "title": "Auto-Sleepers Symbol",
+   "subTitle": "2.0",
+   "attentionGrabber": "Hab Checked, LPG, Solar",
+   "make": "Auto-Sleepers",
+   "model": "Symbol",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "26,900 miles",
+   "mileage": 26900,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Dunmow (35 miles)",
+   "distanceMiles": 35,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/e4021a8c9a60409ea8b4b490e01ae94a.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610066725658",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k",
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202609256381622": {
+   "id": "202609256381622",
+   "title": "Auto-Sleepers Broadway EK",
+   "subTitle": "Long Benches",
+   "attentionGrabber": "Spacious Living Area",
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (15 reg)",
+   "mileageText": "28,800 miles",
+   "mileage": 28800,
+   "price": 37995,
+   "priceText": "£37,995",
+   "location": "Warminster (91 miles)",
+   "distanceMiles": 91,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/8778251dc78e4fdbbf8213fff4b630d5.jpg",
+   "imageCount": 15,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609256381622",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 37995
+    }
+   ]
+  },
+  "202609196184899": {
+   "id": "202609196184899",
+   "title": "Auto-Sleepers Broadway EK",
+   "subTitle": "2.0",
+   "attentionGrabber": "Available NOW",
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "41,769 miles",
+   "mileage": 41769,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Leeds (169 miles)",
+   "distanceMiles": 169,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/03649bb9630b4692bed99c018bc2a478.jpg",
+   "imageCount": 12,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609196184899",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202609186165948": {
+   "id": "202609186165948",
+   "title": "Auto-Sleepers Kingham",
+   "subTitle": "2.2",
+   "attentionGrabber": "FRENCH BED, GAS LOW, SOLAR",
+   "make": "Auto-Sleepers",
+   "model": "Kingham",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileageText": "96,125 miles",
+   "mileage": 96125,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Bradford (170 miles)",
+   "distanceMiles": 170,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/7ea2565542d94ee5bb6dfaaf2acec654.jpg",
+   "imageCount": 16,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609186165948",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202609186154181": {
+   "id": "202609186154181",
+   "title": "Auto-Sleepers Broadway EK 2.2 Only 20,000 Miles",
+   "subTitle": "Peugeot 2.2",
+   "attentionGrabber": null,
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "20,000 miles",
+   "mileage": 20000,
+   "price": 36995,
+   "priceText": "£36,995",
+   "location": "Barton Upon Humber (150 miles)",
+   "distanceMiles": 150,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/39b948d44f274600807f2a4faa1a63cc.jpg",
+   "imageCount": 25,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609186154181",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 36995
+    }
+   ]
+  },
+  "202609176133971": {
+   "id": "202609176133971",
+   "title": "Auto-Sleepers Warwick Duo",
+   "subTitle": "- Manual 2.2",
+   "attentionGrabber": "PLEASE CALL TO ARRANGE VIEWING",
+   "make": "Auto-Sleepers",
+   "model": "Warwick Duo",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (64 reg)",
+   "mileageText": "30,550 miles",
+   "mileage": 30550,
+   "price": 38995,
+   "priceText": "£38,995",
+   "location": "Bracknell (28 miles)",
+   "distanceMiles": 28,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/60c90bd0c3ec4adb91c5f3c40954d8ff.jpg",
+   "imageCount": 43,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609176133971",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 38995
+    }
+   ]
+  },
+  "202609166082022": {
+   "id": "202609166082022",
+   "title": "Auto-Sleepers Broadway EK",
+   "subTitle": "2.2",
+   "attentionGrabber": "COMPACT SIZE/LONG BENCH SEATS",
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (15 reg)",
+   "mileageText": "36,407 miles",
+   "mileage": 36407,
+   "price": 35999,
+   "priceText": "£35,999",
+   "location": "Coventry (93 miles)",
+   "distanceMiles": 93,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/df9fd639f4d44d4ebe192486f27e417e.jpg",
+   "imageCount": 34,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609166082022",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 35999
+    }
+   ]
+  },
+  "202608285526379": {
+   "id": "202608285526379",
+   "title": "Auto-Sleepers Wave",
+   "subTitle": "2.1 113 CDi Panel Van 5dr Diesel Manual L1 (198 g/km, 136 bhp)",
+   "attentionGrabber": null,
+   "make": "Auto-Sleepers",
+   "model": "Wave",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "61,961 miles",
+   "mileage": 61961,
+   "price": 27995,
+   "priceText": "£27,995",
+   "location": "Hailsham (46 miles)",
+   "distanceMiles": 46,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/f120835ec4e14cf6bf448a10f33a0086.jpg",
+   "imageCount": 31,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608285526379",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 27995
+    }
+   ]
+  },
+  "202608255412816": {
+   "id": "202608255412816",
+   "title": "Auto-Sleepers Warwick XL",
+   "subTitle": "2.2",
+   "attentionGrabber": "Open to sensible offers",
+   "make": "Auto-Sleepers",
+   "model": "Warwick XL",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (64 reg)",
+   "mileageText": "14,400 miles",
+   "mileage": 14400,
+   "price": 37292,
+   "priceText": "£37,292",
+   "location": "Halifax (169 miles)",
+   "distanceMiles": 169,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/48489e9e622440a3bb1b463e3b7003ff.jpg",
+   "imageCount": 28,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608255412816",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 37292
+    }
+   ]
+  },
+  "202608135059521": {
+   "id": "202608135059521",
+   "title": "Auto-Sleepers Malvern",
+   "subTitle": "Mercedes Sprinter 2.1",
+   "attentionGrabber": "4 Berth, Automatic",
+   "make": "Auto-Sleepers",
+   "model": "Malvern",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "67,886 miles",
+   "mileage": 67886,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Huntingdon (68 miles)",
+   "distanceMiles": 68,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/9e32a395b6704b41a1a7f824711f8f0b.jpg",
+   "imageCount": 26,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608135059521",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202607284566899": {
+   "id": "202607284566899",
+   "title": "Auto-Sleepers Broadway EK",
+   "subTitle": "2.0",
+   "attentionGrabber": "Lithium, 2k Inverter, LPG Tank",
+   "make": "Auto-Sleepers",
+   "model": "Broadway EK",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "32,677 miles",
+   "mileage": 32677,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Bristol (103 miles)",
+   "distanceMiles": 103,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/2c9e7e9e2392460ba4354b3cdb7d098d.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607284566899",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202607244463492": {
+   "id": "202607244463492",
+   "title": "Auto-Sleepers Kemerton XL",
+   "subTitle": "2.0",
+   "attentionGrabber": "Hab Air Con, Solar",
+   "make": "Auto-Sleepers",
+   "model": "Kemerton XL",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "87,700 miles",
+   "mileage": 87700,
+   "price": 39999,
+   "priceText": "£39,999",
+   "location": "Deeside (170 miles)",
+   "distanceMiles": 170,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/72b921af159242a9b00f5fc198a74d9a.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607244463492",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39999
+    }
+   ]
+  },
+  "202607214377453": {
+   "id": "202607214377453",
+   "title": "Auto-Sleepers Nuevo",
+   "subTitle": "ES 2.2",
+   "attentionGrabber": "FSH Rev Cam Tow Bar <6m",
+   "make": "Auto-Sleepers",
+   "model": "Nuevo",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "59,240 miles",
+   "mileage": 59240,
+   "price": 37999,
+   "priceText": "£37,999",
+   "location": "Carnforth (215 miles)",
+   "distanceMiles": 215,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/21ec6bcb7eb54f498005cecd53c7ab09.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607214377453",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 37999
+    }
+   ]
+  },
+  "202606053037045": {
+   "id": "202606053037045",
+   "title": "Auto-Sleepers Nuevo Ek",
+   "subTitle": "2.2",
+   "attentionGrabber": "AUTOSLEEPER NUEVO EK LOW MILES",
+   "make": "Auto-Sleepers",
+   "model": "Nuevo EK",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (64 reg)",
+   "mileageText": "20,800 miles",
+   "mileage": 20800,
+   "price": 35999,
+   "priceText": "£35,999",
+   "location": "Barnsley (150 miles)",
+   "distanceMiles": 150,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/b77dd8b32bbc42e1b9be0fb5056db72c.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202606053037045",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 35999
+    }
+   ]
+  },
+  "202510317567443": {
+   "id": "202510317567443",
+   "title": "Auto-Sleepers Wave",
+   "subTitle": "4 Berth 2.1",
+   "attentionGrabber": "AUTOMATIC",
+   "make": "Auto-Sleepers",
+   "model": "Wave",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (65 reg)",
+   "mileageText": "62,000 miles",
+   "mileage": 62000,
+   "price": 29995,
+   "priceText": "£29,995",
+   "location": "Somerton (112 miles)",
+   "distanceMiles": 112,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6fe1001f50d44dcd9332ce5ef003a521.jpg",
+   "imageCount": 81,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202510317567443",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 29995
+    }
+   ]
+  },
+  "202505152421395": {
+   "id": "202505152421395",
+   "title": "Auto-Sleepers Symbol",
+   "subTitle": "symbol 2.2",
+   "attentionGrabber": "low mileage with LPG auto Gas",
+   "make": "Auto-Sleepers",
+   "model": "Symbol",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (15 reg)",
+   "mileageText": "24,192 miles",
+   "mileage": 24192,
+   "price": 38990,
+   "priceText": "£38,990",
+   "location": "Sittingbourne (40 miles)",
+   "distanceMiles": 40,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c51d4a5d8f74438d93df94d50723900a.jpg",
+   "imageCount": 46,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202505152421395",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 38990
+    }
+   ]
+  },
+  "202308311396111": {
+   "id": "202308311396111",
+   "title": "Auto-Sleepers Nuevo EK",
+   "subTitle": "**REDUCED** 2.2",
+   "attentionGrabber": null,
+   "make": "Auto-Sleepers",
+   "model": "Nuevo EK",
+   "category": "motorhome",
+   "year": 2015,
+   "registeredYear": "2015 (65 reg)",
+   "mileageText": "15,080 miles",
+   "mileage": 15080,
+   "price": 34995,
+   "priceText": "£34,995",
+   "location": "Southampton (63 miles)",
+   "distanceMiles": 63,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6d3ca461a6be47f48587f030535f6c37.jpg",
+   "imageCount": 17,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202308311396111",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Auto-Sleepers 2015+ under £40k"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34995
+    }
+   ]
+  },
+  "202610106861766": {
+   "id": "202610106861766",
+   "title": "Auto-Sleepers Symbol",
+   "subTitle": "Peugeot Boxer 2.0",
+   "attentionGrabber": null,
+   "make": "Auto-Sleepers",
+   "model": "Symbol",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "18,133 miles",
+   "mileage": 18133,
+   "price": 42995,
+   "priceText": "£42,995",
+   "location": "Huntingdon (68 miles)",
+   "distanceMiles": 68,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/8538a7a7ab39481c81f2d036884d469d.jpg",
+   "imageCount": 12,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610106861766",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42995
+    }
+   ]
+  },
+  "202610076753502": {
+   "id": "202610076753502",
+   "title": "Swift Bessacarr 442",
+   "subTitle": "2.3",
+   "attentionGrabber": "One owner | Auto | Air Assist",
+   "make": "Swift",
+   "model": "Bessacarr 442",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (67 reg)",
+   "mileageText": "31,000 miles",
+   "mileage": 31000,
+   "price": 44995,
+   "priceText": "£44,995",
+   "location": "Scunthorpe (145 miles)",
+   "distanceMiles": 145,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/8fa0a165824448e49dd997f66c5618da.jpg",
+   "imageCount": 23,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610076753502",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 44995
+    }
+   ]
+  },
+  "202610066734076": {
+   "id": "202610066734076",
+   "title": "Rollerteam Toleno L",
+   "subTitle": null,
+   "attentionGrabber": null,
+   "make": "Roller Team",
+   "model": "Toleno L",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019",
+   "mileageText": "14,946 miles",
+   "mileage": 14946,
+   "price": 42995,
+   "priceText": "£42,995",
+   "location": "Taunton (130 miles)",
+   "distanceMiles": 130,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/45156b2ee4a34be9951a44201bf7922f.jpg",
+   "imageCount": 20,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610066734076",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42995
+    }
+   ]
+  },
+  "202610066722839": {
+   "id": "202610066722839",
+   "title": "VW Transporter T28",
+   "subTitle": "Manual 2.0",
+   "attentionGrabber": null,
+   "make": "Volkswagen",
+   "model": "Transporter",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileageText": "52,191 miles",
+   "mileage": 52191,
+   "price": 29995,
+   "priceText": "£29,995",
+   "location": "Newark (113 miles)",
+   "distanceMiles": 113,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/aec4ce56268449f292f64c6d3fdefba2.jpg",
+   "imageCount": 23,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610066722839",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 29995
+    }
+   ]
+  },
+  "202610046655997": {
+   "id": "202610046655997",
+   "title": "Mercedes-Benz Sprinter",
+   "subTitle": "2.1 316 CDi Panel Van 5dr Diesel Manual RWD L3 H3 (206 g/km, 163 bhp)",
+   "attentionGrabber": null,
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "16,663 miles",
+   "mileage": 16663,
+   "price": 45000,
+   "priceText": "£45,000",
+   "location": "Brecon (139 miles)",
+   "distanceMiles": 139,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/dc9147e9ee2245c2913ba7eac67f12cc.jpg",
+   "imageCount": 30,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610046655997",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 45000
+    }
+   ]
+  },
+  "202610046652750": {
+   "id": "202610046652750",
+   "title": "Ford Transit Custom",
+   "subTitle": "2.0 300 EcoBlue Trend Camper Van 5dr Diesel Manual L1 H1 Euro 6 (s/s) (110 ps)",
+   "attentionGrabber": "NEW CONVERSION, REAR SLIDE OUT",
+   "make": "Ford",
+   "model": "Transit Custom",
+   "category": "motorhome",
+   "year": 2024,
+   "registeredYear": "2024 (24 reg)",
+   "mileageText": "48,400 miles",
+   "mileage": 48400,
+   "price": 27995,
+   "priceText": "£27,995",
+   "location": "Hassocks (39 miles)",
+   "distanceMiles": 39,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/5d6f92e0a67f424884b54d2928b6c5ba.jpg",
+   "imageCount": 25,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610046652750",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 27995
+    }
+   ]
+  },
+  "202609286473415": {
+   "id": "202609286473415",
+   "title": "Mercedes-Benz Sprinter",
+   "subTitle": "2.1 314 CDI Premium Panel Van 5dr Diesel Manual FWD L2 H2 Euro 6 (s/s) (143 ps)",
+   "attentionGrabber": "Low mileage, Apple car play",
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "category": "motorhome",
+   "year": 2021,
+   "registeredYear": "2021 (71 reg)",
+   "mileageText": "28,200 miles",
+   "mileage": 28200,
+   "price": 32995,
+   "priceText": "£32,995",
+   "location": "Emsworth (57 miles)",
+   "distanceMiles": 57,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/8fd5fe94ef104dafbc07527d3a26cb57.jpg",
+   "imageCount": 35,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609286473415",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 32995
+    }
+   ]
+  },
+  "202609276430547": {
+   "id": "202609276430547",
+   "title": "Ford Transit Custom",
+   "subTitle": "2.0 280 EcoBlue Limited 5dr Diesel Manual L1 H1 Euro 6 (s/s) (130 ps)",
+   "attentionGrabber": "Beautiful looking van, FSH",
+   "make": "Ford",
+   "model": "Transit Custom",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (70 reg)",
+   "mileageText": "15,409 miles",
+   "mileage": 15409,
+   "price": 35500,
+   "priceText": "£35,500",
+   "location": "Boston (102 miles)",
+   "distanceMiles": 102,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/84fe6735312149f98b6efaea347f9762.jpg",
+   "imageCount": 19,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609276430547",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 35500
+    }
+   ]
+  },
+  "202609256400160": {
+   "id": "202609256400160",
+   "title": "Volkswagen Transporter",
+   "subTitle": "2.0 TDI T30 BlueMotion Tech Startline Panel Van 5dr Diesel Manual FWD SWB Euro 6 (s/s) (102 ps)",
+   "attentionGrabber": "Low Mileage!",
+   "make": "Volkswagen",
+   "model": "Transporter",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileageText": "39,600 miles",
+   "mileage": 39600,
+   "price": 26999,
+   "priceText": "£26,999",
+   "location": "Markfield (96 miles)",
+   "distanceMiles": 96,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/0d18950f20c0423eb62d1e638a102367.jpg",
+   "imageCount": 16,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609256400160",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 26999
+    }
+   ]
+  },
+  "202609236313383": {
+   "id": "202609236313383",
+   "title": "Citroen Relay",
+   "subTitle": "2.2 BlueHDi 35 Enterprise Panel Van 5dr Diesel Manual L3 High Roof Euro 6 (s/s) (140 ps)",
+   "attentionGrabber": null,
+   "make": "Citroen",
+   "model": "Relay",
+   "category": "motorhome",
+   "year": 2022,
+   "registeredYear": "2022 (22 reg)",
+   "mileageText": "31,790 miles",
+   "mileage": 31790,
+   "price": 41200,
+   "priceText": "£41,200",
+   "location": "Lincoln (118 miles)",
+   "distanceMiles": 118,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6dbd5e6eebb44720b4f5859ab5a77b57.jpg",
+   "imageCount": 22,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609236313383",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 41200
+    }
+   ]
+  },
+  "202609216250808": {
+   "id": "202609216250808",
+   "title": "Fiat Ducato",
+   "subTitle": "Autotrail Tribute T 680 2.3",
+   "attentionGrabber": null,
+   "make": "Fiat",
+   "model": "Ducato",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (70 reg)",
+   "mileageText": "12,864 miles",
+   "mileage": 12864,
+   "price": 43995,
+   "priceText": "£43,995",
+   "location": "Lee On The Solent (67 miles)",
+   "distanceMiles": 67,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/234765ab9a92401f931fcee99be71020.jpg",
+   "imageCount": 16,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609216250808",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 43995
+    }
+   ]
+  },
+  "202609196198569": {
+   "id": "202609196198569",
+   "title": "Ford Transit 350 Limited EcoBlue",
+   "subTitle": "2.0 350 EcoBlue Limited Panel Van 5dr Diesel Manual RWD L3 H2 Euro 6 (s/s) (170 ps)",
+   "attentionGrabber": "High Victron Spec, 2 x Solar",
+   "make": "Ford",
+   "model": "Transit",
+   "category": "motorhome",
+   "year": 2024,
+   "registeredYear": "2024 (24 reg)",
+   "mileageText": "16,789 miles",
+   "mileage": 16789,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Dunmow (35 miles)",
+   "distanceMiles": 35,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/11203d026b31400cad2af8de2ceaf129.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609196198569",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202609196196776": {
+   "id": "202609196196776",
+   "title": "Ford Transit Custom",
+   "subTitle": "2.0 TDCi 310 Trend Kombi 5dr Diesel Manual L2 H2 (159 g/km, 128 bhp)",
+   "attentionGrabber": "Wellhouse  Hightop Campervan",
+   "make": "Ford",
+   "model": "Transit Custom",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "34,000 miles",
+   "mileage": 34000,
+   "price": 34995,
+   "priceText": "£34,995",
+   "location": "Exeter (149 miles)",
+   "distanceMiles": 149,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/fc60ca892e74405aa0488fef9d3921f8.jpg",
+   "imageCount": 27,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609196196776",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34995
+    }
+   ]
+  },
+  "202609176144045": {
+   "id": "202609176144045",
+   "title": "MAXUS eDeliver 9",
+   "subTitle": "88.5kWh Campervan 5dr Electric Auto FWD L3 H2 (204 ps)",
+   "attentionGrabber": "Fully Electric - 220mile Range",
+   "make": "MAXUS",
+   "model": "eDeliver 9",
+   "category": "motorhome",
+   "year": 2021,
+   "registeredYear": "2021 (71 reg)",
+   "mileageText": "14,045 miles",
+   "mileage": 14045,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Alton (43 miles)",
+   "distanceMiles": 43,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c9c3af8e18f44fe8b2aadff843bcd493.jpg",
+   "imageCount": 15,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609176144045",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39995
+    }
+   ]
+  },
+  "202609176139413": {
+   "id": "202609176139413",
+   "title": "Peugeot Expert Tepee",
+   "subTitle": "2.0 HDi Tepee Comfort Combi Van 4dr Diesel Automatic L2 (199 g/km, 163 bhp)",
+   "attentionGrabber": "CAMPERVAN DAY VAN",
+   "make": "Peugeot",
+   "model": "Expert Tepee",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (66 reg)",
+   "mileageText": "44,750 miles",
+   "mileage": 44750,
+   "price": 21880,
+   "priceText": "£21,880",
+   "location": "Cannock (115 miles)",
+   "distanceMiles": 115,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/ffec05079e044e9b9123e5273d58a453.jpg",
+   "imageCount": 26,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609176139413",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 21880
+    }
+   ]
+  },
+  "202609135993761": {
+   "id": "202609135993761",
+   "title": "AUTO-TRAIL V-LINE 635 SE",
+   "subTitle": "Manual 2017-05-23 2.3",
+   "attentionGrabber": null,
+   "make": "Auto-Trail",
+   "model": "V-Line 635 SE",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017",
+   "mileageText": "42,730 miles",
+   "mileage": 42730,
+   "price": 43995,
+   "priceText": "£43,995",
+   "location": "Derby (114 miles)",
+   "distanceMiles": 114,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/3953ba06ceb248f68cb6d48f1e91e3c0.jpg",
+   "imageCount": 20,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609135993761",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 43995
+    }
+   ]
+  },
+  "202609125972766": {
+   "id": "202609125972766",
+   "title": "Fiat Ducato",
+   "subTitle": "2.0",
+   "attentionGrabber": "low milage new mot solar panel",
+   "make": "Fiat",
+   "model": "Ducato",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileageText": "37,000 miles",
+   "mileage": 37000,
+   "price": 42500,
+   "priceText": "£42,500",
+   "location": "Newport (123 miles)",
+   "distanceMiles": 123,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/bbe4afe96b4c412dad6392aab0dd6f64.jpg",
+   "imageCount": 30,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609125972766",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42500
+    }
+   ]
+  },
+  "202609105913848": {
+   "id": "202609105913848",
+   "title": "Compass Avantgarde 175",
+   "subTitle": "2.0",
+   "attentionGrabber": null,
+   "make": "Compass",
+   "model": "Avantgarde 175",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (69 reg)",
+   "mileageText": "10,233 miles",
+   "mileage": 10233,
+   "price": 44995,
+   "priceText": "£44,995",
+   "location": "Chesterfield (128 miles)",
+   "distanceMiles": 128,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/cb65c77772674e1ea3c7a906643aa496.jpg",
+   "imageCount": 26,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609105913848",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 44995
+    }
+   ]
+  },
+  "202609095866318": {
+   "id": "202609095866318",
+   "title": "Renault Trafic",
+   "subTitle": "1.6 dCi ENERGY 27 Sport Nav Panel Van 5dr Diesel Manual SWB Standard Roof Euro 6 (s/s) (125 ps)",
+   "attentionGrabber": "A true multi purpose van",
+   "make": "Renault",
+   "model": "Trafic",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (68 reg)",
+   "mileageText": "53,000 miles",
+   "mileage": 53000,
+   "price": 14000,
+   "priceText": "£14,000",
+   "location": "Leatherhead (16 miles)",
+   "distanceMiles": 16,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/06f84b81ba994bd6bc676882e52ab1c5.jpg",
+   "imageCount": 42,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609095866318",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 14000
+    }
+   ]
+  },
+  "202609085844767": {
+   "id": "202609085844767",
+   "title": "Ford Transit",
+   "subTitle": "Ford Transit 350 EcoBlue L3H3 RWD 130PS Stealth Campervan Conversion",
+   "attentionGrabber": "FSH- NO VAT - 53k",
+   "make": "Ford",
+   "model": "Transit",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "53,904 miles",
+   "mileage": 53904,
+   "price": 33995,
+   "priceText": "£33,995",
+   "location": "Bromley (11 miles)",
+   "distanceMiles": 11,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/2a1c2bccd45e4e398eab0f3f8f8717a6.jpg",
+   "imageCount": 26,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609085844767",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 33995
+    }
+   ]
+  },
+  "202609085841784": {
+   "id": "202609085841784",
+   "title": "Wellhouse Transit Custom LUX XL 310 Trend",
+   "subTitle": "Manual 2018 2.0",
+   "attentionGrabber": "Wellhouse LUX XL custom 310",
+   "make": "Wellhouse",
+   "model": "Transit Custom LUX XL 310 Trend",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileageText": "49,745 miles",
+   "mileage": 49745,
+   "price": 39990,
+   "priceText": "£39,990",
+   "location": "Stourbridge (108 miles)",
+   "distanceMiles": 108,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/ed0f89cc671c40d99d4ba6565129a976.jpg",
+   "imageCount": 15,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609085841784",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39990
+    }
+   ]
+  },
+  "202609075805627": {
+   "id": "202609075805627",
+   "title": "Auto-Sleepers Stanway",
+   "subTitle": "2.2",
+   "attentionGrabber": "LOW MILEAGE LONG MOT HABCHECK",
+   "make": "Auto-Sleepers",
+   "model": "Stanway",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (66 reg)",
+   "mileageText": "21,319 miles",
+   "mileage": 21319,
+   "price": 40999,
+   "priceText": "£40,999",
+   "location": "High Wycombe (28 miles)",
+   "distanceMiles": 28,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/97dbe318f9904fcf92ad784cf8085004.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609075805627",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 40999
+    }
+   ]
+  },
+  "202609055759456": {
+   "id": "202609055759456",
+   "title": "Ford E-Transit Custom",
+   "subTitle": "320 65kWh Sport Panel Van 5dr Electric Auto L1 H1 (218 ps)",
+   "attentionGrabber": "Electric and rare!",
+   "make": "Ford",
+   "model": "Transit Custom",
+   "category": "motorhome",
+   "year": 2025,
+   "registeredYear": "2025 (75 reg)",
+   "mileageText": "6,500 miles",
+   "mileage": 6500,
+   "price": 36500,
+   "priceText": "£36,500",
+   "location": "Attleborough (86 miles)",
+   "distanceMiles": 86,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/063dfffe8e7547df91d25db35d20ce9e.jpg",
+   "imageCount": 49,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609055759456",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 36500
+    }
+   ]
+  },
+  "202609045719838": {
+   "id": "202609045719838",
+   "title": "Citroen Relay",
+   "subTitle": "S&L MOTORHOMES APOLLO 2.2",
+   "attentionGrabber": "Mint Condition, Low Milage",
+   "make": "Citroen",
+   "model": "Relay",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileageText": "35,300 miles",
+   "mileage": 35300,
+   "price": 42995,
+   "priceText": "£42,995",
+   "location": "Fakenham (104 miles)",
+   "distanceMiles": 104,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/dcd45a10edbd4b49ac5954c75413b9c2.jpg",
+   "imageCount": 38,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609045719838",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42995
+    }
+   ]
+  },
+  "202609035675869": {
+   "id": "202609035675869",
+   "title": "Peugeot Boxer",
+   "subTitle": "2.0 BlueHDi 440 Panel Van 4dr Diesel Manual L4 H3 Euro 6 (s/s) (160 ps)",
+   "attentionGrabber": "For Sale-GinoDaCamper full MOT",
+   "make": "Peugeot",
+   "model": "Boxer",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (66 reg)",
+   "mileageText": "12,250 miles",
+   "mileage": 12250,
+   "price": 34995,
+   "priceText": "£34,995",
+   "location": "Doncaster (148 miles)",
+   "distanceMiles": 148,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/54aab6f35c2d47aeb9321fa203fd0ed3.jpg",
+   "imageCount": 16,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609035675869",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34995
+    }
+   ]
+  },
+  "202609015625204": {
+   "id": "202609015625204",
+   "title": "Citroen Relay",
+   "subTitle": "2.2 BlueHDi 35 Enterprise Panel Van 5dr Diesel Manual L2 High Roof Euro 6 (s/s) (140 ps)",
+   "attentionGrabber": "Fully off grid Camper, no gas",
+   "make": "Citroen",
+   "model": "Relay",
+   "category": "motorhome",
+   "year": 2022,
+   "registeredYear": "2022 (22 reg)",
+   "mileageText": "29,091 miles",
+   "mileage": 29091,
+   "price": 34250,
+   "priceText": "£34,250",
+   "location": "Market Harborough (76 miles)",
+   "distanceMiles": 76,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/d6dc60c3cfcc4de991c353a4075cc4dd.jpg",
+   "imageCount": 23,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609015625204",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34250
+    }
+   ]
+  },
+  "202608315584771": {
+   "id": "202608315584771",
+   "title": "Mercedes-Benz Sprinter",
+   "subTitle": "2.1 314 CDi Panel Van 5dr Diesel Manual RWD L2 (213 g/km, 140 bhp)",
+   "attentionGrabber": "Low mileage and full service",
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (68 reg)",
+   "mileageText": "42,600 miles",
+   "mileage": 42600,
+   "price": 36000,
+   "priceText": "£36,000",
+   "location": "Swindon (69 miles)",
+   "distanceMiles": 69,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/d4ffcb4b0e9e4a3a8695f1503694ecf3.jpg",
+   "imageCount": 23,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608315584771",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 36000
+    }
+   ]
+  },
+  "202608185217570": {
+   "id": "202608185217570",
+   "title": "Elddis Accordo 135",
+   "subTitle": "2.0",
+   "attentionGrabber": "GREAT MILES|SUPERB CONDITION",
+   "make": "Elddis",
+   "model": "Accordo 135",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "20,500 miles",
+   "mileage": 20500,
+   "price": 41995,
+   "priceText": "£41,995",
+   "location": "Kempsey (99 miles)",
+   "distanceMiles": 99,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/8e8bbeaed9064d92a3fb1f6942e66390.jpg",
+   "imageCount": 46,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608185217570",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 41995
+    }
+   ]
+  },
+  "202608185210899": {
+   "id": "202608185210899",
+   "title": "Peugeot Boxer",
+   "subTitle": "2 Berth Camper 2.0",
+   "attentionGrabber": "GAS FREE OFF GRID READY",
+   "make": "Peugeot",
+   "model": "Boxer",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (66 reg)",
+   "mileageText": "26,530 miles",
+   "mileage": 26530,
+   "price": 36995,
+   "priceText": "£36,995",
+   "location": "Bridgend (148 miles)",
+   "distanceMiles": 148,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c81c480fd27940379b27101ce04a1a67.jpg",
+   "imageCount": 74,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608185210899",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 36995
+    }
+   ]
+  },
+  "202608125035709": {
+   "id": "202608125035709",
+   "title": "Volkswagen Autohaus Camelot  High line Automatic DSG",
+   "subTitle": "Automatic 2018 2.0",
+   "attentionGrabber": "VW Autohaus Camelot",
+   "make": "Volkswagen",
+   "model": "Campervan",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileageText": "30,350 miles",
+   "mileage": 30350,
+   "price": 43990,
+   "priceText": "£43,990",
+   "location": "Stourbridge (108 miles)",
+   "distanceMiles": 108,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/e5017d5ad1454ca690fd5ff38a6bd7ae.jpg",
+   "imageCount": 42,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608125035709",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 43990
+    }
+   ]
+  },
+  "202607284591265": {
+   "id": "202607284591265",
+   "title": "Auto-Trail V-Line 635 SE",
+   "subTitle": "2.3",
+   "attentionGrabber": "GREAT CONDITION",
+   "make": "Auto-Trail",
+   "model": "V-Line 635 SE",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (18 reg)",
+   "mileageText": "26,847 miles",
+   "mileage": 26847,
+   "price": 44995,
+   "priceText": "£44,995",
+   "location": "Kidderminster (106 miles)",
+   "distanceMiles": 106,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/839fb362f324495bb873670ce859b6d2.jpg",
+   "imageCount": 45,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607284591265",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 44995
+    }
+   ]
+  },
+  "202607284582398": {
+   "id": "202607284582398",
+   "title": "Volkswagen Camelot Highlife",
+   "subTitle": "2.0",
+   "attentionGrabber": null,
+   "make": "Volkswagen",
+   "model": "Camelot Highlife",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (68 reg)",
+   "mileageText": "31,121 miles",
+   "mileage": 31121,
+   "price": 42995,
+   "priceText": "£42,995",
+   "location": "Chesterfield (128 miles)",
+   "distanceMiles": 128,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c754eee462994f148abe776e294f353f.jpg",
+   "imageCount": 17,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607284582398",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42995
+    }
+   ]
+  },
+  "202607224396606": {
+   "id": "202607224396606",
+   "title": "Elddis Autoquest CV20",
+   "subTitle": "2 BERTH-2 BELTS-6MTRS 2.2",
+   "attentionGrabber": "12M WARRANTY-PART EX-FINANCE",
+   "make": "Elddis",
+   "model": "Autoquest CV20",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (20 reg)",
+   "mileageText": "56,000 miles",
+   "mileage": 56000,
+   "price": 43995,
+   "priceText": "£43,995",
+   "location": "Skegness (113 miles)",
+   "distanceMiles": 113,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/5357685d1a4f45eb94ad0c1cdd7e7c15.jpg",
+   "imageCount": 5,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607224396606",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 43995
+    }
+   ]
+  },
+  "202607144177735": {
+   "id": "202607144177735",
+   "title": "Elddis Evolution CV60",
+   "subTitle": "Evolution 2.3 140 2 Berth",
+   "attentionGrabber": "FRESH MOT",
+   "make": "Elddis",
+   "model": "Evolution",
+   "category": "motorhome",
+   "year": 2021,
+   "registeredYear": "2021 (21 reg)",
+   "mileageText": "8,500 miles",
+   "mileage": 8500,
+   "price": 42999,
+   "priceText": "£42,999",
+   "location": "Mansfield (122 miles)",
+   "distanceMiles": 122,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/86c4569523164748b099b43cb9f95166.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607144177735",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 42999
+    }
+   ]
+  },
+  "202606073077542": {
+   "id": "202606073077542",
+   "title": "Renault Trafic Sussex Campervans Paradise",
+   "subTitle": "2.0",
+   "attentionGrabber": "SOLAR, HEAT,NAV, REV CAMERA",
+   "make": "Renault",
+   "model": "Trafic",
+   "category": "motorhome",
+   "year": 2024,
+   "registeredYear": "2024 (73 reg)",
+   "mileageText": "19,000 miles",
+   "mileage": 19000,
+   "price": 44995,
+   "priceText": "£44,995",
+   "location": "Chesterfield (131 miles)",
+   "distanceMiles": 131,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/588bcce182b64c3c9e9aaad2c5e6d2e3.jpg",
+   "imageCount": 63,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202606073077542",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 44995
+    }
+   ]
+  },
+  "202605222629993": {
+   "id": "202605222629993",
+   "title": "Auto Campers Ford Transit Custom",
+   "subTitle": "Lo line Day Van - Versatile practical camper 2 5dr Camper Manual Diesel 2.0",
+   "attentionGrabber": "IN STOCK FOR VIEWING TODAY",
+   "make": "Auto Campers",
+   "model": "Ford Transit Custom",
+   "category": "motorhome",
+   "year": 2022,
+   "registeredYear": "2022 (23 reg)",
+   "mileageText": "22,844 miles",
+   "mileage": 22844,
+   "price": 34995,
+   "priceText": "£34,995",
+   "location": "Reading (33 miles)",
+   "distanceMiles": 33,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/2e56a107b2794e8d86034b72dffed762.jpg",
+   "imageCount": 82,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202605222629993",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34995
+    }
+   ]
+  },
+  "202504231648716": {
+   "id": "202504231648716",
+   "title": "Ford Transit Custom",
+   "subTitle": "300 Active 2 Berth, Rock n Roll Bed 2.0",
+   "attentionGrabber": "COMES WITH A 15 MONTH WARRANTY",
+   "make": "Ford",
+   "model": "Transit Custom",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (21 reg)",
+   "mileageText": "29,099 miles",
+   "mileage": 29099,
+   "price": 38995,
+   "priceText": "£38,995",
+   "location": "Bridgend (147 miles)",
+   "distanceMiles": 147,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/4aa2cb59f92b489e9ea7f4827824194b.jpg",
+   "imageCount": 28,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202504231648716",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "2-berth van conversions within 150 miles"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 38995
+    }
+   ]
+  }
+ },
+ "runs": [
+  {
+   "date": "2026-10-11T21:12:35.761Z",
+   "searches": [
+    {
+     "name": "Auto-Sleepers 2015+ under £40k",
+     "error": null,
+     "added": 20,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "2-berth van conversions within 150 miles",
+     "error": null,
+     "added": 38,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  }
+ ]
+}
