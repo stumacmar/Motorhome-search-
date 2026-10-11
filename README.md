@@ -115,7 +115,7 @@ Add these as **Settings → Secrets and variables → Actions → Repository sec
 
 ### 3. Dashboard
 
-**Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `master`, folder `/docs`. After the first run the page appears at `https://<your-username>.github.io/<repo-name>/`. Put that address in `dashboardUrl` in `search.config.json` so notifications link to it.
+**Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `master`, folder `/docs` (the root folder also works; it redirects to the dashboard). After the first run the page appears at `https://<your-username>.github.io/<repo-name>/`. Put that address in `dashboardUrl` in `search.config.json` so notifications link to it.
 
 ### 4. First run
 
