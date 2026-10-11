@@ -9,6 +9,7 @@
 import { readFile } from 'node:fs/promises';
 import { fetchSearch, filtersFromUrl, filtersFromCriteria, urlFromFilters } from './autotrader.js';
 import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearches } from './store.js';
+import { slimStore, DASHBOARD_PATH } from './export.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
 import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
@@ -198,6 +199,7 @@ async function main() {
   }
 
   await saveStore(store);
+  await saveStore(slimStore(store), DASHBOARD_PATH);
   console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned, ${enrichment.stillPending} still awaiting details)`);
 
   const failures = results.filter((r) => r.error).length;

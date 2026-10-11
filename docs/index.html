@@ -147,7 +147,8 @@
 
   let data;
   try {
-    const res = await fetch('data/listings.json?' + Date.now());
+    let res = await fetch('data/dashboard.json?' + Date.now());
+    if (!res.ok) res = await fetch('data/listings.json?' + Date.now());
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
   } catch (e) {
@@ -192,9 +193,10 @@
   document.getElementById('stats').innerHTML = stats.map(([c, n, l]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join('');
 
   const searches = Object.values(data.searches || {});
+  if (data.hiddenByRules) searches.push({ name: `${data.hiddenByRules} hidden by the length and berth rules`, url: 'https://github.com/stumacmar/Motorhome-search-#spotting-the-good-ones' });
   document.getElementById('searches').innerHTML = searches.map((s) =>
     `<a href="${esc(s.url || '#')}" target="_blank" rel="noopener" class="${s.error || s.truncated ? 'warn' : ''}" title="${esc(s.error || (s.truncated ? 'Only the first ' + s.read + ' of ' + s.total + ' results were read' : 'Open on Autotrader'))}">
-      ${s.error ? '⚠️ ' : ''}${esc(s.name)} · ${s.error ? 'failed' : s.total + ' on Autotrader'}${s.truncated ? ' (cut short)' : ''}</a>`).join('');
+      ${s.error ? '⚠️ ' : ''}${esc(s.name)}${s.total != null ? ' · ' + (s.error ? 'failed' : s.total + ' on Autotrader') : ''}${s.truncated ? ' (cut short)' : ''}</a>`).join('');
   const sel = document.getElementById('search');
   for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
 
