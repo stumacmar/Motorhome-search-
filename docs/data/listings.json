@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-11T21:20:05.727Z",
+ "generatedAt": "2026-10-11T21:23:31.254Z",
  "searches": {
   "Auto-Sleepers 2015+ under £40k": {
    "name": "Auto-Sleepers 2015+ under £40k",
@@ -1963,6 +1963,25 @@
   }
  },
  "runs": [
+  {
+   "date": "2026-10-11T21:23:31.254Z",
+   "searches": [
+    {
+     "name": "Auto-Sleepers 2015+ under £40k",
+     "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm",
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "2-berth van conversions within 150 miles",
+     "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm",
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-11T21:20:05.727Z",
    "searches": [
