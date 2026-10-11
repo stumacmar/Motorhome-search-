@@ -7,15 +7,41 @@ function esc(s) {
   return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function advertLine(a) {
+function valueText(a) {
+  if (!a.value) return null;
+  const sign = a.value.pct <= 0 ? '−' : '+';
+  return `${sign}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar`;
+}
+
+function specText(a, wantedSpecs) {
+  const labels = (a.specs || []).map((s) => s.label);
+  if (!labels.length) return null;
+  const wanted = labels.filter((l) => wantedSpecs.includes(l));
+  const other = labels.filter((l) => !wantedSpecs.includes(l));
+  const shown = [...wanted.map((l) => `✔ ${l}`), ...other.slice(0, Math.max(0, 5 - wanted.length))];
+  const more = labels.length - shown.length;
+  return shown.join(' · ') + (more > 0 ? ` · +${more}` : '');
+}
+
+function advertLine(a, wantedSpecs = []) {
   const bits = [a.registeredYear || a.year, a.mileageText, a.location, a.sellerType === 'PRIVATE' ? 'private' : null]
     .filter(Boolean)
     .join(' · ');
-  return `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}`;
+  const flags = [];
+  if (a.deal?.underpriced) flags.push('💰 ' + valueText(a));
+  else if (a.value) flags.push(valueText(a));
+  const specs = specText(a, wantedSpecs);
+  if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
+  if (a.details?.owners) flags.push(`${a.details.owners} owner${a.details.owners === 1 ? '' : 's'}`);
+  return (
+    `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}` +
+    (flags.length ? `\n${esc(flags.join(' · '))}` : '') +
+    (specs ? `\n${esc(specs)}` : '')
+  );
 }
 
 /** Build the per-search report lines shared by both channels (HTML). */
-export function buildReport(results, { maxPerSection = 25 } = {}) {
+export function buildReport(results, { maxPerSection = 25, wantedSpecs = [] } = {}) {
   const sections = [];
   let anything = false;
   for (const r of results) {
@@ -25,11 +51,20 @@ export function buildReport(results, { maxPerSection = 25 } = {}) {
       continue;
     }
     const parts = [];
-    if (r.added.length) {
+    const deals = r.deals || [];
+    const dealIds = new Set(deals.map((a) => a.id));
+    if (deals.length) {
       parts.push(
-        `🆕 <b>${r.added.length} new</b>\n` +
-          r.added.slice(0, maxPerSection).map(advertLine).join('\n\n') +
-          (r.added.length > maxPerSection ? `\n…and ${r.added.length - maxPerSection} more on the dashboard` : ''),
+        `⭐ <b>${deals.length} worth a look</b> (underpriced or high spec)\n` +
+          deals.slice(0, maxPerSection).map((a) => advertLine(a, wantedSpecs)).join('\n\n'),
+      );
+    }
+    const added = r.added.filter((a) => !dealIds.has(a.id));
+    if (added.length) {
+      parts.push(
+        `🆕 <b>${added.length} new</b>\n` +
+          added.slice(0, maxPerSection).map((a) => advertLine(a, wantedSpecs)).join('\n\n') +
+          (added.length > maxPerSection ? `\n…and ${added.length - maxPerSection} more on the dashboard` : ''),
       );
     }
     if (r.priceDrops.length) {

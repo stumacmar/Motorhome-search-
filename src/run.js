@@ -10,6 +10,78 @@ import { readFile } from 'node:fs/promises';
 import { fetchSearch, filtersFromUrl, filtersFromCriteria, urlFromFilters } from './autotrader.js';
 import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearches } from './store.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
+import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
+import { compileSpecs, matchSpecs, compareWithSimilar, scoreDeal, DEFAULT_SPECS } from './spec.js';
+import { BrowserTransport } from './autotrader.js';
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Fetch detail pages for live adverts we have not looked at yet (newest first,
+ * capped per run), then recompute specs, price-vs-similar and deal flags.
+ */
+async function enrich(store, config, transport) {
+  const maxFetches = config.details?.maxFetchesPerRun ?? 80;
+  const retryAfterDays = config.details?.retryFailedAfterDays ?? 3;
+  const compiled = compileSpecs(config.specs || DEFAULT_SPECS);
+  const dealConfig = config.deals || {};
+  const todayMs = Date.now();
+
+  const pending = Object.values(store.adverts)
+    .filter((a) => a.status === 'active' && !a.details)
+    .filter((a) => !a.detailsError || todayMs - new Date(a.detailsError.date) > retryAfterDays * 864e5)
+    .sort((x, y) => (y.firstSeen || '').localeCompare(x.firstSeen || '') || y.id.localeCompare(x.id))
+    .slice(0, maxFetches);
+
+  if (pending.length) console.info(`\nFetching details for ${pending.length} advert(s)`);
+  let fetched = 0;
+  let failed = 0;
+  for (const advert of pending) {
+    try {
+      let details;
+      if (!transport.browser) {
+        try {
+          details = await fetchAdvertDirect(advert.id);
+        } catch (err) {
+          if (!/Cloudflare|HTTP 403/.test(err.message)) throw err;
+          console.warn(`  direct advert request blocked (${err.message}); using the headless browser`);
+          transport.browser = new BrowserTransport();
+          await transport.browser.start();
+        }
+      }
+      if (!details) details = await fetchAdvertViaBrowser(transport.browser, advert.id);
+      if (details.gone) {
+        advert.detailsError = { date: new Date().toISOString(), message: 'advert page not found' };
+        continue;
+      }
+      delete details._text;
+      advert.details = details;
+      delete advert.detailsError;
+      fetched++;
+    } catch (err) {
+      failed++;
+      advert.detailsError = { date: new Date().toISOString(), message: err.message };
+      console.warn(`  ${advert.id} ${advert.title}: ${err.message}`);
+      if (failed >= 5 && fetched === 0) {
+        console.warn('  giving up on detail pages for this run');
+        break;
+      }
+    }
+    await sleep(1000 + Math.random() * 1500);
+  }
+  if (pending.length) console.info(`  fetched ${fetched}, failed ${failed}`);
+
+  for (const advert of Object.values(store.adverts)) {
+    if (advert.details) advert.specs = matchSpecs(advert.details, compiled);
+  }
+  const values = compareWithSimilar(Object.values(store.adverts), dealConfig);
+  for (const advert of Object.values(store.adverts)) {
+    advert.value = values[advert.id] || null;
+    advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
+  }
+  const skipped = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.details).length - failed;
+  return { fetched, failed, stillPending: Math.max(0, skipped) };
+}
 
 const dryRun = process.argv.includes('--dry-run');
 const configPath = process.argv.find((a) => a.endsWith('.json')) || 'search.config.json';
@@ -59,8 +131,20 @@ async function main() {
     } catch (err) {
       console.error(`  FAILED: ${err.message}`);
       store.searches[name] = { ...(store.searches[name] || {}), name, lastRun: today, error: err.message };
-      results.push({ name, error: err.message, added: [], priceDrops: [], priceRises: [], gone: [] });
+      results.push({ name, error: err.message, added: [], priceDrops: [], priceRises: [], gone: [], deals: [] });
     }
+  }
+  let enrichment = { fetched: 0, failed: 0, stillPending: 0 };
+  try {
+    enrichment = await enrich(store, config, transport);
+  } catch (err) {
+    console.error(`Detail enrichment failed: ${err.message}`);
+  }
+  for (const r of results) {
+    const candidates = new Map();
+    for (const a of r.added) candidates.set(a.id, a);
+    for (const c of r.priceDrops) candidates.set(c.advert.id, c.advert);
+    r.deals = [...candidates.values()].filter((a) => a.deal?.isDeal);
   }
   await transport.browser?.stop().catch(() => {});
 
@@ -71,6 +155,7 @@ async function main() {
 
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
   store.generatedAt = new Date().toISOString();
+  store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.runs.unshift({
     date: store.generatedAt,
     searches: results.map((r) => ({
@@ -83,17 +168,17 @@ async function main() {
   });
   store.runs = store.runs.slice(0, 60);
 
-  const report = buildReport(results);
+  const report = buildReport(results, { wantedSpecs: config.deals?.wantedSpecs || [] });
   const dashboardUrl = process.env.DASHBOARD_URL || config.dashboardUrl || null;
 
   if (dryRun) {
-    console.info('\n--- dry run: not saving or notifying ---');
+    console.info(`\n--- dry run: not saving or notifying (details fetched ${enrichment.fetched}, failed ${enrichment.failed}) ---`);
     console.info(report.anything ? report.html.replace(/<[^>]+>/g, '') : '(nothing new)');
     return;
   }
 
   await saveStore(store);
-  console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned)`);
+  console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned, ${enrichment.stillPending} still awaiting details)`);
 
   const failures = results.filter((r) => r.error).length;
   const allFailed = failures === results.length;

@@ -34,7 +34,7 @@
   .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
   .stat b { display: block; font-size: 24px; line-height: 1.1; }
   .stat span { color: var(--muted); font-size: 13px; }
-  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); }
+  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b { color: #c98a00; }
   .searches { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
   .searches a { font-size: 13px; color: var(--muted); text-decoration: none; }
   .searches .warn { color: var(--drop); }
@@ -64,6 +64,13 @@
   .tag.new { background: var(--new); color: var(--accent-ink); }
   .tag.drop { background: var(--drop); color: #fff; }
   .tag.gone { background: var(--gone); color: #fff; }
+  .tag.deal { background: #c98a00; color: #fff; }
+  .tag.value { background: transparent; border: 1px solid var(--line); }
+  .tag.value.under { border-color: var(--drop); color: var(--drop); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .chip.want { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .desc { white-space: pre-wrap; margin-top: 4px; }
   details { font-size: 13px; color: var(--muted); }
   details summary { cursor: pointer; }
   .empty { color: var(--muted); padding: 40px 0; text-align: center; }
@@ -86,12 +93,15 @@
       <option value="price-asc">Price: low to high</option>
       <option value="price-desc">Price: high to low</option>
       <option value="drop">Biggest price drop</option>
+      <option value="value">Best value vs similar</option>
+      <option value="spec">Most wanted kit</option>
       <option value="year">Year: newest</option>
       <option value="mileage">Mileage: lowest</option>
       <option value="distance">Distance: nearest</option>
     </select>
     <div class="toggle" role="group" aria-label="Show">
       <button data-show="active" aria-pressed="true">Live</button>
+      <button data-show="deals" aria-pressed="false">Worth a look</button>
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
       <button data-show="gone" aria-pressed="false">Gone</button>
@@ -118,6 +128,7 @@
   }
 
   const adverts = Object.values(data.adverts || {});
+  const wantedSpecs = new Set(data.wantedSpecs || []);
   const today = new Date().toISOString().slice(0, 10);
   for (const a of adverts) {
     const h = a.priceHistory || [];
@@ -126,6 +137,7 @@
     a._drop = a._first != null && a._last != null ? a._first - a._last : 0;
     a._recentDrop = h.length > 1 && daysAgo(h.at(-1).date) <= 7 && h.at(-1).price < h.at(-2).price;
     a._isNew = daysAgo(a.firstSeen) <= 7;
+    a._wanted = (a.specs || []).filter((s) => wantedSpecs.has(s.label)).length;
   }
 
   const gen = data.generatedAt ? new Date(data.generatedAt) : null;
@@ -138,6 +150,7 @@
     ['live', live.length, 'live adverts'],
     ['new', live.filter((a) => a._isNew).length, 'new this week'],
     ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week'],
+    ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look'],
     ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week'],
   ];
   document.getElementById('stats').innerHTML = stats.map(([c, n, l]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join('');
@@ -161,7 +174,16 @@
     if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
     else if (a._isNew) tags.push(`<span class="tag new">new ${a.firstSeen === today ? 'today' : daysAgo(a.firstSeen) + 'd ago'}</span>`);
     if (a._recentDrop) tags.push(`<span class="tag drop">price drop</span>`);
+    if (a.deal?.isDeal) tags.push(`<span class="tag deal">${a.deal.underpriced ? 'underpriced' : 'high spec'}</span>`);
+    if (a.value) tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="Median ${gbp(a.value.median)} across ${a.value.comps} live ${a.value.basis === 'model' ? 'same-model' : 'same-make'} adverts of a similar age">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar</span>`);
     for (const s of a.searches || []) tags.push(`<span class="tag">${esc(s)}</span>`);
+    const specs = (a.specs || []).slice().sort((x, y) => (wantedSpecs.has(y.label) ? 1 : 0) - (wantedSpecs.has(x.label) ? 1 : 0));
+    const chips = specs.length ? `<div class="chips">${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(s.evidence)}">${esc(s.label)}</span>`).join('')}</div>` : '';
+    const d = a.details;
+    const facts = d ? [d.chassis, d.keySpec?.Berth ? d.keySpec.Berth + ' berth' : null, d.keySpec?.Gearbox, d.owners ? d.owners + ' owner' + (d.owners === 1 ? '' : 's') : null, d.serviceHistory, d.historyCheck ? 'History check ' + d.historyCheck.toLowerCase() : null].filter(Boolean) : [];
+    const detailsBlock = d
+      ? `<details><summary>Details</summary>${esc(facts.join(' · '))}${d.description ? `<div class="desc">${esc(d.description)}${d.descriptionLength > d.description.length ? '…' : ''}</div>` : ''}</details>`
+      : (a.status === 'active' ? `<details><summary>Details</summary>${a.detailsError ? 'Could not read the advert page: ' + esc(a.detailsError.message) : 'Not read yet; picked up on a later run.'}</details>` : '');
     const hist = (a.priceHistory || []).length > 1
       ? `<details><summary>Price history</summary>${a.priceHistory.map((p) => `${p.date}: ${gbp(p.price)}`).join('<br>')}</details>` : '';
     const delta = a._drop > 0 ? `<s>${gbp(a._first)}</s><span class="delta">−${gbp(a._drop)}</span>`
@@ -178,7 +200,9 @@
           ${a.location ? `<span>${esc(a.location)}</span>` : ''}
           ${a.sellerType ? `<span>${a.sellerType === 'PRIVATE' ? 'Private' : 'Trade'}</span>` : ''}
         </div>
+        ${chips}
         ${hist}
+        ${detailsBlock}
         <div class="tags">${tags.join('')}</div>
       </div>
     </article>`;
@@ -191,6 +215,7 @@
       else if (a.status !== 'active') return false;
       if (state.show === 'new' && !a._isNew) return false;
       if (state.show === 'drops' && !a._recentDrop) return false;
+      if (state.show === 'deals' && !a.deal?.isDeal) return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
       return true;
@@ -200,6 +225,8 @@
       'price-asc': (x, y) => (x._last ?? 1e12) - (y._last ?? 1e12),
       'price-desc': (x, y) => (y._last ?? -1) - (x._last ?? -1),
       drop: (x, y) => y._drop - x._drop,
+      value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
+      spec: (x, y) => y._wanted - x._wanted || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
       year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
       mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
       distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),

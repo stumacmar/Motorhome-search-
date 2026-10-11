@@ -11,8 +11,21 @@ It runs on GitHub Actions, so nothing needs to be switched on at home.
 1. `search.config.json` lists your searches. Each one is either a pasted Autotrader URL or a block of criteria.
 2. `.github/workflows/daily.yml` runs `src/run.js` once a day (and whenever you press **Run workflow**) on a self-hosted runner, see "Where it runs".
 3. The job fetches every search, compares the results with `docs/data/listings.json`, and commits the updated file back to the repo.
-4. If anything is new, it sends a Telegram message and/or an email. If nothing changed, it stays quiet.
+4. It reads each new advert's page for its kit and description, scores it, and if anything is new sends a Telegram message and/or an email. If nothing changed, it stays quiet.
 5. `docs/index.html` is the dashboard. GitHub Pages serves it from the `docs/` folder.
+
+## Spotting the good ones
+
+The search results only carry the headline facts, so after each run the job also opens every new advert's own page once and reads the seller's features list, description, owner count, service history and history check. From that it works out two things, shown on the dashboard and in notifications:
+
+- **Kit.** Each advert is matched against a list of equipment (air conditioning, self-levelling, rear air suspension, 360° camera, reversing camera, automatic, solar, lithium, inverter, cruise control, tow bar, awning, satellite TV, full service history). The ones you care about go in `deals.wantedSpecs` in `search.config.json` and are highlighted.
+- **Price against similar adverts.** Each advert is compared with the median price of live adverts of the same make and model within two years of its age (falling back to the same make within one year when there are not enough). "−14% vs 7 similar" means it is 14% cheaper than the median of seven comparable adverts. The more adverts your searches cover, the better these comparisons get, so a broad search with a high `maxPages` helps here even if you only want to be told about a narrow one.
+
+An advert is flagged **worth a look** when it has at least `deals.minWantedSpecs` of your wanted kit, or is at least `deals.underpricedPercent` below similar adverts. Those lead the notification.
+
+Sellers describe kit in their own words, so the matcher looks for common phrasings ("air con", "cab air conditioning", "E&P levelling", "VB air suspension", "360 degree camera"). You can add or change patterns with a top-level `"specs"` list in the config, each entry being `{ "label": "...", "pattern": "<regular expression>" }`; the defaults are in `src/spec.js`.
+
+Reading advert pages adds one request per new advert, so `details.maxFetchesPerRun` caps it (default 80); the rest are read on later runs.
 
 ## Where it runs
 
@@ -71,7 +84,7 @@ Or describe it with criteria:
 }
 ```
 
-Every criteria key is optional. Values must match what Autotrader offers in its own filters, for example:
+A criteria value can be a list to allow several, for example `"bodyType": ["Van Conversion", "Campervan"]`. Every criteria key is optional. Values must match what Autotrader offers in its own filters, for example:
 
 | Key | Values |
 | --- | --- |

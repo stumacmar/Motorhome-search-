@@ -3,22 +3,32 @@
   "dashboardUrl": "https://stumacmar.github.io/Motorhome-search-/",
   "maxPages": 10,
   "keepGoneDays": 90,
+  "details": {
+    "_comment": "Each new advert's page is fetched once to read its features and description. This caps how many per run; the rest are picked up on later runs.",
+    "maxFetchesPerRun": 80
+  },
+  "deals": {
+    "_comment": "An advert is 'worth a look' if it has at least minWantedSpecs of the wantedSpecs, or is underpricedPercent below the median of similar live adverts (same make and model, year within 2, at least minComparables of them).",
+    "wantedSpecs": ["Air conditioning", "Self-levelling", "Rear air suspension", "360° camera"],
+    "minWantedSpecs": 2,
+    "underpricedPercent": 10,
+    "minComparables": 3
+  },
   "searches": [
     {
-      "name": "Auto-Sleepers 2015+ under £40k",
+      "name": "Van conversions and campervans 2016+ £25k–£70k",
       "criteria": {
         "postcode": "SW1A 1AA",
-        "make": "Auto-Sleepers",
-        "yearFrom": 2015,
-        "priceTo": 40000,
+        "bodyType": ["Van Conversion", "Campervan"],
+        "yearFrom": 2016,
+        "priceFrom": 25000,
+        "priceTo": 70000,
+        "maxMileage": 80000,
         "excludeWriteOffs": true,
         "sort": "datedesc"
-      }
-    },
-    {
-      "name": "2-berth van conversions within 150 miles",
-      "url": "https://www.autotrader.co.uk/motorhome-search?postcode=SW1A1AA&radius=150&berth=2&body-type=Van%20Conversion&year-from=2016&price-to=45000&maximum-mileage=60000&exclude-writeoff-categories=on&sort=datedesc",
-      "mustNotContain": ["spares or repair", "cat s", "cat n"]
+      },
+      "maxPages": 40,
+      "mustNotContain": ["spares or repair", "cat s", "cat n", "panel van"]
     }
   ]
 }
