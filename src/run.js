@@ -12,7 +12,7 @@ import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearch
 import { slimStore, DASHBOARD_PATH } from './export.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
-import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
+import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, looksUnconverted, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
 import { BrowserTransport } from './autotrader.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -92,6 +92,7 @@ async function enrich(store, config, transport) {
     advert.redFlags = matchRedFlags(advert.details, compiledFlags);
     const berth = Number(advert.details.keySpec?.Berth);
     if (!advert.excluded && minBerth && Number.isFinite(berth) && berth > 0 && berth < minBerth) advert.excluded = `${berth} berth`;
+    if (!advert.excluded && looksUnconverted(advert)) advert.excluded = 'no living equipment described';
   }
   const values = compareWithSimilar(Object.values(store.adverts), dealConfig);
   for (const advert of Object.values(store.adverts)) {

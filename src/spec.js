@@ -313,3 +313,20 @@ export function lengthExclusion(advert, { minMetres, maxMetres, hideUnknown = fa
   if (maxMetres != null && len.metres > maxMetres + 0.05) return `${len.metres} m (${len.source})`;
   return null;
 }
+
+// ---------------------------------------------------------------------------
+// Unconverted vans. Autotrader's motorhome channel carries plain panel vans,
+// and the subtitle often says "Panel Van" even for a proper conversion, so we
+// look for signs of living equipment on the advert page instead.
+const CONVERSION_WORDS = /\b(berth|bed|beds|bunk|hob|cooker|oven|grill|kitchen|kitchenette|sink|fridge|toilet|loo|shower|washroom|bathroom|leisure battery|hook[\s-]?up|awning|heater|heating|camper|campervan|conversion|converted|motorhome|pop[\s-]?top|elevating roof|rock and roll|rock n roll|swivel|solar|inverter|water tank|gas locker)\b/i;
+
+/** True when the advert page is present but describes no living equipment at all. */
+export function looksUnconverted(advert) {
+  const d = advert.details;
+  if (!d) return false;
+  const berth = Number(d.keySpec?.Berth);
+  if (Number.isFinite(berth) && berth >= 2) return false;
+  if (/coach|motorhome|a class|low profile|overcab/i.test(d.bodyType || '')) return false; // built as a motorhome
+  const text = advertText(d);
+  return !CONVERSION_WORDS.test(text);
+}

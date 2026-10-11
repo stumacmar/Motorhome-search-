@@ -137,3 +137,11 @@ test('length inference', async () => {
   assert.equal(lengthExclusion({}, rule), null);
   assert.equal(lengthExclusion({}, { ...rule, hideUnknown: true }), 'length unknown');
 });
+
+test('unconverted van detection', async () => {
+  const { looksUnconverted } = await import('../src/spec.js');
+  assert.equal(looksUnconverted({ details: { features: ['Bluetooth', 'Ply lined'], description: 'Clean panel van, one owner, long MOT.', keySpec: {}, specs: {} } }), true);
+  assert.equal(looksUnconverted({ details: { features: [], description: 'Full conversion with fixed bed, hob and leisure battery.', keySpec: {}, specs: {} } }), false);
+  assert.equal(looksUnconverted({ details: { features: [], description: 'Nothing said.', keySpec: { Berth: '2' }, specs: {} } }), false);
+  assert.equal(looksUnconverted({}), false);
+});
