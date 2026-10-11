@@ -29,7 +29,7 @@ async function main() {
   }
   const store = await loadStore();
   const results = [];
-  let transport = null;
+  const transport = {}; // shared across searches; holds the headless browser if the fallback is needed
 
   for (const search of config.searches) {
     const name = search.name || search.url || JSON.stringify(search.criteria);
@@ -38,7 +38,6 @@ async function main() {
       const spec = search.url ? filtersFromUrl(search.url) : filtersFromCriteria(search.criteria || {});
       const searchUrl = urlFromFilters(spec.filters, spec.sortBy);
       const fetched = await fetchSearch(spec, { maxPages: search.maxPages ?? config.maxPages ?? 10, transport });
-      transport = fetched.transport;
 
       const listings = fetched.listings.filter((l) => matchesText(l, search));
       const filteredOut = fetched.listings.length - listings.length;
@@ -63,7 +62,7 @@ async function main() {
       results.push({ name, error: err.message, added: [], priceDrops: [], priceRises: [], gone: [] });
     }
   }
-  await transport?.browser?.stop();
+  await transport.browser?.stop().catch(() => {});
 
   // Drop searches that were removed from the config, retiring adverts only they matched.
   const configured = config.searches.map((s) => s.name || s.url || JSON.stringify(s.criteria));
@@ -97,15 +96,16 @@ async function main() {
   console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned)`);
 
   const failures = results.filter((r) => r.error).length;
+  const allFailed = failures === results.length;
   if (!report.anything) {
     console.info('Nothing new today; no notification sent.');
-    return;
+    return allFailed;
   }
 
   const channels = channelsFromEnv();
   if (!Object.keys(channels).length) {
     console.info('No notification channel configured (set Telegram or SMTP secrets); dashboard updated only.');
-    return;
+    return allFailed;
   }
   const totalNew = results.reduce((n, r) => n + r.added.length, 0);
   const totalDrops = results.reduce((n, r) => n + r.priceDrops.length, 0);
@@ -119,9 +119,17 @@ async function main() {
     await sendEmail(channels.email, report.html, subject, dashboardUrl);
     console.info(`Email: sent to ${channels.email.to || channels.email.user}`);
   }
+  return allFailed;
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then((allFailed) => {
+    if (allFailed) {
+      console.error('\nEvery search failed; see the messages above.');
+      process.exitCode = 1;
+    }
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exitCode = 1;
+  });

@@ -374,7 +374,7 @@ export class BrowserTransport {
  * Fetch every page of a search (up to maxPages). Tries the direct transport
  * first and switches to the browser transport if that is blocked.
  */
-export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPages = 10, transport = null, log = console } = {}) {
+export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPages = 10, transport = {}, log = console } = {}) {
   const searchId = randomUUID();
   const all = new Map();
   let totalResults = 0;
@@ -390,11 +390,11 @@ export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPage
     } catch (err) {
       if (transport?.browser) throw err;
       log.warn(`  direct request failed (${err.message}); retrying through a headless browser`);
-      transport = transport || {};
-      transport.browser = new BrowserTransport();
-      await transport.browser.start();
+      const browser = new BrowserTransport();
+      transport.browser = browser; // caller owns it from here and must call stop()
+      await browser.start();
       usedBrowser = true;
-      result = await transport.browser.fetchPage(filters, sortBy, page, searchId);
+      result = await browser.fetchPage(filters, sortBy, page, searchId);
     }
     pageCount = result.pageCount;
     totalResults = result.totalResults;
@@ -408,6 +408,5 @@ export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPage
     totalResults,
     truncated: pageCount > maxPages,
     usedBrowser,
-    transport,
   };
 }

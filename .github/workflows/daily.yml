@@ -15,7 +15,13 @@ concurrency:
 
 jobs:
   search:
-    runs-on: ubuntu-latest
+    # Scheduled runs are skipped until RUNNER_LABEL is set, so the schedule does not
+    # fail every day on GitHub's blocked runners. Manual "Run workflow" always runs.
+    if: github.event_name == 'workflow_dispatch' || vars.RUNNER_LABEL != ''
+    # Autotrader blocks GitHub's own runners (HTTP 403), so this normally has to run
+    # on a self-hosted runner. Set a repository variable RUNNER_LABEL (for example
+    # "self-hosted") to pick it; see README "Where it runs".
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -30,7 +36,9 @@ jobs:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
 
       # Only needed if Autotrader blocks the direct request and the browser fallback kicks in.
+      # On a self-hosted runner install Chromium once by hand: npx playwright install chromium
       - run: npx playwright install --with-deps chromium
+        if: runner.environment == 'github-hosted'
 
       - name: Run the search
         run: node src/run.js
@@ -45,6 +53,7 @@ jobs:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
 
       - name: Commit updated data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

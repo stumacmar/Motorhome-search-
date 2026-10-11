@@ -9,10 +9,24 @@ It runs on GitHub Actions, so nothing needs to be switched on at home.
 ## How it works
 
 1. `search.config.json` lists your searches. Each one is either a pasted Autotrader URL or a block of criteria.
-2. `.github/workflows/daily.yml` runs `src/run.js` once a day (and whenever you press **Run workflow**).
+2. `.github/workflows/daily.yml` runs `src/run.js` once a day (and whenever you press **Run workflow**) on a self-hosted runner, see "Where it runs".
 3. The job fetches every search, compares the results with `docs/data/listings.json`, and commits the updated file back to the repo.
 4. If anything is new, it sends a Telegram message and/or an email. If nothing changed, it stays quiet.
 5. `docs/index.html` is the dashboard. GitHub Pages serves it from the `docs/` folder.
+
+## Where it runs
+
+**Autotrader blocks GitHub's own runners.** Every request from a GitHub-hosted runner gets HTTP 403, with or without a browser, so the scheduled job cannot run on `ubuntu-latest`. It needs a machine on an ordinary home or office connection. The cleanest way is a **self-hosted GitHub Actions runner**: the same workflow, schedule, commit-back and dashboard, just executed on your own machine.
+
+1. Pick a machine that is on at the scheduled time: a Raspberry Pi, a NAS, an always-on PC or a small VPS (check a VPS provider is not blocked too).
+2. Install Node 20 or newer on it.
+3. In this repo go to **Settings → Actions → Runners → New self-hosted runner**, choose the OS and architecture, and paste the commands it shows into a terminal on that machine. Install it as a service when it offers to, so it survives reboots.
+4. Once on that machine, in the runner's checkout of this repo (or anywhere), run `npx playwright install chromium` so the browser fallback is available.
+5. In this repo go to **Settings → Secrets and variables → Actions → Variables** and add a variable `RUNNER_LABEL` with the value `self-hosted`.
+
+From then on the daily job runs on your machine and everything else is unchanged. Until `RUNNER_LABEL` is set the schedule is skipped rather than failing every morning; **Run workflow** still runs on GitHub's machines so you can see the 403 for yourself. If the machine is off at 06:40 the run is skipped until the next day.
+
+The fallback without a runner is a plain cron entry on that machine running `node src/run.js && git add docs/data && git commit -m "Daily search" && git push`, with the notification secrets exported in the environment.
 
 ## Setup
 
@@ -120,6 +134,6 @@ npm test
 
 The job's log (Actions tab) says which search failed and why. The likely causes, in order:
 
-- **`Gateway HTTP 403`** on every search: Autotrader is blocking GitHub's IP addresses. The browser fallback runs automatically; if that fails too, the job needs to run from somewhere else (a Raspberry Pi with the same `node src/run.js` and a cron entry works).
+- **`Gateway HTTP 403`** on every search: Autotrader is blocking the machine's IP address. This is what GitHub-hosted runners get; see "Where it runs". On your own machine it means your IP has been blocked, usually temporarily: wait a day, and consider running less often.
 - **`no searchResults.listings`** or **`Gateway error: Cannot query field …`**: Autotrader changed its search API. Compare the request the live site sends (browser dev tools → Network → `at-gateway`) with `LISTINGS_QUERY` in `src/autotrader.js`.
 - **`Unknown criteria key`**: a typo in `search.config.json`.
