@@ -11,6 +11,7 @@ import { randomUUID } from 'node:crypto';
 export const SEARCH_BASE = 'https://www.autotrader.co.uk/motorhome-search';
 const GATEWAY = 'https://www.autotrader.co.uk/at-gateway?opname=SearchResultsListingsGridQuery';
 const REQUEST_TIMEOUT_MS = 30_000;
+const CHALLENGE_WAIT_MS = 30_000;
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 
@@ -330,17 +331,37 @@ export async function fetchPageDirect(filters, sortBy, page, searchId) {
  * satisfied, then issue the gateway request from inside the page.
  */
 export class BrowserTransport {
-  async start() {
+  async start(log = console) {
     const { chromium } = await import('playwright');
-    this.browser = await chromium.launch({ headless: true });
+    // The full Chromium build in new-headless mode looks more like a real browser
+    // than the headless shell, which matters for Cloudflare's challenge.
+    try {
+      this.browser = await chromium.launch({ headless: true, channel: 'chromium' });
+    } catch {
+      this.browser = await chromium.launch({ headless: true });
+    }
     const context = await this.browser.newContext({
-      userAgent: USER_AGENT,
+      userAgent: USER_AGENT, // new-headless Chromium otherwise announces itself as HeadlessChrome
       locale: 'en-GB',
+      timezoneId: 'Europe/London',
       viewport: { width: 1280, height: 900 },
     });
     this.page = await context.newPage();
     await this.page.goto(`${SEARCH_BASE}?postcode=SW1A1AA`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await this.page.waitForTimeout(3000);
+
+    // Cloudflare's "Just a moment..." challenge usually clears itself within a
+    // few seconds in a real browser. Give it a chance before we give up.
+    const deadline = Date.now() + CHALLENGE_WAIT_MS;
+    let title = await this.page.title();
+    while (/just a moment|attention required/i.test(title) && Date.now() < deadline) {
+      await this.page.waitForTimeout(1000);
+      title = await this.page.title().catch(() => title);
+    }
+    if (/just a moment|attention required/i.test(title)) {
+      log.warn(`  browser is still on the Cloudflare challenge page after ${CHALLENGE_WAIT_MS / 1000}s`);
+    } else {
+      await this.page.waitForTimeout(1500);
+    }
   }
 
   async fetchPage(filters, sortBy, page, searchId) {
@@ -392,7 +413,7 @@ export async function fetchSearch({ filters, sortBy = 'most_recent' }, { maxPage
       log.warn(`  direct request failed (${err.message}); retrying through a headless browser`);
       const browser = new BrowserTransport();
       transport.browser = browser; // caller owns it from here and must call stop()
-      await browser.start();
+      await browser.start(log);
       usedBrowser = true;
       result = await browser.fetchPage(filters, sortBy, page, searchId);
     }
