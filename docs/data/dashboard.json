@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-11T23:36:59.492Z",
+ "generatedAt": "2026-10-11T23:47:30.046Z",
  "wantedSpecs": [
   "Habitation air conditioning",
   "Self-levelling",
@@ -22,12 +22,31 @@
    "url": "https://www.autotrader.co.uk/motorhome-search?body-type=Campervan&body-type=Van+Conversion&exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-11",
    "total": 2535,
-   "read": 1410,
+   "read": 1504,
    "truncated": false,
    "error": null
   }
  },
  "runs": [
+  {
+   "date": "2026-10-11T23:47:30.046Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 94,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-11T23:36:59.492Z",
    "searches": [
@@ -84,7 +103,7 @@
    ]
   }
  ],
- "hiddenByRules": 895,
+ "hiddenByRules": 950,
  "adverts": {
   "202610116889899": {
    "id": "202610116889899",
@@ -1422,10 +1441,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 32.7,
-    "expected": 36939,
+    "pct": 30.6,
+    "expected": 37522,
     "net": 49000,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -1576,10 +1595,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.2,
-    "expected": 47000,
+    "pct": 6.4,
+    "expected": 43177,
     "net": 45950,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -1669,10 +1688,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -14.2,
-    "expected": 55924,
+    "pct": -13.8,
+    "expected": 55689,
     "net": 47995,
-    "comps": 8,
+    "comps": 10,
     "basis": "model",
     "adjusted": true
    },
@@ -3181,10 +3200,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.3,
-    "expected": 52944,
+    "pct": 0.3,
+    "expected": 52638,
     "net": 52795,
-    "comps": 22,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -4123,9 +4142,9 @@
    "redFlags": [],
    "value": {
     "pct": 12,
-    "expected": 42398,
+    "expected": 42400,
     "net": 47495,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -4333,10 +4352,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.2,
-    "expected": 42000,
+    "pct": 4.7,
+    "expected": 42200,
     "net": 44190,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -4585,10 +4604,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.2,
-    "expected": 48979,
+    "pct": -3.8,
+    "expected": 49791,
     "net": 47900,
-    "comps": 11,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -4775,10 +4794,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5,
-    "expected": 43493,
+    "pct": -3.5,
+    "expected": 42795,
     "net": 41300,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -5303,10 +5322,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -13.1,
-    "expected": 55810,
+    "pct": -12.3,
+    "expected": 55305,
     "net": 48495,
-    "comps": 19,
+    "comps": 20,
     "basis": "make",
     "adjusted": true
    },
@@ -9059,10 +9078,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -14.9,
-    "expected": 51676,
+    "pct": -15.3,
+    "expected": 51919,
     "net": 43995,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -10327,7 +10346,14 @@
     }
    ],
    "redFlags": [],
-   "value": null,
+   "value": {
+    "pct": 15,
+    "expected": 52588,
+    "net": 60495,
+    "comps": 6,
+    "basis": "make",
+    "adjusted": false
+   },
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -10790,7 +10816,7 @@
     "pct": 13.5,
     "expected": 49342,
     "net": 55995,
-    "comps": 4,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -11340,10 +11366,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.3,
-    "expected": 47645,
+    "pct": 1.5,
+    "expected": 46795,
     "net": 47495,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -12562,10 +12588,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.9,
-    "expected": 39962,
+    "pct": -4.2,
+    "expected": 39677,
     "net": 37995,
-    "comps": 11,
+    "comps": 14,
     "basis": "make",
     "adjusted": true
    },
@@ -13482,12 +13508,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -19.9,
-    "expected": 32395,
+    "pct": -17.7,
+    "expected": 31520,
     "net": 25950,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -13722,7 +13748,14 @@
     }
    ],
    "redFlags": [],
-   "value": null,
+   "value": {
+    "pct": -1.2,
+    "expected": 43295,
+    "net": 42795,
+    "comps": 6,
+    "basis": "make",
+    "adjusted": false
+   },
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -14313,10 +14346,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -23.7,
-    "expected": 37095,
+    "pct": -23.5,
+    "expected": 36992,
     "net": 28299,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -14965,10 +14998,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2.5,
-    "expected": 47995,
+    "pct": -1.5,
+    "expected": 47495,
     "net": 46795,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -15874,10 +15907,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.2,
-    "expected": 43195,
+    "pct": -13.3,
+    "expected": 43745,
     "net": 37926,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -16041,10 +16074,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -18,
-    "expected": 50088,
+    "pct": -15.4,
+    "expected": 48499,
     "net": 41047,
-    "comps": 15,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -16598,10 +16631,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12,
-    "expected": 39700,
+    "pct": -11.1,
+    "expected": 39332,
     "net": 34950,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -16665,10 +16698,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 25.1,
-    "expected": 37561,
+    "pct": 23.9,
+    "expected": 37926,
     "net": 46990,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -16836,10 +16869,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.2,
-    "expected": 41864,
+    "pct": -10.9,
+    "expected": 41750,
     "net": 37195,
-    "comps": 9,
+    "comps": 10,
     "basis": "model",
     "adjusted": true
    },
@@ -17004,12 +17037,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.7,
-    "expected": 30650,
+    "pct": 10,
+    "expected": 29452,
     "net": 32395,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -17090,10 +17123,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5,
-    "expected": 44190,
+    "pct": -3,
+    "expected": 43295,
     "net": 42000,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -17168,12 +17201,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 10.9,
-    "expected": 30650,
+    "pct": 3.1,
+    "expected": 32986,
     "net": 33995,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -17489,10 +17522,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.5,
-    "expected": 41479,
+    "pct": 6.5,
+    "expected": 42234,
     "net": 44995,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -18233,10 +18266,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.7,
-    "expected": 51112,
+    "pct": -5.3,
+    "expected": 51408,
     "net": 48699,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -19629,10 +19662,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.4,
-    "expected": 47145,
+    "pct": 13.2,
+    "expected": 46795,
     "net": 52995,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -20068,10 +20101,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.9,
-    "expected": 46475,
+    "pct": 8.2,
+    "expected": 45950,
     "net": 49695,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -20731,10 +20764,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 70,
-    "expected": 30397,
+    "pct": 61.9,
+    "expected": 31899,
     "net": 51660,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -22538,12 +22571,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 56.6,
-    "expected": 30650,
+    "pct": 65.3,
+    "expected": 29037,
     "net": 48000,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -22793,10 +22826,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.4,
-    "expected": 50215,
+    "pct": -4.9,
+    "expected": 50473,
     "net": 48000,
-    "comps": 8,
+    "comps": 9,
     "basis": "make",
     "adjusted": true
    },
@@ -23444,15 +23477,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10,
-    "expected": 59357,
+    "pct": -9,
+    "expected": 58693,
     "net": 53400,
-    "comps": 22,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
    "deal": {
-    "underpriced": true,
+    "underpriced": false,
     "highSpec": false,
     "motivated": false,
     "wantedHits": [],
@@ -23460,7 +23493,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -24705,10 +24738,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 32.7,
-    "expected": 48468,
+    "pct": 31.4,
+    "expected": 48930,
     "net": 64295,
-    "comps": 10,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -25391,10 +25424,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18,
-    "expected": 53876,
+    "pct": 19.1,
+    "expected": 53389,
     "net": 63595,
-    "comps": 24,
+    "comps": 26,
     "basis": "model",
     "adjusted": true
    },
@@ -26159,10 +26192,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 17.3,
-    "expected": 42000,
+    "pct": 16.7,
+    "expected": 42200,
     "net": 49250,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -28526,10 +28559,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.2,
-    "expected": 47455,
+    "pct": 0.1,
+    "expected": 46828,
     "net": 46895,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -29648,10 +29681,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.8,
-    "expected": 57613,
+    "pct": -0.6,
+    "expected": 57498,
     "net": 57180,
-    "comps": 8,
+    "comps": 10,
     "basis": "model",
     "adjusted": true
    },
@@ -30744,10 +30777,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.9,
-    "expected": 47145,
+    "pct": 3.6,
+    "expected": 46795,
     "net": 48495,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -31588,10 +31621,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 29.2,
-    "expected": 43895,
+    "pct": 30.1,
+    "expected": 43594,
     "net": 56699,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -34396,10 +34429,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2.1,
-    "expected": 51040,
+    "pct": -2.5,
+    "expected": 51284,
     "net": 49985,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -35703,10 +35736,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 13.4,
-    "expected": 46475,
+    "pct": 14.7,
+    "expected": 45950,
     "net": 52695,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -38700,7 +38733,7 @@
     "pct": 18.6,
     "expected": 49342,
     "net": 58500,
-    "comps": 4,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -39216,7 +39249,8 @@
    "listedDate": "2026-10-09",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -39248,10 +39282,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -19.2,
-    "expected": 47965,
+    "pct": -19,
+    "expected": 47858,
     "net": 38750,
-    "comps": 10,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -42866,7 +42900,8 @@
    "listedDate": "2026-10-07",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -46506,7 +46541,8 @@
    "listedDate": "2026-10-04",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -46558,10 +46594,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -22.7,
-    "expected": 51390,
+    "pct": -23.1,
+    "expected": 51675,
     "net": 39750,
-    "comps": 9,
+    "comps": 11,
     "basis": "model",
     "adjusted": true
    },
@@ -47399,7 +47435,8 @@
    "listedDate": "2026-10-02",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -47456,10 +47493,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.6,
-    "expected": 56637,
+    "pct": -8.8,
+    "expected": 56136,
     "net": 51200,
-    "comps": 22,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -48568,7 +48605,8 @@
    "listedDate": "2026-10-01",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -48616,9 +48654,9 @@
    "redFlags": [],
    "value": {
     "pct": 8.2,
-    "expected": 28740,
+    "expected": 28752,
     "net": 31100,
-    "comps": 24,
+    "comps": 26,
     "basis": "model",
     "adjusted": true
    },
@@ -50256,7 +50294,8 @@
    "listedDate": "2026-09-30",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -50298,10 +50337,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.1,
-    "expected": 43234,
+    "pct": 0.2,
+    "expected": 43126,
     "net": 43195,
-    "comps": 15,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -51468,15 +51507,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7.1,
-    "expected": 32395,
+    "pct": -12.1,
+    "expected": 34256,
     "net": 30095,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
     "wantedHits": [],
@@ -51484,7 +51523,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": {
     "metres": 6.3,
@@ -52330,7 +52369,8 @@
    "listedDate": "2026-09-27",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -52362,10 +52402,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -29.3,
-    "expected": 45000,
+    "pct": -30.3,
+    "expected": 45600,
     "net": 31800,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -52563,10 +52603,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9,
-    "expected": 44190,
+    "pct": -7.2,
+    "expected": 43295,
     "net": 40195,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -57451,7 +57491,8 @@
    "listedDate": "2026-09-21",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -57478,10 +57519,10 @@
     }
    ],
    "value": {
-    "pct": 13.8,
-    "expected": 39549,
+    "pct": 12.2,
+    "expected": 40091,
     "net": 45000,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -57958,10 +57999,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.3,
-    "expected": 45950,
+    "pct": 10.2,
+    "expected": 42652,
     "net": 47000,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -58181,7 +58222,8 @@
    "listedDate": "2026-09-20",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -58223,10 +58265,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -22.3,
-    "expected": 47000,
+    "pct": -21.5,
+    "expected": 46475,
     "net": 36500,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -58547,7 +58589,8 @@
    "listedDate": "2026-09-20",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -58604,12 +58647,12 @@
     }
    ],
    "value": {
-    "pct": -5.4,
-    "expected": 32395,
+    "pct": -4.5,
+    "expected": 32110,
     "net": 30650,
-    "comps": 7,
+    "comps": 9,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -59196,7 +59239,8 @@
    "listedDate": "2026-09-19",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -63599,7 +63643,8 @@
    "listedDate": "2026-09-14",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -65452,7 +65497,8 @@
    "listedDate": "2026-09-12",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -65479,10 +65525,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 25.2,
-    "expected": 55525,
+    "pct": 26.2,
+    "expected": 55073,
     "net": 69495,
-    "comps": 22,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -68761,7 +68807,8 @@
    "listedDate": "2026-09-08",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -68788,10 +68835,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -30.1,
-    "expected": 41775,
+    "pct": -30,
+    "expected": 41703,
     "net": 29199,
-    "comps": 10,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -69795,7 +69842,8 @@
    "listedDate": "2026-09-05",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -69822,10 +69870,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 10.4,
-    "expected": 40313,
+    "pct": 11.2,
+    "expected": 40015,
     "net": 44500,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -69881,7 +69929,8 @@
    "listedDate": "2026-09-05",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -71149,7 +71198,8 @@
    "listedDate": "2026-09-03",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -71171,12 +71221,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.6,
-    "expected": 30650,
+    "pct": -9,
+    "expected": 36595,
     "net": 33295,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -74801,10 +74851,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.5,
-    "expected": 39482,
+    "pct": -3.5,
+    "expected": 39894,
     "net": 38499,
-    "comps": 22,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -76484,10 +76534,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.1,
-    "expected": 37117,
+    "pct": -10.5,
+    "expected": 36852,
     "net": 32995,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -78103,10 +78153,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 716,
-    "expected": 3027,
+    "pct": 31.2,
+    "expected": 18827,
     "net": 24700,
-    "comps": 10,
+    "comps": 14,
     "basis": "model",
     "adjusted": true
    },
@@ -82779,10 +82829,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 32.6,
-    "expected": 44263,
+    "pct": 30.2,
+    "expected": 45077,
     "net": 58695,
-    "comps": 11,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -83986,7 +84036,8 @@
    "listedDate": "2026-08-05",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -86915,7 +86966,7 @@
     "pct": 42.5,
     "expected": 47995,
     "net": 68395,
-    "comps": 3,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -87746,10 +87797,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.2,
-    "expected": 25407,
+    "pct": 7.8,
+    "expected": 25518,
     "net": 27500,
-    "comps": 24,
+    "comps": 26,
     "basis": "model",
     "adjusted": true
    },
@@ -90306,7 +90357,8 @@
    "listedDate": "2026-07-16",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -90773,7 +90825,8 @@
    "listedDate": "2026-07-15",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -93504,10 +93557,10 @@
     }
    ],
    "value": {
-    "pct": -6.9,
-    "expected": 41877,
+    "pct": -5.9,
+    "expected": 41444,
     "net": 38999,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -93973,10 +94026,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 84,
-    "expected": 16193,
+    "pct": 78.9,
+    "expected": 16656,
     "net": 29800,
-    "comps": 10,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -95701,7 +95754,8 @@
    "listedDate": "2026-06-26",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -97025,12 +97079,12 @@
     }
    ],
    "value": {
-    "pct": -20.4,
-    "expected": 32395,
+    "pct": -11.5,
+    "expected": 29148,
     "net": 25795,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -105424,10 +105478,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -29.6,
-    "expected": 50873,
+    "pct": -29.7,
+    "expected": 50938,
     "net": 35800,
-    "comps": 9,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -107146,7 +107200,8 @@
    "listedDate": "2026-04-04",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -107183,10 +107238,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 51.9,
-    "expected": 41736,
+    "pct": 48.6,
+    "expected": 42670,
     "net": 63395,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -112143,7 +112198,8 @@
    "listedDate": "2026-01-08",
    "status": "active",
    "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -112165,10 +112221,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.6,
-    "expected": 45220,
+    "pct": 6.8,
+    "expected": 44729,
     "net": 47750,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -118748,10 +118804,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.4,
-    "expected": 32942,
+    "pct": -4.7,
+    "expected": 33047,
     "net": 31499,
-    "comps": 10,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -118925,15 +118981,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.8,
-    "expected": 32065,
+    "pct": -8.2,
+    "expected": 30441,
     "net": 27950,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
    "deal": {
-    "underpriced": true,
+    "underpriced": false,
     "highSpec": false,
     "motivated": false,
     "wantedHits": [],
@@ -118941,7 +118997,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -119376,10 +119432,10 @@
     }
    ],
    "value": {
-    "pct": -49.2,
-    "expected": 36581,
+    "pct": -49,
+    "expected": 36458,
     "net": 18600,
-    "comps": 8,
+    "comps": 9,
     "basis": "model",
     "adjusted": true
    },
@@ -119467,10 +119523,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -29.1,
-    "expected": 38481,
+    "pct": -28.4,
+    "expected": 38102,
     "net": 27300,
-    "comps": 20,
+    "comps": 23,
     "basis": "model",
     "adjusted": true
    },
@@ -119552,10 +119608,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -16,
-    "expected": 34389,
+    "pct": -15.9,
+    "expected": 34341,
     "net": 28895,
-    "comps": 9,
+    "comps": 10,
     "basis": "model",
     "adjusted": true
    },
@@ -119658,10 +119714,10 @@
     }
    ],
    "value": {
-    "pct": -18.6,
-    "expected": 48348,
+    "pct": -16.3,
+    "expected": 47000,
     "net": 39353,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -119753,10 +119809,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.3,
-    "expected": 37416,
+    "pct": -11.9,
+    "expected": 37240,
     "net": 32811,
-    "comps": 24,
+    "comps": 26,
     "basis": "model",
     "adjusted": true
    },
@@ -120306,10 +120362,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 27.6,
-    "expected": 38510,
+    "pct": 28.3,
+    "expected": 38300,
     "net": 49150,
-    "comps": 24,
+    "comps": 26,
     "basis": "model",
     "adjusted": true
    },
@@ -120503,6 +120559,1369 @@
     },
     "description": "Exterior Features:Single AxleAlloy WheelsCentral LockingReversing CameraDRLs (Daytime Running Lights)Pull-out Awning / CanopyAwning LightInterior Features: Truma Blown Air Heating;Adjustable Seats;Swivel Driver’s Seat;Swivel Passenger’s Seat;Leather Steering Wheel;Multi-Function Steering Wheel;Rear Drop Down Transverse Bed;Dinette to Berth;Gas Hobs;Oven (No Grill);Compressor Fridge Freezer;Integrated Washroom;Toilet Cassette;Twin Airbags;Cab Blinds;Rear Lounge;Rear Bench Seating;Eco-Leather Upholstery;Rear TV Bracket;Electronic Features: Leisure Battery;Battery Monitor;Power Assisted Steering;Cab Air Conditioning;Cruise Control;Electric Mirrors;Electric Windows;Immobiliser;Habitation Electri",
     "descriptionLength": 987
+   }
+  },
+  "202610116890023": {
+   "id": "202610116890023",
+   "title": "Peugeot Boxer",
+   "subTitle": "2.2 BlueHDi 435 Professional Panel Van 5dr Diesel Manual L4 H2 Euro 6 (s/s) (140 ps)",
+   "make": "Peugeot",
+   "model": "Boxer",
+   "year": 2020,
+   "registeredYear": "2020 (20 reg)",
+   "mileage": 80000,
+   "mileageText": "80,000 miles",
+   "price": 34950,
+   "location": "Norwich (107 miles)",
+   "distanceMiles": 107,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/20ea59b8ad5c48cca219eb4550250a9a.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610116890023",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-11",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 34950
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "manual air conditioning for cab area including glovebox"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…totally off-grid van with 420w solar, a 230a lithium battery, and a 40a dc-dc cha…"
+    },
+    {
+     "label": "Lithium battery",
+     "value": 1200,
+     "evidence": "…ly off-grid van with 420w solar, a 230a lithium battery, and a 40a dc-dc charger. perfect…"
+    },
+    {
+     "label": "Inverter",
+     "value": 300,
+     "evidence": "inverter: sunshine power 1500w - 12v pure sine wave"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with programmable speed limiter"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -28.7,
+    "expected": 45950,
+    "net": 32750,
+    "comps": 7,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "boxer L4"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "This van is my pride and joy and i've loved every second of owning and travelling in it. After extensive research in design, components and layout the van was lovingly crafted to get every detail just right.\nTotally off-grid van with 420w Solar, a 230A lithium battery, and a 40A DC-DC Charger. Perfect van for off-grid, (full time) living.\nDouble bed, an indoor shower which can double as a drying room along with 70L fresh water (10L grey) and a combi boiler for lovely hot water and heating. The van feels really spacious when you're cosy inside.\nThere's 50mm insulation all around (25mm where thickness wouldn't allow 50mm) with recycled bottle insulation to stuff all the gaps, along with sound ",
+    "descriptionLength": 2475
+   }
+  },
+  "202610106875346": {
+   "id": "202610106875346",
+   "title": "Fiat Ducato",
+   "subTitle": "2.2 MultijetIII 35 Panel Van 5dr Diesel Manual L H2 Euro 6 (140 ps)",
+   "make": "Fiat",
+   "model": "Ducato",
+   "year": 2023,
+   "registeredYear": "2023 (73 reg)",
+   "mileage": 10561,
+   "mileageText": "10,561 miles",
+   "price": 41950,
+   "location": "Wembley (7 miles)",
+   "distanceMiles": 7,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/5fc95de97b4049d48b69b7b630a4ee03.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610106875346",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-10",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 41950
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "manual air conditioning"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with variable speed limiter"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -27.2,
+    "expected": 57625,
+    "net": 41950,
+    "comps": 4,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 1,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "",
+    "descriptionLength": 0
+   }
+  },
+  "202610096852815": {
+   "id": "202610096852815",
+   "title": "Volkswagen Crafter",
+   "subTitle": "2.0 TDI CR35 Trendline Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (140 ps)",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileage": 34000,
+   "mileageText": "34,000 miles",
+   "price": 46795,
+   "location": "Reading (35 miles)",
+   "distanceMiles": 35,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/547f52bc69fb4da380a6c4a03669797e.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610096852815",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-09",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 46795
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with speed limiter"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "- overhead storage shelf, with dedicated storage underneath for the awning poles"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -4.7,
+    "expected": 48481,
+    "net": 46195,
+    "comps": 23,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 2,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.84,
+    "source": "crafter LWB"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "2019 VW Crafter CR35 2.0 TDI 140ps LWB High Roof, professionally converted by Mclaren Sporthome into a race van with full living accommodation. Only 34,000 miles.\nPerfect for karting, motorsport, bikes or anyone who wants to carry kit and stay away in comfort, all in one vehicle with no trailer to tow.\nREAR GARAGE\n- Fully lined in aluminium chequer plate (floor, walls and doors)\n- Heavy-duty two-tier kart racking: kart sits on the upper deck, with the full floor underneath free for tyres, boxes, compressor and kit\n- Tie-down points in the floor\n- Mains sockets in the garage\n- Overhead storage shelf, with dedicated storage underneath for the awning poles\n- Easily takes a kart plus all your ki",
+    "descriptionLength": 2213
+   }
+  },
+  "202610066734795": {
+   "id": "202610066734795",
+   "title": "Peugeot Boxer",
+   "subTitle": "2.0 BlueHDi 435 Professional Panel Van 5dr Diesel Manual L4 H2 Euro 6 (130 ps)",
+   "make": "Peugeot",
+   "model": "Boxer",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileage": 110000,
+   "mileageText": "110,000 miles",
+   "price": 25000,
+   "location": "York (174 miles)",
+   "distanceMiles": 174,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c3048ab6fb054364837bd0288f9a5fd6.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610066734795",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-06",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 25000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning - manual"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control and speed limiter"
+    }
+   ],
+   "redFlags": [
+    {
+     "label": "5 owners",
+     "evidence": "5 previous owners"
+    }
+   ],
+   "value": {
+    "pct": -24.9,
+    "expected": 33307,
+    "net": 25000,
+    "comps": 8,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 5,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 1,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "boxer L4"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 5,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "The van is fully fitted camper van with double bed, shower, full kitchen, will come with all equipment to drive away to a camp site. Year's of fun in this van. You have every thing to live in it. Life style changes forces the sale. Please feel free to have a guided tour.",
+    "descriptionLength": 271
+   }
+  },
+  "202610046662844": {
+   "id": "202610046662844",
+   "title": "Volkswagen Crafter",
+   "subTitle": "2.0 TDI CR35 BlueMotion Tech Trendline Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (102 ps)",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "year": 2017,
+   "registeredYear": "2017 (67 reg)",
+   "mileage": 89000,
+   "mileageText": "89,000 miles",
+   "price": 32000,
+   "location": "Hitchin (32 miles)",
+   "distanceMiles": 32,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/d2e51f5060774795a541ac0e36adccac.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610046662844",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-04",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 32000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…, sad to have to sell. top of the range solar system (all vitron) leisure batteries, loung…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with speed limiter"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…brand new fridge and fiama awning. drives really smoothly, low milage (89,000…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 3.9,
+    "expected": 29744,
+    "net": 30900,
+    "comps": 14,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 7,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.84,
+    "source": "crafter LWB"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "Good condition all round, sad to have to sell. Top of the range solar system (all vitron) leisure batteries, lounge area that converts into v large double bed, TV, really good storage, travel modem.\nBrand new fridge and Fiama awning. Drives really smoothly, low milage (89,000-ish). Has been on two great european tours in the last 14 months and been absolutely perfect blend between reliable, comfortable, really good facilities, and its a bit cool too - being a two-tone VW! Dosnt get much better for UK/Euro adventures, everything you need.\nOnly issue is a small scuff on paintwork at side. Large underside fresh water tank and grey water tank.\nRCA 12v tv,  great, cooker, sink. I installed brand ",
+    "descriptionLength": 861
+   }
+  },
+  "202610046661632": {
+   "id": "202610046661632",
+   "title": "Volkswagen Campervan",
+   "subTitle": "2.0 TDI T28 Highline Panel Van 5dr Diesel Manual FWD SWB Euro 6 (s/s) (110 ps)",
+   "make": "Volkswagen",
+   "model": "Campervan",
+   "year": 2020,
+   "registeredYear": "2020 (70 reg)",
+   "mileage": 48724,
+   "mileageText": "48,724 miles",
+   "price": 45000,
+   "location": "Abingdon (47 miles)",
+   "distanceMiles": 47,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/5a24cfd61dfc4c3b90f933f6598908c2.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610046661632",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-04",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 45000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning - electronically controlled"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control - adaptive with speed limiter"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -5.3,
+    "expected": 47495,
+    "net": 45000,
+    "comps": 5,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 7,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Manual",
+     "Bedroom layout": "Rock n Roll bed"
+    },
+    "description": "This camper van has been very special to me and I'll genuinely be sad to see it go. We've made some absolutely beautiful memories in it, from spontaneous weekends away to longer adventures, and it has given us a real sense of freedom.\nIt's been loved and cared for rather than simply used as a vehicle, and I hope it goes to someone who will enjoy it and make just as many wonderful memories in it as we have.\nThere's something lovely about being able to pack up, head off and have everything you need with you. Whether it's waking up somewhere beautiful, having a morning coffee with the doors open or just escaping for a weekend, this camper has given us so many special moments.",
+    "descriptionLength": 681
+   }
+  },
+  "202610026597181": {
+   "id": "202610026597181",
+   "title": "Volkswagen Crafter",
+   "subTitle": "2.0 TDI CR35 Trendline Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (140 ps)",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileage": 50250,
+   "mileageText": "50,250 miles",
+   "price": 39950,
+   "location": "Nuneaton (89 miles)",
+   "distanceMiles": 89,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1850e1153ee24217b5f45e14be7f620d.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610026597181",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-02",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39950
+    }
+   ],
+   "specs": [
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "electrical & solar system"
+    },
+    {
+     "label": "Lithium battery",
+     "value": 1200,
+     "evidence": "* frogstar 280ah lithium leisure battery"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with speed limiter"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -15.9,
+    "expected": 45470,
+    "net": 38250,
+    "comps": 23,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 9,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": {
+    "metres": 6.84,
+    "source": "crafter LWB"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "2019 VW Crafter LWB 2-Berth Campervan -\n50,250 miles | Manual | Full VW Dealer Service History | MOT until October 2027 | Excellent Condition\nFor sale is my 2019 Volkswagen Crafter Long Wheelbase 2-berth campervan, finished to a very high standard and in excellent condition.\nI have owned the van since it was just six months old, purchasing it from a Volkswagen main dealer, and it has been exceptionally well cared for throughout my ownership. It has covered just 50,250 miles and benefits from a full dealer service history.\nThe camper conversion was carried out by myself and my son, who previously worked for a professional camper conversion company. We used lightweight camper furniture through",
+    "descriptionLength": 2439
+   }
+  },
+  "202609296504170": {
+   "id": "202609296504170",
+   "title": "Citroen Relay",
+   "subTitle": "2.2 BlueHDi 35 Enterprise Panel Van 5dr Diesel Manual L4 Extra High Roof Euro 6 (s/s) (Heavy) (140 ps)",
+   "make": "Citroen",
+   "model": "Relay",
+   "year": 2021,
+   "registeredYear": "2021 (21 reg)",
+   "mileage": 40600,
+   "mileageText": "40,600 miles",
+   "price": 39999,
+   "location": "Pontefract (157 miles)",
+   "distanceMiles": 157,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/5094947f76a24de3ac1a44cfd226b76e.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609296504170",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-09-29",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 39999
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "manual air conditioning for cab area - including glovebox"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panels"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with programmable speed limiter"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "supply and fit of awning"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -0.4,
+    "expected": 39061,
+    "net": 38899,
+    "comps": 10,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 12,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "relay L4"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "Citroen Relay L4 H3, registered 2021.\nLow miles, 40,600.\nSat Nav\nCruise control\nAir con\nBluetooth\nTracker fitted\nIt will come with a new 12 months mot.\nProfessionally converted by DA Campers, West Yorkshire (Only used twice since):\nCaptains swivel seats\nThe seating area converts to a large double bed\nLarge Fridge/freezer\nTruma Combi 4, blown air heating and hot water\nUnderslung gas tank\nUnderslung fresh and waste water tanks\nGas Hob\nGas oven and grill (Unused)\nSatellite receiver ready for tv\nShower, sink and cassette loo (All unused)\nMaxi two way roof fan, with remote control\nSolar panels\n2 x 105amp leisure batteries\nSargent electrical system\nRemus cab blinds\nLots of storage inc hanging ward",
+    "descriptionLength": 852
+   }
+  },
+  "202609276433990": {
+   "id": "202609276433990",
+   "title": "Wildax Solaris XL.",
+   "subTitle": "2.0 BlueHDi 35 Enterprise Panel Van 5dr Diesel Manual L4 High Roof Euro 6 (Heavy) (130 ps)",
+   "make": "Wildax",
+   "model": "Solaris XL",
+   "year": 2018,
+   "registeredYear": "2018 (68 reg)",
+   "mileage": 18228,
+   "mileageText": "18,228 miles",
+   "price": 43500,
+   "location": "Newbury (52 miles)",
+   "distanceMiles": 52,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/2e34873517004f04809d433e2beaebbf.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609276433990",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-09-27",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 43500
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control with programmable speed limiter"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "- tow bar fitted"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "- large awning"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.6,
+    "expected": 43095,
+    "net": 42400,
+    "comps": 4,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 14,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 2,
+    "serviceHistory": "Full service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Manual"
+    },
+    "description": "Low mileage, high-spec 4 berth motorhome providing flexible layout.\n- Bunk beds\n- double bed in the front\n- full size kitchen with lots of storage, worktop space, full height fridge/freezer, oven and sink\n- deep drawers under bunk beds and around top of lounge area\n- travelling seats easily convert to sofa and cabs seats swivel to face rear\n- tow bar fitted\n- extra storage via back doors\n- LED lighting\n- automatic electric step\n- large awning\n- tv with DVD\n- black fitted carpet in excellent condition\n- 2 owners from new\n- MOT and Service passed on 22//09/26\nIn excellent condition with some minor scratches to interior",
+    "descriptionLength": 624
+   }
+  },
+  "202609156055175": {
+   "id": "202609156055175",
+   "title": "Renault Master",
+   "subTitle": "2.3 dCi 35 Business+ Panel Van 4dr Diesel Manual FWD LWB Medium Roof Euro 6 (135 ps)",
+   "make": "Renault",
+   "model": "Master",
+   "year": 2022,
+   "registeredYear": "2022 (72 reg)",
+   "mileage": 28000,
+   "mileageText": "28,000 miles",
+   "price": 30999,
+   "location": "Chester Le Street (241 miles)",
+   "distanceMiles": 241,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/7ac52bcfc7a74528b412f6b645b90827.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609156055175",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-09-15",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 30999
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning - manual with pollen filter"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "full carplay infotainment system / satnav / reversing camera etc"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "fiamma f80s awning"
+    },
+    {
+     "label": "Full service history",
+     "value": 0,
+     "evidence": "…king it ready for immediate adventures. full service history present.…"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 26,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.22,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "2",
+     "Gearbox": "Manual",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Fixed double bed"
+    },
+    "description": "Renault Master Camper Conversion 2022 Renault Master Business 2.3 dCi\n28,000 miles - Van is still in use.\n2 owners from new\nA professionally converted campervan in excellent condition. I commissioned the conversion after much thought during 2025/26 and the van has completed less than a 1,000 miles since completion.\nThe van has just had its annual service where the crank pulley was found to be misaligned. This was replaced and corrected during the service and MOT was completed with no advisories, making it ready for immediate adventures. Full service history present.\nKey Features\n Fiamma F80s awning\n Brand new alloys and tyres.\n Full carplay infotainment system / satnav / reversing camera etc",
+    "descriptionLength": 1828
+   }
+  },
+  "202608255433503": {
+   "id": "202608255433503",
+   "title": "Man Tge",
+   "subTitle": "2.0 3140d Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (140 ps)",
+   "make": "MAN",
+   "model": "Tge",
+   "year": 2017,
+   "registeredYear": "2017 (67 reg)",
+   "mileage": 78800,
+   "mileageText": "78,800 miles",
+   "price": 32985,
+   "location": "Harrogate (188 miles)",
+   "distanceMiles": 188,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6ceb1e76b0df482fb3d865ec61cf4c9b.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608255433503",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-08-25",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 32985
+    }
+   ],
+   "specs": [
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…batteries with split charger, 3 x 100w solar panels, 240v main hook up with noko charger…"
+    },
+    {
+     "label": "Inverter",
+     "value": 300,
+     "evidence": "…hook up with noko charger system, 2000w inverter and 240v power sockets/usb…"
+    }
+   ],
+   "redFlags": [
+    {
+     "label": "4 owners",
+     "evidence": "4 previous owners"
+    }
+   ],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 47,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 1,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.84,
+    "source": "tge LWB"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 4,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (9 checks passed, 1 item to note)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "MAN TGE 2.0 3140d Long Wheel Base Camper Van Conversion!\nContact Nidd View Sales for a viewing!\n07933279097\nniddviewsales@gmail.com\nwww.niddviewsales.co.uk\n78k  miles on the Clock\n2017 Registration Van\nFull Service including water pump and cam belt change at 74k\nBrand new 16\" Rogue alloys with Devanti all-terrain tyres (correctly rated)\n6 speed manual, 2 remote keys\nRally mudflaps front and rear Exterior LPG gas tank and fill point Rear mounted spare wheel\nColour coded front bumper/mirror caps\nFront splitter, bonnet protector, wind deflectors\nKing size bed or 2 x singles Fully insulated and carpeted\nSwivel base passenger twin seat\nThetford gas oven, 3 burner hob and sink with fresh and waste",
+    "descriptionLength": 3377
+   }
+  },
+  "202506283960277": {
+   "id": "202506283960277",
+   "title": "Volkswagen Crafter CR35 TDI",
+   "subTitle": "2.0 TDI CR35 Panel Van 4dr Diesel Manual L2 H3 (234 g/km, 134 bhp)",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileage": null,
+   "mileageText": null,
+   "price": 37999,
+   "location": "Barnsley (150 miles)",
+   "distanceMiles": 150,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/f0538875dd3848e9958a1b9ef4a431ae.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202506283960277",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2025-06-28",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 37999
+    }
+   ],
+   "specs": [
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…ar garagetruma heating systemfiamma f45 awningsolar power system for off-grid capabilityfu…"
+    },
+    {
+     "label": "Full service history",
+     "value": 0,
+     "evidence": "…berth camper conversion mileage: 46,000 full service history price: £37,999 location: clee…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 2.6,
+    "expected": 35974,
+    "net": 36899,
+    "comps": 4,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 470,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 3,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Manual",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Lounge Conversion"
+    },
+    "description": "2016 VW Crafter CR35 TDI – 4 Berth Camper Conversion Mileage: 46,000 Full Service History Price: £37,999 Location: Cleethorpes  A well-maintained, low-mileage VW Crafter featuring a high-quality professional camper conversion with a smart and spacious layout, perfect for off-grid travel and extended touring.  Key Features:  4 berth configurationHigh quality conversion throughoutCentre lounge converts to two single bedsFixed spacious double bed over rear garageTruma heating systemFiamma F45 awningSolar power system for off-grid capabilityFully insulated and carpeted interiorKitchen with sink, hob, and fridgeSwivel front seats for extended living spaceLED lighting throughoutLeisure battery wit",
+    "descriptionLength": 1153
+   }
+  },
+  "202610106868088": {
+   "id": "202610106868088",
+   "title": "Mercedes-Benz Sprinter",
+   "subTitle": "2.0 315 CDI Progressive Panel Van 5dr Diesel Manual RWD L3 H2 Euro 6 (s/s) (150 ps)",
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "year": 2021,
+   "registeredYear": "2021",
+   "mileage": 30100,
+   "mileageText": "30,100 miles",
+   "price": 49000,
+   "location": "Newry (310 miles)",
+   "distanceMiles": 310,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1fbb7f9fab1e4a5baecfcc1f253ee149.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610106868088",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-10",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 49000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…tron power solution including inverter, solar controller, ve hub, charger, 2 x 150ah lithi…"
+    },
+    {
+     "label": "Lithium battery",
+     "value": 1200,
+     "evidence": "…controller, ve hub, charger, 2 x 150ah lithium batteries, 24v system, 140bhp, 540-watt so…"
+    },
+    {
+     "label": "Inverter",
+     "value": 300,
+     "evidence": "…victron power solution including inverter, solar controller, ve hub, charger, 2 x 1…"
+    },
+    {
+     "label": "Diesel heater",
+     "value": 0,
+     "evidence": "…verter, bobil hybrid water and heating, diesel heater, 5 belted seats, swivel passenger be…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -7.4,
+    "expected": 50776,
+    "net": 47000,
+    "comps": 12,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 1,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.97,
+    "source": "sprinter L3"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "Victron power solution including inverter, solar controller, VE hub, charger, 2 x 150Ah lithium batteries, 24V system, 140bhp, 540-watt solar panel, 4/5 birth, rear lounge, 3000-watt inverter, Bobil hybrid water and heating, diesel heater, 5 belted seats, swivel passenger bench seat, 90-litre fridge, front runner roof rack, Maxxair fan, windows all round, stainless steel sink, 80-litre fresh water tank, 80-litre waste water tank, Raspberry Pi operating system, driver convenience, auto lights, auto wipers, cruise control, Bluetooth audio, Apple CarPlay, full leather retrimmed seats with Bentley stitching.\n270-degree double-wing rear-end doors opening to side wall, armrest for driver's seat, b",
+    "descriptionLength": 2313
+   }
+  },
+  "202610096827452": {
+   "id": "202610096827452",
+   "title": "Mercedes-Benz Sprinter",
+   "subTitle": "2.1 316 CDI Panel Van 5dr Diesel G-Tronic+ RWD L3 H2 Euro 6 (163 ps)",
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileage": 57111,
+   "mileageText": "57,111 miles",
+   "price": 51000,
+   "location": "Inverness (445 miles)",
+   "distanceMiles": 445,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/0b12fb7c0b064347bf23bfef208b6c17.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610096827452",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-09",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 51000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Rear air suspension",
+     "value": 2000,
+     "evidence": "uprated vb air suspention (7k upgrade)"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "…uise control, 360 parking sensors, and reversing camera.…"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel setup with a heavy-duty leisure battery."
+    },
+    {
+     "label": "Diesel heater",
+     "value": 0,
+     "evidence": "webasto night heater, gas heating, and hot water heater."
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "exterior: premium alloy wheels and a large fiamma roll-out awning."
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 10.8,
+    "expected": 41711,
+    "net": 46200,
+    "comps": 11,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [
+     "Rear air suspension"
+    ],
+    "daysListed": 2,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.97,
+    "source": "sprinter L3"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Automatic"
+    },
+    "description": "Mercedes-Benz Sprinter - 2019 AB Race Cruiser (4-Berth)\nNo Vat.\n5 seats all with seatbelts.\nProfessionally converted to the highest standard by AB Race Cruisers, this premium van has been well looked after with no expense spared. It is the ultimate dual-purpose setup for mountain bike, motorsport enthusiasts, track days, or high-end off-grid touring.\nMileage: 57,111 miles\nMOT: Fresh 12-Month MOT provided upon sale\nLocation: Inverness, Scotland. + delivery or meeting half way can be arranged at buyers cost.\nHad a engine oil/filters + transmission oil changed at 50,000 miles.\nUprated VB air suspention (7k upgrade)\nVEHICLE & CAB SPECIFICATION:\n Chassis & Cab: 2019 Mercedes-Benz Sprinter with cr",
+    "descriptionLength": 2220
+   }
+  },
+  "202610086817335": {
+   "id": "202610086817335",
+   "title": "Fiat Ducato",
+   "subTitle": "2.3 MultiJetII 35 Maxi Panel Van 5dr Diesel Manual LX H2 Euro 6 (140 ps)",
+   "make": "Fiat",
+   "model": "Ducato",
+   "year": 2021,
+   "registeredYear": "2021 (21 reg)",
+   "mileage": 5112,
+   "mileageText": "5,112 miles",
+   "price": 58000,
+   "location": "Sunderland (241 miles)",
+   "distanceMiles": 241,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/486d3ef91f7946bba57cfa2bde0faf8b.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610086817335",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-10-08",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 58000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "bike rake included, awning also included."
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 12.9,
+    "expected": 50840,
+    "net": 57400,
+    "comps": 8,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 3,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Manual"
+    },
+    "description": "Bathroom / Shower - Brand new - never been used.\nCooker / Oven - Brand new - never been used.\nUpstairs pop up sleeping area only been used twice.\nBike rake included, awning also included.\nOutdoor shower for dogs / cleaning bikes etc down has been added and never been used.\nUnreal drive, reason for selling is we have 3 big dogs and it just doesn't have enough space.\nSadly not getting the use out of it.\nOpen to offers.",
+    "descriptionLength": 420
+   }
+  },
+  "202608195234858": {
+   "id": "202608195234858",
+   "title": "Mercedes-Benz Sprinter 315",
+   "subTitle": "2.0 315 CDI Premium Panel Van 5dr Diesel G-Tronic RWD L3 H2 Euro 6 (s/s) (150 ps)",
+   "make": "Mercedes-Benz",
+   "model": "Sprinter",
+   "year": 2023,
+   "registeredYear": "2023 (23 reg)",
+   "mileage": 11265,
+   "mileageText": "11,265 miles",
+   "price": 68500,
+   "location": "Bristol (103 miles)",
+   "distanceMiles": 103,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/0b30883a827c42169a40c8baad358a7c.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202608195234858",
+   "firstSeen": "2026-10-11",
+   "lastSeen": "2026-10-11",
+   "listedDate": "2026-08-19",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-11",
+     "price": 68500
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…previous owner, 1,950cc diesel engine, automatic transmission, rhd, 3,500kg, 147.5bhp, 2…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…cab air conditioning, automatic lights, cruise control with limiter, front and rear parkin…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 36.9,
+    "expected": 47995,
+    "net": 65700,
+    "comps": 5,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "wantedHits": [],
+    "daysListed": 53,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.97,
+    "source": "sprinter L3"
+   },
+   "details": {
+    "chassis": "Mercedes Sprinter 315 Prestige",
+    "bodyType": "Van Conversion",
+    "owners": 1,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "2",
+     "Gearbox": "Automatic",
+     "End layout": "End Garage",
+     "Bedroom layout": "Fixed double bed"
+    },
+    "description": "Mercedes Sprinter 315 Premium CDI Sports Camper, 20232023 Mercedes Sprinter 315 Premium CDI Sports Camper, 11,265 miles, first registered 13/03/2023, 1 previous owner, 1,950cc diesel engine, automatic transmission, RHD, 3,500kg, 147.5BHP, 2 berth, 4 belts. Converted by CK Sporthomes during 2024 to 2025.The cab has two swivel captain’s chairs, cab air conditioning, automatic lights, cruise control with limiter, front and rear parking sensors, reversing camera, Bluetooth handsfree, Android Auto and Apple CarPlay.The rear living area has two tone leather seating, a 6ft x 5ft 7in bed, washroom with shower, toilet and basin, Thetford three burner hob, grill and oven, fridge freezer, Truma gas hea",
+    "descriptionLength": 1520
    }
   }
  }
