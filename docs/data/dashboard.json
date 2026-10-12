@@ -15,7 +15,7 @@
    "total": 1130,
    "read": 1129,
    "truncated": false,
-   "error": null
+   "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
   },
   "Campervans and van conversions (length from advert)": {
    "name": "Campervans and van conversions (length from advert)",
@@ -24,7 +24,7 @@
    "total": 2538,
    "read": 1503,
    "truncated": false,
-   "error": null
+   "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
   }
  },
  "runs": [
