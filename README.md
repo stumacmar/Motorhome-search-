@@ -136,7 +136,11 @@ Add these as **Settings → Secrets and variables → Actions → Repository sec
 
 **Settings → Pages → Build and deployment**: Source "Deploy from a branch", branch `master`, folder `/docs` (the root folder also works; it redirects to the dashboard). After the first run the page appears at `https://<your-username>.github.io/<repo-name>/`. Put that address in `dashboardUrl` in `search.config.json` so notifications link to it.
 
-### 4. First run
+### 4. Refreshing from the dashboard
+
+The **Refresh from Autotrader** button on the dashboard opens this repo's Actions page in a new tab, where one press of **Run workflow** starts the job (you need to be signed in to GitHub there). The dashboard then follows the run and reloads itself once the new data is published, usually a few minutes later. No credentials are stored on the page. The job runs wherever the workflow runs, so until a self-hosted runner is set up (see "Where it runs") a refresh will fail with 403s from Autotrader and the dashboard says so.
+
+### 5. First run
 
 **Actions → Daily motorhome search → Run workflow**. The first run records everything that currently matches, so you will get one large "new" notification; after that only changes are reported.
 

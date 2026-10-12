@@ -90,12 +90,28 @@
   details summary { cursor: pointer; }
   .empty { color: var(--muted); padding: 40px 0; text-align: center; }
   footer { color: var(--muted); font-size: 13px; max-width: 1180px; margin: 0 auto; padding: 0 16px 32px; }
+  .headrow { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .headrow > div:first-child { flex: 1 1 240px; }
+  .refresh { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .refresh button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .refresh .status { font-size: 13px; color: var(--muted); max-width: 340px; text-align: right; }
+  .refresh .status.err { color: var(--drop); }
+  .refresh .status a { color: inherit; }
+  @media (max-width: 600px) { .refresh { align-items: flex-start; } .refresh .status { text-align: left; } }
 </style>
 </head>
 <body>
 <header>
-  <h1>Motorhome search</h1>
-  <p class="sub" id="updated">Loading…</p>
+  <div class="headrow">
+    <div>
+      <h1>Motorhome search</h1>
+      <p class="sub" id="updated">Loading…</p>
+    </div>
+    <div class="refresh">
+      <button id="refresh" type="button" title="Opens GitHub, where one click starts the search job. This page then reloads itself when the new data is published.">⟳ Refresh from Autotrader</button>
+      <span class="status" id="refresh-status"></span>
+    </div>
+  </div>
 </header>
 <main>
   <div class="stats" id="stats"></div>
@@ -347,6 +363,75 @@
     render();
   }));
   render();
+
+  // ---- Refresh: start the search job on GitHub, then reload when the new data is published ----
+  // No credentials live on this page. The button opens GitHub's own "Run workflow" page in a
+  // new tab (you must be signed in to GitHub there); this page then watches the public run
+  // status and reloads itself once the site has republished.
+  const REPO = 'stumacmar/Motorhome-search-';
+  const WORKFLOW = 'daily.yml';
+  const refreshBtn = document.getElementById('refresh');
+  const statusEl = document.getElementById('refresh-status');
+  const setStatus = (html, err) => { statusEl.innerHTML = html; statusEl.classList.toggle('err', !!err); };
+  const mins = (from) => Math.max(0, Math.round((Date.now() - new Date(from)) / 60000));
+  const runnerHelp = '<a href="https://github.com/' + REPO + '#where-it-runs" target="_blank" rel="noopener">set up the runner</a>';
+  let watching = false;
+
+  async function latestRun(since) {
+    const res = await fetch('https://api.github.com/repos/' + REPO + '/actions/workflows/' + WORKFLOW + '/runs?per_page=3', { headers: { accept: 'application/vnd.github+json' } });
+    if (!res.ok) return null;
+    const { workflow_runs: runs = [] } = await res.json();
+    return runs.find((r) => !since || new Date(r.created_at) >= since - 120000) || null;
+  }
+
+  async function watchRun(since, generatedBefore) {
+    if (watching) return;
+    watching = true;
+    const started = Date.now();
+    try {
+      for (;;) {
+        await new Promise((r) => setTimeout(r, 20000));
+        const run = await latestRun(since).catch(() => null);
+        if (!run) {
+          if (Date.now() - started > 5 * 60000) { setStatus('No run started. Press <b>Run workflow</b> on the GitHub tab, then come back.', true); return; }
+          setStatus('Waiting for you to press <b>Run workflow</b> on the GitHub tab…');
+          continue;
+        }
+        if (run.status !== 'completed') {
+          setStatus((run.status === 'queued' ? 'Queued' : 'Running') + ' for ' + mins(run.created_at) + ' min. New adverts add about a second each. This page reloads itself when done.');
+          continue;
+        }
+        if (run.conclusion === 'success') {
+          for (let i = 0; i < 24; i++) {
+            setStatus('Finished. Waiting for the site to publish… (' + i * 15 + 's)');
+            await new Promise((r) => setTimeout(r, 15000));
+            const probe = await fetch('data/dashboard.json?' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).catch(() => null);
+            if (probe && probe.generatedAt !== generatedBefore) { location.reload(); return; }
+          }
+          setStatus('Finished, but the site has not republished yet. Reload in a minute.');
+          return;
+        }
+        setStatus('The run ' + run.conclusion + '. If the log says "Gateway HTTP 403" on every search, Autotrader is blocking GitHub\'s own servers and the job needs its own machine: ' + runnerHelp + '. <a href="' + run.html_url + '" target="_blank" rel="noopener">See the log</a>.', true);
+        return;
+      }
+    } finally {
+      watching = false;
+    }
+  }
+
+  refreshBtn.addEventListener('click', () => {
+    window.open('https://github.com/' + REPO + '/actions/workflows/' + WORKFLOW, '_blank', 'noopener');
+    setStatus('On the GitHub tab press <b>Run workflow</b> → <b>Run workflow</b>. This page will follow the run and reload itself.');
+    watchRun(new Date(), data.generatedAt);
+  });
+
+  // If a run is already going (started from GitHub or another device), follow it.
+  latestRun().then((run) => {
+    if (run && run.status !== 'completed') {
+      setStatus('A run is already ' + run.status + ' (' + mins(run.created_at) + ' min). This page reloads itself when it finishes.');
+      watchRun(new Date(run.created_at), data.generatedAt);
+    }
+  }).catch(() => {});
 })();
 </script>
 </body>
