@@ -81,6 +81,13 @@ test('deal scoring with motivation and red flags', () => {
   assert.equal(stale.motivated, true);
   assert.equal(stale.daysListed, 102);
   assert.equal(stale.isDeal, true);
+  assert.ok(stale.desperation > 40 && stale.desperation < 60, `desperation ${stale.desperation}`);
+  const longListed = scoreDeal({ listedDate: '2026-03-01', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null, sellerType: 'PRIVATE' }, cfg, today);
+  assert.equal(longListed.motivated, true, 'six months listed counts on its own');
+  assert.equal(longListed.desperation, 60);
+  const fresh = scoreDeal({ listedDate: '2026-10-10', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null }, cfg, today);
+  assert.equal(fresh.motivated, false);
+  assert.equal(fresh.desperation, 0);
   const flagged = scoreDeal({ value: { pct: -30 }, redFlags: [{ label: 'Damp mentioned' }] }, cfg, today);
   assert.equal(flagged.underpriced, true);
   assert.equal(flagged.isDeal, false);

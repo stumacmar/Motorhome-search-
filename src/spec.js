@@ -208,12 +208,28 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   const daysListed = listed ? daysBetween(listed, today) : null;
   const { drops, totalDropPct } = priceDrops(advert);
   const staleDays = dealConfig.staleDays ?? 60;
-  const motivated = (daysListed != null && daysListed >= staleDays && drops >= 1) || drops >= 2;
   const redFlags = (advert.redFlags || []).length;
+
+  // Desperation, 0 to 100: how long it has sat unsold, how often and how far the
+  // price has been cut, and whether it is a private seller (who feels every week).
+  const days = daysListed ?? 0;
+  const timeScore = Math.max(0, Math.min(50, ((days - 14) / 166) * 50)); // 0 at two weeks, 50 at six months
+  const dropScore = Math.min(20, drops * 10);
+  const cutScore = Math.min(20, Math.max(0, -totalDropPct) * 2); // 10% off = full marks
+  const privateScore = advert.sellerType === 'PRIVATE' ? 10 : 0;
+  const desperation = Math.round(timeScore + dropScore + cutScore + privateScore);
+  const reasons = [];
+  if (days >= staleDays) reasons.push(`listed ${days} days`);
+  if (drops) reasons.push(`${drops} price drop${drops > 1 ? 's' : ''} (${totalDropPct}%)`);
+  if (privateScore) reasons.push('private seller');
+  const motivated = days >= staleDays || drops >= 2 || (days >= 30 && drops >= 1);
+
   return {
     underpriced,
     highSpec,
     motivated,
+    desperation,
+    motivationReasons: reasons,
     wantedHits,
     daysListed,
     drops,

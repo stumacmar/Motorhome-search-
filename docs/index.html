@@ -129,6 +129,7 @@
       <option value="listed">Longest listed</option>
       <option value="length">Length</option>
       <option value="drops">Most price drops</option>
+      <option value="desperation">Most desperate seller</option>
       <option value="year">Year: newest</option>
       <option value="mileage">Mileage: lowest</option>
       <option value="distance">Distance: nearest</option>
@@ -204,6 +205,7 @@
     ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look'],
     ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced'],
     ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers'],
+    ['', live.filter((a) => a._listed >= 90).length, 'listed 90+ days'],
     ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week'],
   ];
   document.getElementById('stats').innerHTML = stats.map(([c, n, l]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join('');
@@ -238,7 +240,8 @@
     if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
     if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
     if (a.deal?.highSpec) tags.push(`<span class="tag deal">high spec</span>`);
-    if (a.deal?.motivated) tags.push(`<span class="tag motivated">motivated seller</span>`);
+    if (a.deal?.motivated) tags.push(`<span class="tag motivated" title="${esc((a.deal.motivationReasons || []).join(', '))}">motivated · ${a.deal.desperation}/100</span>`);
+    else if (a.deal?.desperation >= 20) tags.push(`<span class="tag" title="Desperation score from time listed, price cuts and seller type: ${esc((a.deal.motivationReasons || []).join(', ') || 'time listed')}">desperation ${a.deal.desperation}/100</span>`);
     if (a.value) {
       const basis = { model: 'same-model', chassis: 'same-chassis, berth and body', make: 'same-make' }[a.value.basis] || a.value.basis;
       const kit = a.price != null && a.value.net != null ? a.price - a.value.net : 0;
@@ -322,6 +325,7 @@
       listed: (x, y) => y._listed - x._listed,
       length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
       drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
+      desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._listed - x._listed,
       year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
       mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
       distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),

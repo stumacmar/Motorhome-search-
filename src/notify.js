@@ -40,7 +40,7 @@ function advertLine(a, wantedSpecs = []) {
   const flags = [];
   if (a.deal?.underpriced) flags.push('💰 ' + valueText(a));
   else if (a.value) flags.push(valueText(a));
-  if (a.deal?.motivated) flags.push('⏳ ' + marketText(a));
+  if (a.deal?.motivated) flags.push(`⏳ motivated ${a.deal.desperation}/100: ${(a.deal.motivationReasons || []).join(', ') || marketText(a)}`);
   else if (marketText(a) && a.deal?.daysListed > 0) flags.push(marketText(a));
   const specs = specText(a, wantedSpecs);
   if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
