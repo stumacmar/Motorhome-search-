@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-12T12:22:24.030Z",
+ "generatedAt": "2026-10-12T17:20:53.759Z",
  "wantedSpecs": [
   "Habitation air conditioning",
   "Self-levelling",
@@ -12,8 +12,8 @@
    "name": "6.25–7 m, all body types (Autotrader length)",
    "url": "https://www.autotrader.co.uk/motorhome-search?exclude-writeoff-categories=on&exterior-length-to=7000&price-to=70000&exterior-length-from=6250&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-12",
-   "total": 1130,
-   "read": 1129,
+   "total": 1135,
+   "read": 1134,
    "truncated": false,
    "error": null
   },
@@ -21,13 +21,32 @@
    "name": "Campervans and van conversions (length from advert)",
    "url": "https://www.autotrader.co.uk/motorhome-search?body-type=Campervan&body-type=Van+Conversion&exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-12",
-   "total": 2538,
-   "read": 1503,
+   "total": 2545,
+   "read": 1504,
    "truncated": false,
    "error": null
   }
  },
  "runs": [
+  {
+   "date": "2026-10-12T17:20:53.759Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 10,
+     "priceDrops": 4,
+     "gone": 5
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 13,
+     "priceDrops": 3,
+     "gone": 12
+    }
+   ]
+  },
   {
    "date": "2026-10-12T12:22:24.030Z",
    "searches": [
@@ -122,7 +141,7 @@
    ]
   }
  ],
- "hiddenByRules": 951,
+ "hiddenByRules": 953,
  "adverts": {
   "202610116889899": {
    "id": "202610116889899",
@@ -604,8 +623,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.2,
-    "expected": 57796,
+    "pct": -2.1,
+    "expected": 57685,
     "net": 56500,
     "comps": 9,
     "basis": "make",
@@ -1298,10 +1317,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.2,
-    "expected": 57379,
+    "pct": 3.3,
+    "expected": 57289,
     "net": 59195,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -1573,7 +1592,7 @@
    "redFlags": [],
    "value": {
     "pct": -12,
-    "expected": 53968,
+    "expected": 53969,
     "net": 47495,
     "comps": 27,
     "basis": "model",
@@ -1978,7 +1997,7 @@
    "location": "Bathgate (336 miles)",
    "distanceMiles": 336,
    "sellerType": "TRADE",
-   "image": null,
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1140b1287e074d86bc9af5e1ffd301fd.jpg",
    "url": "https://www.autotrader.co.uk/motorhome-details/202610086786928",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -2296,10 +2315,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.6,
-    "expected": 52731,
+    "pct": -1.5,
+    "expected": 52689,
     "net": 51895,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -2940,12 +2959,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.4,
-    "expected": 56695,
+    "pct": -2.2,
+    "expected": 55435,
     "net": 54195,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 30,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -3301,10 +3320,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.3,
-    "expected": 52638,
+    "pct": -0.3,
+    "expected": 52944,
     "net": 52795,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -3545,7 +3564,7 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
+    "pct": -4,
     "expected": 56487,
     "net": 54199,
     "comps": 27,
@@ -4011,10 +4030,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.3,
-    "expected": 46822,
+    "pct": 8.5,
+    "expected": 46702,
     "net": 50695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -4461,10 +4480,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.7,
-    "expected": 42200,
+    "pct": 4.2,
+    "expected": 42400,
     "net": 44190,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -4520,10 +4539,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-10-02",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -4543,27 +4561,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -3.3,
-    "expected": 53770,
-    "net": 51995,
-    "comps": 9,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 10,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": null,
    "details": {
     "chassis": "Volkswagen Transporter",
@@ -4680,7 +4679,7 @@
    "registeredYear": "2019 (19 reg)",
    "mileage": 13029,
    "mileageText": "13,029 miles",
-   "price": 49500,
+   "price": 48500,
    "location": "Middlesbrough (215 miles)",
    "distanceMiles": 215,
    "sellerType": "PRIVATE",
@@ -4698,6 +4697,10 @@
     {
      "date": "2026-10-11",
      "price": 49500
+    },
+    {
+     "date": "2026-10-12",
+     "price": 48500
     }
    ],
    "specs": [
@@ -4719,9 +4722,9 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.1,
+    "pct": -5.1,
     "expected": 49428,
-    "net": 47900,
+    "net": 46900,
     "comps": 12,
     "basis": "model",
     "adjusted": true
@@ -4730,14 +4733,15 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 10,
+    "desperation": 24,
     "motivationReasons": [
+     "1 price drop (-2%)",
      "private seller"
     ],
     "wantedHits": [],
     "daysListed": 11,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -2,
     "redFlags": 0,
     "isDeal": false
    },
@@ -4996,10 +5000,10 @@
     }
    ],
    "value": {
-    "pct": 8.9,
-    "expected": 43966,
+    "pct": 8.8,
+    "expected": 44020,
     "net": 47895,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -5169,11 +5173,11 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 11.7,
-    "expected": 56695,
+    "pct": 13.8,
+    "expected": 55690,
     "net": 63350,
-    "comps": 3,
-    "basis": "model",
+    "comps": 5,
+    "basis": "chassis",
     "adjusted": false
    },
    "deal": {
@@ -5364,10 +5368,10 @@
     }
    ],
    "value": {
-    "pct": 14.5,
-    "expected": 40170,
+    "pct": 15.5,
+    "expected": 39824,
     "net": 45995,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -5439,10 +5443,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.3,
-    "expected": 55305,
+    "pct": -13.4,
+    "expected": 55968,
     "net": 48495,
-    "comps": 20,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -6484,10 +6488,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -13.9,
-    "expected": 60281,
+    "pct": -13.6,
+    "expected": 60097,
     "net": 51900,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -7639,7 +7643,7 @@
    "redFlags": [],
    "value": {
     "pct": -1.2,
-    "expected": 62659,
+    "expected": 62658,
     "net": 61891,
     "comps": 25,
     "basis": "model",
@@ -7917,9 +7921,9 @@
    "redFlags": [],
    "value": {
     "pct": 5.7,
-    "expected": 63020,
+    "expected": 63019,
     "net": 66590,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -8157,7 +8161,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.2,
-    "expected": 58593,
+    "expected": 58594,
     "net": 56150,
     "comps": 27,
     "basis": "model",
@@ -8368,10 +8372,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-23",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -8396,29 +8399,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 6.1,
-    "expected": 54195,
-    "net": 57495,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 2,
-    "motivationReasons": [],
-    "wantedHits": [
-     "Rear air suspension"
-    ],
-    "daysListed": 19,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.4,
     "source": "stated in advert"
@@ -8504,7 +8486,7 @@
    "redFlags": [],
    "value": {
     "pct": 2.7,
-    "expected": 62521,
+    "expected": 62520,
     "net": 64195,
     "comps": 25,
     "basis": "model",
@@ -8597,10 +8579,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.3,
-    "expected": 46374,
+    "pct": 8.2,
+    "expected": 46383,
     "net": 50200,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -8858,9 +8840,9 @@
    "redFlags": [],
    "value": {
     "pct": -5,
-    "expected": 57918,
+    "expected": 57914,
     "net": 54995,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -9133,10 +9115,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7.8,
-    "expected": 57919,
+    "pct": -7.9,
+    "expected": 57986,
     "net": 53399,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -9295,8 +9277,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -15.6,
-    "expected": 52116,
+    "pct": -15.5,
+    "expected": 52053,
     "net": 43995,
     "comps": 8,
     "basis": "model",
@@ -10889,9 +10871,9 @@
    "redFlags": [],
    "value": {
     "pct": 4.7,
-    "expected": 63056,
+    "expected": 63052,
     "net": 65995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -10998,9 +10980,9 @@
    "redFlags": [],
    "value": {
     "pct": 4.7,
-    "expected": 63056,
+    "expected": 63052,
     "net": 65995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -11272,10 +11254,10 @@
     }
    ],
    "value": {
-    "pct": 11.5,
-    "expected": 39195,
+    "pct": 11.4,
+    "expected": 39218,
     "net": 43695,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -11423,10 +11405,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-15",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -11466,29 +11447,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -3.8,
-    "expected": 58923,
-    "net": 56695,
-    "comps": 4,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 4,
-    "motivationReasons": [],
-    "wantedHits": [
-     "Rear air suspension"
-    ],
-    "daysListed": 27,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": null,
    "details": {
     "chassis": null,
@@ -11628,10 +11588,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-15",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -11651,27 +11610,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 1.5,
-    "expected": 46795,
-    "net": 47495,
-    "comps": 5,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 4,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 27,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": null,
    "details": {
     "chassis": "Volkswagen Transporter",
@@ -11737,8 +11677,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 15.6,
-    "expected": 54337,
+    "pct": 15.5,
+    "expected": 54348,
     "net": 62795,
     "comps": 9,
     "basis": "make",
@@ -12382,8 +12322,8 @@
     }
    ],
    "value": {
-    "pct": -5.1,
-    "expected": 44268,
+    "pct": -5,
+    "expected": 44209,
     "net": 42000,
     "comps": 11,
     "basis": "model",
@@ -12904,10 +12844,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 39608,
+    "pct": -5.3,
+    "expected": 40140,
     "net": 37995,
-    "comps": 13,
+    "comps": 12,
     "basis": "make",
     "adjusted": true
    },
@@ -13358,8 +13298,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.8,
-    "expected": 38267,
+    "pct": -8.3,
+    "expected": 38912,
     "net": 35670,
     "comps": 8,
     "basis": "model",
@@ -13588,10 +13528,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.7,
-    "expected": 46944,
+    "pct": -2.4,
+    "expected": 46827,
     "net": 45695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -13923,10 +13863,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.2,
-    "expected": 49237,
+    "pct": -9.3,
+    "expected": 49271,
     "net": 44695,
-    "comps": 29,
+    "comps": 28,
     "basis": "make",
     "adjusted": true
    },
@@ -14086,10 +14026,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.2,
-    "expected": 43295,
+    "pct": -3.2,
+    "expected": 44190,
     "net": 42795,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -15028,10 +14968,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.8,
-    "expected": 40941,
+    "pct": 5,
+    "expected": 40465,
     "net": 42495,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -15367,10 +15307,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -1.5,
-    "expected": 47495,
+    "pct": 0.1,
+    "expected": 46748,
     "net": 46795,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -15802,10 +15742,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.2,
-    "expected": 43120,
+    "pct": -4.8,
+    "expected": 42964,
     "net": 40895,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -15977,12 +15917,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.8,
-    "expected": 50900,
+    "pct": -10.2,
+    "expected": 50579,
     "net": 45395,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -16129,8 +16069,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 47900,
+    "pct": 0.1,
+    "expected": 46900,
     "net": 46950,
     "comps": 7,
     "basis": "make",
@@ -16495,10 +16435,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -15.6,
-    "expected": 48633,
+    "pct": -17.9,
+    "expected": 50008,
     "net": 41047,
-    "comps": 18,
+    "comps": 17,
     "basis": "model",
     "adjusted": true
    },
@@ -16684,12 +16624,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.2,
-    "expected": 50900,
+    "pct": -12.7,
+    "expected": 51170,
     "net": 44695,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -16779,10 +16719,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.7,
-    "expected": 42045,
+    "pct": -1.9,
+    "expected": 41695,
     "net": 40895,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -17076,10 +17016,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.2,
-    "expected": 39344,
+    "pct": -12.2,
+    "expected": 39785,
     "net": 34950,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -17218,10 +17158,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 3.1,
-    "expected": 38788,
+    "pct": 3.3,
+    "expected": 38726,
     "net": 39990,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -17592,10 +17532,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3,
-    "expected": 43295,
+    "pct": -5,
+    "expected": 44190,
     "net": 42000,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -17767,9 +17707,9 @@
    "redFlags": [],
    "value": {
     "pct": 7.3,
-    "expected": 39319,
+    "expected": 39323,
     "net": 42195,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -18762,8 +18702,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.5,
-    "expected": 51520,
+    "pct": -5.4,
+    "expected": 51459,
     "net": 48699,
     "comps": 8,
     "basis": "model",
@@ -19233,10 +19173,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 37.1,
-    "expected": 41567,
+    "pct": 37.8,
+    "expected": 41374,
     "net": 56995,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -19503,10 +19443,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11,
-    "expected": 59771,
+    "pct": -10.8,
+    "expected": 59635,
     "net": 53195,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -19578,9 +19518,9 @@
    ],
    "value": {
     "pct": 17.7,
-    "expected": 41635,
+    "expected": 41636,
     "net": 48995,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -20028,8 +19968,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 9.6,
-    "expected": 42330,
+    "pct": 9.7,
+    "expected": 42297,
     "net": 46400,
     "comps": 8,
     "basis": "model",
@@ -20196,10 +20136,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 13.2,
-    "expected": 46795,
+    "pct": 15.5,
+    "expected": 45898,
     "net": 52995,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -21518,15 +21458,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 56284,
+    "pct": -22.6,
+    "expected": 67790,
     "net": 52500,
-    "comps": 32,
-    "basis": "make",
-    "adjusted": true
+    "comps": 3,
+    "basis": "model",
+    "adjusted": false
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
     "desperation": 18,
@@ -21540,7 +21480,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": {
     "metres": 6.36,
@@ -23063,9 +23003,9 @@
    "redFlags": [],
    "value": {
     "pct": -2.9,
-    "expected": 63326,
+    "expected": 63307,
     "net": 61499,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -24086,15 +24026,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9,
-    "expected": 58693,
+    "pct": -10,
+    "expected": 59357,
     "net": 53400,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
     "desperation": 11,
@@ -24104,7 +24044,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": null,
    "details": {
@@ -24280,10 +24220,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.1,
-    "expected": 60601,
+    "pct": -8,
+    "expected": 60505,
     "net": 55695,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -24455,10 +24395,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.1,
-    "expected": 61548,
+    "pct": -1.4,
+    "expected": 62395,
     "net": 61495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -25198,7 +25138,7 @@
    "redFlags": [],
    "value": {
     "pct": 6.3,
-    "expected": 62395,
+    "expected": 62394,
     "net": 66295,
     "comps": 25,
     "basis": "model",
@@ -25278,9 +25218,9 @@
    "redFlags": [],
    "value": {
     "pct": -0.4,
-    "expected": 63236,
+    "expected": 63223,
     "net": 62995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -25727,7 +25667,7 @@
     "pct": 1.7,
     "expected": 62945,
     "net": 63995,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -26077,10 +26017,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 19.3,
-    "expected": 53326,
+    "pct": 18,
+    "expected": 53876,
     "net": 63595,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -26155,10 +26095,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.6,
-    "expected": 61098,
+    "pct": 4.9,
+    "expected": 61495,
     "net": 64495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -26344,7 +26284,7 @@
    "redFlags": [],
    "value": {
     "pct": -5.6,
-    "expected": 62814,
+    "expected": 62813,
     "net": 59295,
     "comps": 25,
     "basis": "model",
@@ -26863,10 +26803,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 16.7,
-    "expected": 42200,
+    "pct": 16.2,
+    "expected": 42400,
     "net": 49250,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -27046,10 +26986,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.4,
-    "expected": 54195,
+    "pct": 5.4,
+    "expected": 50695,
     "net": 53450,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -28593,7 +28533,7 @@
     "pct": -7.8,
     "expected": 57833,
     "net": 53295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -29322,10 +29262,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.1,
-    "expected": 46825,
+    "pct": -1.4,
+    "expected": 47570,
     "net": 46895,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -29912,12 +29852,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.4,
-    "expected": 50900,
+    "pct": -1.9,
+    "expected": 50107,
     "net": 49150,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -31648,10 +31588,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.6,
-    "expected": 46795,
+    "pct": 5.7,
+    "expected": 45898,
     "net": 48495,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -31740,10 +31680,10 @@
     }
    ],
    "value": {
-    "pct": -2.9,
-    "expected": 50172,
+    "pct": -2.7,
+    "expected": 50029,
     "net": 48695,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -31834,9 +31774,9 @@
    "redFlags": [],
    "value": {
     "pct": -0.4,
-    "expected": 63236,
+    "expected": 63223,
     "net": 62995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -32310,12 +32250,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.7,
-    "expected": 57495,
+    "pct": -6.6,
+    "expected": 58027,
     "net": 54195,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 32,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -32418,10 +32358,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.1,
-    "expected": 60437,
+    "pct": 0.2,
+    "expected": 60385,
     "net": 60500,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -32528,10 +32468,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 30.3,
-    "expected": 43502,
+    "pct": 28.5,
+    "expected": 44112,
     "net": 56699,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -32808,7 +32748,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.8,
-    "expected": 62784,
+    "expected": 62783,
     "net": 59795,
     "comps": 25,
     "basis": "model",
@@ -33545,12 +33485,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.5,
-    "expected": 57495,
+    "pct": 0.5,
+    "expected": 64389,
     "net": 64690,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 13,
+    "basis": "chassis",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -33854,9 +33794,9 @@
    "redFlags": [],
    "value": {
     "pct": -1.4,
-    "expected": 63272,
+    "expected": 63257,
     "net": 62395,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -34950,7 +34890,7 @@
     "pct": 1.7,
     "expected": 62945,
     "net": 63995,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -35464,8 +35404,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2.9,
-    "expected": 51454,
+    "pct": -2.8,
+    "expected": 51417,
     "net": 49985,
     "comps": 8,
     "basis": "model",
@@ -35560,10 +35500,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.4,
-    "expected": 54914,
+    "pct": 1.2,
+    "expected": 55027,
     "net": 55695,
-    "comps": 51,
+    "comps": 50,
     "basis": "make",
     "adjusted": true
    },
@@ -35761,7 +35701,7 @@
    "redFlags": [],
    "value": {
     "pct": 2,
-    "expected": 62545,
+    "expected": 62544,
     "net": 63795,
     "comps": 25,
     "basis": "model",
@@ -36159,7 +36099,7 @@
    "redFlags": [],
    "value": {
     "pct": 7.3,
-    "expected": 55800,
+    "expected": 55799,
     "net": 59846,
     "comps": 27,
     "basis": "model",
@@ -37722,10 +37662,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.3,
-    "expected": 46822,
+    "pct": 8.6,
+    "expected": 46702,
     "net": 50695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -38662,9 +38602,9 @@
    "redFlags": [],
    "value": {
     "pct": 5.7,
-    "expected": 56291,
+    "expected": 56278,
     "net": 59495,
-    "comps": 26,
+    "comps": 27,
     "basis": "chassis",
     "adjusted": true
    },
@@ -39204,7 +39144,7 @@
    "location": "Ipswich (67 miles)",
    "distanceMiles": 67,
    "sellerType": "TRADE",
-   "image": "https://m.atcdn.co.uk/a/media/w480h360/1fb4af57f482490aac11a2b7fe596ab0.jpg",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/60285022b9954ced8ca991d5772a52a0.jpg",
    "url": "https://www.autotrader.co.uk/motorhome-details/202610106868188",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -39301,7 +39241,7 @@
    "redFlags": [],
    "value": {
     "pct": 9.6,
-    "expected": 62277,
+    "expected": 62276,
     "net": 68267,
     "comps": 25,
     "basis": "model",
@@ -39590,10 +39530,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.1,
-    "expected": 61098,
+    "pct": 1.5,
+    "expected": 61495,
     "net": 62395,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -40229,10 +40169,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.6,
-    "expected": 40934,
+    "pct": 4.8,
+    "expected": 40461,
     "net": 42399,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -40413,10 +40353,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 50567,
+    "pct": -6.4,
+    "expected": 50414,
     "net": 47199,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -43645,13 +43585,13 @@
    "model": "Expedition 68",
    "year": 2024,
    "registeredYear": "2024 (24 reg)",
-   "mileage": 30026,
-   "mileageText": "30,026 miles",
+   "mileage": 30000,
+   "mileageText": "30,000 miles",
    "price": 50995,
-   "location": "Pershore (95 miles)",
-   "distanceMiles": 95,
+   "location": "Bellshill (339 miles)",
+   "distanceMiles": 339,
    "sellerType": "PRIVATE",
-   "image": "https://m.atcdn.co.uk/a/media/w480h360/9fe7ddf40cee4b0e92e7a9ced6bc82d9.jpg",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/810480265fb54448a347857568fb9316.jpg",
    "url": "https://www.autotrader.co.uk/motorhome-details/202610076771230",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -43686,7 +43626,7 @@
    "redFlags": [],
    "value": {
     "pct": 0.6,
-    "expected": 49375,
+    "expected": 49378,
     "net": 49695,
     "comps": 27,
     "basis": "model",
@@ -44336,10 +44276,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -16.9,
-    "expected": 41412,
+    "pct": -15.9,
+    "expected": 40918,
     "net": 34399,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -46716,10 +46656,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.5,
-    "expected": 58378,
+    "pct": 0.4,
+    "expected": 58465,
     "net": 58699,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -47008,10 +46948,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.4,
-    "expected": 59947,
+    "pct": -6.3,
+    "expected": 59835,
     "net": 56095,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -47067,10 +47007,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-10-05",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -47105,27 +47044,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -0.9,
-    "expected": 54161,
-    "net": 53699,
-    "comps": 11,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 7,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.36,
     "source": "spec sheet"
@@ -47383,9 +47303,9 @@
    "redFlags": [],
    "value": {
     "pct": 9.6,
-    "expected": 54733,
+    "expected": 54728,
     "net": 59995,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -47803,7 +47723,7 @@
    "registeredYear": "2020 (69 reg)",
    "mileage": 167000,
    "mileageText": "167,000 miles",
-   "price": 45495,
+   "price": 43295,
    "location": "Halifax (169 miles)",
    "distanceMiles": 169,
    "sellerType": "TRADE",
@@ -47821,6 +47741,10 @@
     {
      "date": "2026-10-11",
      "price": 45495
+    },
+    {
+     "date": "2026-10-12",
+     "price": 43295
     }
    ],
    "specs": [
@@ -47847,25 +47771,27 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.3,
+    "pct": -12.9,
     "expected": 47195,
-    "net": 43295,
+    "net": 41095,
     "comps": 3,
     "basis": "model",
     "adjusted": false
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
+    "desperation": 20,
+    "motivationReasons": [
+     "1 price drop (-4.8%)"
+    ],
     "wantedHits": [],
     "daysListed": 8,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -4.8,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": {
     "metres": 6.8,
@@ -48149,10 +48075,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.7,
-    "expected": 47513,
+    "pct": 22.4,
+    "expected": 46062,
     "net": 56395,
-    "comps": 12,
+    "comps": 13,
     "basis": "make",
     "adjusted": true
    },
@@ -48475,7 +48401,7 @@
    "redFlags": [],
    "value": {
     "pct": 8.4,
-    "expected": 41686,
+    "expected": 41694,
     "net": 45195,
     "comps": 8,
     "basis": "model",
@@ -48677,10 +48603,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.5,
-    "expected": 58426,
+    "pct": -5.6,
+    "expected": 58497,
     "net": 55195,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -48888,10 +48814,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.8,
-    "expected": 56136,
+    "pct": -9.6,
+    "expected": 56637,
     "net": 51200,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -50075,9 +50001,9 @@
    "redFlags": [],
    "value": {
     "pct": 8.2,
-    "expected": 28750,
+    "expected": 28740,
     "net": 31100,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -50783,10 +50709,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.7,
-    "expected": 41695,
+    "pct": -2.8,
+    "expected": 41295,
     "net": 40150,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -51693,9 +51619,9 @@
    "redFlags": [],
    "value": {
     "pct": 15.4,
-    "expected": 56595,
+    "expected": 56576,
     "net": 65295,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -51868,10 +51794,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.8,
-    "expected": 61583,
+    "pct": -11.7,
+    "expected": 61488,
     "net": 54295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -52520,10 +52446,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.8,
-    "expected": 42045,
+    "pct": -8,
+    "expected": 41695,
     "net": 38350,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -53053,8 +52979,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.6,
-    "expected": 45704,
+    "pct": -2.4,
+    "expected": 45602,
     "net": 44500,
     "comps": 11,
     "basis": "model",
@@ -53231,10 +53157,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.4,
-    "expected": 43079,
+    "pct": 5.7,
+    "expected": 42960,
     "net": 45395,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -55653,10 +55579,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.6,
-    "expected": 60456,
+    "pct": -3.5,
+    "expected": 60400,
     "net": 58295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -55756,10 +55682,10 @@
     }
    ],
    "value": {
-    "pct": 8.9,
-    "expected": 53878,
+    "pct": 9,
+    "expected": 53859,
     "net": 58695,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -56136,10 +56062,10 @@
     }
    ],
    "value": {
-    "pct": 5.8,
-    "expected": 41864,
+    "pct": 6.7,
+    "expected": 41500,
     "net": 44300,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -56228,10 +56154,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.3,
-    "expected": 41127,
+    "pct": -3.2,
+    "expected": 40645,
     "net": 39350,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -56409,10 +56335,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.7,
-    "expected": 41295,
+    "pct": 3.7,
+    "expected": 40895,
     "net": 42395,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -56512,8 +56438,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.3,
-    "expected": 57958,
+    "pct": 0.1,
+    "expected": 57127,
     "net": 57195,
     "comps": 14,
     "basis": "make",
@@ -56611,9 +56537,9 @@
    "redFlags": [],
    "value": {
     "pct": -10.5,
-    "expected": 42683,
+    "expected": 42700,
     "net": 38199,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -56879,10 +56805,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.7,
-    "expected": 48462,
+    "pct": 2,
+    "expected": 48316,
     "net": 49295,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -56971,10 +56897,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.7,
-    "expected": 39177,
+    "pct": 7.6,
+    "expected": 39228,
     "net": 42195,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -57214,7 +57140,7 @@
    "registeredYear": "2022 (72 reg)",
    "mileage": 13400,
    "mileageText": "13,400 miles",
-   "price": 52950,
+   "price": 51950,
    "location": "Lancaster (204 miles)",
    "distanceMiles": 204,
    "sellerType": "PRIVATE",
@@ -57231,6 +57157,10 @@
     {
      "date": "2026-10-11",
      "price": 52950
+    },
+    {
+     "date": "2026-10-12",
+     "price": 51950
     }
    ],
    "specs": [
@@ -57267,9 +57197,9 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.3,
+    "pct": -14.1,
     "expected": 57190,
-    "net": 50150,
+    "net": 49150,
     "comps": 5,
     "basis": "chassis",
     "adjusted": false
@@ -57278,14 +57208,15 @@
     "underpriced": true,
     "highSpec": false,
     "motivated": false,
-    "desperation": 12,
+    "desperation": 25,
     "motivationReasons": [
+     "1 price drop (-1.9%)",
      "private seller"
     ],
     "wantedHits": [],
     "daysListed": 19,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -1.9,
     "redFlags": 0,
     "isDeal": true
    },
@@ -57797,10 +57728,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.4,
-    "expected": 41038,
+    "pct": 1.6,
+    "expected": 40556,
     "net": 41195,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -58623,10 +58554,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0,
-    "expected": 51200,
+    "pct": 3.4,
+    "expected": 49498,
     "net": 51195,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -58890,8 +58821,8 @@
     }
    ],
    "value": {
-    "pct": -6.5,
-    "expected": 40642,
+    "pct": -6.7,
+    "expected": 40737,
     "net": 38000,
     "comps": 8,
     "basis": "model",
@@ -58994,16 +58925,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -24.4,
-    "expected": 63395,
-    "net": 47895,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
-    "underpriced": true,
+    "underpriced": false,
     "highSpec": false,
     "motivated": false,
     "desperation": 2,
@@ -59013,7 +58937,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.75,
@@ -62046,10 +61970,10 @@
     }
    ],
    "value": {
-    "pct": 19.1,
-    "expected": 40284,
+    "pct": 20.5,
+    "expected": 39831,
     "net": 47995,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -62263,10 +62187,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-18",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -62287,19 +62210,7 @@
    ],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 3,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 24,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "deal": null,
    "length": {
     "metres": 6.4,
     "source": "spec sheet"
@@ -62433,10 +62344,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 59057,
+    "pct": -2.1,
+    "expected": 59132,
     "net": 57895,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -62607,14 +62518,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 2.5,
-    "expected": 61645,
-    "net": 63195,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -62956,10 +62860,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.1,
-    "expected": 59523,
+    "pct": 6.3,
+    "expected": 59402,
     "net": 63157,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -64562,8 +64466,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 55775,
+    "pct": -2.7,
+    "expected": 54999,
     "net": 53495,
     "comps": 9,
     "basis": "chassis",
@@ -64747,8 +64651,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -5.2,
-    "expected": 60100,
+    "pct": -4.1,
+    "expected": 59459,
     "net": 56995,
     "comps": 14,
     "basis": "make",
@@ -66524,10 +66428,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.2,
-    "expected": 42549,
+    "pct": -8.6,
+    "expected": 42268,
     "net": 38636,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -66715,8 +66619,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4,
-    "expected": 52281,
+    "pct": -3.9,
+    "expected": 52230,
     "net": 50199,
     "comps": 27,
     "basis": "make",
@@ -67361,10 +67265,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 26.2,
-    "expected": 55073,
+    "pct": 25.2,
+    "expected": 55525,
     "net": 69495,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -68277,7 +68181,7 @@
    "redFlags": [],
    "value": {
     "pct": -12.2,
-    "expected": 57434,
+    "expected": 57433,
     "net": 50400,
     "comps": 18,
     "basis": "chassis",
@@ -68328,7 +68232,7 @@
    "registeredYear": "2024 (73 reg)",
    "mileage": 8200,
    "mileageText": "8,200 miles",
-   "price": 63830,
+   "price": 57250,
    "location": "Halifax (169 miles)",
    "distanceMiles": 169,
    "sellerType": "TRADE",
@@ -68345,6 +68249,10 @@
     {
      "date": "2026-10-11",
      "price": 63830
+    },
+    {
+     "date": "2026-10-12",
+     "price": 57250
     }
    ],
    "specs": [
@@ -68366,9 +68274,9 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.3,
+    "pct": -5,
     "expected": 58167,
-    "net": 61830,
+    "net": 55250,
     "comps": 9,
     "basis": "chassis",
     "adjusted": true
@@ -68377,12 +68285,14 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 5,
-    "motivationReasons": [],
+    "desperation": 35,
+    "motivationReasons": [
+     "1 price drop (-10.3%)"
+    ],
     "wantedHits": [],
     "daysListed": 31,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -10.3,
     "redFlags": 0,
     "isDeal": false
    },
@@ -68454,10 +68364,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.2,
-    "expected": 50181,
+    "pct": 18.6,
+    "expected": 49989,
     "net": 59295,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -69320,10 +69230,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.2,
-    "expected": 59906,
+    "pct": 8,
+    "expected": 59986,
     "net": 64795,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -71529,10 +71439,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-07",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -71552,27 +71461,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 1.9,
-    "expected": 51198,
-    "net": 52195,
-    "comps": 6,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 6,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 35,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.8,
     "source": "spec sheet"
@@ -71803,10 +71693,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 11.3,
-    "expected": 39997,
+    "pct": 10,
+    "expected": 40470,
     "net": 44500,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -72528,7 +72418,7 @@
   "202609045716607": {
    "id": "202609045716607",
    "title": "AUTO-SLEEPERS BOURTON",
-   "subTitle": "MERCEDES BASED LUXURY AUTOMATIC MOTORHOME, 2 SINGLE BEDS OR LARGE DOUBLE 2.1",
+   "subTitle": "MERCEDES BASED LUXURY AUTOMATIC MOTORHOME, 2 SINGLE BEDS OR LARGE DOUBLE, FULL SERVICE HISTORY 2.1",
    "make": "Auto-Sleepers",
    "model": "Bourton",
    "year": 2017,
@@ -72919,10 +72809,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -10.6,
-    "expected": 44723,
+    "pct": -10.2,
+    "expected": 44529,
     "net": 39999,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -73011,10 +72901,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.4,
-    "expected": 41124,
+    "pct": -4.3,
+    "expected": 40647,
     "net": 38899,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -73429,8 +73319,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.3,
-    "expected": 44117,
+    "pct": 1.5,
+    "expected": 44039,
     "net": 44700,
     "comps": 8,
     "basis": "model",
@@ -74619,10 +74509,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-09-01",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -74657,27 +74546,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -5.8,
-    "expected": 63395,
-    "net": 59695,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 8,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 41,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.75,
     "source": "spec sheet"
@@ -76826,10 +76696,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.7,
-    "expected": 64145,
+    "pct": -2.4,
+    "expected": 61995,
     "net": 60495,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -76915,10 +76785,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.5,
-    "expected": 39894,
+    "pct": -2.5,
+    "expected": 39482,
     "net": 38499,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -77687,10 +77557,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6,
-    "expected": 46982,
+    "pct": -5.8,
+    "expected": 46866,
     "net": 44150,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -77800,10 +77670,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.6,
-    "expected": 42329,
+    "pct": -4.5,
+    "expected": 42315,
     "net": 40400,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -78345,10 +78215,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.5,
-    "expected": 40278,
+    "pct": 6.4,
+    "expected": 39938,
     "net": 42499,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -78636,10 +78506,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.5,
-    "expected": 36858,
+    "pct": -11.3,
+    "expected": 37209,
     "net": 32995,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -79004,10 +78874,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.1,
-    "expected": 61945,
+    "pct": -3.8,
+    "expected": 62395,
     "net": 59995,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -79422,7 +79292,7 @@
    ],
    "value": {
     "pct": -17.6,
-    "expected": 58508,
+    "expected": 58507,
     "net": 48200,
     "comps": 18,
     "basis": "chassis",
@@ -80291,10 +80161,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 31,
-    "expected": 18858,
+    "pct": 44.9,
+    "expected": 17051,
     "net": 24700,
-    "comps": 13,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -81065,10 +80935,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.7,
-    "expected": 39800,
+    "pct": 5.4,
+    "expected": 39550,
     "net": 41690,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -81168,10 +81038,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.6,
-    "expected": 46908,
+    "pct": 0.9,
+    "expected": 46790,
     "net": 47195,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -82313,8 +82183,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.6,
-    "expected": 53670,
+    "pct": 7.5,
+    "expected": 53193,
     "net": 57190,
     "comps": 6,
     "basis": "chassis",
@@ -82412,7 +82282,7 @@
    "redFlags": [],
    "value": {
     "pct": -22.1,
-    "expected": 48496,
+    "expected": 48498,
     "net": 37795,
     "comps": 10,
     "basis": "model",
@@ -82806,9 +82676,9 @@
    "redFlags": [],
    "value": {
     "pct": 16.1,
-    "expected": 54248,
+    "expected": 54244,
     "net": 62990,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -82977,8 +82847,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.3,
-    "expected": 61867,
+    "pct": -3.4,
+    "expected": 61254,
     "net": 59195,
     "comps": 21,
     "basis": "make",
@@ -83788,10 +83658,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -15,
-    "expected": 42577,
+    "pct": -14.9,
+    "expected": 42554,
     "net": 36199,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -84289,12 +84159,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.5,
-    "expected": 64699,
+    "pct": 2.8,
+    "expected": 60125,
     "net": 61795,
-    "comps": 5,
-    "basis": "chassis",
-    "adjusted": false
+    "comps": 66,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -84882,10 +84752,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3,
-    "expected": 63943,
+    "pct": 0,
+    "expected": 61995,
     "net": 61995,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -85073,8 +84943,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 29.9,
-    "expected": 45171,
+    "pct": 30.1,
+    "expected": 45111,
     "net": 58695,
     "comps": 12,
     "basis": "model",
@@ -85488,10 +85358,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.4,
-    "expected": 61793,
+    "pct": 7.1,
+    "expected": 61995,
     "net": 66395,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -85818,12 +85688,12 @@
     }
    ],
    "value": {
-    "pct": 2.4,
-    "expected": 41695,
+    "pct": -1.3,
+    "expected": 43236,
     "net": 42695,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -87612,10 +87482,10 @@
     }
    ],
    "value": {
-    "pct": 1.3,
-    "expected": 46900,
+    "pct": 1.5,
+    "expected": 46783,
     "net": 47495,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -87876,10 +87746,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -7.8,
-    "expected": 43379,
+    "pct": -7.4,
+    "expected": 43180,
     "net": 39995,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -87972,10 +87842,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 43462,
+    "pct": -3.9,
+    "expected": 43372,
     "net": 41695,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -88440,10 +88310,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.3,
-    "expected": 59682,
+    "pct": -5.5,
+    "expected": 59764,
     "net": 56495,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -88718,7 +88588,7 @@
     "pct": -1,
     "expected": 62995,
     "net": 62395,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -88899,8 +88769,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.7,
-    "expected": 54010,
+    "pct": -8.6,
+    "expected": 53963,
     "net": 49295,
     "comps": 27,
     "basis": "make",
@@ -89021,10 +88891,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.8,
-    "expected": 51737,
+    "pct": 4.9,
+    "expected": 51688,
     "net": 54195,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -89117,7 +88987,7 @@
     "pct": 4.5,
     "expected": 62945,
     "net": 65786,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -89391,10 +89261,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.1,
-    "expected": 61098,
+    "pct": 2.4,
+    "expected": 61495,
     "net": 62995,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -89968,10 +89838,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.3,
-    "expected": 55673,
+    "pct": -6.8,
+    "expected": 54195,
     "net": 50495,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -90141,10 +90011,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.8,
-    "expected": 25515,
+    "pct": 8.2,
+    "expected": 25407,
     "net": 27500,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -90855,14 +90725,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 5.5,
-    "expected": 61445,
-    "net": 64795,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -91050,10 +90913,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.9,
-    "expected": 50734,
+    "pct": -10.6,
+    "expected": 50559,
     "net": 45195,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -91205,10 +91068,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.3,
-    "expected": 61793,
+    "pct": 6.9,
+    "expected": 61995,
     "net": 66295,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -91923,8 +91786,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3,
-    "expected": 57563,
+    "pct": 4.6,
+    "expected": 56700,
     "net": 59300,
     "comps": 10,
     "basis": "chassis",
@@ -92306,10 +92169,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7.1,
-    "expected": 64145,
+    "pct": -3.9,
+    "expected": 61995,
     "net": 59590,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -92409,10 +92272,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4,
-    "expected": 64145,
+    "pct": -0.7,
+    "expected": 61995,
     "net": 61590,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -93388,10 +93251,10 @@
     }
    ],
    "value": {
-    "pct": -7.2,
-    "expected": 58427,
+    "pct": -7.4,
+    "expected": 58523,
     "net": 54195,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -93836,7 +93699,7 @@
     "pct": 4.5,
     "expected": 62945,
     "net": 65785,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -93913,10 +93776,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.6,
-    "expected": 50763,
+    "pct": -8.3,
+    "expected": 50591,
     "net": 46395,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -96093,10 +95956,10 @@
     }
    ],
    "value": {
-    "pct": -5.9,
-    "expected": 41453,
+    "pct": -7.1,
+    "expected": 41975,
     "net": 38999,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -96276,10 +96139,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.8,
-    "expected": 59151,
+    "pct": -0.9,
+    "expected": 59227,
     "net": 58695,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -96758,14 +96621,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -0.6,
-    "expected": 63995,
-    "net": 63595,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -97114,7 +96970,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.6,
-    "expected": 62778,
+    "expected": 62777,
     "net": 59895,
     "comps": 25,
     "basis": "model",
@@ -97456,10 +97312,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2,
-    "expected": 40895,
+    "pct": 2.9,
+    "expected": 40523,
     "net": 41695,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -97642,10 +97498,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7,
-    "expected": 61945,
+    "pct": -7.7,
+    "expected": 62395,
     "net": 57595,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -98332,8 +98188,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 12.3,
-    "expected": 56964,
+    "pct": 12.6,
+    "expected": 56853,
     "net": 63995,
     "comps": 9,
     "basis": "make",
@@ -98738,7 +98594,7 @@
    "redFlags": [],
    "value": {
     "pct": -7.6,
-    "expected": 62886,
+    "expected": 62885,
     "net": 58095,
     "comps": 25,
     "basis": "model",
@@ -99960,10 +99816,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0,
-    "expected": 51195,
+    "pct": 3.4,
+    "expected": 49495,
     "net": 51200,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -100349,9 +100205,9 @@
    "redFlags": [],
    "value": {
     "pct": 1.9,
-    "expected": 54665,
+    "expected": 54664,
     "net": 55695,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -101022,10 +100878,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.4,
-    "expected": 61945,
+    "pct": -5.1,
+    "expected": 62395,
     "net": 59195,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -101609,8 +101465,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6,
-    "expected": 61502,
+    "pct": 7.1,
+    "expected": 60876,
     "net": 65195,
     "comps": 21,
     "basis": "make",
@@ -102070,7 +101926,7 @@
    "redFlags": [],
    "value": {
     "pct": -2.7,
-    "expected": 62712,
+    "expected": 62711,
     "net": 61001,
     "comps": 25,
     "basis": "model",
@@ -102416,10 +102272,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 9.6,
-    "expected": 61793,
+    "pct": 9.2,
+    "expected": 61995,
     "net": 67695,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -103438,10 +103294,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -17.7,
-    "expected": 47117,
+    "pct": -17.5,
+    "expected": 46998,
     "net": 38795,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -104696,8 +104552,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.6,
-    "expected": 49727,
+    "pct": 6.1,
+    "expected": 48996,
     "net": 51995,
     "comps": 9,
     "basis": "chassis",
@@ -104792,9 +104648,9 @@
    "redFlags": [],
    "value": {
     "pct": -11.3,
-    "expected": 51200,
+    "expected": 51198,
     "net": 45399,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -104891,10 +104747,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1,
-    "expected": 58091,
+    "pct": 0.9,
+    "expected": 58168,
     "net": 58699,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -104982,10 +104838,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.3,
-    "expected": 61945,
+    "pct": -3,
+    "expected": 62395,
     "net": 60495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -105056,10 +104912,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -1.5,
-    "expected": 40620,
+    "pct": -0.6,
+    "expected": 40236,
     "net": 39995,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -105534,14 +105390,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 11,
-    "expected": 61445,
-    "net": 68195,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -106747,10 +106596,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -17.6,
-    "expected": 55673,
+    "pct": -15.3,
+    "expected": 54195,
     "net": 45899,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -106832,10 +106681,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 61945,
+    "pct": -2.7,
+    "expected": 62395,
     "net": 60700,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -107237,10 +107086,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -7.5,
-    "expected": 43260,
+    "pct": -7.1,
+    "expected": 43072,
     "net": 39995,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -108203,10 +108052,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.2,
-    "expected": 58139,
+    "pct": 3.1,
+    "expected": 58214,
     "net": 59995,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -110457,8 +110306,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3,
-    "expected": 61624,
+    "pct": 4.1,
+    "expected": 60999,
     "net": 63495,
     "comps": 21,
     "basis": "make",
@@ -110986,10 +110835,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-03-25",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -111024,29 +110872,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 10.5,
-    "expected": 46800,
-    "net": 51695,
-    "comps": 42,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": true,
-    "desperation": 50,
-    "motivationReasons": [
-     "listed 201 days"
-    ],
-    "wantedHits": [],
-    "daysListed": 201,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.7,
     "source": "spec sheet"
@@ -111294,8 +111121,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.7,
-    "expected": 54737,
+    "pct": -10.6,
+    "expected": 54690,
     "net": 48895,
     "comps": 27,
     "basis": "make",
@@ -111389,10 +111216,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 51200,
+    "pct": -6.6,
+    "expected": 51198,
     "net": 47795,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -112216,10 +112043,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.9,
-    "expected": 61098,
+    "pct": 2.3,
+    "expected": 61495,
     "net": 62895,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -112583,7 +112410,7 @@
    "redFlags": [],
    "value": {
     "pct": 5.4,
-    "expected": 62425,
+    "expected": 62424,
     "net": 65795,
     "comps": 25,
     "basis": "model",
@@ -112672,10 +112499,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.4,
-    "expected": 59627,
+    "pct": -0.3,
+    "expected": 59590,
     "net": 59395,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -112949,10 +112776,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.9,
-    "expected": 56631,
+    "pct": -3.8,
+    "expected": 56553,
     "net": 54395,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -113416,10 +113243,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.9,
-    "expected": 48647,
+    "pct": 1.2,
+    "expected": 48500,
     "net": 49099,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -113511,10 +113338,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.5,
-    "expected": 44002,
+    "pct": -1.9,
+    "expected": 43739,
     "net": 42895,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -114772,10 +114599,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.3,
-    "expected": 61098,
+    "pct": 1.6,
+    "expected": 61495,
     "net": 62495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -115189,9 +115016,9 @@
    ],
    "value": {
     "pct": 3,
-    "expected": 39498,
+    "expected": 39499,
     "net": 40695,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -115542,10 +115369,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.8,
-    "expected": 44705,
+    "pct": 5.3,
+    "expected": 45359,
     "net": 47750,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -116683,10 +116510,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.5,
-    "expected": 57749,
+    "pct": 2.4,
+    "expected": 57812,
     "net": 59195,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -117231,9 +117058,9 @@
    "redFlags": [],
    "value": {
     "pct": -2.6,
-    "expected": 58701,
+    "expected": 58670,
     "net": 57150,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -117436,10 +117263,10 @@
     }
    ],
    "value": {
-    "pct": 10.5,
-    "expected": 38824,
+    "pct": 10.1,
+    "expected": 38947,
     "net": 42895,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -117873,9 +117700,9 @@
    "redFlags": [],
    "value": {
     "pct": 6.7,
-    "expected": 51198,
+    "expected": 51195,
     "net": 54650,
-    "comps": 6,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -118531,10 +118358,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.9,
-    "expected": 43122,
+    "pct": 13.1,
+    "expected": 43067,
     "net": 48695,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -118819,9 +118646,9 @@
    "redFlags": [],
    "value": {
     "pct": 0.4,
-    "expected": 55446,
+    "expected": 55491,
     "net": 55695,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -119834,10 +119661,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.6,
-    "expected": 47029,
+    "pct": -9.4,
+    "expected": 46915,
     "net": 42495,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -120094,10 +119921,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.1,
-    "expected": 44384,
+    "pct": -3,
+    "expected": 44331,
     "net": 42995,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -120276,10 +120103,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.9,
-    "expected": 38274,
+    "pct": 17.7,
+    "expected": 38643,
     "net": 45495,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -120928,10 +120755,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 50236,
+    "pct": -3.8,
+    "expected": 50077,
     "net": 48195,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -121526,10 +121353,10 @@
     }
    ],
    "value": {
-    "pct": 2.5,
-    "expected": 40856,
+    "pct": 3.7,
+    "expected": 40406,
     "net": 41895,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -123177,10 +123004,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -28.4,
-    "expected": 38125,
+    "pct": -29.1,
+    "expected": 38511,
     "net": 27300,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -123449,10 +123276,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.9,
-    "expected": 37240,
+    "pct": -12.3,
+    "expected": 37416,
     "net": 32811,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -124022,10 +123849,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 28.3,
-    "expected": 38297,
+    "pct": 27.6,
+    "expected": 38510,
     "net": 49150,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -124433,10 +124260,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-10-09",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -124456,29 +124282,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -4.8,
-    "expected": 48504,
-    "net": 46195,
-    "comps": 22,
-    "basis": "model",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 10,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 3,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.84,
     "source": "crafter LWB"
@@ -124631,10 +124436,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.1,
-    "expected": 29671,
+    "pct": 4.7,
+    "expected": 29507,
     "net": 30900,
-    "comps": 13,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -124713,10 +124518,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.3,
-    "expected": 47495,
+    "pct": -5.6,
+    "expected": 47645,
     "net": 45000,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -124770,10 +124575,9 @@
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
    "listedDate": "2026-10-02",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "goneSince": "2026-10-12",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -124798,29 +124602,8 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -16,
-    "expected": 45523,
-    "net": 38250,
-    "comps": 22,
-    "basis": "model",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": true,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 10,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 10,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   },
+   "value": null,
+   "deal": null,
    "length": {
     "metres": 6.84,
     "source": "crafter LWB"
@@ -124983,10 +124766,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.6,
-    "expected": 43095,
+    "pct": -4.1,
+    "expected": 44190,
     "net": 42400,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -125234,10 +125017,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 19.4,
-    "expected": 30900,
+    "pct": 2.6,
+    "expected": 35974,
     "net": 36899,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -125897,9 +125680,9 @@
    "redFlags": [],
    "value": {
     "pct": 3.2,
-    "expected": 52203,
+    "expected": 52204,
     "net": 53899,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -126631,6 +126414,1127 @@
     },
     "description": "Brownhills Motorhomes is one of the UK’s leading motorhome retailers, offering a massive indoor showroom with loads of quality used stock ready to drive away. With so many pre‑owned models available, you can compare layouts, sizes and features at your own pace in a relaxed, no‑pressure environment.\nWe proudly support a full range of trusted brands, including Auto‑Trail, Rapido, Swift, Adria, Itineo, Elddis and Sun Living. Whether you’re looking for premium European design, British craftsmanship, family‑friendly layouts or great value touring, our used selection gives you exceptional choice and excellent savings.\nWith UK staycations more popular than ever, a motorhome offers the freedom to ex",
     "descriptionLength": 1915
+   }
+  },
+  "202610126919335": {
+   "id": "202610126919335",
+   "title": "Auto-Trail Tracker EKS",
+   "subTitle": "2.3",
+   "make": "Auto-Trail",
+   "model": "Tracker EKS",
+   "year": 2016,
+   "registeredYear": "2016 (22 reg)",
+   "mileage": 29482,
+   "mileageText": "29,482 miles",
+   "price": 39999,
+   "location": "Mansfield (122 miles)",
+   "distanceMiles": 122,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6cc753fbdfa1408ba45a12a96cb167dc.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126919335",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 39999
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [
+    {
+     "label": "4 owners",
+     "evidence": "4 previous owners"
+    }
+   ],
+   "value": {
+    "pct": -9.9,
+    "expected": 41295,
+    "net": 37199,
+    "comps": 6,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 1,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.44,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Coach Built",
+    "owners": 4,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Automatic",
+     "End layout": "End kitchen / washroom",
+     "Bedroom layout": "Lounge Conversion"
+    },
+    "description": "2016 Autotrail Tracker EKS built on the Fiat chassis | Automatic | * Good service history |* Sale included new Full Habitation Report | * 4-Berth/2-Belt |* 2 single 1700mm length bunks or makes large double |* Second double bed over the cab |* Calor gas bottle |* Reversing camera |* Awning |* External BBQ point |* External shower point | * Solar |* TV |* Aerial | * Cab Air-Con | * Located in Mansfield |* Slight damage to rear bumper and minor scratches |* Small crack in cluster light | For further information contact Julian on 01246 382388.\nPlease note, this vehicle is not a brokerage unit and as such means that it is compliant with the Consumer Rights Act 2015.",
+    "descriptionLength": 670
+   }
+  },
+  "202610126919296": {
+   "id": "202610126919296",
+   "title": "WildAx Europa XL",
+   "subTitle": "2.2",
+   "make": "Wildax",
+   "model": "Europa",
+   "year": 2022,
+   "registeredYear": "2022 (22 reg)",
+   "mileage": 15050,
+   "mileageText": "15,050 miles",
+   "price": 53999,
+   "location": "Newquay (228 miles)",
+   "distanceMiles": 228,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/514632c338874690921e9527fba4d78d.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126919296",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 53999
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -2.7,
+    "expected": 54161,
+    "net": 52699,
+    "comps": 11,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": null,
+    "owners": 1,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "2",
+     "Gearbox": "Manual",
+     "End layout": "End lounge",
+     "Bedroom layout": "Lounge Conversion"
+    },
+    "description": "Motorhome Depot Cornwall proudly presents this stunning 2022 WildAx Europa XL. This camper is one to be seen and stands out from the crowd with such high spec. Built on the Citreon chassis and powered by a 2.2 litre diesel engine with a Manual 6-speed transmission, measuring just 6.36 metres in length, MOT not due until April 2027 and being EURO 6 compliant are all attributes that will help this camper appeal to many people. The Wildax Also benefits from having its latest Engine and Habitation service both completed in April 2026 for that extra peace of mind! The WildAx Europa has been designed with detail in mind with a bright and modern feel inside. All areas have been looked at in detail ",
+    "descriptionLength": 2860
+   }
+  },
+  "202610126916531": {
+   "id": "202610126916531",
+   "title": "Volkswagen Crafter CR35 Trendline TDI LWB",
+   "subTitle": "2.0 TDI CR35 BlueMotion Tech Startline Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (140 ps)",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileage": 39000,
+   "mileageText": "39,000 miles",
+   "price": 44995,
+   "location": "Shrewsbury (141 miles)",
+   "distanceMiles": 141,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/3a12cffbd1174ddb8a388b49f893e30a.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126916531",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 44995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…26.the trendline specification includes cruise control, multifunction steering wheel, dab…"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "tow bar"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…an electrically operated thule omnistor awning canopy, xplore side steps making access ext…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.9,
+    "expected": 44048,
+    "net": 43195,
+    "comps": 17,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.85,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Manual",
+     "End layout": "End Garage",
+     "Bedroom layout": "Lounge Conversion"
+    },
+    "description": "2018 Volkswagen Crafter CR35 Trendline TDI Campervan – 4 Berth / 5 Belts – Low Mileage – Off-GridProfessionally converted by Mark1 Conversions, this superb Crafter has had just 2 owners from new. Powered by the Euro 6 2.0 TDI 140bhp engine with 6-speed manual gearbox and plated at 3,500kg GVW, meaning it can be driven on a standard car licence. MOT until July 2027, good service history and last serviced January 2026.The Trendline specification includes cruise control, multifunction steering wheel, DAB media system with Bluetooth/USB connectivity, electric heated mirrors and comfortable front seating. Twin swivelling captain’s seats with armrests create an excellent lounge area.The profession",
+    "descriptionLength": 2148
+   }
+  },
+  "202610126913901": {
+   "id": "202610126913901",
+   "title": "WildAx Solaris Xl",
+   "subTitle": "2.3",
+   "make": "Wildax",
+   "model": "Solaris XL",
+   "year": 2020,
+   "registeredYear": "2020 (20 reg)",
+   "mileage": 24352,
+   "mileageText": "24,352 miles",
+   "price": 54000,
+   "location": "Inverness (445 miles)",
+   "distanceMiles": 445,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/828d114448004175b94cd6e02e73d093.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126913901",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 54000
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…include 2 x swivel seats, cab air con, cruise control, infotainment system with an oversi…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 18.3,
+    "expected": 43295,
+    "net": 51200,
+    "comps": 4,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": null,
+    "owners": 3,
+    "serviceHistory": "Partial service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Automatic",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "Lounge Conversion"
+    },
+    "description": "Brokers Comments - Designed to maximise comfort, practicality and usable living space with a highly versatile layout. Key features include 2 x swivel seats, cab air con, cruise control, infotainment system with an oversized touch screen, sat nav and Bluetooth, integrated cab blinds, awning, and an alarm and tracker. Extras including leveller ramps, hook up cable and water hose. A Truma combi boiler provides heating and hot water via gas or electric.    Service History - MOT until October 2027. Chassis service completed November 2026. Habitation check booked.     Living/Dining - Front dinette area with two swivel cab chairs with arm rests, double rear passenger seat with 3-point seatbelts, re",
+    "descriptionLength": 1720
+   }
+  },
+  "202610126908370": {
+   "id": "202610126908370",
+   "title": "Hymer ML T 570 Design",
+   "subTitle": "2.2",
+   "make": "Hymer",
+   "model": "ML-T",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileage": 42000,
+   "mileageText": "42,000 miles",
+   "price": 54995,
+   "location": "Farnborough (30 miles)",
+   "distanceMiles": 30,
+   "sellerType": "TRADE",
+   "image": null,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126908370",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 54995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…silver habitation - 60th edition colourscruise control, cab air conditioningmultifunction…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    },
+    {
+     "label": "Satellite TV",
+     "value": 800,
+     "evidence": "satellite system"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.2,
+    "expected": 52033,
+    "net": 51395,
+    "comps": 10,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.8,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Coach Built",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "3",
+     "Gearbox": "Automatic",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Fixed single beds"
+    },
+    "description": "Hymer ML-T 570 60th Edition - Mercedes Automatic Located near Southamton Hampshire 2017  6.74m The Rare Diamond Anniversary Model - One of Hymer's Most Desirable Limited Editions !Built to celebrate 60 years of Hymer, the 60th Edition was a special, limited production run where Hymer finally included all the expensive options as standard. If you know Hymers, you'll know that's rare.  At just 6.74m long and 3,500kg (standard UK licence), this is the perfect compact luxury tourer - easy to drive and park, but with true Hymer quality throughout. Mercedes-Benz Sprinter 316 CDI 163BHP7G-TRONIC Fully Automatic Gearbox16\" Alloy WheelsMetallic Graphite Grey Cab & Crystal Silver Habitation - 60th Edi",
+    "descriptionLength": 2290
+   }
+  },
+  "202610126902841": {
+   "id": "202610126902841",
+   "title": "Laika Kreos 3008",
+   "subTitle": "Automatic , French Bed , 4 belts 4 berth 2.3",
+   "make": "Laika",
+   "model": "Kreos",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileage": 25834,
+   "mileageText": "25,834 miles",
+   "price": 51995,
+   "location": "Gosport (65 miles)",
+   "distanceMiles": 65,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/30b46c451f394eee98b479ecc0754c77.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126902841",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 51995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 7,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Motorhome",
+    "owners": 1,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (10 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Automatic",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "French bed"
+    },
+    "description": "1 owner from new\nAutomatic\nAwaiting Preparation\nIntroducing the 2017 Laika Kreos 3002 Motorhome, a splendid diesel vehicle that has travelled just 25,834 miles. Ideal for adventurous families or couples, it comfortably accommodates four berths and features four seats, making it perfect for road trips or leisurely getaways. This automatic motorhome boasts a convenient French bed design, ensuring restful nights after a day of exploration. With an MOT valid until 22nd August 2027, you can embark on your journeys with peace of mind, knowing it's roadworthy and ready for use. Laika's renowned craftsmanship ensures a high-quality experience, combining practicality with comfort for an enjoyable jou",
+    "descriptionLength": 986
+   }
+  },
+  "202609226283903": {
+   "id": "202609226283903",
+   "title": "Burstner Ixeo 680G 680G",
+   "subTitle": "Automatic 2016 2.3",
+   "make": "Burstner",
+   "model": "Ixeo 680G 680G",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileage": null,
+   "mileageText": null,
+   "price": 46995,
+   "location": "Crewe (152 miles)",
+   "distanceMiles": 152,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c75b4c97c4774685b4ec0f85a1de49f8.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609226283903",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-09-22",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 46995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air conditioning"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…wn bed for a restful night's sleep. the automatic transmission and powerful 150bhp 2300cc…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "towbar"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "awning"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -10.1,
+    "expected": 48618,
+    "net": 43695,
+    "comps": 13,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 2,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 20,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": {
+    "metres": 6.99,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": null,
+    "bodyType": "Motorhome",
+    "owners": 3,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Automatic",
+     "End layout": "End washroom",
+     "Bedroom layout": "Drop-down bed"
+    },
+    "description": "Embark on your next adventure in style with our used 2016 Bürstner IXEO 680G Motorhome. This 4-berth, 4-seat motorhome is designed for comfort and convenience, featuring a practical end washroom layout and a drop-down bed for a restful night's sleep. The automatic transmission and powerful 150bhp 2300cc engine make driving a breeze, while the 7m length and 2.4m width provide ample space for all your travel essentials. Equipped with a range of sought-after features, including ABS brakes, alloy wheels, and a bike rack, this motorhome is ready for any journey. Stay connected on the road with Bluetooth capability and enjoy the comfort of cab air conditioning during warmer days. The inclusion of ",
+    "descriptionLength": 1337
+   }
+  },
+  "202607184286932": {
+   "id": "202607184286932",
+   "title": "Ace 1500 GL",
+   "subTitle": "Automatic 2.0",
+   "make": "Ace",
+   "model": "1500",
+   "year": 2026,
+   "registeredYear": null,
+   "mileage": null,
+   "mileageText": null,
+   "price": 63995,
+   "location": "Newcastle (138 miles)",
+   "distanceMiles": 138,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c22024fc268445109859f4ab2def0933.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607184286932",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-07-18",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 63995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 0,
+    "expected": 61995,
+    "net": 61995,
+    "comps": 7,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 22,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 86,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": {
+    "metres": 6.97,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": "Ford Transit",
+    "bodyType": "Motorhome",
+    "owners": null,
+    "serviceHistory": null,
+    "historyCheck": null,
+    "keySpec": {
+     "Berth": "2",
+     "Gearbox": "Automatic",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Transverse bed"
+    },
+    "description": "Step into the future of motorhome travel with the brand-new 2026 Ace GL 1500 Motorhome. This stylish motorhome is designed for those who seek luxury on the open road. The spacious end bedroom layout features a comfortable transverse bed, perfect for a restful night's sleep after a day of adventures. Equipped with a powerful 2000cc 165bhp diesel engine and a manual transmission, this Ace motorhome offers both performance and efficiency. At 7 metres in length, 2.4 metres in width, and 2.9 metres in height, the Ace GL 1500 provides ample space for all your travel needs. Enjoy the convenience of on-the-go living with features such as alloy wheels, a door flyscreen, a fridge/freezer, a solar pane",
+    "descriptionLength": 2097
+   }
+  },
+  "202606273682763": {
+   "id": "202606273682763",
+   "title": "Swift 624 Lifestyle",
+   "subTitle": "2.3",
+   "make": "Swift",
+   "model": "624 Lifestyle",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileage": 11064,
+   "mileageText": "11,064 miles",
+   "price": 36995,
+   "location": "Inverness (445 miles)",
+   "distanceMiles": 445,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1033fd83293d4f2e9539864e60dd8200.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202606273682763",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-06-27",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 36995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "• cab air conditioning"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "…blown-air central heating, solar panel, reversing camera, awning and rear bike rack, this…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…with blown-air central heating, solar panel, reversing camera, awning and rear bik…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…heating, solar panel, reversing camera, awning and rear bike rack, this swift is well equi…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -13.5,
+    "expected": 41259,
+    "net": 35695,
+    "comps": 26,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 28,
+    "motivationReasons": [
+     "listed 107 days"
+    ],
+    "wantedHits": [],
+    "daysListed": 107,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": {
+    "metres": 6.3,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": "Peugeot Boxer",
+    "bodyType": "Campervan",
+    "owners": null,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "5",
+     "Gearbox": "Manual",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "Overcab bed - double"
+    },
+    "description": "2016 Swift 624 Lifestyle\nOnly 11,064 Miles • 5 Berth • 4 Seatbelts • End Kitchen & Washroom\nA fantastic opportunity to own this exceptionally low-mileage Swift 624 Lifestyle, with just 11,064 miles from new.\nAt 6.3m long, the Swift 624 offers an excellent balance of space and practicality, with a clever layout designed for comfortable touring. The end kitchen and washroom provide a particularly useful arrangement, leaving the main living area open and spacious.\nThe front dinette creates a comfortable place to relax during the day and converts to sleeping accommodation at night, while the additional beds make this a genuine five-berth motorhome.\nThe well-equipped kitchen includes a 3-ring hob",
+    "descriptionLength": 1618
+   }
+  },
+  "202603050417835": {
+   "id": "202603050417835",
+   "title": "Ace 1200 GL",
+   "subTitle": "Automatic",
+   "make": "Ace",
+   "model": "1200",
+   "year": 2026,
+   "registeredYear": null,
+   "mileage": null,
+   "mileageText": null,
+   "price": 64995,
+   "location": "Newcastle (138 miles)",
+   "distanceMiles": 138,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/52ceccdee4454afe83cf65bc58785856.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202603050417835",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-03-05",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 64995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air conditioning"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…iesel engine paired with an eight-speed automatic gearbox, the gl  delivers smooth, confid…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 2.4,
+    "expected": 61495,
+    "net": 62995,
+    "comps": 11,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": true,
+    "desperation": 50,
+    "motivationReasons": [
+     "listed 221 days"
+    ],
+    "wantedHits": [],
+    "daysListed": 221,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   },
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "details": {
+    "chassis": "Fiat Ducato",
+    "bodyType": "Campervan",
+    "owners": null,
+    "serviceHistory": null,
+    "historyCheck": null,
+    "keySpec": {
+     "Berth": "2",
+     "Gearbox": "Automatic",
+     "End layout": "End bedroom"
+    },
+    "description": "The 2026 Ace 1200 GL is a brand-new two-berth van conversion designed for couples seeking a stylish, practical and comfortable touring vehicle. Due to arrive soon at our Staffordshire branch, this 6.36M campervan combines a compact footprint with a high-specification interior and end-bedroom layout featuring a fixed bed for maximum sleeping comfort.\nInside, the GL offers a well-appointed living space with swivel cab seats, a midi heki rooflight, flyscreens and thoughtful storage solutions. The end-bedroom provides a comfortable fixed bed, while the onboard washroom includes a cassette toilet and shower for full touring convenience. The kitchen is fully equipped with a gas hob, fridge freezer",
+    "descriptionLength": 1996
+   }
+  },
+  "202610126910599": {
+   "id": "202610126910599",
+   "title": "Bailey Approach Autograph",
+   "subTitle": "Peugeot Boxer 2.2 HDi",
+   "make": "Bailey",
+   "model": "Approach",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileage": 32756,
+   "mileageText": "32,756 miles",
+   "price": 39995,
+   "location": "Stockton On Tees (214 miles)",
+   "distanceMiles": 214,
+   "sellerType": "PRIVATE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c1e937ca50bd4eab876c3f0686fb41f5.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126910599",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 39995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "…anual, al-co chassis, alde heating. cab air conditioning, cruise control.stereo, tv, fixed…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…is, alde heating. cab air conditioning, cruise control.stereo, tv, fixed french bed, full…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…an be converted into a double bed. full awning and rear bike rack. 2 seat belts.m.o.t june…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 0,
+    "expected": 39378,
+    "net": 39395,
+    "comps": 15,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 10,
+    "motivationReasons": [
+     "private seller"
+    ],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Berth": "4",
+     "Gearbox": "Manual"
+    },
+    "description": "Electric front windows, electric mirror's. 6 speed manual, Al-Co chassis, Alde heating. Cab air conditioning, Cruise control.Stereo, TV, fixed french bed, Full oven, 3 gas hob 1 electric hot plate. Large capacity fridge freezer. Microwave. Rear corner washroom with separate shower cubicle. 4 berth with twin bench sofa's which can be converted into a double bed. Full Awning and Rear bike rack. 2 seat belts.M.O.T June 27.  Habitation inspection completed September 27.  6000 miles covered since last Full Service Non-smoker and no pet's. Very good condition inside and out.",
+    "descriptionLength": 575
+   }
+  },
+  "202610126912606": {
+   "id": "202610126912606",
+   "title": "SWIFT CARRERA",
+   "subTitle": "144 Automatic",
+   "make": "Swift",
+   "model": "Carrera",
+   "year": 2023,
+   "registeredYear": "2023 (73 reg)",
+   "mileage": 4118,
+   "mileageText": "4,118 miles",
+   "price": 59995,
+   "location": "Darlington (216 miles)",
+   "distanceMiles": 216,
+   "sellerType": "TRADE",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/e4b8750fcf2b488aaa1ab4773fb58a6e.jpg",
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126912606",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "listedDate": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 59995
+    }
+   ],
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.9,
+    "expected": 59602,
+    "net": 58495,
+    "comps": 36,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   },
+   "length": null,
+   "details": {
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 1,
+    "serviceHistory": "Full dealership service history",
+    "historyCheck": "PASSED (5 checks passed)",
+    "keySpec": {
+     "Gearbox": "Automatic"
+    },
+    "description": "",
+    "descriptionLength": 0
    }
   }
  }

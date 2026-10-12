@@ -1,13 +1,13 @@
 {
  "version": 1,
- "generatedAt": "2026-10-12T12:22:24.030Z",
+ "generatedAt": "2026-10-12T17:20:53.759Z",
  "searches": {
   "6.25–7 m, all body types (Autotrader length)": {
    "name": "6.25–7 m, all body types (Autotrader length)",
    "url": "https://www.autotrader.co.uk/motorhome-search?exclude-writeoff-categories=on&exterior-length-to=7000&price-to=70000&exterior-length-from=6250&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-12",
-   "total": 1130,
-   "read": 1129,
+   "total": 1135,
+   "read": 1134,
    "truncated": false,
    "error": null
   },
@@ -15,8 +15,8 @@
    "name": "Campervans and van conversions (length from advert)",
    "url": "https://www.autotrader.co.uk/motorhome-search?body-type=Campervan&body-type=Van+Conversion&exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-12",
-   "total": 2538,
-   "read": 1503,
+   "total": 2545,
+   "read": 1504,
    "truncated": false,
    "error": null
   }
@@ -125,7 +125,7 @@
   "202610116886715": {
    "id": "202610116886715",
    "title": "SWIFT CARRERA 122",
-   "subTitle": "ON-BOARD REFILLABLE GAS TANK, ONLY 5500 MILES, PRISTINE 2.2",
+   "subTitle": "ON-BOARD REFILLABLE GAS TANK, 5500 MILES, 4 SEASONS WINTERISED, CAR LICENCE OK 2.2",
    "attentionGrabber": "3 YEARS RAC P&L WARRANTY,",
    "make": "Swift",
    "model": "Carrera 122",
@@ -134,14 +134,14 @@
    "registeredYear": "2024 (74 reg)",
    "mileageText": "5,500 miles",
    "mileage": 5500,
-   "price": 61995,
-   "priceText": "£61,995",
+   "price": 59995,
+   "priceText": "£59,995",
    "location": "Bradford (176 miles)",
    "distanceMiles": 176,
    "sellerType": "TRADE",
    "condition": "used",
-   "image": null,
-   "imageCount": 0,
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/37aa3a98ff914018a08f7509931cd99a.jpg",
+   "imageCount": 24,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610116886715",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -153,6 +153,10 @@
     {
      "date": "2026-10-11",
      "price": 61995
+    },
+    {
+     "date": "2026-10-12",
+     "price": 59995
     }
    ],
    "details": {
@@ -227,14 +231,16 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
+    "desperation": 16,
+    "motivationReasons": [
+     "1 price drop (-3.2%)"
+    ],
     "wantedHits": [
      "Rear air suspension"
     ],
     "daysListed": 1,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -3.2,
     "redFlags": 0,
     "isDeal": false
    },
@@ -1053,8 +1059,8 @@
     }
    ],
    "value": {
-    "pct": -2.2,
-    "expected": 57796,
+    "pct": -2.1,
+    "expected": 57685,
     "net": 56500,
     "comps": 9,
     "basis": "make",
@@ -3715,10 +3721,10 @@
     }
    ],
    "value": {
-    "pct": 3.2,
-    "expected": 57379,
+    "pct": 3.3,
+    "expected": 57289,
     "net": 59195,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -4816,7 +4822,7 @@
    ],
    "value": {
     "pct": -12,
-    "expected": 53968,
+    "expected": 53969,
     "net": 47495,
     "comps": 27,
     "basis": "model",
@@ -7811,8 +7817,8 @@
    "distanceMiles": 336,
    "sellerType": "TRADE",
    "condition": "used",
-   "image": null,
-   "imageCount": 0,
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1140b1287e074d86bc9af5e1ffd301fd.jpg",
+   "imageCount": 30,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610086786928",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -9058,10 +9064,10 @@
     }
    ],
    "value": {
-    "pct": -1.6,
-    "expected": 52731,
+    "pct": -1.5,
+    "expected": 52689,
     "net": 51895,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -11005,7 +11011,7 @@
    "id": "202610076744121",
    "title": "Ace 1200 SL",
    "subTitle": "-2027",
-   "attentionGrabber": "Order Your 2027 Motorhome Now",
+   "attentionGrabber": "Coming Soon – Order Now",
    "make": "Ace",
    "model": "1200",
    "category": "motorhome",
@@ -11131,7 +11137,7 @@
    "id": "202610076743920",
    "title": "Ace 1200 RL",
    "subTitle": "-2027",
-   "attentionGrabber": "Order Your 2027 Motorhome Now",
+   "attentionGrabber": "Coming Soon – Order Now",
    "make": "Ace",
    "model": "1200",
    "category": "motorhome",
@@ -11257,7 +11263,7 @@
    "id": "202610076743653",
    "title": "Ace 1200 RB",
    "subTitle": "-2027",
-   "attentionGrabber": "Order Your 2027 Motorhome Now",
+   "attentionGrabber": "Coming Soon – Order Now",
    "make": "Ace",
    "model": "1200",
    "category": "motorhome",
@@ -11383,7 +11389,7 @@
    "id": "202610076743434",
    "title": "Ace 1200 GS",
    "subTitle": "-2027",
-   "attentionGrabber": "Order Your 2027 Motorhome Now",
+   "attentionGrabber": "Coming Soon – Order Now",
    "make": "Ace",
    "model": "1200",
    "category": "motorhome",
@@ -11509,7 +11515,7 @@
    "id": "202610076743370",
    "title": "Ace 1200 GL",
    "subTitle": "-2027",
-   "attentionGrabber": "Order Your 2027 Motorhome Now",
+   "attentionGrabber": "Coming Soon – Order Now",
    "make": "Ace",
    "model": "1200",
    "category": "motorhome",
@@ -13123,12 +13129,12 @@
     }
    ],
    "value": {
-    "pct": -4.4,
-    "expected": 56695,
+    "pct": -2.2,
+    "expected": 55435,
     "net": 54195,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 30,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -15603,10 +15609,10 @@
     }
    ],
    "value": {
-    "pct": 0.3,
-    "expected": 52638,
+    "pct": -0.3,
+    "expected": 52944,
     "net": 52795,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -16623,8 +16629,8 @@
    "registeredYear": "2018 (18 reg)",
    "mileageText": "36,500 miles",
    "mileage": 36500,
-   "price": 32000,
-   "priceText": "£32,000",
+   "price": 30400,
+   "priceText": "£30,400",
    "location": "Halifax (169 miles)",
    "distanceMiles": 169,
    "sellerType": "TRADE",
@@ -16642,6 +16648,10 @@
     {
      "date": "2026-10-11",
      "price": 32000
+    },
+    {
+     "date": "2026-10-12",
+     "price": 30400
     }
    ],
    "value": null,
@@ -16649,12 +16659,14 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
+    "desperation": 20,
+    "motivationReasons": [
+     "1 price drop (-5%)"
+    ],
     "wantedHits": [],
     "daysListed": 8,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -5,
     "redFlags": 0,
     "isDeal": false
    },
@@ -16781,7 +16793,7 @@
     }
    ],
    "value": {
-    "pct": -4.1,
+    "pct": -4,
     "expected": 56487,
     "net": 54199,
     "comps": 27,
@@ -18721,10 +18733,10 @@
     }
    ],
    "value": {
-    "pct": 8.3,
-    "expected": 46822,
+    "pct": 8.5,
+    "expected": 46702,
     "net": 50695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -19983,10 +19995,10 @@
     }
    ],
    "value": {
-    "pct": 4.7,
-    "expected": 42200,
+    "pct": 4.2,
+    "expected": 42400,
     "net": 44190,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -20146,37 +20158,16 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202610026601568",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
      "price": 51995
     }
    ],
-   "value": {
-    "pct": -3.3,
-    "expected": 53770,
-    "net": 51995,
-    "comps": 9,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 10,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "details": {
     "fetchedAt": "2026-10-11",
     "description": "Opening Hours\nMon – 9.00am to 5.00pm\nTue – 9.00am to 5.00pm\nWed – 9.00am to 5.00pm\nThur – 9.00am to 5.00pm\nFri – 9.00am to 5.00pm\nSat – 10.00am to 4.00pm\nSun– 10.00am to 4.00pm\n*12 months MOT\n*12 months RAC Warranty",
@@ -20257,7 +20248,8 @@
     }
    ],
    "redFlags": [],
-   "length": null
+   "length": null,
+   "goneSince": "2026-10-12"
   },
   "202610026600937": {
    "id": "202610026600937",
@@ -21065,8 +21057,8 @@
    "registeredYear": "2019 (19 reg)",
    "mileageText": "13,029 miles",
    "mileage": 13029,
-   "price": 49500,
-   "priceText": "£49,500",
+   "price": 48500,
+   "priceText": "£48,500",
    "location": "Middlesbrough (215 miles)",
    "distanceMiles": 215,
    "sellerType": "PRIVATE",
@@ -21085,12 +21077,16 @@
     {
      "date": "2026-10-11",
      "price": 49500
+    },
+    {
+     "date": "2026-10-12",
+     "price": 48500
     }
    ],
    "value": {
-    "pct": -3.1,
+    "pct": -5.1,
     "expected": 49428,
-    "net": 47900,
+    "net": 46900,
     "comps": 12,
     "basis": "model",
     "adjusted": true
@@ -21099,14 +21095,15 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 10,
+    "desperation": 24,
     "motivationReasons": [
+     "1 price drop (-2%)",
      "private seller"
     ],
     "wantedHits": [],
     "daysListed": 11,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -2,
     "redFlags": 0,
     "isDeal": false
    },
@@ -23446,10 +23443,10 @@
     }
    ],
    "value": {
-    "pct": 8.9,
-    "expected": 43966,
+    "pct": 8.8,
+    "expected": 44020,
     "net": 47895,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -23881,11 +23878,11 @@
     }
    ],
    "value": {
-    "pct": 11.7,
-    "expected": 56695,
+    "pct": 13.8,
+    "expected": 55690,
     "net": 63350,
-    "comps": 3,
-    "basis": "model",
+    "comps": 5,
+    "basis": "chassis",
     "adjusted": false
    },
    "deal": {
@@ -24600,10 +24597,10 @@
     }
    ],
    "value": {
-    "pct": 14.5,
-    "expected": 40170,
+    "pct": 15.5,
+    "expected": 39824,
     "net": 45995,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -24814,10 +24811,10 @@
     }
    ],
    "value": {
-    "pct": -12.3,
-    "expected": 55305,
+    "pct": -13.4,
+    "expected": 55968,
     "net": 48495,
-    "comps": 20,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -31173,10 +31170,10 @@
     }
    ],
    "value": {
-    "pct": -13.9,
-    "expected": 60281,
+    "pct": -13.6,
+    "expected": 60097,
     "net": 51900,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -37262,7 +37259,7 @@
    ],
    "value": {
     "pct": -1.2,
-    "expected": 62659,
+    "expected": 62658,
     "net": 61891,
     "comps": 25,
     "basis": "model",
@@ -38332,9 +38329,9 @@
    ],
    "value": {
     "pct": 5.7,
-    "expected": 63020,
+    "expected": 63019,
     "net": 66590,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -39466,7 +39463,7 @@
    ],
    "value": {
     "pct": -4.2,
-    "expected": 58593,
+    "expected": 58594,
     "net": 56150,
     "comps": 27,
     "basis": "model",
@@ -39778,10 +39775,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609236319758",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -39789,19 +39784,7 @@
     }
    ],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 2,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 19,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "deal": null,
    "details": {
     "fetchedAt": "2026-10-11",
     "description": "2019 FIAT DUCATO 2.3MJTD 140 BHP MANUAL 2  BERTH COMPASS KENSINGTON CV 20 HIGH TOP MOTORHOME FOR SALE IN NOTTINGHAM. COMES WITH TWIN REAR LONG BENCHES. CENTRAL KITCHEN. CENTRAL WASHROOM SHOWER & TOILET. X3GAS BURNER HOB.OVEN/GRILL. MICROWAVE. 12V FRIDGE / FREEZER. BLOW AIR HEATING & HOT WATER. BLINDS & FLYSCREENS. REMIS CAB BLINDS. T/V AERIAL. SOLAR PANEL. ON BOARD GAS TANK. AWNING. TOW BAR. REVERSE CAMERA. ALLOY WHEELS. CAB AIR CON. CRYUISE CONTROL. LENGTH 5.99 METRES. WIDTH 2.05 METRES. GVW 3500KGS.OUR EXPERIENCED TEAM ARE HAPPY TO CALL YOU ON THE MOTORHOME/CARAVAN AND ANSWER ANY QUESTIONS YOU MAY HAVE. TEL01159664401 sales@fullerleisure.com FOR MORE DETAILS AS OUR STOCK CHANGES DAILY.",
@@ -39911,6 +39894,7 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
+   "goneSince": "2026-10-12",
    "excluded": "5.99 m (spec sheet)"
   },
   "202609236319034": {
@@ -40051,39 +40035,16 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609236318854",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
      "price": 59995
     }
    ],
-   "value": {
-    "pct": 6.1,
-    "expected": 54195,
-    "net": 57495,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 2,
-    "motivationReasons": [],
-    "wantedHits": [
-     "Rear air suspension"
-    ],
-    "daysListed": 19,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "details": {
     "fetchedAt": "2026-10-11",
     "description": "Embark on your next adventure with our captivating 2023 Auto-Sleepers Fairford Campervan! This end lounge layout gem offers both comfort and versatility, making it an ideal choice for those seeking a touch of luxury on the road.\nFeaturing a lounge conversion bedroom, this campervan comfortably sleeps four and seats four, ensuring ample space for both relaxation and travel companions. With only 8,429 miles on the clock and two caring owners, this used beauty is in impeccable condition, ready to clock up more memories with its new owner.\nEquipped with a powerful 2200cc, 165bhp diesel engine and a manual transmission, this campervan is not only efficient but also a joy to drive. Measuring at 6.4m in length and 2.3m in width, it strikes the perfect balance between spaciousness and manoeuvrability. Packed with features such as ABS brakes, cab air conditioning, a fridge freezer, gas & electric heating, Air Suspension, Gas Low system and even a solar panel, this campervan is designed to cater to your every need.\nWhether you're exploring the countryside or unwinding by the coast, this Auto-Sleepers Fairford is your ticket to endless adventures. Don't miss out on this fantastic opportunity to own a piece of mobile luxury at just £59,995\nThis van is sold with 12 Months mot, Serviced (including timing belt if due), Habitation Survey/Pdi check and 3 months warranty.\nGlobal Telemectrics Thatcham S5 Trackers and Immobiliser's fitted starting from £400 - contact us for details.\nFinance Avai",
@@ -40147,7 +40108,8 @@
    "length": {
     "metres": 6.4,
     "source": "stated in advert"
-   }
+   },
+   "goneSince": "2026-10-12"
   },
   "202609236313810": {
    "id": "202609236313810",
@@ -40504,7 +40466,7 @@
    ],
    "value": {
     "pct": 2.7,
-    "expected": 62521,
+    "expected": 62520,
     "net": 64195,
     "comps": 25,
     "basis": "model",
@@ -40678,10 +40640,10 @@
     }
    ],
    "value": {
-    "pct": 8.3,
-    "expected": 46374,
+    "pct": 8.2,
+    "expected": 46383,
     "net": 50200,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -41255,9 +41217,9 @@
    ],
    "value": {
     "pct": -5,
-    "expected": 57918,
+    "expected": 57914,
     "net": 54995,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -42083,10 +42045,10 @@
     }
    ],
    "value": {
-    "pct": -7.8,
-    "expected": 57919,
+    "pct": -7.9,
+    "expected": 57986,
     "net": 53399,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -42542,8 +42504,8 @@
     }
    ],
    "value": {
-    "pct": -15.6,
-    "expected": 52116,
+    "pct": -15.5,
+    "expected": 52053,
     "net": 43995,
     "comps": 8,
     "basis": "model",
@@ -48647,9 +48609,9 @@
    ],
    "value": {
     "pct": 4.7,
-    "expected": 63056,
+    "expected": 63052,
     "net": 65995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -48859,9 +48821,9 @@
    ],
    "value": {
     "pct": 4.7,
-    "expected": 63056,
+    "expected": 63052,
     "net": 65995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -50311,10 +50273,10 @@
     }
    ],
    "value": {
-    "pct": 11.5,
-    "expected": 39195,
+    "pct": 11.4,
+    "expected": 39218,
     "net": 43695,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -51145,39 +51107,16 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609156056923",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
      "price": 59995
     }
    ],
-   "value": {
-    "pct": -3.8,
-    "expected": 58923,
-    "net": 56695,
-    "comps": 4,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 4,
-    "motivationReasons": [],
-    "wantedHits": [
-     "Rear air suspension"
-    ],
-    "daysListed": 27,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "details": {
     "fetchedAt": "2026-10-11",
     "description": "2022 Auto-Sleepers Kingham | 2 Berth | 13,500 Miles | Luxury Campervan | £59,995\nThis stunning 2022 Auto-Sleepers Kingham is a superb example of one of the UK's most sought-after premium campervans, offering a luxurious 2 berth layout that is perfect for couples wanting exceptional comfort, high-end specification, and effortless touring throughout the UK and Europe.\nWith just 13,500 miles, this low-mileage example is presented in excellent condition throughout and represents outstanding value for a nearly new Auto-Sleepers Kingham.\nThe intelligently designed interior features a welcoming front lounge with comfortable side settees, creating a bright and spacious area for relaxing or dining. A fully equipped central kitchen provides everything needed for extended adventures, while the cleverly designed rear bedroom incorporates a fixed French bed alongside a spacious washroom, giving you the convenience of a permanent sleeping area without sacrificing living space. The layout has long been regarded as one of the finest available in a premium campervan, combining luxury with everyday practicality.\nBuilt on the dependable Peugeot Boxer chassis, the Kingham is renowned for its outstanding craftsmanship, high-quality cabinetry, and refined driving experience. Its compact dimensions make it easy to drive and park while still providing all the comfort and equipment expected from a luxury touring campervan. Whether you're enjoying weekends away or extended European road trips, the Kin",
@@ -51278,7 +51217,8 @@
     }
    ],
    "redFlags": [],
-   "length": null
+   "length": null,
+   "goneSince": "2026-10-12"
   },
   "202609156056788": {
    "id": "202609156056788",
@@ -51867,37 +51807,16 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609156045312",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
      "price": 47995
     }
    ],
-   "value": {
-    "pct": 1.5,
-    "expected": 46795,
-    "net": 47495,
-    "comps": 5,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 4,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 27,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "value": null,
+   "deal": null,
    "details": {
     "fetchedAt": "2026-10-11",
     "description": "Opening Hours\nMon – 9.15am to 5.00pm\nTue – 9.15am to 5.00pm\nWed – 9.15am to 5.00pm\nThur – 9.15am to 5.00pm\nFri – 9.15am to 5.00pm\nSat – 10.00am to 4.00pm\nSun– 10.00am to 4.00pm\n*12 months MOT\n*12 months RAC Warranty",
@@ -51979,7 +51898,8 @@
     }
    ],
    "redFlags": [],
-   "length": null
+   "length": null,
+   "goneSince": "2026-10-12"
   },
   "202609156038452": {
    "id": "202609156038452",
@@ -52015,8 +51935,8 @@
     }
    ],
    "value": {
-    "pct": 15.6,
-    "expected": 54337,
+    "pct": 15.5,
+    "expected": 54348,
     "net": 62795,
     "comps": 9,
     "basis": "make",
@@ -54065,8 +53985,8 @@
     }
    ],
    "value": {
-    "pct": -5.1,
-    "expected": 44268,
+    "pct": -5,
+    "expected": 44209,
     "net": 42000,
     "comps": 11,
     "basis": "model",
@@ -56937,10 +56857,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 39608,
+    "pct": -5.3,
+    "expected": 40140,
     "net": 37995,
-    "comps": 13,
+    "comps": 12,
     "basis": "make",
     "adjusted": true
    },
@@ -58189,8 +58109,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.8,
-    "expected": 38267,
+    "pct": -8.3,
+    "expected": 38912,
     "net": 35670,
     "comps": 8,
     "basis": "model",
@@ -58540,10 +58460,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.7,
-    "expected": 46944,
+    "pct": -2.4,
+    "expected": 46827,
     "net": 45695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -59570,10 +59490,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202608315582729",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -59624,25 +59542,12 @@
    "specs": [],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 18,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 42,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "deal": null,
    "length": {
     "metres": 4.99,
     "source": "spec sheet"
    },
+   "goneSince": "2026-10-12",
    "excluded": "4.99 m (spec sheet)"
   },
   "202608315578710": {
@@ -60440,10 +60345,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.2,
-    "expected": 49237,
+    "pct": -9.3,
+    "expected": 49271,
     "net": 44695,
-    "comps": 29,
+    "comps": 28,
     "basis": "make",
     "adjusted": true
    },
@@ -61059,10 +60964,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.2,
-    "expected": 43295,
+    "pct": -3.2,
+    "expected": 44190,
     "net": 42795,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -67187,10 +67092,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.8,
-    "expected": 40941,
+    "pct": 5,
+    "expected": 40465,
     "net": 42495,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -68516,10 +68421,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -1.5,
-    "expected": 47495,
+    "pct": 0.1,
+    "expected": 46748,
     "net": 46795,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -69867,10 +69772,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.2,
-    "expected": 43120,
+    "pct": -4.8,
+    "expected": 42964,
     "net": 40895,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -70134,12 +70039,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.8,
-    "expected": 50900,
+    "pct": -10.2,
+    "expected": 50579,
     "net": 45395,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -70450,8 +70355,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 47900,
+    "pct": 0.1,
+    "expected": 46900,
     "net": 46950,
     "comps": 7,
     "basis": "make",
@@ -71817,10 +71722,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -15.6,
-    "expected": 48633,
+    "pct": -17.9,
+    "expected": 50008,
     "net": 41047,
-    "comps": 18,
+    "comps": 17,
     "basis": "model",
     "adjusted": true
    },
@@ -72904,12 +72809,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.2,
-    "expected": 50900,
+    "pct": -12.7,
+    "expected": 51170,
     "net": 44695,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": true,
@@ -73437,10 +73342,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.7,
-    "expected": 42045,
+    "pct": -1.9,
+    "expected": 41695,
     "net": 40895,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -74330,10 +74235,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.2,
-    "expected": 39344,
+    "pct": -12.2,
+    "expected": 39785,
     "net": 34950,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -75408,10 +75313,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 3.1,
-    "expected": 38788,
+    "pct": 3.3,
+    "expected": 38726,
     "net": 39990,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -77277,10 +77182,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3,
-    "expected": 43295,
+    "pct": -5,
+    "expected": 44190,
     "net": 42000,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -77666,9 +77571,9 @@
    "redFlags": [],
    "value": {
     "pct": 7.3,
-    "expected": 39319,
+    "expected": 39323,
     "net": 42195,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -80597,8 +80502,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.5,
-    "expected": 51520,
+    "pct": -5.4,
+    "expected": 51459,
     "net": 48699,
     "comps": 8,
     "basis": "model",
@@ -83165,10 +83070,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 37.1,
-    "expected": 41567,
+    "pct": 37.8,
+    "expected": 41374,
     "net": 56995,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -83557,10 +83462,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11,
-    "expected": 59771,
+    "pct": -10.8,
+    "expected": 59635,
     "net": 53195,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -83659,9 +83564,9 @@
    ],
    "value": {
     "pct": 17.7,
-    "expected": 41635,
+    "expected": 41636,
     "net": 48995,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -85137,8 +85042,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 9.6,
-    "expected": 42330,
+    "pct": 9.7,
+    "expected": 42297,
     "net": 46400,
     "comps": 8,
     "basis": "model",
@@ -87873,10 +87778,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 13.2,
-    "expected": 46795,
+    "pct": 15.5,
+    "expected": 45898,
     "net": 52995,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -92360,15 +92265,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 56284,
+    "pct": -22.6,
+    "expected": 67790,
     "net": 52500,
-    "comps": 32,
-    "basis": "make",
-    "adjusted": true
+    "comps": 3,
+    "basis": "model",
+    "adjusted": false
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
     "desperation": 18,
@@ -92382,7 +92287,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": {
     "metres": 6.36,
@@ -95682,10 +95587,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202608315581199",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -95748,25 +95651,12 @@
     }
    ],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 18,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 42,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 1,
-    "isDeal": false
-   },
+   "deal": null,
    "length": {
     "metres": 8.04,
     "source": "spec sheet"
    },
+   "goneSince": "2026-10-12",
    "excluded": "8.04 m (spec sheet)"
   },
   "202608305566692": {
@@ -98177,9 +98067,9 @@
    "redFlags": [],
    "value": {
     "pct": -2.9,
-    "expected": 63326,
+    "expected": 63307,
     "net": 61499,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -101634,15 +101524,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9,
-    "expected": 58693,
+    "pct": -10,
+    "expected": 59357,
     "net": 53400,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
     "desperation": 11,
@@ -101652,7 +101542,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    },
    "length": null
   },
@@ -102495,10 +102385,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.1,
-    "expected": 60601,
+    "pct": -8,
+    "expected": 60505,
     "net": 55695,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -103866,10 +103756,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.1,
-    "expected": 61548,
+    "pct": -1.4,
+    "expected": 62395,
     "net": 61495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -107472,7 +107362,7 @@
    "redFlags": [],
    "value": {
     "pct": 6.3,
-    "expected": 62395,
+    "expected": 62394,
     "net": 66295,
     "comps": 25,
     "basis": "model",
@@ -107584,9 +107474,9 @@
    "redFlags": [],
    "value": {
     "pct": -0.4,
-    "expected": 63236,
+    "expected": 63223,
     "net": 62995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -109268,7 +109158,7 @@
     "pct": 1.7,
     "expected": 62945,
     "net": 63995,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -110483,10 +110373,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 19.3,
-    "expected": 53326,
+    "pct": 18,
+    "expected": 53876,
     "net": 63595,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -110743,10 +110633,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.6,
-    "expected": 61098,
+    "pct": 4.9,
+    "expected": 61495,
     "net": 64495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -111265,7 +111155,7 @@
    "redFlags": [],
    "value": {
     "pct": -5.6,
-    "expected": 62814,
+    "expected": 62813,
     "net": 59295,
     "comps": 25,
     "basis": "model",
@@ -113456,10 +113346,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 16.7,
-    "expected": 42200,
+    "pct": 16.2,
+    "expected": 42400,
     "net": 49250,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -114088,10 +113978,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.4,
-    "expected": 54195,
+    "pct": 5.4,
+    "expected": 50695,
     "net": 53450,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -117237,8 +117127,8 @@
    "registeredYear": "2022",
    "mileageText": "8,763 miles",
    "mileage": 8763,
-   "price": 49999,
-   "priceText": "£49,999",
+   "price": 47999,
+   "priceText": "£47,999",
    "location": "Nottingham (120 miles)",
    "distanceMiles": 120,
    "sellerType": "TRADE",
@@ -117256,6 +117146,10 @@
     {
      "date": "2026-10-11",
      "price": 49999
+    },
+    {
+     "date": "2026-10-12",
+     "price": 47999
     }
    ],
    "details": {
@@ -117350,15 +117244,16 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": false,
-    "desperation": 23,
+    "motivated": true,
+    "desperation": 41,
     "motivationReasons": [
-     "listed 90 days"
+     "listed 90 days",
+     "1 price drop (-4%)"
     ],
     "wantedHits": [],
     "daysListed": 90,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -4,
     "redFlags": 0,
     "isDeal": false
    },
@@ -122342,7 +122237,7 @@
     "pct": -7.8,
     "expected": 57833,
     "net": 53295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -123880,10 +123775,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.1,
-    "expected": 46825,
+    "pct": -1.4,
+    "expected": 47570,
     "net": 46895,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -125674,12 +125569,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.4,
-    "expected": 50900,
+    "pct": -1.9,
+    "expected": 50107,
     "net": 49150,
-    "comps": 7,
+    "comps": 8,
     "basis": "make",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -132989,10 +132884,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.6,
-    "expected": 46795,
+    "pct": 5.7,
+    "expected": 45898,
     "net": 48495,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -133114,10 +133009,10 @@
     }
    ],
    "value": {
-    "pct": -2.9,
-    "expected": 50172,
+    "pct": -2.7,
+    "expected": 50029,
     "net": 48695,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -133725,9 +133620,9 @@
    "redFlags": [],
    "value": {
     "pct": -0.4,
-    "expected": 63236,
+    "expected": 63223,
     "net": 62995,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -134763,12 +134658,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.7,
-    "expected": 57495,
+    "pct": -6.6,
+    "expected": 58027,
     "net": 54195,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 32,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -135252,10 +135147,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.1,
-    "expected": 60437,
+    "pct": 0.2,
+    "expected": 60385,
     "net": 60500,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -135413,10 +135308,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 30.3,
-    "expected": 43502,
+    "pct": 28.5,
+    "expected": 44112,
     "net": 56699,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -136395,7 +136290,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.8,
-    "expected": 62784,
+    "expected": 62783,
     "net": 59795,
     "comps": 25,
     "basis": "model",
@@ -140184,12 +140079,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.5,
-    "expected": 57495,
+    "pct": 0.5,
+    "expected": 64389,
     "net": 64690,
-    "comps": 3,
-    "basis": "model",
-    "adjusted": false
+    "comps": 13,
+    "basis": "chassis",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -141747,9 +141642,9 @@
    "redFlags": [],
    "value": {
     "pct": -1.4,
-    "expected": 63272,
+    "expected": 63257,
     "net": 62395,
-    "comps": 23,
+    "comps": 24,
     "basis": "chassis",
     "adjusted": true
    },
@@ -146995,7 +146890,7 @@
     "pct": 1.7,
     "expected": 62945,
     "net": 63995,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -149030,8 +148925,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -2.9,
-    "expected": 51454,
+    "pct": -2.8,
+    "expected": 51417,
     "net": 49985,
     "comps": 8,
     "basis": "model",
@@ -149184,10 +149079,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.4,
-    "expected": 54914,
+    "pct": 1.2,
+    "expected": 55027,
     "net": 55695,
-    "comps": 51,
+    "comps": 50,
     "basis": "make",
     "adjusted": true
    },
@@ -149623,7 +149518,7 @@
    "redFlags": [],
    "value": {
     "pct": 2,
-    "expected": 62545,
+    "expected": 62544,
     "net": 63795,
     "comps": 25,
     "basis": "model",
@@ -150712,7 +150607,7 @@
    "redFlags": [],
    "value": {
     "pct": 7.3,
-    "expected": 55800,
+    "expected": 55799,
     "net": 59846,
     "comps": 27,
     "basis": "model",
@@ -157406,10 +157301,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202509266654314",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -157556,25 +157449,12 @@
    ],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": true,
-    "desperation": 50,
-    "motivationReasons": [
-     "listed 381 days"
-    ],
-    "wantedHits": [],
-    "daysListed": 381,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   },
+   "deal": null,
    "length": {
     "metres": 5.99,
     "source": "spec sheet"
    },
+   "goneSince": "2026-10-12",
    "excluded": "5.99 m (spec sheet)"
   },
   "202509266654215": {
@@ -158710,10 +158590,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.3,
-    "expected": 46822,
+    "pct": 8.6,
+    "expected": 46702,
     "net": 50695,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -160303,10 +160183,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202507094301959",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -160384,25 +160262,12 @@
    ],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": true,
-    "desperation": 50,
-    "motivationReasons": [
-     "listed 460 days"
-    ],
-    "wantedHits": [],
-    "daysListed": 460,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   },
+   "deal": null,
    "length": {
     "metres": 7.45,
     "source": "spec sheet"
    },
+   "goneSince": "2026-10-12",
    "excluded": "7.45 m (spec sheet)"
   },
   "202506273928839": {
@@ -164203,9 +164068,9 @@
    "redFlags": [],
    "value": {
     "pct": 5.7,
-    "expected": 56291,
+    "expected": 56278,
     "net": 59495,
-    "comps": 26,
+    "comps": 27,
     "basis": "chassis",
     "adjusted": true
    },
@@ -165126,8 +164991,8 @@
    "distanceMiles": 67,
    "sellerType": "TRADE",
    "condition": "used",
-   "image": "https://m.atcdn.co.uk/a/media/w480h360/1fb4af57f482490aac11a2b7fe596ab0.jpg",
-   "imageCount": 10,
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/60285022b9954ced8ca991d5772a52a0.jpg",
+   "imageCount": 30,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610106868188",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -165298,7 +165163,7 @@
    "redFlags": [],
    "value": {
     "pct": 9.6,
-    "expected": 62277,
+    "expected": 62276,
     "net": 68267,
     "comps": 25,
     "basis": "model",
@@ -165759,10 +165624,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.1,
-    "expected": 61098,
+    "pct": 1.5,
+    "expected": 61495,
     "net": 62395,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -166722,10 +166587,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.6,
-    "expected": 40934,
+    "pct": 4.8,
+    "expected": 40461,
     "net": 42399,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -167031,10 +166896,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 50567,
+    "pct": -6.4,
+    "expected": 50414,
     "net": 47199,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -171835,15 +171700,15 @@
    "category": "motorhome",
    "year": 2024,
    "registeredYear": "2024 (24 reg)",
-   "mileageText": "30,026 miles",
-   "mileage": 30026,
+   "mileageText": "30,000 miles",
+   "mileage": 30000,
    "price": 50995,
    "priceText": "£50,995",
-   "location": "Pershore (95 miles)",
-   "distanceMiles": 95,
+   "location": "Bellshill (339 miles)",
+   "distanceMiles": 339,
    "sellerType": "PRIVATE",
    "condition": "used",
-   "image": "https://m.atcdn.co.uk/a/media/w480h360/9fe7ddf40cee4b0e92e7a9ced6bc82d9.jpg",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/810480265fb54448a347857568fb9316.jpg",
    "imageCount": 11,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610076771230",
    "firstSeen": "2026-10-11",
@@ -171939,7 +171804,7 @@
    "redFlags": [],
    "value": {
     "pct": 0.6,
-    "expected": 49375,
+    "expected": 49378,
     "net": 49695,
     "comps": 27,
     "basis": "model",
@@ -172966,10 +172831,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -16.9,
-    "expected": 41412,
+    "pct": -15.9,
+    "expected": 40918,
     "net": 34399,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -176536,10 +176401,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.5,
-    "expected": 58378,
+    "pct": 0.4,
+    "expected": 58465,
     "net": 58699,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -177004,10 +176869,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.4,
-    "expected": 59947,
+    "pct": -6.3,
+    "expected": 59835,
     "net": 56095,
-    "comps": 10,
+    "comps": 11,
     "basis": "make",
     "adjusted": true
    },
@@ -177048,10 +176913,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202610056688586",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -177153,27 +177016,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -0.9,
-    "expected": 54161,
-    "net": 53699,
-    "comps": 11,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 7,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202610056687220": {
    "id": "202610056687220",
@@ -177612,9 +177457,9 @@
    "redFlags": [],
    "value": {
     "pct": 9.6,
-    "expected": 54733,
+    "expected": 54728,
     "net": 59995,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -178168,14 +178013,14 @@
    "registeredYear": "2020 (69 reg)",
    "mileageText": "167,000 miles",
    "mileage": 167000,
-   "price": 45495,
-   "priceText": "£45,495",
+   "price": 43295,
+   "priceText": "£43,295",
    "location": "Halifax (169 miles)",
    "distanceMiles": 169,
    "sellerType": "TRADE",
    "condition": "used",
    "image": "https://m.atcdn.co.uk/a/media/w480h360/0c05df3c917a4860beeb132eb715864a.jpg",
-   "imageCount": 28,
+   "imageCount": 35,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610046658164",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
@@ -178188,6 +178033,10 @@
     {
      "date": "2026-10-11",
      "price": 45495
+    },
+    {
+     "date": "2026-10-12",
+     "price": 43295
     }
    ],
    "details": {
@@ -178273,25 +178122,27 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.3,
+    "pct": -12.9,
     "expected": 47195,
-    "net": 43295,
+    "net": 41095,
     "comps": 3,
     "basis": "model",
     "adjusted": false
    },
    "deal": {
-    "underpriced": false,
+    "underpriced": true,
     "highSpec": false,
     "motivated": false,
-    "desperation": 0,
-    "motivationReasons": [],
+    "desperation": 20,
+    "motivationReasons": [
+     "1 price drop (-4.8%)"
+    ],
     "wantedHits": [],
     "daysListed": 8,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -4.8,
     "redFlags": 0,
-    "isDeal": false
+    "isDeal": true
    }
   },
   "202610046655997": {
@@ -178695,10 +178546,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.7,
-    "expected": 47513,
+    "pct": 22.4,
+    "expected": 46062,
     "net": 56395,
-    "comps": 12,
+    "comps": 13,
     "basis": "make",
     "adjusted": true
    },
@@ -179160,7 +179011,7 @@
    "redFlags": [],
    "value": {
     "pct": 8.4,
-    "expected": 41686,
+    "expected": 41694,
     "net": 45195,
     "comps": 8,
     "basis": "model",
@@ -179470,10 +179321,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.5,
-    "expected": 58426,
+    "pct": -5.6,
+    "expected": 58497,
     "net": 55195,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -179818,10 +179669,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.8,
-    "expected": 56136,
+    "pct": -9.6,
+    "expected": 56637,
     "net": 51200,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -181826,9 +181677,9 @@
    "redFlags": [],
    "value": {
     "pct": 8.2,
-    "expected": 28750,
+    "expected": 28740,
     "net": 31100,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -183053,10 +182904,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.7,
-    "expected": 41695,
+    "pct": -2.8,
+    "expected": 41295,
     "net": 40150,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -184541,9 +184392,9 @@
    "redFlags": [],
    "value": {
     "pct": 15.4,
-    "expected": 56595,
+    "expected": 56576,
     "net": 65295,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -184812,10 +184663,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.8,
-    "expected": 61583,
+    "pct": -11.7,
+    "expected": 61488,
     "net": 54295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -185793,10 +185644,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.8,
-    "expected": 42045,
+    "pct": -8,
+    "expected": 41695,
     "net": 38350,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -186686,8 +186537,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.6,
-    "expected": 45704,
+    "pct": -2.4,
+    "expected": 45602,
     "net": 44500,
     "comps": 11,
     "basis": "model",
@@ -186945,10 +186796,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.4,
-    "expected": 43079,
+    "pct": 5.7,
+    "expected": 42960,
     "net": 45395,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -190745,10 +190596,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.6,
-    "expected": 60456,
+    "pct": -3.5,
+    "expected": 60400,
     "net": 58295,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -190927,10 +190778,10 @@
     }
    ],
    "value": {
-    "pct": 8.9,
-    "expected": 53878,
+    "pct": 9,
+    "expected": 53859,
     "net": 58695,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -191505,10 +191356,10 @@
     }
    ],
    "value": {
-    "pct": 5.8,
-    "expected": 41864,
+    "pct": 6.7,
+    "expected": 41500,
     "net": 44300,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -191660,10 +191511,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.3,
-    "expected": 41127,
+    "pct": -3.2,
+    "expected": 40645,
     "net": 39350,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -191950,10 +191801,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.7,
-    "expected": 41295,
+    "pct": 3.7,
+    "expected": 40895,
     "net": 42395,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -192085,8 +191936,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.3,
-    "expected": 57958,
+    "pct": 0.1,
+    "expected": 57127,
     "net": 57195,
     "comps": 14,
     "basis": "make",
@@ -192232,9 +192083,9 @@
    "redFlags": [],
    "value": {
     "pct": -10.5,
-    "expected": 42683,
+    "expected": 42700,
     "net": 38199,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -192657,10 +192508,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.7,
-    "expected": 48462,
+    "pct": 2,
+    "expected": 48316,
     "net": 49295,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -192808,10 +192659,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.7,
-    "expected": 39177,
+    "pct": 7.6,
+    "expected": 39228,
     "net": 42195,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -193117,8 +192968,8 @@
    "registeredYear": "2022 (72 reg)",
    "mileageText": "13,400 miles",
    "mileage": 13400,
-   "price": 52950,
-   "priceText": "£52,950",
+   "price": 51950,
+   "priceText": "£51,950",
    "location": "Lancaster (204 miles)",
    "distanceMiles": 204,
    "sellerType": "PRIVATE",
@@ -193136,6 +192987,10 @@
     {
      "date": "2026-10-11",
      "price": 52950
+    },
+    {
+     "date": "2026-10-12",
+     "price": 51950
     }
    ],
    "details": {
@@ -193222,9 +193077,9 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.3,
+    "pct": -14.1,
     "expected": 57190,
-    "net": 50150,
+    "net": 49150,
     "comps": 5,
     "basis": "chassis",
     "adjusted": false
@@ -193233,14 +193088,15 @@
     "underpriced": true,
     "highSpec": false,
     "motivated": false,
-    "desperation": 12,
+    "desperation": 25,
     "motivationReasons": [
+     "1 price drop (-1.9%)",
      "private seller"
     ],
     "wantedHits": [],
     "daysListed": 19,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -1.9,
     "redFlags": 0,
     "isDeal": true
    }
@@ -194064,10 +193920,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.4,
-    "expected": 41038,
+    "pct": 1.6,
+    "expected": 40556,
     "net": 41195,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -195312,10 +195168,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0,
-    "expected": 51200,
+    "pct": 3.4,
+    "expected": 49498,
     "net": 51195,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -195679,8 +195535,8 @@
     }
    ],
    "value": {
-    "pct": -6.5,
-    "expected": 40642,
+    "pct": -6.7,
+    "expected": 40737,
     "net": 38000,
     "comps": 8,
     "basis": "model",
@@ -195831,16 +195687,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -24.4,
-    "expected": 63395,
-    "net": 47895,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
-    "underpriced": true,
+    "underpriced": false,
     "highSpec": false,
     "motivated": false,
     "desperation": 2,
@@ -195850,7 +195699,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    }
   },
   "202609226259165": {
@@ -200560,10 +200409,10 @@
     }
    ],
    "value": {
-    "pct": 19.1,
-    "expected": 40284,
+    "pct": 20.5,
+    "expected": 39831,
     "net": 47995,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -200860,10 +200709,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609186146060",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -200945,19 +200792,8 @@
    ],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 3,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 24,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   }
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202609176140760": {
    "id": "202609176140760",
@@ -201160,10 +200996,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 59057,
+    "pct": -2.1,
+    "expected": 59132,
     "net": 57895,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -201422,14 +201258,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 2.5,
-    "expected": 61645,
-    "net": 63195,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -201948,10 +201777,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.1,
-    "expected": 59523,
+    "pct": 6.3,
+    "expected": 59402,
     "net": 63157,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -204320,8 +204149,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 55775,
+    "pct": -2.7,
+    "expected": 54999,
     "net": 53495,
     "comps": 9,
     "basis": "chassis",
@@ -204581,8 +204410,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -5.2,
-    "expected": 60100,
+    "pct": -4.1,
+    "expected": 59459,
     "net": 56995,
     "comps": 14,
     "basis": "make",
@@ -207493,10 +207322,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.2,
-    "expected": 42549,
+    "pct": -8.6,
+    "expected": 42268,
     "net": 38636,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -207820,8 +207649,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4,
-    "expected": 52281,
+    "pct": -3.9,
+    "expected": 52230,
     "net": 50199,
     "comps": 27,
     "basis": "make",
@@ -208889,10 +208718,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 26.2,
-    "expected": 55073,
+    "pct": 25.2,
+    "expected": 55525,
     "net": 69495,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -210423,7 +210252,7 @@
    "redFlags": [],
    "value": {
     "pct": -12.2,
-    "expected": 57434,
+    "expected": 57433,
     "net": 50400,
     "comps": 18,
     "basis": "chassis",
@@ -210457,8 +210286,8 @@
    "registeredYear": "2024 (73 reg)",
    "mileageText": "8,200 miles",
    "mileage": 8200,
-   "price": 63830,
-   "priceText": "£63,830",
+   "price": 57250,
+   "priceText": "£57,250",
    "location": "Halifax (169 miles)",
    "distanceMiles": 169,
    "sellerType": "TRADE",
@@ -210476,6 +210305,10 @@
     {
      "date": "2026-10-11",
      "price": 63830
+    },
+    {
+     "date": "2026-10-12",
+     "price": 57250
     }
    ],
    "details": {
@@ -210546,9 +210379,9 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.3,
+    "pct": -5,
     "expected": 58167,
-    "net": 61830,
+    "net": 55250,
     "comps": 9,
     "basis": "chassis",
     "adjusted": true
@@ -210557,12 +210390,14 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 5,
-    "motivationReasons": [],
+    "desperation": 35,
+    "motivationReasons": [
+     "1 price drop (-10.3%)"
+    ],
     "wantedHits": [],
     "daysListed": 31,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -10.3,
     "redFlags": 0,
     "isDeal": false
    }
@@ -210668,10 +210503,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.2,
-    "expected": 50181,
+    "pct": 18.6,
+    "expected": 49989,
     "net": 59295,
-    "comps": 34,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -211968,10 +211803,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.2,
-    "expected": 59906,
+    "pct": 8,
+    "expected": 59986,
     "net": 64795,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -215198,10 +215033,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609075795813",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -215265,27 +215098,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 1.9,
-    "expected": 51198,
-    "net": 52195,
-    "comps": 6,
-    "basis": "model",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 6,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 35,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202609075791883": {
    "id": "202609075791883",
@@ -215635,10 +215450,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 11.3,
-    "expected": 39997,
+    "pct": 10,
+    "expected": 40470,
     "net": 44500,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -216812,7 +216627,7 @@
   "202609045716607": {
    "id": "202609045716607",
    "title": "AUTO-SLEEPERS BOURTON",
-   "subTitle": "MERCEDES BASED LUXURY AUTOMATIC MOTORHOME, 2 SINGLE BEDS OR LARGE DOUBLE 2.1",
+   "subTitle": "MERCEDES BASED LUXURY AUTOMATIC MOTORHOME, 2 SINGLE BEDS OR LARGE DOUBLE, FULL SERVICE HISTORY 2.1",
    "attentionGrabber": "3 YEARS RAC WARRANTY",
    "make": "Auto-Sleepers",
    "model": "Bourton",
@@ -217499,10 +217314,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -10.6,
-    "expected": 44723,
+    "pct": -10.2,
+    "expected": 44529,
     "net": 39999,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -217662,10 +217477,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.4,
-    "expected": 41124,
+    "pct": -4.3,
+    "expected": 40647,
     "net": 38899,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -218307,8 +218122,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.3,
-    "expected": 44117,
+    "pct": 1.5,
+    "expected": 44039,
     "net": 44700,
     "comps": 8,
     "basis": "model",
@@ -219986,10 +219801,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202609015603246",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -220119,27 +219932,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -5.8,
-    "expected": 63395,
-    "net": 59695,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 8,
-    "motivationReasons": [],
-    "wantedHits": [],
-    "daysListed": 41,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202609015598210": {
    "id": "202609015598210",
@@ -223516,10 +223311,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.7,
-    "expected": 64145,
+    "pct": -2.4,
+    "expected": 61995,
     "net": 60495,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -223646,10 +223441,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.5,
-    "expected": 39894,
+    "pct": -2.5,
+    "expected": 39482,
     "net": 38499,
-    "comps": 24,
+    "comps": 22,
     "basis": "model",
     "adjusted": true
    },
@@ -224852,10 +224647,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6,
-    "expected": 46982,
+    "pct": -5.8,
+    "expected": 46866,
     "net": 44150,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -225017,10 +224812,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.6,
-    "expected": 42329,
+    "pct": -4.5,
+    "expected": 42315,
     "net": 40400,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -225816,10 +225611,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.5,
-    "expected": 40278,
+    "pct": 6.4,
+    "expected": 39938,
     "net": 42499,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -226250,10 +226045,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.5,
-    "expected": 36858,
+    "pct": -11.3,
+    "expected": 37209,
     "net": 32995,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -226877,10 +226672,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.1,
-    "expected": 61945,
+    "pct": -3.8,
+    "expected": 62395,
     "net": 59995,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -227529,7 +227324,7 @@
    ],
    "value": {
     "pct": -17.6,
-    "expected": 58508,
+    "expected": 58507,
     "net": 48200,
     "comps": 18,
     "basis": "chassis",
@@ -228922,10 +228717,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 31,
-    "expected": 18858,
+    "pct": 44.9,
+    "expected": 17051,
     "net": 24700,
-    "comps": 13,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -230194,10 +229989,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.7,
-    "expected": 39800,
+    "pct": 5.4,
+    "expected": 39550,
     "net": 41690,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -230394,10 +230189,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.6,
-    "expected": 46908,
+    "pct": 0.9,
+    "expected": 46790,
     "net": 47195,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -232199,8 +231994,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.6,
-    "expected": 53670,
+    "pct": 7.5,
+    "expected": 53193,
     "net": 57190,
     "comps": 6,
     "basis": "chassis",
@@ -232364,7 +232159,7 @@
    "redFlags": [],
    "value": {
     "pct": -22.1,
-    "expected": 48496,
+    "expected": 48498,
     "net": 37795,
     "comps": 10,
     "basis": "model",
@@ -233060,9 +232855,9 @@
    "redFlags": [],
    "value": {
     "pct": 16.1,
-    "expected": 54248,
+    "expected": 54244,
     "net": 62990,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -233302,8 +233097,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.3,
-    "expected": 61867,
+    "pct": -3.4,
+    "expected": 61254,
     "net": 59195,
     "comps": 21,
     "basis": "make",
@@ -234697,10 +234492,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -15,
-    "expected": 42577,
+    "pct": -14.9,
+    "expected": 42554,
     "net": 36199,
-    "comps": 18,
+    "comps": 19,
     "basis": "make",
     "adjusted": true
    },
@@ -235458,12 +235253,12 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.5,
-    "expected": 64699,
+    "pct": 2.8,
+    "expected": 60125,
     "net": 61795,
-    "comps": 5,
-    "basis": "chassis",
-    "adjusted": false
+    "comps": 66,
+    "basis": "make",
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -236442,10 +236237,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3,
-    "expected": 63943,
+    "pct": 0,
+    "expected": 61995,
     "net": 61995,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -236726,8 +236521,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 29.9,
-    "expected": 45171,
+    "pct": 30.1,
+    "expected": 45111,
     "net": 58695,
     "comps": 12,
     "basis": "model",
@@ -237324,10 +237119,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.4,
-    "expected": 61793,
+    "pct": 7.1,
+    "expected": 61995,
     "net": 66395,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -237831,12 +237626,12 @@
     }
    ],
    "value": {
-    "pct": 2.4,
-    "expected": 41695,
+    "pct": -1.3,
+    "expected": 43236,
     "net": 42695,
-    "comps": 7,
+    "comps": 8,
     "basis": "model",
-    "adjusted": false
+    "adjusted": true
    },
    "deal": {
     "underpriced": false,
@@ -240427,10 +240222,10 @@
     }
    ],
    "value": {
-    "pct": 1.3,
-    "expected": 46900,
+    "pct": 1.5,
+    "expected": 46783,
     "net": 47495,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -240847,10 +240642,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -7.8,
-    "expected": 43379,
+    "pct": -7.4,
+    "expected": 43180,
     "net": 39995,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -241001,10 +240796,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 43462,
+    "pct": -3.9,
+    "expected": 43372,
     "net": 41695,
-    "comps": 28,
+    "comps": 29,
     "basis": "make",
     "adjusted": true
    },
@@ -241714,10 +241509,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.3,
-    "expected": 59682,
+    "pct": -5.5,
+    "expected": 59764,
     "net": 56495,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -242150,7 +241945,7 @@
     "pct": -1,
     "expected": 62995,
     "net": 62395,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -242378,8 +242173,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.7,
-    "expected": 54010,
+    "pct": -8.6,
+    "expected": 53963,
     "net": 49295,
     "comps": 27,
     "basis": "make",
@@ -242586,10 +242381,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.8,
-    "expected": 51737,
+    "pct": 4.9,
+    "expected": 51688,
     "net": 54195,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -242745,7 +242540,7 @@
     "pct": 4.5,
     "expected": 62945,
     "net": 65786,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -243244,10 +243039,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.1,
-    "expected": 61098,
+    "pct": 2.4,
+    "expected": 61495,
     "net": 62995,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -244101,10 +243896,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.3,
-    "expected": 55673,
+    "pct": -6.8,
+    "expected": 54195,
     "net": 50495,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -244357,10 +244152,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.8,
-    "expected": 25515,
+    "pct": 8.2,
+    "expected": 25407,
     "net": 27500,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -245411,14 +245206,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 5.5,
-    "expected": 61445,
-    "net": 64795,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -245697,10 +245485,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.9,
-    "expected": 50734,
+    "pct": -10.6,
+    "expected": 50559,
     "net": 45195,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -245920,10 +245708,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.3,
-    "expected": 61793,
+    "pct": 6.9,
+    "expected": 61995,
     "net": 66295,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -247046,8 +246834,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3,
-    "expected": 57563,
+    "pct": 4.6,
+    "expected": 56700,
     "net": 59300,
     "comps": 10,
     "basis": "chassis",
@@ -247692,10 +247480,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7.1,
-    "expected": 64145,
+    "pct": -3.9,
+    "expected": 61995,
     "net": 59590,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -247888,10 +247676,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4,
-    "expected": 64145,
+    "pct": -0.7,
+    "expected": 61995,
     "net": 61590,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -249509,10 +249297,10 @@
     }
    ],
    "value": {
-    "pct": -7.2,
-    "expected": 58427,
+    "pct": -7.4,
+    "expected": 58523,
     "net": 54195,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -250166,7 +249954,7 @@
     "pct": 4.5,
     "expected": 62945,
     "net": 65785,
-    "comps": 30,
+    "comps": 32,
     "basis": "make",
     "adjusted": false
    },
@@ -250273,10 +250061,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -8.6,
-    "expected": 50763,
+    "pct": -8.3,
+    "expected": 50591,
     "net": 46395,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -253547,10 +253335,10 @@
     }
    ],
    "value": {
-    "pct": -5.9,
-    "expected": 41453,
+    "pct": -7.1,
+    "expected": 41975,
     "net": 38999,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -253829,10 +253617,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.8,
-    "expected": 59151,
+    "pct": -0.9,
+    "expected": 59227,
     "net": 58695,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -254633,14 +254421,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -0.6,
-    "expected": 63995,
-    "net": 63595,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -255185,7 +254966,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.6,
-    "expected": 62778,
+    "expected": 62777,
     "net": 59895,
     "comps": 25,
     "basis": "model",
@@ -255798,10 +255579,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2,
-    "expected": 40895,
+    "pct": 2.9,
+    "expected": 40523,
     "net": 41695,
-    "comps": 5,
+    "comps": 6,
     "basis": "model",
     "adjusted": false
    },
@@ -256108,10 +255889,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7,
-    "expected": 61945,
+    "pct": -7.7,
+    "expected": 62395,
     "net": 57595,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -257144,8 +256925,8 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": 12.3,
-    "expected": 56964,
+    "pct": 12.6,
+    "expected": 56853,
     "net": 63995,
     "comps": 9,
     "basis": "make",
@@ -257851,7 +257632,7 @@
    "redFlags": [],
    "value": {
     "pct": -7.6,
-    "expected": 62886,
+    "expected": 62885,
     "net": 58095,
     "comps": 25,
     "basis": "model",
@@ -259801,10 +259582,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0,
-    "expected": 51195,
+    "pct": 3.4,
+    "expected": 49495,
     "net": 51200,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -260381,9 +260162,9 @@
    "redFlags": [],
    "value": {
     "pct": 1.9,
-    "expected": 54665,
+    "expected": 54664,
     "net": 55695,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -261601,10 +261382,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.4,
-    "expected": 61945,
+    "pct": -5.1,
+    "expected": 62395,
     "net": 59195,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -262460,8 +262241,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6,
-    "expected": 61502,
+    "pct": 7.1,
+    "expected": 60876,
     "net": 65195,
     "comps": 21,
     "basis": "make",
@@ -263180,7 +262961,7 @@
    "redFlags": [],
    "value": {
     "pct": -2.7,
-    "expected": 62712,
+    "expected": 62711,
     "net": 61001,
     "comps": 25,
     "basis": "model",
@@ -263692,10 +263473,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 9.6,
-    "expected": 61793,
+    "pct": 9.2,
+    "expected": 61995,
     "net": 67695,
-    "comps": 6,
+    "comps": 7,
     "basis": "model",
     "adjusted": false
    },
@@ -265297,10 +265078,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -17.7,
-    "expected": 47117,
+    "pct": -17.5,
+    "expected": 46998,
     "net": 38795,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -267351,8 +267132,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.6,
-    "expected": 49727,
+    "pct": 6.1,
+    "expected": 48996,
     "net": 51995,
     "comps": 9,
     "basis": "chassis",
@@ -267509,9 +267290,9 @@
    "redFlags": [],
    "value": {
     "pct": -11.3,
-    "expected": 51200,
+    "expected": 51198,
     "net": 45399,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -267673,10 +267454,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1,
-    "expected": 58091,
+    "pct": 0.9,
+    "expected": 58168,
     "net": 58699,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -267818,10 +267599,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.3,
-    "expected": 61945,
+    "pct": -3,
+    "expected": 62395,
     "net": 60495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -267921,10 +267702,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -1.5,
-    "expected": 40620,
+    "pct": -0.6,
+    "expected": 40236,
     "net": 39995,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -268683,14 +268464,7 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 11,
-    "expected": 61445,
-    "net": 68195,
-    "comps": 6,
-    "basis": "make",
-    "adjusted": false
-   },
+   "value": null,
    "deal": {
     "underpriced": false,
     "highSpec": false,
@@ -270517,10 +270291,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -17.6,
-    "expected": 55673,
+    "pct": -15.3,
+    "expected": 54195,
     "net": 45899,
-    "comps": 6,
+    "comps": 7,
     "basis": "make",
     "adjusted": false
    },
@@ -270626,10 +270400,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2,
-    "expected": 61945,
+    "pct": -2.7,
+    "expected": 62395,
     "net": 60700,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -271226,10 +271000,10 @@
    "specs": [],
    "redFlags": [],
    "value": {
-    "pct": -7.5,
-    "expected": 43260,
+    "pct": -7.1,
+    "expected": 43072,
     "net": 39995,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -272685,10 +272459,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3.2,
-    "expected": 58139,
+    "pct": 3.1,
+    "expected": 58214,
     "net": 59995,
-    "comps": 34,
+    "comps": 32,
     "basis": "make",
     "adjusted": true
    },
@@ -276244,8 +276018,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 3,
-    "expected": 61624,
+    "pct": 4.1,
+    "expected": 60999,
     "net": 63495,
     "comps": 21,
     "basis": "make",
@@ -276951,10 +276725,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202603250997884",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "6.25–7 m, all body types (Autotrader length)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -277065,29 +276837,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": 10.5,
-    "expected": 46800,
-    "net": 51695,
-    "comps": 42,
-    "basis": "make",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": true,
-    "desperation": 50,
-    "motivationReasons": [
-     "listed 201 days"
-    ],
-    "wantedHits": [],
-    "daysListed": 201,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202603250995673": {
    "id": "202603250995673",
@@ -277505,8 +277257,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.7,
-    "expected": 54737,
+    "pct": -10.6,
+    "expected": 54690,
     "net": 48895,
     "comps": 27,
     "basis": "make",
@@ -277631,10 +277383,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -6.7,
-    "expected": 51200,
+    "pct": -6.6,
+    "expected": 51198,
     "net": 47795,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -278990,10 +278742,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.9,
-    "expected": 61098,
+    "pct": 2.3,
+    "expected": 61495,
     "net": 62895,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -279548,7 +279300,7 @@
    "redFlags": [],
    "value": {
     "pct": 5.4,
-    "expected": 62425,
+    "expected": 62424,
     "net": 65795,
     "comps": 25,
     "basis": "model",
@@ -279688,10 +279440,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -0.4,
-    "expected": 59627,
+    "pct": -0.3,
+    "expected": 59590,
     "net": 59395,
-    "comps": 32,
+    "comps": 33,
     "basis": "make",
     "adjusted": true
    },
@@ -280184,10 +279936,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.9,
-    "expected": 56631,
+    "pct": -3.8,
+    "expected": 56553,
     "net": 54395,
-    "comps": 35,
+    "comps": 36,
     "basis": "make",
     "adjusted": true
    },
@@ -280884,10 +280636,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.9,
-    "expected": 48647,
+    "pct": 1.2,
+    "expected": 48500,
     "net": 49099,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -281050,10 +280802,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.5,
-    "expected": 44002,
+    "pct": -1.9,
+    "expected": 43739,
     "net": 42895,
-    "comps": 42,
+    "comps": 43,
     "basis": "make",
     "adjusted": true
    },
@@ -282987,10 +282739,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.3,
-    "expected": 61098,
+    "pct": 1.6,
+    "expected": 61495,
     "net": 62495,
-    "comps": 10,
+    "comps": 11,
     "basis": "model",
     "adjusted": false
    },
@@ -283607,9 +283359,9 @@
    ],
    "value": {
     "pct": 3,
-    "expected": 39498,
+    "expected": 39499,
     "net": 40695,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -284221,10 +283973,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 6.8,
-    "expected": 44705,
+    "pct": 5.3,
+    "expected": 45359,
     "net": 47750,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -285859,10 +285611,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 2.5,
-    "expected": 57749,
+    "pct": 2.4,
+    "expected": 57812,
     "net": 59195,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -286670,9 +286422,9 @@
    "redFlags": [],
    "value": {
     "pct": -2.6,
-    "expected": 58701,
+    "expected": 58670,
     "net": 57150,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -287040,10 +286792,10 @@
     }
    ],
    "value": {
-    "pct": 10.5,
-    "expected": 38824,
+    "pct": 10.1,
+    "expected": 38947,
     "net": 42895,
-    "comps": 14,
+    "comps": 15,
     "basis": "make",
     "adjusted": true
    },
@@ -287683,9 +287435,9 @@
    "redFlags": [],
    "value": {
     "pct": 6.7,
-    "expected": 51198,
+    "expected": 51195,
     "net": 54650,
-    "comps": 6,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -288868,10 +288620,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.9,
-    "expected": 43122,
+    "pct": 13.1,
+    "expected": 43067,
     "net": 48695,
-    "comps": 45,
+    "comps": 46,
     "basis": "make",
     "adjusted": true
    },
@@ -289283,9 +289035,9 @@
    "redFlags": [],
    "value": {
     "pct": 0.4,
-    "expected": 55446,
+    "expected": 55491,
     "net": 55695,
-    "comps": 67,
+    "comps": 66,
     "basis": "make",
     "adjusted": true
    },
@@ -290877,10 +290629,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -9.6,
-    "expected": 47029,
+    "pct": -9.4,
+    "expected": 46915,
     "net": 42495,
-    "comps": 42,
+    "comps": 41,
     "basis": "make",
     "adjusted": true
    },
@@ -291349,10 +291101,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.1,
-    "expected": 44384,
+    "pct": -3,
+    "expected": 44331,
     "net": 42995,
-    "comps": 45,
+    "comps": 44,
     "basis": "make",
     "adjusted": true
    },
@@ -291609,10 +291361,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 18.9,
-    "expected": 38274,
+    "pct": 17.7,
+    "expected": 38643,
     "net": 45495,
-    "comps": 9,
+    "comps": 10,
     "basis": "make",
     "adjusted": true
    },
@@ -292700,10 +292452,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -4.1,
-    "expected": 50236,
+    "pct": -3.8,
+    "expected": 50077,
     "net": 48195,
-    "comps": 16,
+    "comps": 17,
     "basis": "make",
     "adjusted": true
    },
@@ -293655,10 +293407,10 @@
     }
    ],
    "value": {
-    "pct": 2.5,
-    "expected": 40856,
+    "pct": 3.7,
+    "expected": 40406,
     "net": 41895,
-    "comps": 25,
+    "comps": 26,
     "basis": "make",
     "adjusted": true
    },
@@ -297657,10 +297409,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -28.4,
-    "expected": 38125,
+    "pct": -29.1,
+    "expected": 38511,
     "net": 27300,
-    "comps": 22,
+    "comps": 21,
     "basis": "model",
     "adjusted": true
    },
@@ -298713,10 +298465,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -11.9,
-    "expected": 37240,
+    "pct": -12.3,
+    "expected": 37416,
     "net": 32811,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -299212,8 +298964,8 @@
    "registeredYear": "2020 (70 reg)",
    "mileageText": "91,340 miles",
    "mileage": 91340,
-   "price": 40000,
-   "priceText": "£40,000",
+   "price": 40300,
+   "priceText": "£40,300",
    "location": "Liverpool (182 miles)",
    "distanceMiles": 182,
    "sellerType": "TRADE",
@@ -299231,6 +298983,10 @@
     {
      "date": "2026-10-11",
      "price": 40000
+    },
+    {
+     "date": "2026-10-12",
+     "price": 40300
     }
    ],
    "details": {
@@ -299386,7 +299142,7 @@
     "wantedHits": [],
     "daysListed": 221,
     "drops": 0,
-    "totalDropPct": 0,
+    "totalDropPct": 0.8,
     "redFlags": 0,
     "isDeal": true
    },
@@ -310539,10 +310295,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 28.3,
-    "expected": 38297,
+    "pct": 27.6,
+    "expected": 38510,
     "net": 49150,
-    "comps": 25,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -314180,10 +313936,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202610096852815",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -314257,29 +314011,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -4.8,
-    "expected": 48504,
-    "net": 46195,
-    "comps": 22,
-    "basis": "model",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 10,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 3,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202610096851319": {
    "id": "202610096851319",
@@ -315535,10 +315269,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 4.1,
-    "expected": 29671,
+    "pct": 4.7,
+    "expected": 29507,
     "net": 30900,
-    "comps": 13,
+    "comps": 12,
     "basis": "model",
     "adjusted": true
    },
@@ -315675,10 +315409,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -5.3,
-    "expected": 47495,
+    "pct": -5.6,
+    "expected": 47645,
     "net": 45000,
-    "comps": 5,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -315982,10 +315716,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202610026597181",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -316064,29 +315796,9 @@
     }
    ],
    "redFlags": [],
-   "value": {
-    "pct": -16,
-    "expected": 45523,
-    "net": 38250,
-    "comps": 22,
-    "basis": "model",
-    "adjusted": true
-   },
-   "deal": {
-    "underpriced": true,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 10,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 10,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": true
-   }
+   "value": null,
+   "deal": null,
+   "goneSince": "2026-10-12"
   },
   "202609296504170": {
    "id": "202609296504170",
@@ -317019,10 +316731,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.6,
-    "expected": 43095,
+    "pct": -4.1,
+    "expected": 44190,
     "net": 42400,
-    "comps": 4,
+    "comps": 5,
     "basis": "model",
     "adjusted": false
    },
@@ -320346,10 +320058,8 @@
    "url": "https://www.autotrader.co.uk/motorhome-details/202608315584771",
    "firstSeen": "2026-10-11",
    "lastSeen": "2026-10-12",
-   "status": "active",
-   "searches": [
-    "Campervans and van conversions (length from advert)"
-   ],
+   "status": "gone",
+   "searches": [],
    "priceHistory": [
     {
      "date": "2026-10-11",
@@ -320425,21 +320135,8 @@
    ],
    "redFlags": [],
    "value": null,
-   "deal": {
-    "underpriced": false,
-    "highSpec": false,
-    "motivated": false,
-    "desperation": 18,
-    "motivationReasons": [
-     "private seller"
-    ],
-    "wantedHits": [],
-    "daysListed": 42,
-    "drops": 0,
-    "totalDropPct": 0,
-    "redFlags": 0,
-    "isDeal": false
-   },
+   "deal": null,
+   "goneSince": "2026-10-12",
    "excluded": "5.93 m (spec sheet)"
   },
   "202608255433503": {
@@ -321090,10 +320787,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 19.4,
-    "expected": 30900,
+    "pct": 2.6,
+    "expected": 35974,
     "net": 36899,
-    "comps": 3,
+    "comps": 4,
     "basis": "model",
     "adjusted": false
    },
@@ -324403,9 +324100,9 @@
    "redFlags": [],
    "value": {
     "pct": 3.2,
-    "expected": 52203,
+    "expected": 52204,
     "net": 53899,
-    "comps": 32,
+    "comps": 30,
     "basis": "make",
     "adjusted": true
    },
@@ -326255,9 +325952,2735 @@
     "isDeal": false
    },
    "excluded": "5.99 m (spec sheet)"
+  },
+  "202610126919335": {
+   "id": "202610126919335",
+   "title": "Auto-Trail Tracker EKS",
+   "subTitle": "2.3",
+   "attentionGrabber": "Automatic",
+   "make": "Auto-Trail",
+   "model": "Tracker EKS",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (22 reg)",
+   "mileageText": "29,482 miles",
+   "mileage": 29482,
+   "price": 39999,
+   "priceText": "£39,999",
+   "location": "Mansfield (122 miles)",
+   "distanceMiles": 122,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6cc753fbdfa1408ba45a12a96cb167dc.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126919335",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 39999
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2016 Autotrail Tracker EKS built on the Fiat chassis | Automatic | * Good service history |* Sale included new Full Habitation Report | * 4-Berth/2-Belt |* 2 single 1700mm length bunks or makes large double |* Second double bed over the cab |* Calor gas bottle |* Reversing camera |* Awning |* External BBQ point |* External shower point | * Solar |* TV |* Aerial | * Cab Air-Con | * Located in Mansfield |* Slight damage to rear bumper and minor scratches |* Small crack in cluster light | For further information contact Julian on 01246 382388.\nPlease note, this vehicle is not a brokerage unit and as such means that it is compliant with the Consumer Rights Act 2015.",
+    "descriptionLength": 670,
+    "features": [
+     "2 X sets of keys",
+     "Aerial",
+     "BBQ Point",
+     "Cab air-con",
+     "Fridge",
+     "Fridge Freezer",
+     "Gas bottle",
+     "Grill",
+     "Heating",
+     "Microwave",
+     "Oven",
+     "Radio",
+     "Reversing camera",
+     "Solar Panel",
+     "Swivel Seats",
+     "TV",
+     "Toilet",
+     "V5 reg doc",
+     "Washroom",
+     "Wind Out Canopy"
+    ],
+    "keySpec": {
+     "Mileage": "29,482 miles",
+     "Registration": "2016 (22 reg)",
+     "Owners": "4",
+     "Berth": "4",
+     "End layout": "End kitchen / washroom",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.3L",
+     "Seats": "2",
+     "Dimensions": "L:6,440mm"
+    },
+    "specs": {
+     "Length": "6,440mm",
+     "Seats": "2",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Coach Built",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": "Coach Built",
+    "owners": 4,
+    "serviceHistory": "Partial service history",
+    "serviceHistoryType": "SOME",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 6.44,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [
+    {
+     "label": "4 owners",
+     "evidence": "4 previous owners"
+    }
+   ],
+   "value": {
+    "pct": -9.9,
+    "expected": 41295,
+    "net": 37199,
+    "comps": 6,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 1,
+    "isDeal": false
+   }
+  },
+  "202610126919296": {
+   "id": "202610126919296",
+   "title": "WildAx Europa XL",
+   "subTitle": "2.2",
+   "attentionGrabber": "Huge Rear Lounge",
+   "make": "Wildax",
+   "model": "Europa",
+   "category": "motorhome",
+   "year": 2022,
+   "registeredYear": "2022 (22 reg)",
+   "mileageText": "15,050 miles",
+   "mileage": 15050,
+   "price": 53999,
+   "priceText": "£53,999",
+   "location": "Newquay (228 miles)",
+   "distanceMiles": 228,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/514632c338874690921e9527fba4d78d.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126919296",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 53999
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Motorhome Depot Cornwall proudly presents this stunning 2022 WildAx Europa XL. This camper is one to be seen and stands out from the crowd with such high spec. Built on the Citreon chassis and powered by a 2.2 litre diesel engine with a Manual 6-speed transmission, measuring just 6.36 metres in length, MOT not due until April 2027 and being EURO 6 compliant are all attributes that will help this camper appeal to many people. The Wildax Also benefits from having its latest Engine and Habitation service both completed in April 2026 for that extra peace of mind! The WildAx Europa has been designed with detail in mind with a bright and modern feel inside. All areas have been looked at in detail with many new innovations evident in the design. The layout is the very inviting rear U shaped lounge with ample seating for 4 people in comfort. Additionally the cab seats rotate to offer a front seating area should you wish to leave the bed made up in the rear! The rear seating area is a large and comfortable area which transforms easily into either 2 single beds or a large double bed. The combination of lots of side and roof windows and a bright modern colour scheme enhance the open feeling in the van. The washroom is made from a custom designed hard wearing fibreglass and uses the unique waterproof door which removes the need for a shower curtain making the room large enough for a comfortable shower. The washroom is also fitted with multiple accessories and a useful storage cupboard. T",
+    "descriptionLength": 2860,
+    "features": [
+     "2 X sets of keys",
+     "Aerial",
+     "Alarm",
+     "Bike Rack",
+     "Bluetooth",
+     "Cab air-con",
+     "Fridge",
+     "Fridge Freezer",
+     "Gas bottle",
+     "Grill",
+     "Heating",
+     "LPG Tank",
+     "Microwave",
+     "Oven",
+     "Parking Sensors",
+     "Radio",
+     "Refillable Gas Bottles",
+     "Reversing Sensors",
+     "Reversing camera",
+     "Solar Panel",
+     "Swivel Seats",
+     "Toilet",
+     "V5 reg doc",
+     "Washroom",
+     "Wind Out Canopy"
+    ],
+    "keySpec": {
+     "Mileage": "15,050 miles",
+     "Registration": "2022 (22 reg)",
+     "Owners": "1",
+     "Berth": "2",
+     "End layout": "End lounge",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Manual",
+     "Engine size power": "2.2L",
+     "Seats": "2",
+     "Dimensions": "L:6,360mm"
+    },
+    "specs": {
+     "Length": "6,360mm",
+     "Seats": "2",
+     "Gross vehicle weight": "3,500kg",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": null,
+    "owners": 1,
+    "serviceHistory": "Partial service history",
+    "serviceHistoryType": "SOME",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -2.7,
+    "expected": 54161,
+    "net": 52699,
+    "comps": 11,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126916531": {
+   "id": "202610126916531",
+   "title": "Volkswagen Crafter CR35 Trendline TDI LWB",
+   "subTitle": "2.0 TDI CR35 BlueMotion Tech Startline Panel Van 5dr Diesel Manual FWD LWB High Roof Euro 6 (s/s) (140 ps)",
+   "attentionGrabber": "LOW MILEAGE - OFF-GRID CAMPER",
+   "make": "Volkswagen",
+   "model": "Crafter",
+   "category": "motorhome",
+   "year": 2018,
+   "registeredYear": "2018 (18 reg)",
+   "mileageText": "39,000 miles",
+   "mileage": 39000,
+   "price": 44995,
+   "priceText": "£44,995",
+   "location": "Shrewsbury (141 miles)",
+   "distanceMiles": 141,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/3a12cffbd1174ddb8a388b49f893e30a.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126916531",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 44995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2018 Volkswagen Crafter CR35 Trendline TDI Campervan – 4 Berth / 5 Belts – Low Mileage – Off-GridProfessionally converted by Mark1 Conversions, this superb Crafter has had just 2 owners from new. Powered by the Euro 6 2.0 TDI 140bhp engine with 6-speed manual gearbox and plated at 3,500kg GVW, meaning it can be driven on a standard car licence. MOT until July 2027, good service history and last serviced January 2026.The Trendline specification includes cruise control, multifunction steering wheel, DAB media system with Bluetooth/USB connectivity, electric heated mirrors and comfortable front seating. Twin swivelling captain’s seats with armrests create an excellent lounge area.The professional conversion provides 4 berths and 5 belted travelling seats, with two generous fixed rear bunk beds and a quality RIB seat/bed converting into the front double bed.The well-equipped kitchen features a Dometic twin-burner gas hob with sink and tap, together with a Dometic CRX50 compressor fridge.Excellent off-grid specification includes a 145W solar panel, 100Ah AGM leisure battery, CTEK D250 intelligent charger with MPPT solar control, Victron Bluetooth mains charger, 240V hook-up, 12V/USB sockets, LED lighting and diesel night heater for comfort in colder weather. A MaxxFan roof vent provides excellent ventilation.Outside equipment includes an electrically operated Thule Omnistor awning canopy, Xplore side steps making access extremely easy at all entry points, rear bike rack, tow bar, ",
+    "descriptionLength": 2148,
+    "features": [
+     "2 X sets of keys",
+     "Alarm",
+     "Bike Rack",
+     "Bluetooth",
+     "Cab air-con",
+     "Fridge Freezer",
+     "Heating",
+     "Parking Sensors",
+     "Radio",
+     "Reversing camera",
+     "Solar Panel",
+     "Swivel Seats",
+     "Tow Bar",
+     "USB Points",
+     "V5 reg doc"
+    ],
+    "keySpec": {
+     "Mileage": "39,000 miles",
+     "Registration": "2018 (18 reg)",
+     "Owners": "2",
+     "Berth": "4",
+     "End layout": "End Garage",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Manual",
+     "Engine size power": "2.0L",
+     "Seats": "5",
+     "Dimensions": "L:6,850mm"
+    },
+    "specs": {
+     "Length": "6,850mm",
+     "Seats": "5",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Van Conversion",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Partial service history",
+    "serviceHistoryType": "SOME",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 6.85,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…26.the trendline specification includes cruise control, multifunction steering wheel, dab…"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "tow bar"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…an electrically operated thule omnistor awning canopy, xplore side steps making access ext…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.9,
+    "expected": 44048,
+    "net": 43195,
+    "comps": 17,
+    "basis": "model",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126913901": {
+   "id": "202610126913901",
+   "title": "WildAx Solaris Xl",
+   "subTitle": "2.3",
+   "attentionGrabber": "4 BERTH WITH BUNK BEDS",
+   "make": "Wildax",
+   "model": "Solaris XL",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (20 reg)",
+   "mileageText": "24,352 miles",
+   "mileage": 24352,
+   "price": 54000,
+   "priceText": "£54,000",
+   "location": "Inverness (445 miles)",
+   "distanceMiles": 445,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/828d114448004175b94cd6e02e73d093.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126913901",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 54000
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Brokers Comments - Designed to maximise comfort, practicality and usable living space with a highly versatile layout. Key features include 2 x swivel seats, cab air con, cruise control, infotainment system with an oversized touch screen, sat nav and Bluetooth, integrated cab blinds, awning, and an alarm and tracker. Extras including leveller ramps, hook up cable and water hose. A Truma combi boiler provides heating and hot water via gas or electric.    Service History - MOT until October 2027. Chassis service completed November 2026. Habitation check booked.     Living/Dining - Front dinette area with two swivel cab chairs with arm rests, double rear passenger seat with 3-point seatbelts, removable dining table. Overhead storage units, soft lighting     Kitchen - 4 x ring gas hob, separate grill and oven, microwave, worktop space, sink with mixer tap & hot and cold water, 3 way fridge, generous storage and plenty of good lighting, 12v USB sockets & power sockets.     Sleeping - The standout feature is the fixed rear bunk-bed arrangement, providing dedicated sleeping accommodation without the need to convert the beds every night. The generous bunk beds offer excellent length, making them suitable for both children and adults, while freeing up the rest of the motorhome for living and relaxing.    Washroom - Sink with hot and cold running water, tap extends into a shower head, cassette toilet, wall mounted mirror, overhead storage units and space for accessories.   Approx. Vehic",
+    "descriptionLength": 1720,
+    "features": [
+     "2 X sets of keys",
+     "Aerial",
+     "Alarm",
+     "Cab air-con",
+     "Fridge",
+     "Fridge Freezer",
+     "Grill",
+     "Heating",
+     "LPG Tank",
+     "Microwave",
+     "Oven",
+     "Radio",
+     "Rear Seat Belt",
+     "Reversing camera",
+     "Solar Panel",
+     "Swivel Seats",
+     "Toilet",
+     "USB Points",
+     "V5 reg doc",
+     "Washroom",
+     "Wind Out Canopy"
+    ],
+    "keySpec": {
+     "Mileage": "24,352 miles",
+     "Registration": "2020 (20 reg)",
+     "Owners": "3",
+     "Berth": "4",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.3L",
+     "Seats": "4",
+     "Dimensions": "L:6,360mm"
+    },
+    "specs": {
+     "Length": "6,360mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,500kg",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": null,
+    "owners": 3,
+    "serviceHistory": "Partial service history",
+    "serviceHistoryType": "SOME",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…include 2 x swivel seats, cab air con, cruise control, infotainment system with an oversi…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 18.3,
+    "expected": 43295,
+    "net": 51200,
+    "comps": 4,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126908370": {
+   "id": "202610126908370",
+   "title": "Hymer ML T 570 Design",
+   "subTitle": "2.2",
+   "attentionGrabber": "Mercedes Auto 42000 miles FSH",
+   "make": "Hymer",
+   "model": "ML-T",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "42,000 miles",
+   "mileage": 42000,
+   "price": 54995,
+   "priceText": "£54,995",
+   "location": "Farnborough (30 miles)",
+   "distanceMiles": 30,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": null,
+   "imageCount": 0,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126908370",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 54995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Hymer ML-T 570 60th Edition - Mercedes Automatic Located near Southamton Hampshire 2017  6.74m The Rare Diamond Anniversary Model - One of Hymer's Most Desirable Limited Editions !Built to celebrate 60 years of Hymer, the 60th Edition was a special, limited production run where Hymer finally included all the expensive options as standard. If you know Hymers, you'll know that's rare.  At just 6.74m long and 3,500kg (standard UK licence), this is the perfect compact luxury tourer - easy to drive and park, but with true Hymer quality throughout. Mercedes-Benz Sprinter 316 CDI 163BHP7G-TRONIC Fully Automatic Gearbox16\" Alloy WheelsMetallic Graphite Grey Cab & Crystal Silver Habitation - 60th Edition ColoursCruise Control, Cab Air ConditioningMultifunction Steering Wheel with Phone ControlsDouble-DIN Sat Nav, Media & Reversing Camera SystemElectric Windows & Heated MirrorsCab Central Locking & ImmobiliserSwivel Aguti Captain's Chairs with ArmrestsExclusive Milano Upholstery with Stain-Guard ProtectionChiavenna Walnut Furniture with High-Gloss DoorsTwo-Tone Gold Fleck Worktops - Anti-FingerprintAmbient Lighting PackageOyster Automatic Satellite System & 32\" TVPanoramic Heki Rooflight Over CabDark Tinted Roof Habitation & Living:3 Berth - 4 Belted Seats (Rear 2-Point Belts)L-Shaped Lounge with Swivel Cab Seats & Folding TableRear Twin Single Beds 186cm & 190cm - Converts to Large DoubleOverhead Lockers with Soft-Close CatchesFlyscreen to Habitation Door with WindowBlinds & Flyscreen",
+    "descriptionLength": 2290,
+    "features": [
+     "2 X sets of keys",
+     "Alarm",
+     "Bike Rack",
+     "Bluetooth",
+     "Cab air-con",
+     "Fridge",
+     "Fridge Freezer",
+     "Gas bottle",
+     "Grill",
+     "Heating",
+     "Oven",
+     "Radio",
+     "Reversing camera",
+     "Satellite System",
+     "Solar Panel",
+     "Swivel Seats",
+     "TV",
+     "Toilet",
+     "V5 reg doc",
+     "Washroom",
+     "Wind Out Canopy"
+    ],
+    "keySpec": {
+     "Mileage": "42,000 miles",
+     "Registration": "2017 (17 reg)",
+     "Owners": "3",
+     "Berth": "3",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Fixed single beds",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.2L",
+     "Seats": "4",
+     "Dimensions": "L:6,800mm"
+    },
+    "specs": {
+     "Length": "6,800mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Coach Built",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Fixed single beds",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": "Coach Built",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "serviceHistoryType": "FULL",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 6.8,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…silver habitation - 60th edition colourscruise control, cab air conditioningmultifunction…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    },
+    {
+     "label": "Satellite TV",
+     "value": 800,
+     "evidence": "satellite system"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.2,
+    "expected": 52033,
+    "net": 51395,
+    "comps": 10,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126902841": {
+   "id": "202610126902841",
+   "title": "Laika Kreos 3008",
+   "subTitle": "Automatic , French Bed , 4 belts 4 berth 2.3",
+   "attentionGrabber": "Laika Kreos",
+   "make": "Laika",
+   "model": "Kreos",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "25,834 miles",
+   "mileage": 25834,
+   "price": 51995,
+   "priceText": "£51,995",
+   "location": "Gosport (65 miles)",
+   "distanceMiles": 65,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/30b46c451f394eee98b479ecc0754c77.jpg",
+   "imageCount": 5,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126902841",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 51995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "1 owner from new\nAutomatic\nAwaiting Preparation\nIntroducing the 2017 Laika Kreos 3002 Motorhome, a splendid diesel vehicle that has travelled just 25,834 miles. Ideal for adventurous families or couples, it comfortably accommodates four berths and features four seats, making it perfect for road trips or leisurely getaways. This automatic motorhome boasts a convenient French bed design, ensuring restful nights after a day of exploration. With an MOT valid until 22nd August 2027, you can embark on your journeys with peace of mind, knowing it's roadworthy and ready for use. Laika's renowned craftsmanship ensures a high-quality experience, combining practicality with comfort for an enjoyable journey. Whether you're exploring the British countryside or navigating cityscapes, the Laika Kreos 3002 delivers performance and style for modern motorhome enthusiasts. Don't miss the opportunity to own this exceptional vehicle, ready to provide countless adventures in the years to come.",
+    "descriptionLength": 986,
+    "features": [
+     "White exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "25,834 miles",
+     "Registration": "2017 (17 reg)",
+     "Owners": "1",
+     "Berth": "4",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "French bed",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.3L (150BHP)",
+     "Seats": "4",
+     "Dimensions": "L:6,999mm x W:2,320mm x H:2,999mm"
+    },
+    "specs": {
+     "Engine power": "150BHP",
+     "Height": "2,999mm",
+     "Length": "6,999mm",
+     "Width": "2,320mm",
+     "Seats": "4",
+     "Body type": "Motorhome",
+     "Fuel type": "Diesel",
+     "Bed Layout": "French bed",
+     "Colour": "White"
+    },
+    "chassis": null,
+    "bodyType": "Motorhome",
+    "owners": 1,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (10 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 7,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202609226283903": {
+   "id": "202609226283903",
+   "title": "Burstner Ixeo 680G 680G",
+   "subTitle": "Automatic 2016 2.3",
+   "attentionGrabber": "AUTO!",
+   "make": "Burstner",
+   "model": "Ixeo 680G 680G",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileageText": null,
+   "mileage": null,
+   "price": 46995,
+   "priceText": "£46,995",
+   "location": "Crewe (152 miles)",
+   "distanceMiles": 152,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c75b4c97c4774685b4ec0f85a1de49f8.jpg",
+   "imageCount": 25,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202609226283903",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 46995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Embark on your next adventure in style with our used 2016 Bürstner IXEO 680G Motorhome. This 4-berth, 4-seat motorhome is designed for comfort and convenience, featuring a practical end washroom layout and a drop-down bed for a restful night's sleep. The automatic transmission and powerful 150bhp 2300cc engine make driving a breeze, while the 7m length and 2.4m width provide ample space for all your travel essentials. Equipped with a range of sought-after features, including ABS brakes, alloy wheels, and a bike rack, this motorhome is ready for any journey. Stay connected on the road with Bluetooth capability and enjoy the comfort of cab air conditioning during warmer days. The inclusion of a full oven, microwave, and large fridge freezer ensures you can prepare delicious meals wherever you roam. Safety is paramount with features like twin airbags, central locking, and a reversing camera for added peace of mind. The solar panel and onboard water tank offer independence off the grid, while the toilet and separate shower provide convenience wherever you travel. Priced at £46,995 and located in Cheshire, this grey Bürstner motorhome is a fantastic choice for those seeking adventure without compromising on comfort. Don't miss out on this fantastic opportunity to own a well-maintained vehicle with only 3 previous owners.",
+    "descriptionLength": 1337,
+    "features": [
+     "Grey exterior colour",
+     "ABS Brakes",
+     "Alloy Wheels",
+     "Awning",
+     "Bike rack",
+     "Bluetooth",
+     "Cab Air conditioning",
+     "Cab blinds",
+     "Cassette Toilet",
+     "Central locking",
+     "Cruise control",
+     "Electric windows",
+     "External BBQ point",
+     "Flyscreens",
+     "Front Skyscrape/Sunroof",
+     "Full oven",
+     "Gas & Electric Heating",
+     "Large fridge freezer",
+     "Large heki rooflight",
+     "Microwave",
+     "Onboard water tank",
+     "Power steering",
+     "Radio",
+     "Reversing camera",
+     "Solar Panel",
+     "Spare Wheel",
+     "Swivel seats",
+     "Toilet and Separate Shower",
+     "Towbar",
+     "Twin airbags"
+    ],
+    "keySpec": {
+     "Registration": "2016 (16 reg)",
+     "Owners": "3",
+     "Berth": "4",
+     "End layout": "End washroom",
+     "Bedroom layout": "Drop-down bed",
+     "GVW": "MTPLM: 3,850kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.3L (150BHP)",
+     "Seats": "4",
+     "Dimensions": "L:6,990mm x W:2,350mm x H:2,800mm"
+    },
+    "specs": {
+     "Engine power": "150BHP",
+     "Height": "2,800mm",
+     "Length": "6,990mm",
+     "Width": "2,350mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,850kg",
+     "Body type": "Motorhome",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,850kg",
+     "Bed Layout": "Drop-down bed",
+     "Colour": "Grey"
+    },
+    "chassis": null,
+    "bodyType": "Motorhome",
+    "owners": 3,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-09-22",
+   "length": {
+    "metres": 6.99,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air conditioning"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…wn bed for a restful night's sleep. the automatic transmission and powerful 150bhp 2300cc…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "towbar"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "awning"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -10.1,
+    "expected": 48618,
+    "net": 43695,
+    "comps": 13,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 2,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 20,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   }
+  },
+  "202607184286932": {
+   "id": "202607184286932",
+   "title": "Ace 1500 GL",
+   "subTitle": "Automatic 2.0",
+   "attentionGrabber": "INCLUDES ACE COMFORT PACK!",
+   "make": "Ace",
+   "model": "1500",
+   "category": "motorhome",
+   "year": 2026,
+   "registeredYear": null,
+   "mileageText": null,
+   "mileage": null,
+   "price": 63995,
+   "priceText": "£63,995",
+   "location": "Newcastle (138 miles)",
+   "distanceMiles": 138,
+   "sellerType": "TRADE",
+   "condition": "new",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c22024fc268445109859f4ab2def0933.jpg",
+   "imageCount": 15,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202607184286932",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 63995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Step into the future of motorhome travel with the brand-new 2026 Ace GL 1500 Motorhome. This stylish motorhome is designed for those who seek luxury on the open road. The spacious end bedroom layout features a comfortable transverse bed, perfect for a restful night's sleep after a day of adventures. Equipped with a powerful 2000cc 165bhp diesel engine and a manual transmission, this Ace motorhome offers both performance and efficiency. At 7 metres in length, 2.4 metres in width, and 2.9 metres in height, the Ace GL 1500 provides ample space for all your travel needs. Enjoy the convenience of on-the-go living with features such as alloy wheels, a door flyscreen, a fridge/freezer, a solar panel, and a toilet & shower. Plus, with a 10-year water ingress warranty, you can have peace of mind knowing your investment is protected. Priced at £65,995, this new Ace 1500 GL 2L Manual motorhome is located in Staffordshire, ready to whisk you away on your next journey. Don't miss out on the opportunity to own this top-of-the-line motorhome that combines comfort, style, and functionality seamlessly.\nStep into the future of motorhome travel with the brand-new 2026 Ace GL 1500 Motorhome. This stylish motorhome is designed for those who seek luxury on the open road. The spacious end bedroom layout features a comfortable transverse bed, perfect for a restful night's sleep after a day of adventures. Equipped with a powerful 2000cc 165bhp diesel engine and a manual transmission, this Ace motorho",
+    "descriptionLength": 2097,
+    "features": [
+     "10 year water ingress warranty",
+     "Alloy Wheels",
+     "Door flyscreen",
+     "Fridge/Freezer",
+     "Solar Panel",
+     "Toilet & Shower"
+    ],
+    "keySpec": {
+     "Berth": "2",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Transverse bed",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.0L (165BHP)",
+     "Seats": "2",
+     "Dimensions": "L:6,970mm x W:2,370mm x H:2,860mm",
+     "Emission class": "Euro 6"
+    },
+    "specs": {
+     "Engine power": "165BHP",
+     "Height": "2,860mm",
+     "Length": "6,970mm",
+     "Width": "2,370mm",
+     "Seats": "2",
+     "Gross vehicle weight": "3,500kg",
+     "Minimum kerb weight": "2,907kg",
+     "Chassis make": "Ford",
+     "Chassis model": "Transit",
+     "Body type": "Motorhome",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "MIRO": "2,907kg",
+     "Transmission drive": "Front Wheel Drive",
+     "Bed Layout": "Transverse bed",
+     "Exterior condition": "New",
+     "Interior condition": "New",
+     "Tyre condition": "New"
+    },
+    "chassis": "Ford Transit",
+    "bodyType": "Motorhome",
+    "owners": null,
+    "serviceHistory": null,
+    "serviceHistoryType": null,
+    "historyCheck": null,
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-07-18",
+   "length": {
+    "metres": 6.97,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 0,
+    "expected": 61995,
+    "net": 61995,
+    "comps": 7,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 22,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 86,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202606273682763": {
+   "id": "202606273682763",
+   "title": "Swift 624 Lifestyle",
+   "subTitle": "2.3",
+   "attentionGrabber": "Perfect First Motorhome!",
+   "make": "Swift",
+   "model": "624 Lifestyle",
+   "category": "motorhome",
+   "year": 2016,
+   "registeredYear": "2016 (16 reg)",
+   "mileageText": "11,064 miles",
+   "mileage": 11064,
+   "price": 36995,
+   "priceText": "£36,995",
+   "location": "Inverness (445 miles)",
+   "distanceMiles": 445,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/1033fd83293d4f2e9539864e60dd8200.jpg",
+   "imageCount": 46,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202606273682763",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 36995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2016 Swift 624 Lifestyle\nOnly 11,064 Miles • 5 Berth • 4 Seatbelts • End Kitchen & Washroom\nA fantastic opportunity to own this exceptionally low-mileage Swift 624 Lifestyle, with just 11,064 miles from new.\nAt 6.3m long, the Swift 624 offers an excellent balance of space and practicality, with a clever layout designed for comfortable touring. The end kitchen and washroom provide a particularly useful arrangement, leaving the main living area open and spacious.\nThe front dinette creates a comfortable place to relax during the day and converts to sleeping accommodation at night, while the additional beds make this a genuine five-berth motorhome.\nThe well-equipped kitchen includes a 3-ring hob, oven, grill, microwave and 3-way fridge, while the rear washroom features a cassette toilet, hot water and useful storage.\nWith blown-air central heating, solar panel, reversing camera, awning and rear bike rack, this Swift is well equipped for both weekend breaks and longer touring adventures.\nKey Features\n• Only 11,064 miles\n• 5 berth / 4 travelling seats\n• 2.3-litre diesel engine\n• 6-speed manual gearbox\n• End kitchen and washroom\n• Front dinette\n• 3 sleeping areas\n• 3-ring hob\n• Oven, grill and microwave\n• 3-way fridge\n• Blown-air heating\n• Hot water\n• Solar panel\n• Reversing camera\n• Awning\n• Rear bike rack\n• Cab air conditioning\n• Electric step\n• Blinds and flyscreens\n• Fresh and grey water tanks\nA superb low-mileage family motorhome offering plenty of space, excellent facilities a",
+    "descriptionLength": 1618,
+    "features": [
+     "Multicolour exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "11,064 miles",
+     "Registration": "2016 (16 reg)",
+     "Berth": "5",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "Overcab bed - double",
+     "GVW": "MTPLM: 3,300kg",
+     "Gearbox": "Manual",
+     "Engine size power": "2.3L (128BHP)",
+     "Seats": "4",
+     "Dimensions": "L:6,300mm x W:2,350mm x H:2,940mm",
+     "Emission class": "Euro 5"
+    },
+    "specs": {
+     "Cylinders": "4",
+     "Engine power": "128BHP",
+     "Engine torque": "320NM",
+     "Height": "2,940mm",
+     "Length": "6,300mm",
+     "Width": "2,350mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,300kg",
+     "Chassis make": "Peugeot",
+     "Chassis model": "Boxer",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,300kg",
+     "Transmission drive": "Front Wheel Drive",
+     "Bed Layout": "Overcab bed - double",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Multicolour"
+    },
+    "chassis": "Peugeot Boxer",
+    "bodyType": "Campervan",
+    "owners": null,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-06-27",
+   "length": {
+    "metres": 6.3,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "• cab air conditioning"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "…blown-air central heating, solar panel, reversing camera, awning and rear bike rack, this…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…with blown-air central heating, solar panel, reversing camera, awning and rear bik…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…heating, solar panel, reversing camera, awning and rear bike rack, this swift is well equi…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -13.5,
+    "expected": 41259,
+    "net": 35695,
+    "comps": 26,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": true,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 28,
+    "motivationReasons": [
+     "listed 107 days"
+    ],
+    "wantedHits": [],
+    "daysListed": 107,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   }
+  },
+  "202603050417835": {
+   "id": "202603050417835",
+   "title": "Ace 1200 GL",
+   "subTitle": "Automatic",
+   "attentionGrabber": "LAST ONE! JULY! DRIVERS PACK!",
+   "make": "Ace",
+   "model": "1200",
+   "category": "motorhome",
+   "year": 2026,
+   "registeredYear": null,
+   "mileageText": null,
+   "mileage": null,
+   "price": 64995,
+   "priceText": "£64,995",
+   "location": "Newcastle (138 miles)",
+   "distanceMiles": 138,
+   "sellerType": "TRADE",
+   "condition": "new",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/52ceccdee4454afe83cf65bc58785856.jpg",
+   "imageCount": 7,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202603050417835",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "6.25–7 m, all body types (Autotrader length)",
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 64995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "The 2026 Ace 1200 GL is a brand-new two-berth van conversion designed for couples seeking a stylish, practical and comfortable touring vehicle. Due to arrive soon at our Staffordshire branch, this 6.36M campervan combines a compact footprint with a high-specification interior and end-bedroom layout featuring a fixed bed for maximum sleeping comfort.\nInside, the GL offers a well-appointed living space with swivel cab seats, a midi heki rooflight, flyscreens and thoughtful storage solutions. The end-bedroom provides a comfortable fixed bed, while the onboard washroom includes a cassette toilet and shower for full touring convenience. The kitchen is fully equipped with a gas hob, fridge freezer, microwave and onboard water tank, while Truma Combi heating and gas/electric options ensure year-round usability.\nPowered by a 140BHP diesel engine paired with an eight-speed automatic gearbox, the GL  delivers smooth, confident performance. Safety and comfort features include ABS brakes, twin airbags, cab air conditioning, cruise control, central locking, electric windows, power steering and a CAT 1 alarm. With an MTPLM of 3500kg and an estimated payload of 493kg, it offers excellent practicality without compromising drivability.\nTechnology and entertainment are well catered for with Apple CarPlay/Android Auto, Bluetooth, radio, USB charging points, built-in Sat Nav and reversing sensors. The model also comes with a 110W solar panel, rear reversing sensors, pleated cab blinds and an ext",
+    "descriptionLength": 1996,
+    "features": [
+     "Grey exterior colour",
+     "ABS Brakes",
+     "Alloy Wheels",
+     "Apple/Carplay/Android Auto",
+     "Bluetooth",
+     "CAT 1 alarm",
+     "Cab Air conditioning",
+     "Cab blinds",
+     "Cassette Toilet",
+     "Central locking",
+     "Cruise control",
+     "Electric windows",
+     "Flyscreens",
+     "Fridge freezer",
+     "Gas & Electric Heating",
+     "Gas Hob",
+     "Microwave",
+     "Midi Heki Rooflight",
+     "Onboard water tank",
+     "Power steering",
+     "Radio",
+     "Reversing sensors",
+     "Sat Nav",
+     "Solar Panel",
+     "Swivel seats",
+     "Toilet & Shower",
+     "Truma Combi heating system",
+     "Twin airbags",
+     "USB Charging Points"
+    ],
+    "keySpec": {
+     "Berth": "2",
+     "End layout": "End bedroom",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "140BHP",
+     "Seats": "4",
+     "Dimensions": "L:6,360mm x W:2,260mm x H:2,720mm"
+    },
+    "specs": {
+     "Engine power": "140BHP",
+     "Height": "2,720mm",
+     "Length": "6,360mm",
+     "Width": "2,260mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,500kg",
+     "Minimum kerb weight": "3,007kg",
+     "Max loading weight": "493kg",
+     "Chassis make": "Fiat",
+     "Chassis model": "Ducato",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "MIRO": "3,007kg",
+     "Payload": "493kg",
+     "Transmission drive": "Front Wheel Drive",
+     "Colour": "Grey",
+     "Exterior condition": "New",
+     "Interior condition": "New",
+     "Tyre condition": "New"
+    },
+    "chassis": "Fiat Ducato",
+    "bodyType": "Campervan",
+    "owners": null,
+    "serviceHistory": null,
+    "serviceHistoryType": null,
+    "historyCheck": null,
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-03-05",
+   "length": {
+    "metres": 6.36,
+    "source": "spec sheet"
+   },
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air conditioning"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…iesel engine paired with an eight-speed automatic gearbox, the gl  delivers smooth, confid…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 2.4,
+    "expected": 61495,
+    "net": 62995,
+    "comps": 11,
+    "basis": "model",
+    "adjusted": false
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": true,
+    "desperation": 50,
+    "motivationReasons": [
+     "listed 221 days"
+    ],
+    "wantedHits": [],
+    "daysListed": 221,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": true
+   }
+  },
+  "202610126917376": {
+   "id": "202610126917376",
+   "title": "Volkswagen Camper King",
+   "subTitle": "2.0 Diesel 148bhp 4 Berth",
+   "attentionGrabber": "Open to sensible offers",
+   "make": "Volkswagen",
+   "model": "Camper King",
+   "category": "motorhome",
+   "year": 2020,
+   "registeredYear": "2020 (20 reg)",
+   "mileageText": "38,000 miles",
+   "mileage": 38000,
+   "price": 38298,
+   "priceText": "£38,298",
+   "location": "Halifax (169 miles)",
+   "distanceMiles": 169,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/12c8e1f97b7e4ffca1284dbf27227cf2.jpg",
+   "imageCount": 9,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126917376",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 38298
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2020 Volkswagen Camper King with 4 berths and 5 belted travelling seats. Rock n Roll bed with end lounge. 38,000 miles with full service history. Features include: Cab Air Con, Parking Sensors.",
+    "descriptionLength": 193,
+    "features": [
+     "Silver exterior colour",
+     "Air Conditioning",
+     "Alloy Wheels",
+     "Cruise Control",
+     "Gas Locker Safety System",
+     "Parking Sensors",
+     "Swivel Seats",
+     "Truma/blown air heating"
+    ],
+    "keySpec": {
+     "Mileage": "38,000 miles",
+     "Registration": "2020 (20 reg)",
+     "Owners": "3",
+     "Number of keys": "2",
+     "Berth": "4",
+     "End layout": "End lounge",
+     "Bedroom layout": "Rock n Roll bed",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.0L (148BHP)",
+     "Seats": "5",
+     "Dimensions": "L:4,800mm x W:1,900mm x H:2,150mm",
+     "Emission class": "Euro 6"
+    },
+    "specs": {
+     "Engine power": "148BHP",
+     "Height": "2,150mm",
+     "Length": "4,800mm",
+     "Width": "1,900mm",
+     "Seats": "5",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Transmission drive": "Front Wheel Drive",
+     "Bed Layout": "Rock n Roll bed",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Silver"
+    },
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 3,
+    "serviceHistory": "Full service history",
+    "serviceHistoryType": "FULL",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 4.8,
+    "source": "spec sheet"
+   },
+   "excluded": "4.8 m (spec sheet)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    },
+    {
+     "label": "Full service history",
+     "value": 0,
+     "evidence": "…bed with end lounge. 38,000 miles with full service history. features include: cab air co…"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126911761": {
+   "id": "202610126911761",
+   "title": "Volkswagen Campervan",
+   "subTitle": "2.0",
+   "attentionGrabber": null,
+   "make": "Volkswagen",
+   "model": "Campervan",
+   "category": "motorhome",
+   "year": 2021,
+   "registeredYear": "2021 (21 reg)",
+   "mileageText": "37,000 miles",
+   "mileage": 37000,
+   "price": 43500,
+   "priceText": "£43,500",
+   "location": "Redruth (241 miles)",
+   "distanceMiles": 241,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/7c24d75caad64b6b94a401aeb568741b.jpg",
+   "imageCount": 34,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126911761",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 43500
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "VW Transporter T28 150 Highline SWB with  the sought after  2 litre TDI engine & 6 speed manual box & tailgate, automatic LED head & tail lights, auto wipers, air con,  sound deadened & insulated throughout with insulated pop top roof (sleeps 2). I have taken this to the Artic circle in -20 temperatures and been toasty with the economical webasto diesel heater . The 100 watt solar panel keeps the batteries topped up with the fridge constantly on and not on EHU even with the very short daylight hours. Together with heated windscreen & heated electric folding wing mirrors, unmarked Fuel gold alloys with excellent three peak General Grabber tyres which are mandatory on the continent in the winter months, and can also be used during the rest of the year both home and abroad to get you on and off those muddy campsites, this camper has the ultimate winter/summer package.\nIt has been serviced, MOT'd and hab checked every 12 months at Elite Automotives (Redruth) who are an excellent well established garage that use genuine VW parts.\nIt has a professional conversion done by Camperking who have a wonderful after sales centre. The conversion includes a two burner gas hob with two butane cylinders, sink with underslung water tank & EHU with very long cable for those more obscure campsites.\nLED internal lights and  eye catching underbody mood lights for those summer evenings and great for VW cruises to stand out from the crowd.\nLanoguard underbody protection with a five year ceramic body ",
+    "descriptionLength": 1815,
+    "features": [
+     "Black exterior colour",
+     "16in Alloy Wheels - Clayton - Silver",
+     "ASR - Anti Slip Regulation",
+     "Air Conditioning - Electronically Controlled",
+     "Allergen Filter",
+     "Anti-Theft Alarm System with Interior Monitoring in Cab - Backup Horn and Tow-Away Protection",
+     "Armrest - Drivers",
+     "Auto-Dimming Breakaway Interior Rearview Mirror",
+     "Automatic Headlight Activation with Daytime Running Lights - Leaving Home - Manual Coming Home Function",
+     "Comfort Pack",
+     "Composition Colour DAB Plus Radio System with 6.5in Touch-Screen",
+     "Crosswind Assist",
+     "Cruise Control - Adaptive with Speed Limiter",
+     "Driver Alert System",
+     "EDL - Electronic Differential Lock",
+     "ESP - Electronic Stability Programme",
+     "Electronically Controlled Heating System",
+     "Exterior Package",
+     "Forward Collision Warning - Front Assist with Autonomous Emergency Braking",
+     "Front Fog Lights with Cornering Lights",
+     "Glove Compartment with Illumination",
+     "Half-Height Side Trim Panels and Roof Trim Panels made of Hardboard",
+     "Halogen Twin Headlights",
+     "Illuminated Instruments - Dimmable",
+     "Interior Lighting with LED Technology in Load and Passenger Compartment",
+     "LED Interior Lighting - 2 Reading Lights in the Roof Console",
+     "Lights and Vision Package",
+     "Manual Sliding Door Passenger Side",
+     "Park Distance Control in Front and Rear",
+     "Rear Wing Doors Without Windows",
+     "Reinforced Lashing Rings - 6",
+     "Rubber Floor Covering in Cab",
+     "Single Tone Horn",
+     "Smartphone Interface",
+     "Sun Visor with Mirror and Airbag Label - Passenger",
+     "USB Interfaces - Type C",
+     "Volkswagen App Connect",
+     "Warning Light and Buzzer for Front Seat Belt if Unfastened",
+     "Waste Bin for Door Pockets in Cab",
+     "Wing Mirrors - Heated - Power Adjustable and Power Folding",
+     "eCall Emergency System"
+    ],
+    "keySpec": {
+     "Mileage": "37,000 miles",
+     "Registration": "2021 (21 reg)",
+     "Owners": "3",
+     "Berth": "4",
+     "End layout": "End kitchen",
+     "Bedroom layout": "Rock n Roll bed",
+     "Gearbox": "Manual",
+     "Engine size power": "2.0L",
+     "Seats": "5"
+    },
+    "specs": {
+     "Seats": "5",
+     "Chassis make": "Volkswagen",
+     "Chassis model": "Transporter",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "Bed Layout": "Rock n Roll bed",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Black"
+    },
+    "chassis": "Volkswagen Transporter",
+    "bodyType": "Campervan",
+    "owners": 3,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 5,
+    "source": "VW Transporter class"
+   },
+   "excluded": "5 m (VW Transporter class)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning - electronically controlled"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…al webasto diesel heater . the 100 watt solar panel keeps the batteries topped up with the…"
+    },
+    {
+     "label": "Diesel heater",
+     "value": 0,
+     "evidence": "…res and been toasty with the economical webasto diesel heater . the 100 watt solar panel k…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control - adaptive with speed limiter"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 10,
+    "motivationReasons": [
+     "private seller"
+    ],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126910599": {
+   "id": "202610126910599",
+   "title": "Bailey Approach Autograph",
+   "subTitle": "Peugeot Boxer 2.2 HDi",
+   "attentionGrabber": "one owner for past 8 years.",
+   "make": "Bailey",
+   "model": "Approach",
+   "category": "motorhome",
+   "year": 2017,
+   "registeredYear": "2017 (17 reg)",
+   "mileageText": "32,756 miles",
+   "mileage": 32756,
+   "price": 39995,
+   "priceText": "£39,995",
+   "location": "Stockton On Tees (214 miles)",
+   "distanceMiles": 214,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c1e937ca50bd4eab876c3f0686fb41f5.jpg",
+   "imageCount": 13,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126910599",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 39995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "Electric front windows, electric mirror's. 6 speed manual, Al-Co chassis, Alde heating. Cab air conditioning, Cruise control.Stereo, TV, fixed french bed, Full oven, 3 gas hob 1 electric hot plate. Large capacity fridge freezer. Microwave. Rear corner washroom with separate shower cubicle. 4 berth with twin bench sofa's which can be converted into a double bed. Full Awning and Rear bike rack. 2 seat belts.M.O.T June 27.  Habitation inspection completed September 27.  6000 miles covered since last Full Service Non-smoker and no pet's. Very good condition inside and out.",
+    "descriptionLength": 575,
+    "features": [
+     "Grey exterior colour",
+     "Armrest - Driver",
+     "Bluetooth",
+     "Central Dash Folding Clipboard",
+     "Conversion Interface Box",
+     "DAB Digital Radio",
+     "Door Mirrors - Electrically Adjustable and Heated",
+     "EBFD - Electronic Brake Force Distribution",
+     "ESP - Electronic Stability Programme",
+     "Filtering Tinted Glass",
+     "Floor - Non Slip Hardwearing Front Cab Covering",
+     "Halogen Headlamps",
+     "Headlights - Remote Adjustment",
+     "Interior Light Front Cabin",
+     "Radio - AM/FM",
+     "Speakers x4"
+    ],
+    "keySpec": {
+     "Mileage": "32,756 miles",
+     "Registration": "2017 (17 reg)",
+     "Owners": "2",
+     "Berth": "4",
+     "Gearbox": "Manual"
+    },
+    "specs": {
+     "Body type": "Van Conversion",
+     "Fuel type": "Diesel",
+     "Colour": "Grey"
+    },
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": null,
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "…anual, al-co chassis, alde heating. cab air conditioning, cruise control.stereo, tv, fixed…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…is, alde heating. cab air conditioning, cruise control.stereo, tv, fixed french bed, full…"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "…an be converted into a double bed. full awning and rear bike rack. 2 seat belts.m.o.t june…"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": 0,
+    "expected": 39378,
+    "net": 39395,
+    "comps": 15,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 10,
+    "motivationReasons": [
+     "private seller"
+    ],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126909112": {
+   "id": "202610126909112",
+   "title": "Citroen Berlingo",
+   "subTitle": "Campervan 1.5",
+   "attentionGrabber": "Brand new conversion",
+   "make": "Citroen",
+   "model": "Berlingo",
+   "category": "motorhome",
+   "year": 2025,
+   "registeredYear": "2025 (26 reg)",
+   "mileageText": "4,000 miles",
+   "mileage": 4000,
+   "price": 36000,
+   "priceText": "£36,000",
+   "location": "Barnsley (154 miles)",
+   "distanceMiles": 154,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/c3d208a6c4ae4b2b84f63aa67d67d578.jpg",
+   "imageCount": 61,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126909112",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 36000
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2026 Citroen Berlingo Enterprise 1.5 hdi\npop top camper, in metallic silver with grey trim. Pop top in black with 2 zipped windows, with fly screens. slide out bed with undercover storage, gas locker, side unit with double Demetic hob and sink. Top lockers down each side with LED lighting- 100 amp agm sealed battery, sargent ec 155 electric system.\nBaileys bespoke black out blinds, Frest water container, porter potty storage box, fridge 12v portable, 240 -12v usb/sockets, body graphics. 3 seats, new set of black polished alloys, new tyres.\ntouch screen panel, DAB radio, aircon, reverse camera, parking sensors, 6 speed, sat nav, elec windows and mirrors, factory alarm and immobiliser with central locking, multi functional steering wheel, my own from new only covered 4000 miles, balance of 3 yr manufacturers warranty. Solar panel fitted, gas certificate, condition as new\n£36,000 inc vat\np/x welcome\nfinance available",
+    "descriptionLength": 927,
+    "features": [
+     "Grey exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "4,000 miles",
+     "Registration": "2025 (26 reg)",
+     "Owners": "1",
+     "Berth": "2",
+     "End layout": "End bedroom / washroom",
+     "Bedroom layout": "Dinette conversion",
+     "Gearbox": "Manual",
+     "Engine size power": "1.5L (101BHP)",
+     "Seats": "3"
+    },
+    "specs": {
+     "Engine power": "101BHP",
+     "Seats": "3",
+     "Body type": "Van Conversion",
+     "Fuel type": "Diesel",
+     "Transmission drive": "Front Wheel Drive",
+     "Bed Layout": "Dinette conversion",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Grey"
+    },
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 1,
+    "serviceHistory": "Not due",
+    "serviceHistoryType": "NOT_DUE",
+    "historyCheck": "PASSED (10 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 4.8,
+    "source": "small van / MPV"
+   },
+   "excluded": "4.8 m (small van / MPV)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "…touch screen panel, dab radio, aircon, reverse camera, parking sensors, 6 speed,…"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "…touch screen panel, dab radio, aircon, reverse camera, parking sensors, 6 speed, sat nav,…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…balance of 3 yr manufacturers warranty. solar panel fitted, gas certificate, condition as…"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126901074": {
+   "id": "202610126901074",
+   "title": "Volkswagen Campervan",
+   "subTitle": "HIGHLINE 2.0",
+   "attentionGrabber": "4BERTH •AUTOMATIC•NIGHT HEATER",
+   "make": "Volkswagen",
+   "model": "Campervan",
+   "category": "motorhome",
+   "year": 2019,
+   "registeredYear": "2019 (19 reg)",
+   "mileageText": "44,000 miles",
+   "mileage": 44000,
+   "price": 39990,
+   "priceText": "£39,990",
+   "location": "Epping (20 miles)",
+   "distanceMiles": 20,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/d695ab795a94490e977207b5121f4fd3.jpg",
+   "imageCount": 33,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126901074",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 39990
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2019 Volkswagen T6 T30 Highline 2.0TDI Campervan, Silver, Automatic, Euro 6, Diesel, 4 Berth, Pop Top, RIB Bed with ISOFIX, Webasto Night Heater, Kitchen - Fridge, Hob & Sink, 5 Seats, Captain Swivel Seat, Tow Bar, 240v Electric Hook Up & 12v, Air/Conditiong, Start/Stop System, Electric Heated Windscreen, Park Pilot Rear Parking Sensors, 20” Calibre Alloy Wheels, Cruise Control, Bluetooth, Bluetooth Audio, Radio/DAB, USB Connection.\nTO VIEW OUR WALK AROUND VIDEO PLEASE HEAD OVER TO OUR YOUTUBE CHANNEL QCARS UK.\nFor more information or if you would like to arrange to view any of our campervans please don’t hesitate to contact us on 01279 443211.",
+    "descriptionLength": 652,
+    "features": [
+     "Silver exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "44,000 miles",
+     "Registration": "2019 (19 reg)",
+     "Berth": "4",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Drop-down bed",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.0L (147BHP)",
+     "Seats": "5",
+     "Emission class": "Euro 6"
+    },
+    "specs": {
+     "Engine power": "147BHP",
+     "Seats": "5",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "Bed Layout": "Drop-down bed",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Silver"
+    },
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": null,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": null,
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 5,
+    "source": "VW Transporter class"
+   },
+   "excluded": "5 m (VW Transporter class)",
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Diesel heater",
+     "value": 0,
+     "evidence": "…4 berth, pop top, rib bed with isofix, webasto night heater, kitchen - fridge, hob & sink…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…king sensors, 20” calibre alloy wheels, cruise control, bluetooth, bluetooth audio, radio/…"
+    },
+    {
+     "label": "Tow bar",
+     "value": 500,
+     "evidence": "…b & sink, 5 seats, captain swivel seat, tow bar, 240v electric hook up & 12v, air/conditio…"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126916318": {
+   "id": "202610126916318",
+   "title": "Swift TREKKER X",
+   "subTitle": "2.0",
+   "attentionGrabber": "BASICALLY BRAND NEW!!",
+   "make": "Swift",
+   "model": "Trekker X",
+   "category": "motorhome",
+   "year": 2026,
+   "registeredYear": "2026 (26 reg)",
+   "mileageText": "5,000 miles",
+   "mileage": 5000,
+   "price": 64995,
+   "priceText": "£64,995",
+   "location": "Colchester (60 miles)",
+   "distanceMiles": 60,
+   "sellerType": "PRIVATE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/fa71fe9f29b74e22a96e70eb04e370ab.jpg",
+   "imageCount": 18,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126916318",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 64995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2026 Swift Trekker X Auto - 5000 Miles - High Spec - One Owner\nSwift Trekker X Auto, one owner from new and only 5000 miles. A compact, highly versatile motorhome with the soughtafter Euro 6D 170bhp automatic engine, premium metallic paint, and a fantastic specification throughout.\nThis Trekker X offers 4 berths, 4 belted seats, blownair heating, swivel cab seats, and a bright, modern interior with excellent storage. The rear double bed and overcab bed provide flexible sleeping options, making it ideal for couples or families.\nThe wellequipped kitchen includes a 12v compressor fridge, hob, grill, sink, Heki rooflight and ample cupboard space. The washroom features a shower facility, toilet, flyscreens/blinds, LED lighting and wardrobe with integrated lighting.\nTouring features include solar panel, WiFi booster, external BBQ point, external cold shower, electric step, fresh/waste tanks (65L/55L), leisure battery & charger, mains hookup, removable carpets and nonslip vinyl flooring.\nSafety and convenience are enhanced with GTE tracker, airbags, cruise control, central locking, electric windows/mirrors, rear inertia seatbelts, DAB radio, Apple CarPlay/Android Auto and alloy wheels.\nDimensions:\nLength 5.97m | Width 2.11m | Height 2.97m\nBed Sizes:\nRear double 1.36m x 1.85m | Overcab 1.3m x 2.05m",
+    "descriptionLength": 1311,
+    "features": [
+     "Grey exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "5,000 miles",
+     "Registration": "2026 (26 reg)",
+     "Owners": "1",
+     "Berth": "4",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Drop-down bed",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.0L (168BHP)",
+     "Seats": "4",
+     "Dimensions": "L:5,981mm x W:2,059mm x H:2,782mm"
+    },
+    "specs": {
+     "Engine power": "168BHP",
+     "Height": "2,782mm",
+     "Length": "5,981mm",
+     "Width": "2,059mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,500kg",
+     "Max loading weight": "1,330kg",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Payload": "1,330kg",
+     "Bed Layout": "Drop-down bed",
+     "Colour": "Grey"
+    },
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 1,
+    "serviceHistory": "Not due",
+    "serviceHistoryType": "NOT_DUE",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 5.98,
+    "source": "spec sheet"
+   },
+   "excluded": "5.98 m (spec sheet)",
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "…touring features include solar panel, wifi booster, external bbq point, ext…"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "…are enhanced with gte tracker, airbags, cruise control, central locking, electric windows/…"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 10,
+    "motivationReasons": [
+     "private seller"
+    ],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126913900": {
+   "id": "202610126913900",
+   "title": "Rimor Horus 66",
+   "subTitle": "2.3",
+   "attentionGrabber": "low mileage, 1 owner from new",
+   "make": "Rimor",
+   "model": "Horus 66",
+   "category": "motorhome",
+   "year": 2026,
+   "registeredYear": "2026 (26 reg)",
+   "mileageText": "1,700 miles",
+   "mileage": 1700,
+   "price": 59999,
+   "priceText": "£59,999",
+   "location": "Newark (117 miles)",
+   "distanceMiles": 117,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": null,
+   "imageCount": 0,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126913900",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 59999
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2026 RIMOR HORUS 66 – AUTOMATIC – ONLY 1,700 MILESA fantastic opportunity to own this 2026 Rimor Horus 66, offering modern styling, excellent practicality and the comfort of an automatic gearbox, with just 1,700 miles from new.This impressive 2 berth, 2 belt campervan is ideal for couples looking for a modern, comfortable and versatile vehicle for both weekend getaways and extended touring adventures.The automatic gearbox makes driving effortless, whether you're exploring the countryside, travelling through towns or heading off on longer European trips.Inside, the Rimor offers a bright and contemporary living area with comfortable seating and a practical dining space, providing the perfect place to relax after a day exploring.The well-equipped kitchen offers convenient cooking facilities, a fridge and useful storage space, while the onboard washroom provides everything needed for comfortable touring.The rear sleeping area provides comfortable accommodation, making this an excellent choice for couples who want the convenience of a campervan without compromising on comfort.With its stylish interior, practical layout and exceptionally low mileage, this 2026 Rimor Horus 66 is a fantastic opportunity to purchase a nearly new campervan ready for its next adventure.Key Features:2026 modelOnly 1,700 miles from newAutomatic gearbox2 berth / 2 travelling beltsModern and stylish interiorComfortable living and dining areaWell-equipped kitchenRear sleeping accommodationOnboard washroomExc",
+    "descriptionLength": 1754,
+    "features": [
+     "2 X sets of keys",
+     "Aerial",
+     "Alarm",
+     "Cab air-con",
+     "Fridge",
+     "Grill",
+     "Heating",
+     "LPG Tank",
+     "Oven",
+     "Radio",
+     "Reversing camera",
+     "Solar Panel",
+     "Swivel Seats",
+     "TV",
+     "Toilet",
+     "V5 reg doc",
+     "Wind Out Canopy"
+    ],
+    "keySpec": {
+     "Mileage": "1,700 miles",
+     "Registration": "2026 (26 reg)",
+     "Owners": "1",
+     "Berth": "2",
+     "End layout": "End bedroom",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.3L",
+     "Seats": "2",
+     "Dimensions": "L:5,990mm"
+    },
+    "specs": {
+     "Length": "5,990mm",
+     "Seats": "2",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Van Conversion",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Driver position": "Right Hand Drive"
+    },
+    "chassis": null,
+    "bodyType": "Van Conversion",
+    "owners": 1,
+    "serviceHistory": "Not due",
+    "serviceHistoryType": "NOT_DUE",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 5.99,
+    "source": "spec sheet"
+   },
+   "excluded": "5.99 m (spec sheet)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "cab air-con"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "reversing camera"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…lent practicality and the comfort of an automatic gearbox, with just 1,700 miles from new.…"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "wind out canopy"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126912606": {
+   "id": "202610126912606",
+   "title": "SWIFT CARRERA",
+   "subTitle": "144 Automatic",
+   "attentionGrabber": "One Owner Low Mileage",
+   "make": "Swift",
+   "model": "Carrera",
+   "category": "motorhome",
+   "year": 2023,
+   "registeredYear": "2023 (73 reg)",
+   "mileageText": "4,118 miles",
+   "mileage": 4118,
+   "price": 59995,
+   "priceText": "£59,995",
+   "location": "Darlington (216 miles)",
+   "distanceMiles": 216,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/e4b8750fcf2b488aaa1ab4773fb58a6e.jpg",
+   "imageCount": 32,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126912606",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 59995
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "",
+    "descriptionLength": 0,
+    "features": [
+     "GREY/BLACK exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "4,118 miles",
+     "Registration": "2023 (73 reg)",
+     "Owners": "1",
+     "Number of keys": "1",
+     "Gearbox": "Automatic"
+    },
+    "specs": {
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "Colour": "Multicolour"
+    },
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 1,
+    "serviceHistory": "Full dealership service history",
+    "serviceHistoryType": "FULL_DEALERSHIP",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": null,
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    }
+   ],
+   "redFlags": [],
+   "value": {
+    "pct": -1.9,
+    "expected": 59602,
+    "net": 58495,
+    "comps": 36,
+    "basis": "make",
+    "adjusted": true
+   },
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610126909374": {
+   "id": "202610126909374",
+   "title": "Benimar Benivan 144",
+   "subTitle": "Diesel 2 Berth 2.2",
+   "attentionGrabber": "Open to sensible offers",
+   "make": "Benimar",
+   "model": "Benivan 144",
+   "category": "motorhome",
+   "year": 2024,
+   "registeredYear": "2024 (24 reg)",
+   "mileageText": "1,650 miles",
+   "mileage": 1650,
+   "price": 51064,
+   "priceText": "£51,064",
+   "location": "Halifax (169 miles)",
+   "distanceMiles": 169,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/6399439341574d64b9ca807b36684d7f.jpg",
+   "imageCount": 27,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610126909374",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 51064
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "2024 Benimar Benivan 144\n-\nOffered by Motorhome Pig as a broker. Available to view at Poole, Dorset.\nThis is a compact, Fiat Ducato-based van conversion, well suited to couples. The owner advises it was bought new from a dealer and is a non-smoker vehicle. It has a garage area, which the owner says takes a coolbox, luggage, camping gear and folding chairs. The owner notes that, because of its weight class, it can be driven on a standard UK car licence.\nThe owner advises the following:\n- Fiat nine-speed automatic gearbox.\n- A five-year transferable Fiat warranty, purchased when the vehicle was new and running to July 2029.\n- A Pioneer DAB entertainment screen radio with steering wheel controls, fitted after purchase because the van came without a radio.\n- Gas central heating.\n- A full service history, with the last service in July 2026.\n- Yearly habitation checks, with the most recent in July 2026.\nFeatures & equipment\n- Cab Air Con\n- Solar Panel\n- Winter Pack\n- Alloy Wheels\n- Swivel Seats\n- Electric Step\n- Gas Locker Safety System\n- Truma/blown air heating\n- Cruise Control\n- Separate Shower\n- Fridge Auto Energy\n- factory alarm\n- Garage\n- Extended warranty\nKey specifications\n- Year: 2024\n- Mileage: 1,650 miles\n- Transmission: Automatic\n- Fuel: Diesel\n- Drive: Right-hand drive\n- Engine: 2.2L\n- Berths: 2\n- Travelling seats: 4\n- Dimensions (L × W × H): 5.9m × 2.51m × 2.65m\n- Weight (MTPLM): Up to 3,500 kg — driveable on a standard car licence\n- Keys: 2",
+    "descriptionLength": 1472,
+    "features": [
+     "Grey exterior colour",
+     "Air Conditioning",
+     "Alloy Wheels",
+     "Cruise Control",
+     "Electric Step",
+     "Fridge Auto Energy",
+     "Gas Locker Safety System",
+     "Separate Shower",
+     "Solar Panel",
+     "Swivel Seats",
+     "Truma/blown air heating",
+     "Winter Pack"
+    ],
+    "keySpec": {
+     "Mileage": "1,650 miles",
+     "Registration": "2024 (24 reg)",
+     "Owners": "1",
+     "Number of keys": "2",
+     "Berth": "2",
+     "End layout": "End bedroom",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.2L",
+     "Seats": "4",
+     "Dimensions": "L:5,900mm x W:2,510mm x H:2,650mm",
+     "Emission class": "Euro 6"
+    },
+    "specs": {
+     "Height": "2,650mm",
+     "Length": "5,900mm",
+     "Width": "2,510mm",
+     "Seats": "4",
+     "Gross vehicle weight": "3,500kg",
+     "Chassis make": "Fiat",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Driver position": "Right Hand Drive",
+     "Colour": "Grey"
+    },
+    "chassis": "Fiat",
+    "bodyType": "Campervan",
+    "owners": 1,
+    "serviceHistory": "Full service history",
+    "serviceHistoryType": "FULL",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-12",
+   "length": {
+    "metres": 5.9,
+    "source": "spec sheet"
+   },
+   "excluded": "5.9 m (spec sheet)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "air conditioning"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "- fiat nine-speed automatic gearbox."
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "solar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "cruise control"
+    },
+    {
+     "label": "Full service history",
+     "value": 0,
+     "evidence": "- a full service history, with the last service in july 2026."
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 0,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
+  },
+  "202610096841460": {
+   "id": "202610096841460",
+   "title": "Auto-Trail V-Line 660 S",
+   "subTitle": "V-Line 660 S 2.3",
+   "attentionGrabber": null,
+   "make": "Auto-Trail",
+   "model": "V-Line 660 S",
+   "category": "motorhome",
+   "year": 2022,
+   "registeredYear": "2022 (71 reg)",
+   "mileageText": "47,816 miles",
+   "mileage": 47816,
+   "price": 52999,
+   "priceText": "£52,999",
+   "location": "Gloucester (93 miles)",
+   "distanceMiles": 93,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/fad46c94545444a686a216eaa7252621.jpg",
+   "imageCount": 22,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202610096841460",
+   "firstSeen": "2026-10-12",
+   "lastSeen": "2026-10-12",
+   "status": "active",
+   "searches": [
+    "Campervans and van conversions (length from advert)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-10-12",
+     "price": 52999
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-10-12",
+    "description": "PEARMAN BRIGGS MOTORHOMES\nAuto-Trail V-Line 660 S 2021\n12 Month Warranty  / Full PDI\n•\tBerth 2\n•\tBelt 2\n•\tOwners 1\n•\tMillage 47816\n•\tEngine Fiat 2.2\n•\t6 Speed Manual\n•\tH 2.68 M\n•\tW 2.27 M\n•\tL 5.99 M\n•\tWeight 3500KG\n•\tCRUISE CONTROL\n•\tCAB AIRCON\n•\tDAB RADIO\n•\tSAT NAV\n•\tREVERSE CAMERA\n•\tSOLAR PANEL\n•\tAWNING\n•\tOUTSIDE LIGHT\n•\tSWIVEL SEATS\n•\tREAR LOUNGE\n•\tSIDE KITCHEN\n•\t2 RING GAS HOB\n•\tOVEN / GRILL\n•\tFRIDGE FREEZER\n•\tHEKI ROOF LIGHT\n•\tSIDE BATHROOM\n•\tCASSETTE TOILET\n•\tSHOWER\n•\tLED LIGHTING\n•\tREMOVABLE CARPETS\n•\tFLY SCREENS\n•\tBLINDS\n•\tDOUBLE GLAZING\n•\tALLOY WHEELS\n•\tGAS & ELECTRIC HOT WATER\n•\tGAS & ELECTRIC BLOWN AIR HEATING\n•\tELECTRIC SIDE STEP\n•\tTV POINT\n•\tTV AERIAL\n•\tUNDERSLUNG GAS TANK\n•\tOUTSIDE BBQ POINT\nAll Sizes & Weights Quoted Are As Per Manufacturers Specification at time of production.\nQuoted Figure should only be used as a guide line.\nFINANCE AVAILABLE! PART EXCHANGE WELCOME … WHAT HAVE YOU GOT ?",
+    "descriptionLength": 917,
+    "features": [
+     "Red exterior colour",
+     "12V Socket",
+     "15in Steel Wheels",
+     "ABS - Anti-Lock Braking System",
+     "Airbags - Driver",
+     "Black Frame for Front Lights",
+     "Bulkhead - Fixed Without Window",
+     "CIAO Fiat Sticker",
+     "Cupholder",
+     "Daytime Running Lights",
+     "Deadlocks",
+     "Drivers Seat Armrest and Lumbar Support",
+     "Dual Passenger Seat with 3-Point Central Seatbelt",
+     "ESC - Electronic Stability Control",
+     "Electric Front Windows",
+     "Electrically Adjustable Heated Door Mirrors",
+     "English Handbook",
+     "Fix and Go Puncture Repair Kit",
+     "Heated Diesel Filter",
+     "Heater - Blow by Pipe",
+     "Height Adjustable Drivers Seat",
+     "Load Retention Hooks",
+     "Power Steering - Servotronic",
+     "Radio - Bluetooth - USB - AUX",
+     "Remote Central Locking",
+     "Speed Limiter - 56-62-70-81mph - Set in Workshop",
+     "Steering Wheel - Height Adjustment",
+     "Steering Wheel Controls for Radio-CD",
+     "Trip Computer",
+     "Twin Panelled Rear Doors"
+    ],
+    "keySpec": {
+     "Mileage": "47,816 miles",
+     "Registration": "2022 (71 reg)",
+     "Owners": "2",
+     "Berth": "2",
+     "End layout": "End lounge",
+     "Bedroom layout": "Lounge Conversion",
+     "GVW": "MTPLM: 3,500kg",
+     "Gearbox": "Manual",
+     "Engine size power": "2.3L (138BHP)",
+     "Seats": "3",
+     "Dimensions": "L:5,998mm x W:2,050mm x H:2,524mm"
+    },
+    "specs": {
+     "Top speed": "93mph",
+     "Cylinders": "4",
+     "Engine power": "138BHP",
+     "Miles per gallon": "40.9mpg",
+     "Height": "2,524mm",
+     "Length": "5,998mm",
+     "Width": "2,050mm",
+     "Seats": "3",
+     "Gross vehicle weight": "3,500kg",
+     "Body type": "Campervan",
+     "Fuel type": "Diesel",
+     "MTPLM": "3,500kg",
+     "Bed Layout": "Lounge Conversion",
+     "Colour": "Red"
+    },
+    "chassis": null,
+    "bodyType": "Campervan",
+    "owners": 2,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (10 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false
+   },
+   "listedDate": "2026-10-09",
+   "length": {
+    "metres": 6,
+    "source": "spec sheet"
+   },
+   "excluded": "6 m (spec sheet)",
+   "specs": [
+    {
+     "label": "Cab air conditioning",
+     "value": 0,
+     "evidence": "•\tcab aircon"
+    },
+    {
+     "label": "Reversing camera",
+     "value": 200,
+     "evidence": "•\treverse camera"
+    },
+    {
+     "label": "Solar panel",
+     "value": 500,
+     "evidence": "•\tsolar panel"
+    },
+    {
+     "label": "Cruise control",
+     "value": 0,
+     "evidence": "•\tcruise control"
+    },
+    {
+     "label": "Awning",
+     "value": 600,
+     "evidence": "•\tawning"
+    }
+   ],
+   "redFlags": [],
+   "value": null,
+   "deal": {
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "daysListed": 3,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "isDeal": false
+   }
   }
  },
  "runs": [
+  {
+   "date": "2026-10-12T17:20:53.759Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 10,
+     "priceDrops": 4,
+     "gone": 5
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 13,
+     "priceDrops": 3,
+     "gone": 12
+    }
+   ]
+  },
   {
    "date": "2026-10-12T12:22:24.030Z",
    "searches": [
