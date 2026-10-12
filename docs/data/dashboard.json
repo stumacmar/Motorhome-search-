@@ -15,7 +15,7 @@
    "total": 1130,
    "read": 1129,
    "truncated": false,
-   "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
+   "error": null
   },
   "Campervans and van conversions (length from advert)": {
    "name": "Campervans and van conversions (length from advert)",
@@ -24,7 +24,7 @@
    "total": 2538,
    "read": 1503,
    "truncated": false,
-   "error": "Gateway HTTP 403 (browser): <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/htm"
+   "error": null
   }
  },
  "runs": [
@@ -14524,17 +14524,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -14614,17 +14612,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -14711,11 +14707,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
@@ -14804,11 +14798,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
@@ -14883,11 +14875,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
@@ -14973,17 +14963,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15050,17 +15038,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 79 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 79,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15142,17 +15128,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 80,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15227,17 +15211,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 84 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 84,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15324,7 +15306,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -15395,7 +15377,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 92 days"
@@ -15405,7 +15387,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15465,7 +15447,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -15475,7 +15457,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15561,7 +15543,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -15571,7 +15553,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -15646,7 +15628,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -15743,7 +15725,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -15753,7 +15735,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15830,7 +15812,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -15840,7 +15822,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -15907,7 +15889,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -15917,7 +15899,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -16005,7 +15987,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 104 days"
@@ -16087,7 +16069,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -16157,7 +16139,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 111 days"
@@ -16167,7 +16149,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -16254,7 +16236,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 113 days"
@@ -16348,7 +16330,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 117 days"
@@ -16425,7 +16407,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 118 days"
@@ -16435,7 +16417,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -16523,7 +16505,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 118 days"
@@ -16616,7 +16598,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 123 days"
@@ -16712,7 +16694,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -16807,7 +16789,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 133 days"
@@ -16817,7 +16799,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.5,
@@ -24571,17 +24553,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -24649,17 +24629,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 66 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 66,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -24730,11 +24708,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
@@ -24834,17 +24810,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -24929,17 +24903,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.49,
@@ -25027,17 +24999,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25144,11 +25114,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": true,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning",
      "360° camera"
@@ -25239,17 +25207,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25321,17 +25287,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 70 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 70,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -25421,17 +25385,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 70 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 70,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25498,11 +25460,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
@@ -25590,17 +25550,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25693,17 +25651,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -25778,17 +25734,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25842,17 +25796,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -25950,17 +25902,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -26044,17 +25994,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -26139,17 +26087,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -26219,17 +26165,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -26318,17 +26262,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -26411,17 +26353,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -26507,17 +26447,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -26602,17 +26540,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 78 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 78,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -26666,17 +26602,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 80,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -26754,17 +26688,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 81 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 81,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -26847,17 +26779,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 81 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 81,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.35,
@@ -26943,17 +26873,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 82,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27044,17 +26972,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 82,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27130,17 +27056,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 84 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 84,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27223,17 +27147,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -27315,17 +27237,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27406,17 +27326,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27480,11 +27398,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
@@ -27572,17 +27488,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -27674,7 +27588,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -27684,7 +27598,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -27762,7 +27676,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -27772,7 +27686,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -27842,7 +27756,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 92 days"
@@ -27852,7 +27766,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -27924,7 +27838,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 92 days"
@@ -27934,7 +27848,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28021,7 +27935,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 93 days"
@@ -28031,7 +27945,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28128,7 +28042,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -28138,7 +28052,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28220,7 +28134,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 95 days"
@@ -28230,7 +28144,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28292,7 +28206,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 96 days"
@@ -28302,7 +28216,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -28383,7 +28297,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 97 days"
@@ -28393,7 +28307,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -28483,7 +28397,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 97 days"
@@ -28493,7 +28407,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28591,7 +28505,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -28601,7 +28515,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -28686,7 +28600,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -28696,7 +28610,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -28777,7 +28691,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -28787,7 +28701,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -28882,7 +28796,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 101 days"
@@ -28892,7 +28806,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -28962,7 +28876,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -28972,7 +28886,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -29057,7 +28971,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -29067,7 +28981,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -29159,7 +29073,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -29257,7 +29171,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -29267,7 +29181,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.5,
@@ -29325,7 +29239,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -29335,7 +29249,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -29418,7 +29332,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -29428,7 +29342,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.84,
@@ -29499,7 +29413,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -29577,7 +29491,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -29587,7 +29501,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -29665,7 +29579,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -29675,7 +29589,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -29752,7 +29666,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -29762,7 +29676,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -29823,7 +29737,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -29833,7 +29747,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -29905,7 +29819,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -29915,7 +29829,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30008,7 +29922,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 109 days"
@@ -30018,7 +29932,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -30082,7 +29996,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 110 days"
@@ -30092,7 +30006,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30153,7 +30067,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 110 days"
@@ -30163,7 +30077,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30223,7 +30137,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 111 days"
@@ -30233,7 +30147,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30316,7 +30230,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 111 days"
@@ -30326,7 +30240,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -30411,7 +30325,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 114 days"
@@ -30421,7 +30335,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30496,7 +30410,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -30506,7 +30420,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30596,7 +30510,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -30606,7 +30520,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -30689,7 +30603,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -30699,7 +30613,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -30768,7 +30682,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -30778,7 +30692,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -30862,7 +30776,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -30872,7 +30786,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.35,
@@ -30943,7 +30857,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 118 days"
@@ -30953,7 +30867,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -31044,7 +30958,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 32,
     "motivationReasons": [
      "listed 119 days"
@@ -31140,7 +31054,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 32,
     "motivationReasons": [
      "listed 119 days"
@@ -31150,7 +31064,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -31214,7 +31128,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 123 days"
@@ -31322,7 +31236,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 125 days"
@@ -31332,7 +31246,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -31428,7 +31342,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 128 days"
@@ -31438,7 +31352,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -31513,7 +31427,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -31591,7 +31505,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -31601,7 +31515,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.75,
@@ -31669,7 +31583,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -31679,7 +31593,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -31744,7 +31658,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -31754,7 +31668,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -31836,7 +31750,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -31929,7 +31843,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 135 days"
@@ -31939,7 +31853,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -32025,7 +31939,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 136 days"
@@ -32037,7 +31951,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -32121,7 +32035,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 137 days"
@@ -32133,7 +32047,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.3,
@@ -32234,7 +32148,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 138 days"
@@ -32244,7 +32158,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.83,
@@ -32319,7 +32233,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 138 days"
@@ -32329,7 +32243,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -32406,7 +32320,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 143 days"
@@ -32416,7 +32330,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -32514,7 +32428,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 144 days"
@@ -32524,7 +32438,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -32624,7 +32538,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 145 days"
@@ -32634,7 +32548,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -32730,7 +32644,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 145 days"
@@ -32815,7 +32729,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -32913,7 +32827,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33014,7 +32928,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33103,7 +33017,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -33196,7 +33110,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33287,7 +33201,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33371,7 +33285,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33464,7 +33378,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33551,7 +33465,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33651,7 +33565,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33760,7 +33674,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.84,
@@ -33868,7 +33782,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -33959,7 +33873,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -73525,7 +73439,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 38,
     "motivationReasons": [
      "1 price drop (-5.1%)",
@@ -73536,7 +73450,7 @@
     "drops": 1,
     "totalDropPct": -5.1,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -83884,11 +83798,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
@@ -83962,17 +83874,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -84062,17 +83972,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.96,
@@ -84157,17 +84065,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -84234,17 +84140,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 60 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 60,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.5,
@@ -84312,17 +84216,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -84397,17 +84299,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.75,
@@ -84516,11 +84416,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": true,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning",
      "Rear air suspension"
@@ -84629,17 +84527,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -84739,17 +84635,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -84839,17 +84733,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -84912,17 +84804,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -85002,17 +84892,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -85097,17 +84985,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 62 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 62,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -85197,17 +85083,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 62 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 62,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.89,
@@ -85292,17 +85176,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 62 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 62,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.35,
@@ -85387,17 +85269,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 62 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 62,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -85461,17 +85341,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 62 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 62,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -85538,17 +85416,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 15,
-    "motivationReasons": [
-     "listed 64 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 64,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -85622,17 +85498,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 15,
-    "motivationReasons": [
-     "listed 65 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 65,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -85702,17 +85576,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 66 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 66,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -85781,17 +85653,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 66 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 66,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -85865,17 +85735,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 66 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 66,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.37,
@@ -85960,11 +85828,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
@@ -86039,17 +85905,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -86119,17 +85983,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -86212,17 +86074,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -86322,11 +86182,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 67 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 67,
     "drops": 0,
@@ -86403,17 +86261,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -86497,17 +86353,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -86575,17 +86429,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -86654,17 +86506,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -86749,17 +86599,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -86842,17 +86690,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.92,
@@ -86920,17 +86766,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -87022,17 +86866,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -87137,17 +86979,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 16,
-    "motivationReasons": [
-     "listed 68 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 68,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -87215,17 +87055,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -87320,17 +87158,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -87415,11 +87251,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
@@ -87499,11 +87333,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning"
     ],
@@ -87511,7 +87343,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -87599,17 +87431,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -87699,17 +87529,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.41,
@@ -87794,11 +87622,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 69 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 69,
     "drops": 0,
@@ -87880,17 +87706,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 70 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 70,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.55,
@@ -87988,11 +87812,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 70 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Rear air suspension"
     ],
@@ -88000,7 +87822,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -88064,17 +87886,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 17,
-    "motivationReasons": [
-     "listed 72 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 72,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.29,
@@ -88162,17 +87982,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -88252,17 +88070,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.54,
@@ -88352,11 +88168,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
@@ -88430,17 +88244,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -88535,17 +88347,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 73,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.49,
@@ -88640,11 +88450,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 73 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning"
     ],
@@ -88652,7 +88460,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.39,
@@ -88737,7 +88545,6 @@
     "motivated": true,
     "desperation": 40,
     "motivationReasons": [
-     "listed 74 days",
      "1 price drop (-6.2%)"
     ],
     "wantedHits": [],
@@ -88745,7 +88552,7 @@
     "drops": 1,
     "totalDropPct": -6.2,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -88820,17 +88627,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -88920,17 +88725,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -89015,17 +88818,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -89108,17 +88909,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -89232,17 +89031,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -89327,17 +89124,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -89415,17 +89210,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -89524,17 +89317,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -89610,17 +89401,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 75,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -89708,11 +89497,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 75 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning"
     ],
@@ -89720,7 +89507,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -89815,17 +89602,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -89914,17 +89699,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -90056,17 +89839,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -90121,17 +89902,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -90199,17 +89978,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -90277,17 +90054,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 76 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 76,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -90376,17 +90151,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 77 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 77,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -90471,11 +90244,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 19,
-    "motivationReasons": [
-     "listed 77 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 77,
     "drops": 0,
@@ -90571,11 +90342,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 79 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 79,
     "drops": 0,
@@ -90644,17 +90413,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 79 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 79,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.3,
@@ -90743,11 +90510,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Habitation air conditioning"
     ],
@@ -90835,17 +90600,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 80,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -90933,17 +90696,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 80,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -91013,17 +90774,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 80 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 80,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -91107,17 +90866,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 82,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -91185,17 +90942,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 82,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.44,
@@ -91305,11 +91060,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [
      "Rear air suspension"
     ],
@@ -91374,17 +91127,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 20,
-    "motivationReasons": [
-     "listed 82 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 82,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -91464,17 +91215,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -91547,17 +91296,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.65,
@@ -91647,11 +91394,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
@@ -91747,17 +91492,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.3,
@@ -91827,17 +91570,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.49,
@@ -91907,17 +91648,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 83 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 83,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -92015,17 +91754,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 84 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 84,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -92088,17 +91825,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 85 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 85,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.83,
@@ -92198,17 +91933,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 21,
-    "motivationReasons": [
-     "listed 85 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 85,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -92298,17 +92031,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 86 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 86,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -92391,17 +92122,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -92484,17 +92213,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -92589,17 +92316,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -92694,17 +92419,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -92789,17 +92512,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 87 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 87,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -92884,17 +92605,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.41,
@@ -92989,11 +92708,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
@@ -93085,17 +92802,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -93188,17 +92903,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -93288,17 +93001,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 22,
-    "motivationReasons": [
-     "listed 88 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 88,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -93383,17 +93094,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.53,
@@ -93478,17 +93187,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -93583,17 +93290,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -93693,11 +93398,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
@@ -93793,11 +93496,9 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
-    "motivationReasons": [
-     "listed 89 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 89,
     "drops": 0,
@@ -93873,7 +93574,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -93883,7 +93584,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.32,
@@ -93953,7 +93654,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -93963,7 +93664,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -94052,7 +93753,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 90 days"
@@ -94062,7 +93763,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -94142,7 +93843,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94152,7 +93853,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -94222,7 +93923,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94232,7 +93933,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.69,
@@ -94314,7 +94015,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94414,7 +94115,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94424,7 +94125,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -94512,7 +94213,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94524,7 +94225,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.91,
@@ -94612,7 +94313,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94622,7 +94323,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.96,
@@ -94698,7 +94399,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94708,7 +94409,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -94789,7 +94490,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 23,
     "motivationReasons": [
      "listed 91 days"
@@ -94799,7 +94500,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -94882,7 +94583,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 93 days"
@@ -94892,7 +94593,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -94971,7 +94672,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 93 days"
@@ -95079,7 +94780,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -95089,7 +94790,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -95162,7 +94863,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -95172,7 +94873,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -95261,7 +94962,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 94 days"
@@ -95271,7 +94972,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -95366,7 +95067,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 95 days"
@@ -95376,7 +95077,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -95451,7 +95152,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 95 days"
@@ -95463,7 +95164,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -95548,7 +95249,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 95 days"
@@ -95558,7 +95259,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -95636,7 +95337,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 24,
     "motivationReasons": [
      "listed 95 days"
@@ -95646,7 +95347,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -95741,7 +95442,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 96 days"
@@ -95751,7 +95452,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -95837,7 +95538,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 96 days"
@@ -95847,7 +95548,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -95930,7 +95631,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 97 days"
@@ -96025,7 +95726,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 97 days"
@@ -96035,7 +95736,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -96097,7 +95798,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 25,
     "motivationReasons": [
      "listed 98 days"
@@ -96107,7 +95808,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -96212,7 +95913,7 @@
     "drops": 1,
     "totalDropPct": -4.7,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -96306,7 +96007,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 98 days",
@@ -96317,7 +96018,7 @@
     "drops": 1,
     "totalDropPct": -1.7,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -96402,7 +96103,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 99 days"
@@ -96485,7 +96186,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -96495,7 +96196,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.41,
@@ -96585,7 +96286,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 100 days"
@@ -96595,7 +96296,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -96677,7 +96378,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 101 days"
@@ -96687,7 +96388,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -96775,7 +96476,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 101 days"
@@ -96785,7 +96486,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.49,
@@ -96891,7 +96592,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 101 days"
@@ -96901,7 +96602,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -96985,7 +96686,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 26,
     "motivationReasons": [
      "listed 101 days"
@@ -96995,7 +96696,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -97068,7 +96769,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97078,7 +96779,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -97161,7 +96862,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97171,7 +96872,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.44,
@@ -97251,7 +96952,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97261,7 +96962,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.7,
@@ -97336,7 +97037,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97346,7 +97047,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -97422,7 +97123,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97432,7 +97133,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -97508,7 +97209,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97518,7 +97219,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.79,
@@ -97579,7 +97280,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 102 days"
@@ -97589,7 +97290,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -97665,7 +97366,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -97675,7 +97376,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -97765,7 +97466,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -97775,7 +97476,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.25,
@@ -97845,7 +97546,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -97951,7 +97652,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 103 days"
@@ -97961,7 +97662,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98025,7 +97726,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -98035,7 +97736,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -98112,7 +97813,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -98122,7 +97823,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98207,7 +97908,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -98217,7 +97918,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.54,
@@ -98311,7 +98012,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -98321,7 +98022,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -98396,7 +98097,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 27,
     "motivationReasons": [
      "listed 105 days"
@@ -98406,7 +98107,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.97,
@@ -98477,7 +98178,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 106 days"
@@ -98487,7 +98188,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98567,7 +98268,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -98577,7 +98278,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -98641,7 +98342,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -98651,7 +98352,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98746,7 +98447,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -98756,7 +98457,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98846,7 +98547,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -98856,7 +98557,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -98946,7 +98647,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -98956,7 +98657,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99046,7 +98747,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 28,
     "motivationReasons": [
      "listed 108 days"
@@ -99056,7 +98757,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99140,7 +98841,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 109 days"
@@ -99150,7 +98851,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99230,7 +98931,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 109 days"
@@ -99240,7 +98941,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99334,7 +99035,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 109 days"
@@ -99344,7 +99045,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -99439,7 +99140,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 109 days"
@@ -99449,7 +99150,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -99539,7 +99240,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 110 days"
@@ -99549,7 +99250,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.4,
@@ -99633,7 +99334,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 111 days"
@@ -99643,7 +99344,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99738,7 +99439,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 29,
     "motivationReasons": [
      "listed 111 days"
@@ -99748,7 +99449,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -99828,7 +99529,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -99838,7 +99539,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.96,
@@ -99900,7 +99601,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -99910,7 +99611,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -99989,7 +99690,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 30,
     "motivationReasons": [
      "listed 115 days"
@@ -100084,7 +99785,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100169,7 +99870,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100269,7 +99970,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100279,7 +99980,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -100364,7 +100065,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100374,7 +100075,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -100464,7 +100165,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100474,7 +100175,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -100557,7 +100258,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100567,7 +100268,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -100657,7 +100358,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 116 days"
@@ -100667,7 +100368,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.32,
@@ -100747,7 +100448,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 117 days"
@@ -100852,7 +100553,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 117 days"
@@ -100862,7 +100563,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -100947,7 +100648,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 31,
     "motivationReasons": [
      "listed 118 days"
@@ -100957,7 +100658,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.69,
@@ -101047,7 +100748,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 32,
     "motivationReasons": [
      "listed 121 days"
@@ -101057,7 +100758,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.96,
@@ -101137,7 +100838,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 122 days"
@@ -101147,7 +100848,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -101230,7 +100931,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 122 days"
@@ -101240,7 +100941,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -101331,7 +101032,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 123 days"
@@ -101341,7 +101042,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -101414,7 +101115,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 123 days"
@@ -101424,7 +101125,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.87,
@@ -101494,7 +101195,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 124 days"
@@ -101504,7 +101205,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -101561,7 +101262,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 33,
     "motivationReasons": [
      "listed 125 days"
@@ -101571,7 +101272,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -101659,7 +101360,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 126 days"
@@ -101669,7 +101370,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -101739,7 +101440,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 126 days"
@@ -101749,7 +101450,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -101825,7 +101526,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 126 days"
@@ -101835,7 +101536,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -101918,7 +101619,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 128 days"
@@ -101928,7 +101629,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -102013,7 +101714,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 34,
     "motivationReasons": [
      "listed 128 days"
@@ -102103,7 +101804,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 129 days"
@@ -102177,7 +101878,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -102187,7 +101888,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -102277,7 +101978,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -102287,7 +101988,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.96,
@@ -102378,7 +102079,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 130 days"
@@ -102388,7 +102089,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -102479,7 +102180,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -102489,7 +102190,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -102559,7 +102260,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -102569,7 +102270,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -102637,7 +102338,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -102647,7 +102348,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -102725,7 +102426,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -102735,7 +102436,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -102823,7 +102524,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -102833,7 +102534,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -102924,7 +102625,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -102934,7 +102635,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -103011,7 +102712,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103021,7 +102722,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -103094,7 +102795,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103104,7 +102805,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -103194,7 +102895,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103204,7 +102905,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -103285,7 +102986,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103295,7 +102996,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -103380,7 +103081,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103390,7 +103091,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.66,
@@ -103475,7 +103176,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103485,7 +103186,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.39,
@@ -103560,7 +103261,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103570,7 +103271,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.32,
@@ -103663,7 +103364,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 132 days"
@@ -103673,7 +103374,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.88,
@@ -103747,7 +103448,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 133 days"
@@ -103843,7 +103544,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 133 days"
@@ -103853,7 +103554,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -103948,7 +103649,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 135 days"
@@ -103958,7 +103659,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -104021,7 +103722,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 136 days"
@@ -104031,7 +103732,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.79,
@@ -104088,7 +103789,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 136 days"
@@ -104098,7 +103799,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.79,
@@ -104161,7 +103862,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 136 days"
@@ -104171,7 +103872,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.64,
@@ -104261,7 +103962,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 136 days"
@@ -104366,7 +104067,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 137 days"
@@ -104459,7 +104160,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 138 days"
@@ -104569,7 +104270,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 37,
     "motivationReasons": [
      "listed 138 days"
@@ -104581,7 +104282,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -104666,7 +104367,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 38,
     "motivationReasons": [
      "listed 139 days"
@@ -104751,7 +104452,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 38,
     "motivationReasons": [
      "listed 140 days"
@@ -104761,7 +104462,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -104825,7 +104526,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 38,
     "motivationReasons": [
      "listed 140 days"
@@ -104835,7 +104536,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.32,
@@ -104910,7 +104611,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 38,
     "motivationReasons": [
      "listed 140 days"
@@ -104920,7 +104621,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -105005,7 +104706,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 142 days"
@@ -105015,7 +104716,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -105100,7 +104801,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 142 days"
@@ -105200,7 +104901,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 143 days"
@@ -105210,7 +104911,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.32,
@@ -105291,7 +104992,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 143 days"
@@ -105301,7 +105002,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -105365,7 +105066,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 39,
     "motivationReasons": [
      "listed 145 days"
@@ -105375,7 +105076,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.43,
@@ -105571,7 +105272,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.79,
@@ -105666,7 +105367,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.41,
@@ -105854,7 +105555,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -105954,7 +105655,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -106054,7 +105755,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.9,
@@ -106152,7 +105853,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.49,
@@ -106233,7 +105934,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.35,
@@ -106316,7 +106017,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -106409,7 +106110,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -106504,7 +106205,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -106679,7 +106380,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.98,
@@ -106871,7 +106572,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -106961,7 +106662,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -107151,7 +106852,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -107217,7 +106918,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.85,
@@ -107317,7 +107018,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -107397,7 +107098,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -107482,7 +107183,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.39,
@@ -107556,7 +107257,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.72,
@@ -107817,7 +107518,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.6,
@@ -107918,7 +107619,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.89,
@@ -108090,7 +107791,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.59,
@@ -108195,7 +107896,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.45,
@@ -108293,7 +107994,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -108367,7 +108068,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.34,
@@ -108439,7 +108140,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.63,
@@ -108522,7 +108223,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.3,
@@ -108603,7 +108304,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.56,
@@ -108774,7 +108475,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -108933,7 +108634,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.95,
@@ -109191,7 +108892,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -109285,7 +108986,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 7,
@@ -109370,7 +109071,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.36,
@@ -109464,7 +109165,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.92,
@@ -109564,7 +109265,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.99,
@@ -109659,7 +109360,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.8,
@@ -109759,7 +109460,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.3,
@@ -123758,11 +123459,9 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 18,
-    "motivationReasons": [
-     "listed 74 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 74,
     "drops": 0,
@@ -124021,17 +123720,15 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 14,
-    "motivationReasons": [
-     "listed 61 days"
-    ],
+    "motivationReasons": [],
     "wantedHits": [],
     "daysListed": 61,
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": {
     "metres": 6.23,
@@ -124091,7 +123788,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -124101,7 +123798,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -124169,7 +123866,7 @@
    "deal": {
     "underpriced": false,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 35,
     "motivationReasons": [
      "listed 131 days"
@@ -124179,7 +123876,7 @@
     "drops": 0,
     "totalDropPct": 0,
     "redFlags": 0,
-    "isDeal": true
+    "isDeal": false
    },
    "length": null,
    "details": {
@@ -124249,7 +123946,7 @@
    "deal": {
     "underpriced": true,
     "highSpec": false,
-    "motivated": true,
+    "motivated": false,
     "desperation": 36,
     "motivationReasons": [
      "listed 133 days"

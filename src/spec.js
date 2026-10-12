@@ -207,7 +207,7 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   const listed = advert.listedDate || advert.firstSeen;
   const daysListed = listed ? daysBetween(listed, today) : null;
   const { drops, totalDropPct } = priceDrops(advert);
-  const staleDays = dealConfig.staleDays ?? 60;
+  const staleDays = dealConfig.staleDays ?? 90;
   const redFlags = (advert.redFlags || []).length;
 
   // Desperation, 0 to 100: how long it has sat unsold, how often and how far the
@@ -222,7 +222,8 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   if (days >= staleDays) reasons.push(`listed ${days} days`);
   if (drops) reasons.push(`${drops} price drop${drops > 1 ? 's' : ''} (${totalDropPct}%)`);
   if (privateScore) reasons.push('private seller');
-  const motivated = days >= staleDays || drops >= 2 || (days >= 30 && drops >= 1);
+  const motivated = desperation >= (dealConfig.motivatedScore ?? 40);
+  const desperate = desperation >= (dealConfig.dealScore ?? 50);
 
   return {
     underpriced,
@@ -235,7 +236,7 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     drops,
     totalDropPct,
     redFlags,
-    isDeal: (underpriced || highSpec || motivated) && redFlags === 0,
+    isDeal: (underpriced || highSpec || desperate) && redFlags === 0,
   };
 }
 

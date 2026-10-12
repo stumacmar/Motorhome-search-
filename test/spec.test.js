@@ -72,7 +72,7 @@ test('listing date from advert id', () => {
 });
 
 test('deal scoring with motivation and red flags', () => {
-  const cfg = { wantedSpecs: ['Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2, underpricedPercent: 10, staleDays: 60 };
+  const cfg = { wantedSpecs: ['Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2, underpricedPercent: 10, staleDays: 90, motivatedScore: 40, dealScore: 50 };
   const today = '2026-10-11';
   assert.equal(scoreDeal({ specs: [{ label: 'Self-levelling' }], value: { pct: -12 } }, cfg, today).isDeal, true);
   assert.equal(scoreDeal({ specs: [{ label: 'Habitation air conditioning' }, { label: 'Self-levelling' }], value: null }, cfg, today).isDeal, true);
@@ -80,11 +80,12 @@ test('deal scoring with motivation and red flags', () => {
   const stale = scoreDeal({ listedDate: '2026-07-01', priceHistory: [{ date: '2026-07-01', price: 50000 }, { date: '2026-09-01', price: 47000 }], value: null }, cfg, today);
   assert.equal(stale.motivated, true);
   assert.equal(stale.daysListed, 102);
-  assert.equal(stale.isDeal, true);
   assert.ok(stale.desperation > 40 && stale.desperation < 60, `desperation ${stale.desperation}`);
+  assert.equal(stale.isDeal, false, 'motivated but under the deal score');
   const longListed = scoreDeal({ listedDate: '2026-03-01', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null, sellerType: 'PRIVATE' }, cfg, today);
   assert.equal(longListed.motivated, true, 'six months listed counts on its own');
   assert.equal(longListed.desperation, 60);
+  assert.equal(longListed.isDeal, true);
   const fresh = scoreDeal({ listedDate: '2026-10-10', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null }, cfg, today);
   assert.equal(fresh.motivated, false);
   assert.equal(fresh.desperation, 0);

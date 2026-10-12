@@ -22,7 +22,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
  * capped per run), then recompute specs, price-vs-similar and deal flags.
  */
 async function enrich(store, config, transport) {
-  const maxFetches = config.details?.maxFetchesPerRun ?? 300;
+  const maxFetches = rescoreOnly ? 0 : config.details?.maxFetchesPerRun ?? 300;
   const retryAfterDays = config.details?.retryFailedAfterDays ?? 3;
   const delayMs = config.details?.delayMs ?? 900;
   const minBerth = config.details?.excludeIfBerthBelow ?? 2;
@@ -104,6 +104,7 @@ async function enrich(store, config, transport) {
 }
 
 const dryRun = process.argv.includes('--dry-run');
+const rescoreOnly = process.argv.includes('--rescore'); // recompute kit, value and deal flags from the stored data without touching Autotrader
 const configPath = process.argv.find((a) => a.endsWith('.json')) || 'search.config.json';
 const today = new Date().toISOString().slice(0, 10);
 
@@ -125,7 +126,7 @@ async function main() {
   const results = [];
   const transport = {}; // shared across searches; holds the headless browser if the fallback is needed
 
-  for (const search of config.searches) {
+  for (const search of rescoreOnly ? [] : config.searches) {
     const name = search.name || search.url || JSON.stringify(search.criteria);
     console.info(`\n▶ ${name}`);
     try {
@@ -172,12 +173,18 @@ async function main() {
 
   // Drop searches that were removed from the config, retiring adverts only they matched.
   const configured = config.searches.map((s) => s.name || s.url || JSON.stringify(s.criteria));
-  const removed = dropRemovedSearches(store, configured, today);
+  const removed = rescoreOnly ? [] : dropRemovedSearches(store, configured, today);
   if (removed.length) console.info(`\nRemoved searches no longer in config: ${removed.join(', ')}`);
 
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
-  store.generatedAt = new Date().toISOString();
   store.wantedSpecs = config.deals?.wantedSpecs || [];
+  if (rescoreOnly) {
+    await saveStore(store);
+    await saveStore(slimStore(store), DASHBOARD_PATH);
+    console.info(`\nRescored ${Object.keys(store.adverts).length} adverts without fetching.`);
+    return false;
+  }
+  store.generatedAt = new Date().toISOString();
   store.runs.unshift({
     date: store.generatedAt,
     searches: results.map((r) => ({
