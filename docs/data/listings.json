@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-13T06:01:00.694Z",
+ "generatedAt": "2026-10-13T07:28:18.334Z",
  "searches": {
   "6.25–7 m, all body types (Autotrader length)": {
    "name": "6.25–7 m, all body types (Autotrader length)",
@@ -44197,8 +44197,8 @@
    "registeredYear": null,
    "mileageText": null,
    "mileage": null,
-   "price": 67995,
-   "priceText": "£67,995",
+   "price": 64995,
+   "priceText": "£64,995",
    "location": "Hertford (21 miles)",
    "distanceMiles": 21,
    "sellerType": "TRADE",
@@ -44216,6 +44216,10 @@
     {
      "date": "2026-10-11",
      "price": 67995
+    },
+    {
+     "date": "2026-10-13",
+     "price": 64995
     }
    ],
    "value": null,
@@ -44223,12 +44227,14 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 3,
-    "motivationReasons": [],
+    "desperation": 22,
+    "motivationReasons": [
+     "1 price drop (-4.4%)"
+    ],
     "wantedHits": [],
     "daysListed": 23,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -4.4,
     "redFlags": 0,
     "isDeal": false
    },
@@ -315993,7 +315999,7 @@
    "id": "202609286473415",
    "title": "Mercedes-Benz Sprinter",
    "subTitle": "2.1 314 CDI Premium Panel Van 5dr Diesel Manual FWD L2 H2 Euro 6 (s/s) (143 ps)",
-   "attentionGrabber": "Low mileage, Apple car play",
+   "attentionGrabber": "Low mileage, 4 seater, Air Con",
    "make": "Mercedes-Benz",
    "model": "Sprinter",
    "category": "motorhome",
@@ -327308,7 +327314,7 @@
    "sellerType": "TRADE",
    "condition": "used",
    "image": "https://m.atcdn.co.uk/a/media/w480h360/12c8e1f97b7e4ffca1284dbf27227cf2.jpg",
-   "imageCount": 9,
+   "imageCount": 21,
    "url": "https://www.autotrader.co.uk/motorhome-details/202610126917376",
    "firstSeen": "2026-10-12",
    "lastSeen": "2026-10-13",
@@ -327921,7 +327927,7 @@
    "id": "202610126916318",
    "title": "Swift TREKKER X",
    "subTitle": "2.0",
-   "attentionGrabber": "BASICALLY BRAND NEW!!",
+   "attentionGrabber": "ONLY 3 MONTHS OLD!!",
    "make": "Swift",
    "model": "Trekker X",
    "category": "motorhome",
@@ -328918,6 +328924,25 @@
   }
  },
  "runs": [
+  {
+   "date": "2026-10-13T07:28:18.334Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 1,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-13T06:01:00.694Z",
    "searches": [

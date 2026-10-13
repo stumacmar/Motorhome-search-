@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-13T06:01:00.694Z",
+ "generatedAt": "2026-10-13T07:28:18.334Z",
  "wantedSpecs": [
   "Habitation air conditioning",
   "Self-levelling",
@@ -28,6 +28,25 @@
   }
  },
  "runs": [
+  {
+   "date": "2026-10-13T07:28:18.334Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 1,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-13T06:01:00.694Z",
    "searches": [
@@ -9741,7 +9760,7 @@
    "registeredYear": null,
    "mileage": null,
    "mileageText": null,
-   "price": 67995,
+   "price": 64995,
    "location": "Hertford (21 miles)",
    "distanceMiles": 21,
    "sellerType": "TRADE",
@@ -9758,6 +9777,10 @@
     {
      "date": "2026-10-11",
      "price": 67995
+    },
+    {
+     "date": "2026-10-13",
+     "price": 64995
     }
    ],
    "specs": [
@@ -9783,12 +9806,14 @@
     "underpriced": false,
     "highSpec": false,
     "motivated": false,
-    "desperation": 3,
-    "motivationReasons": [],
+    "desperation": 22,
+    "motivationReasons": [
+     "1 price drop (-4.4%)"
+    ],
     "wantedHits": [],
     "daysListed": 23,
-    "drops": 0,
-    "totalDropPct": 0,
+    "drops": 1,
+    "totalDropPct": -4.4,
     "redFlags": 0,
     "isDeal": false
    },
