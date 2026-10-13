@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-13T05:18:57.262Z",
+ "generatedAt": "2026-10-13T06:01:00.694Z",
  "wantedSpecs": [
   "Habitation air conditioning",
   "Self-levelling",
@@ -28,6 +28,25 @@
   }
  },
  "runs": [
+  {
+   "date": "2026-10-13T06:01:00.694Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-13T05:18:57.262Z",
    "searches": [
