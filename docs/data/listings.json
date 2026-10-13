@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-13T05:06:19.803Z",
+ "generatedAt": "2026-10-13T05:18:57.262Z",
  "searches": {
   "6.25–7 m, all body types (Autotrader length)": {
    "name": "6.25–7 m, all body types (Autotrader length)",
@@ -328870,7 +328870,6 @@
     "metres": 5.98,
     "source": "transit L3"
    },
-   "excluded": "5.98 m (transit L3)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -328914,10 +328913,30 @@
     "totalDropPct": 0,
     "redFlags": 0,
     "isDeal": false
-   }
+   },
+   "excluded": "5.98 m (transit L3)"
   }
  },
  "runs": [
+  {
+   "date": "2026-10-13T05:18:57.262Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-13T05:06:19.803Z",
    "searches": [
