@@ -140,7 +140,7 @@ Add these as **Settings → Secrets and variables → Actions → Repository sec
 
 ### 4. Refreshing from the dashboard
 
-The **Refresh from Autotrader** button on the dashboard opens this repo's Actions page in a new tab, where one press of **Run workflow** starts the job (you need to be signed in to GitHub there). The dashboard then follows the run and reloads itself once the new data is published, usually a few minutes later. No credentials are stored on the page. The job runs wherever the workflow runs, so until a self-hosted runner is set up (see "Where it runs") a refresh will fail with 403s from Autotrader and the dashboard says so.
+The search runs by itself every morning from the Claude Code routine (see "Where it runs") and the dashboard shows when the next run is due. To run it sooner, open Claude Code, go to **Routines**, open **Daily motorhome search** and press **Run**, or ask Claude in the project chat to refresh. The dashboard's **Refresh now** button explains this and then reloads the page by itself when new data arrives. Nothing on the page can start the job directly, and the GitHub **Run workflow** button only works once a self-hosted runner exists.
 
 ### 5. First run
 
