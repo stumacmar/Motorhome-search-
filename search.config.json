@@ -11,7 +11,7 @@
     "retryFailedAfterDays": 3
   },
   "deals": {
-    "_comment": "An advert is 'worth a look' if it has at least minWantedSpecs of wantedSpecs, or its price net of kit is underpricedPercent below similar live adverts, or its desperation score (time listed, price cuts, private seller; 0-100) reaches dealScore. A seller counts as motivated at motivatedScore. Any red flag removes it from the list.",
+    "_comment": "An advert is 'worth a look' if it has at least minWantedSpecs of wantedSpecs, or its price net of kit is underpricedPercent below similar live adverts, or its desperation score (0-100: price cuts seen up to 60, time listed up to 30, private seller 10) reaches dealScore. A seller counts as motivated at motivatedScore, but only with evidence: a price cut, or a private seller listed longer than staleDays. Any red flag removes it from the list.",
     "wantedSpecs": [
       "Habitation air conditioning",
       "Self-levelling",

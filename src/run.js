@@ -180,7 +180,7 @@ async function main() {
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   if (rescoreOnly) {
     await saveStore(store);
-    await saveStore(slimStore(store), DASHBOARD_PATH);
+    await saveStore(slimStore(store), DASHBOARD_PATH, { indent: 0 }); // compact: the page downloads this on every visit
     console.info(`\nRescored ${Object.keys(store.adverts).length} adverts without fetching.`);
     return false;
   }
@@ -207,7 +207,7 @@ async function main() {
   }
 
   await saveStore(store);
-  await saveStore(slimStore(store), DASHBOARD_PATH);
+  await saveStore(slimStore(store), DASHBOARD_PATH, { indent: 0 }); // compact: the page downloads this on every visit
   console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned, ${enrichment.stillPending} still awaiting details)`);
 
   const failures = results.filter((r) => r.error).length;

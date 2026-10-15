@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Motorhome search</title>
 <meta name="description" content="Adverts matched by the daily Autotrader motorhome search, with price history.">
+<link rel="icon" href="data:,">
 <style>
   :root {
     --bg: #f6f5f2; --card: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc;
@@ -32,6 +33,10 @@
   main { max-width: 1180px; margin: 0 auto; padding: 0 16px 48px; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 18px 0; }
   .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .stat[data-show] { cursor: pointer; }
+  .stat[data-show]:hover { border-color: var(--accent); }
+  .stat[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  @media (max-width: 600px) { .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; } .stat { padding: 8px 10px; } .stat b { font-size: 20px; } .stat span { font-size: 12px; line-height: 1.2; display: block; } }
   .stat b { display: block; font-size: 24px; line-height: 1.1; }
   .stat span { color: var(--muted); font-size: 13px; }
   .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b { color: #c98a00; }
@@ -98,6 +103,8 @@
   .refresh .status.err { color: var(--drop); }
   .refresh .status a { color: inherit; }
   @media (max-width: 600px) { .refresh { align-items: flex-start; } .refresh .status { text-align: left; } }
+  @media (max-width: 700px) { .controls { position: static; } }
+  .tag.listed.unsure { border: 1px dashed var(--line); background: transparent; }
 </style>
 </head>
 <body>
@@ -119,6 +126,7 @@
   <div class="controls">
     <input type="search" id="q" placeholder="Filter by make, model, location…" aria-label="Filter adverts">
     <select id="search" aria-label="Search"><option value="">All searches</option></select>
+    <select id="make" aria-label="Make"><option value="">All makes</option></select>
     <select id="sort" aria-label="Sort">
       <option value="newest">Newest first</option>
       <option value="price-asc">Price: low to high</option>
@@ -143,7 +151,8 @@
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
       <button data-show="gone" aria-pressed="false">Gone</button>
-      <button data-show="hidden" aria-pressed="false">Hidden</button>
+      <button data-show="rules" aria-pressed="false" title="Live adverts outside the length or berth rules in search.config.json">Hidden by rules</button>
+      <button data-show="hidden" aria-pressed="false" title="Adverts you hid with ✕">Hidden by me</button>
     </div>
     <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
     <label class="check"><input type="checkbox" id="private"> Private sellers only</label>
@@ -155,7 +164,7 @@
   <p class="empty" id="empty" hidden>Nothing matches.</p>
   <button class="more" id="more" hidden>Show more</button>
 </main>
-<footer>Data is refreshed once a day by a GitHub Actions job. Adverts link to Autotrader; prices and availability are theirs, not ours.</footer>
+<footer>Data is refreshed every morning by the daily search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound.</footer>
 <script>
 (async function () {
   const gbp = (n) => n == null ? '?' : '£' + Number(n).toLocaleString('en-GB');
@@ -169,22 +178,27 @@
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
   } catch (e) {
-    document.getElementById('updated').textContent = 'No data yet. Run the workflow once (Actions → Daily motorhome search → Run workflow).';
+    document.getElementById('updated').textContent = 'No data yet. Run the daily search once (Claude Code → Routines → Daily motorhome search → Run).';
     return;
   }
 
   const adverts = Object.values(data.adverts || {});
   const wantedSpecs = new Set(data.wantedSpecs || []);
   const today = new Date().toISOString().slice(0, 10);
+  // The first run recorded everything at once, so "first seen" only means "new" after that date.
+  const firstRun = adverts.reduce((min, a) => (a.firstSeen && (!min || a.firstSeen < min) ? a.firstSeen : min), null);
   for (const a of adverts) {
     const h = a.priceHistory || [];
     a._first = h[0]?.price ?? a.price;
     a._last = h.at(-1)?.price ?? a.price;
     a._drop = a._first != null && a._last != null ? a._first - a._last : 0;
     a._recentDrop = h.length > 1 && daysAgo(h.at(-1).date) <= 7 && h.at(-1).price < h.at(-2).price;
-    a._isNew = daysAgo(a.firstSeen) <= 7;
+    a._listedOn = a.listedDate || a.firstSeen;
+    a._listed = Math.max(0, daysAgo(a._listedOn));
+    a._listedSure = a.deal ? a.deal.listedReliable !== false : true;
+    a._isNew = a._listed <= 7; // listed on Autotrader within the week
+    a._newToSearch = !a._isNew && a.firstSeen > firstRun && daysAgo(a.firstSeen) <= 7; // older advert that only just matched a search
     a._wanted = (a.specs || []).filter((s) => wantedSpecs.has(s.label)).length;
-    a._listed = a.deal?.daysListed ?? (a.listedDate ? daysAgo(a.listedDate) : daysAgo(a.firstSeen));
     a._drops = a.deal?.drops ?? 0;
     a._flags = (a.redFlags || []).length;
   }
@@ -198,27 +212,32 @@
     : '';
 
   const live = adverts.filter((a) => a.status === 'active' && !a.excluded);
+  // [class, count, label, view it opens when tapped]
   const stats = [
-    ['live', live.length, 'live adverts'],
-    ['new', live.filter((a) => a._isNew).length, 'new this week'],
-    ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week'],
-    ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look'],
-    ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced'],
-    ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers'],
-    ['', live.filter((a) => a._listed >= 90).length, 'listed 90+ days'],
-    ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week'],
+    ['live', live.length, 'live adverts', 'active'],
+    ['new', live.filter((a) => a._isNew || a._newToSearch).length, 'new this week', 'new'],
+    ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week', 'drops'],
+    ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals'],
+    ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
+    ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated'],
+    ['', live.filter((a) => a._listed >= 90 && a._listedSure).length, 'listed 90+ days', null],
+    ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
+    ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
   ];
-  document.getElementById('stats').innerHTML = stats.map(([c, n, l]) => `<div class="stat ${c}"><b>${n}</b><span>${l}</span></div>`).join('');
+  document.getElementById('stats').innerHTML = stats.map(([c, n, l, show]) => `<div class="stat ${c}" ${show ? `data-show="${show}" role="button" tabindex="0" title="Show these"` : ''}><b>${n}</b><span>${l}</span></div>`).join('');
 
   const searches = Object.values(data.searches || {});
-  if (data.hiddenByRules) searches.push({ name: `${data.hiddenByRules} hidden by the length and berth rules`, url: 'https://github.com/stumacmar/Motorhome-search-#spotting-the-good-ones' });
   document.getElementById('searches').innerHTML = searches.map((s) =>
     `<a href="${esc(s.url || '#')}" target="_blank" rel="noopener" class="${s.error || s.truncated ? 'warn' : ''}" title="${esc(s.error || (s.truncated ? 'Only the first ' + s.read + ' of ' + s.total + ' results were read' : 'Open on Autotrader'))}">
       ${s.error ? '⚠️ ' : ''}${esc(s.name)}${s.total != null ? ' · ' + (s.error ? 'failed' : s.total + ' on Autotrader') : ''}${s.truncated ? ' (cut short)' : ''}</a>`).join('');
   const sel = document.getElementById('search');
   for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
+  const makeSel = document.getElementById('make');
+  const makeCounts = new Map();
+  for (const a of adverts) if (a.make && a.status === 'active') makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
+  for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
 
-  const state = { q: '', search: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false };
+  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false };
   const PAGE = 48;
   let shown = PAGE;
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
@@ -230,25 +249,34 @@
   document.getElementById('knownlen').checked = !!state.knownLen;
   document.getElementById('sort').value = state.sort;
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
-  document.querySelectorAll('.toggle button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.show === state.show)));
+  if ([...makeSel.options].some((o) => o.value === state.make)) makeSel.value = state.make; else state.make = '';
+  function markShow() {
+    document.querySelectorAll('.toggle button, .stat[data-show]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.show === state.show)));
+  }
+  markShow();
 
   function card(a) {
     const tags = [];
     if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
-    else if (a._isNew) tags.push(`<span class="tag new">new ${a.firstSeen === today ? 'today' : daysAgo(a.firstSeen) + 'd ago'}</span>`);
+    else if (a._isNew) tags.push(`<span class="tag new">new ${a._listed === 0 ? 'today' : a._listed + 'd ago'}</span>`);
+    else if (a._newToSearch) tags.push(`<span class="tag new" title="Listed ${esc(a._listedOn)}; only matched a search ${esc(a.firstSeen)}">new to search</span>`);
     if (a._recentDrop) tags.push(`<span class="tag drop">price drop</span>`);
     if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
     if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
     if (a.deal?.highSpec) tags.push(`<span class="tag deal">high spec</span>`);
-    if (a.deal?.motivated) tags.push(`<span class="tag motivated" title="${esc((a.deal.motivationReasons || []).join(', '))}">motivated · ${a.deal.desperation}/100</span>`);
-    else if (a.deal?.desperation >= 20) tags.push(`<span class="tag" title="Desperation score from time listed, price cuts and seller type: ${esc((a.deal.motivationReasons || []).join(', ') || 'time listed')}">desperation ${a.deal.desperation}/100</span>`);
+    if (a.deal?.motivated) tags.push(`<span class="tag motivated" title="Seller looks motivated (${a.deal.desperation}/100): ${esc((a.deal.motivationReasons || []).join(', '))}">motivated · ${a.deal.desperation}/100</span>`);
     if (a.value) {
       const basis = { model: 'same-model', chassis: 'same-chassis, berth and body', make: 'same-make' }[a.value.basis] || a.value.basis;
       const kit = a.price != null && a.value.net != null ? a.price - a.value.net : 0;
       const tip = `Expected ${gbp(a.value.expected)} net of kit from ${a.value.comps} live ${basis} adverts of a similar age${a.value.adjusted ? ', adjusted for age and mileage' : ''}${kit >= 500 ? '. Kit allowed for: ' + gbp(kit) : ''}`;
       tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="${esc(tip)}">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit >= 1000 ? ' · ' + gbp(kit) + ' kit' : ''}</span>`);
     }
-    if (a.status === 'active') tags.push(`<span class="tag" title="Listed on Autotrader ${esc(a.listedDate || a.firstSeen)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd'}</span>`);
+    if (a.status === 'active') {
+      const why = a._listedSure
+        ? `Advert created on Autotrader ${a._listedOn} (from the advert id, the date Autotrader sorts newest-first by)`
+        : `Advert record created ${a._listedOn}, but it is a dealer advert older than the vehicle or than two years, so it may have been listed ahead of arrival or re-published; not counted towards the motivated score`;
+      tags.push(`<span class="tag listed ${a._listedSure ? '' : 'unsure'}" title="${esc(why)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd' + (a._listedSure ? '' : '?')}</span>`);
+    }
     if (a._drops) tags.push(`<span class="tag" title="Price drops since we started watching">${a._drops} drop${a._drops > 1 ? 's' : ''} (${a.deal?.totalDropPct ?? ''}%)</span>`);
     if (a.excluded) tags.push(`<span class="tag gone">hidden: ${esc(a.excluded)}</span>`);
     for (const s of a.searches || []) tags.push(`<span class="tag">${esc(s)}</span>`);
@@ -298,9 +326,10 @@
     let list = adverts.filter((a) => {
       if (state.show === 'hidden') return !!mine.hidden[a.id];
       if (mine.hidden[a.id]) return false;
-      if (state.show === 'gone') { if (a.status !== 'gone') return false; }
+      if (state.show === 'rules') { if (a.status !== 'active' || !a.excluded) return false; }
+      else if (state.show === 'gone') { if (a.status !== 'gone' || a.excluded) return false; }
       else if (a.status !== 'active' || a.excluded) return false;
-      if (state.show === 'new' && !a._isNew) return false;
+      if (state.show === 'new' && !a._isNew && !a._newToSearch) return false;
       if (state.show === 'drops' && !a._recentDrop) return false;
       if (state.show === 'deals' && !a.deal?.isDeal) return false;
       if (state.show === 'under' && !a.deal?.underpriced) return false;
@@ -312,11 +341,12 @@
       if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
       if (state.knownLen && !a.length) return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
+      if (state.make && a.make !== state.make) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
       return true;
     });
     const by = {
-      newest: (x, y) => (y.firstSeen || '').localeCompare(x.firstSeen || '') || y.id.localeCompare(x.id),
+      newest: (x, y) => (y._listedOn || '').localeCompare(x._listedOn || '') || y.id.localeCompare(x.id),
       'price-asc': (x, y) => (x._last ?? 1e12) - (y._last ?? 1e12),
       'price-desc': (x, y) => (y._last ?? -1) - (x._last ?? -1),
       drop: (x, y) => y._drop - x._drop,
@@ -325,7 +355,7 @@
       listed: (x, y) => y._listed - x._listed,
       length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
       drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
-      desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._listed - x._listed,
+      desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._drops - x._drops || y._listed - x._listed,
       year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
       mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
       distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
@@ -359,13 +389,17 @@
 
   document.getElementById('q').addEventListener('input', resetAnd((e) => { state.q = e.target.value; }));
   sel.addEventListener('change', resetAnd((e) => { state.search = e.target.value; }));
+  makeSel.addEventListener('change', resetAnd((e) => { state.make = e.target.value; }));
   document.getElementById('sort').addEventListener('change', resetAnd((e) => { state.sort = e.target.value; }));
-  document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => {
-    state.show = b.dataset.show;
+  function setShow(show) {
+    state.show = show;
     shown = PAGE;
-    document.querySelectorAll('.toggle button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    markShow();
     render();
-  }));
+  }
+  document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setShow(b.dataset.show)));
+  document.getElementById('stats').addEventListener('click', (e) => { const t = e.target.closest('.stat[data-show]'); if (t) setShow(t.dataset.show); });
+  document.getElementById('stats').addEventListener('keydown', (e) => { const t = e.target.closest('.stat[data-show]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setShow(t.dataset.show); } });
   render();
 
   // ---- Refresh ----

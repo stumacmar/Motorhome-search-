@@ -31,7 +31,9 @@ export const DEFAULT_SPECS = [
 export const DEFAULT_RED_FLAGS = [
   { label: 'Left-hand drive', pattern: 'left[\\s-]?hand[\\s-]?drive|\\blhd\\b|^driver position: left' },
   { label: 'Imported', pattern: '\\bimport(ed)?\\b' },
-  { label: 'Damp mentioned', pattern: '\\bdamp\\b' },
+  // Sellers mostly mention damp to say there is none ("damp check all clear", "no damp"), so only
+  // phrasings that describe damp being present count. The lookbehind drops "no damp found" and the like.
+  { label: 'Damp mentioned', pattern: '(?<!\\bno |\\bany |\\bnever |\\bnil |\\bzero )(?:(?:areas?|signs?|evidence|traces?|patch(?:es)?|spots?|issues?|problems?|bit|amount|readings?|history) of damp|damp (?:ingress|issues?|problems?|repairs?|repaired|damage|patch(?:es)?|present|detected|found|readings? (?:of|in|on)|in the|to the|around|behind|under|on the|near|at the)|(?:slight|some|minor|small|little|isolated|has|have|had|shows?|showing|visible|previous|repaired|treated) damp)' },
   { label: 'Write-off category', pattern: '\\bcat(egory)?[\\s-]?(s|n|c|d)\\b' },
   { label: 'Spares or repair', pattern: 'spares or repair|non[\\s-]?runner' },
 ];
@@ -196,6 +198,24 @@ export function priceDrops(advert) {
   return { drops, totalDropPct: first ? Math.round(((last - first) / first) * 1000) / 10 : 0 };
 }
 
+/**
+ * Can the listing date taken from the advert id be trusted as "time on sale"?
+ * Autotrader sorts "newest first" by this same date, and private adverts
+ * expire and have to be re-created, so for private sellers it is sound. A
+ * dealer's stock feed, though, can create the advert before the vehicle is
+ * registered (ordered stock) or withdraw and re-publish the same record, so a
+ * dealer advert older than the vehicle, or older than two years, is treated as
+ * unknown age rather than a long time unsold.
+ */
+export function listedDateReliable(advert, daysListed) {
+  if (!advert.listedDate || daysListed == null) return false;
+  const reg = Number(advert.registeredYear || advert.year) || 0;
+  const listedYear = Number(advert.listedDate.slice(0, 4));
+  if (reg && listedYear < reg) return false;
+  if (advert.sellerType !== 'PRIVATE' && daysListed > 730) return false;
+  return true;
+}
+
 /** Decide whether an advert is worth a look, per the "deals" config. */
 export function scoreDeal(advert, dealConfig, today = new Date().toISOString().slice(0, 10)) {
   const wanted = new Set(dealConfig.wantedSpecs || []);
@@ -206,24 +226,33 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   const highSpec = wantedHits.length >= (dealConfig.minWantedSpecs ?? 2);
   const listed = advert.listedDate || advert.firstSeen;
   const daysListed = listed ? daysBetween(listed, today) : null;
+  const listedReliable = listedDateReliable(advert, daysListed);
   const { drops, totalDropPct } = priceDrops(advert);
   const staleDays = dealConfig.staleDays ?? 90;
+  const isPrivate = advert.sellerType === 'PRIVATE';
   const redFlags = (advert.redFlags || []).length;
 
-  // Desperation, 0 to 100: how long it has sat unsold, how often and how far the
-  // price has been cut, and whether it is a private seller (who feels every week).
-  const days = daysListed ?? 0;
-  const timeScore = Math.max(0, Math.min(50, ((days - 14) / 166) * 50)); // 0 at two weeks, 50 at six months
-  const dropScore = Math.min(20, drops * 10);
-  const cutScore = Math.min(20, Math.max(0, -totalDropPct) * 2); // 10% off = full marks
-  const privateScore = advert.sellerType === 'PRIVATE' ? 10 : 0;
-  const desperation = Math.round(timeScore + dropScore + cutScore + privateScore);
+  // Desperation, 0 to 100. Price cuts we have actually watched happen are the
+  // evidence and carry up to 60: how many (15 each, up to 30) and how deep
+  // (up to 30, full marks at 10% off). Time unsold adds up to 30, from a month
+  // to six months, and only when the listing date can be trusted. A private
+  // seller, who feels every week the van sits there, adds 10.
+  const days = listedReliable ? daysListed : 0;
+  const dropScore = Math.min(30, drops * 15);
+  const cutScore = Math.min(30, Math.max(0, -totalDropPct) * 3);
+  const timeScore = Math.max(0, Math.min(30, ((days - 30) / 150) * 30));
+  const privateScore = isPrivate ? 10 : 0;
+  const desperation = Math.round(dropScore + cutScore + timeScore + privateScore);
   const reasons = [];
-  if (days >= staleDays) reasons.push(`listed ${days} days`);
-  if (drops) reasons.push(`${drops} price drop${drops > 1 ? 's' : ''} (${totalDropPct}%)`);
-  if (privateScore) reasons.push('private seller');
-  const motivated = desperation >= (dealConfig.motivatedScore ?? 40);
-  const desperate = desperation >= (dealConfig.dealScore ?? 50);
+  if (drops) reasons.push(`${drops} price cut${drops > 1 ? 's' : ''}, ${Math.abs(totalDropPct)}% in total`);
+  if (daysListed != null && daysListed >= 30) reasons.push(`listed ${daysListed} days${listedReliable ? '' : ' (dealer record, not counted)'}`);
+  if (isPrivate) reasons.push('private seller');
+  // Time alone never makes a seller "motivated": a dealer advert that has sat
+  // for months at the same price is more likely overpriced than a bargain. It
+  // takes a price cut we have seen, or a private seller past staleDays.
+  const evidence = drops > 0 || (isPrivate && listedReliable && daysListed >= staleDays);
+  const motivated = evidence && desperation >= (dealConfig.motivatedScore ?? 40);
+  const desperate = motivated && desperation >= (dealConfig.dealScore ?? 50);
 
   return {
     underpriced,
@@ -233,6 +262,7 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     motivationReasons: reasons,
     wantedHits,
     daysListed,
+    listedReliable,
     drops,
     totalDropPct,
     redFlags,

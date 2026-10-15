@@ -19,11 +19,11 @@ export async function loadStore(path = STORE_PATH) {
   }
 }
 
-export async function saveStore(store, path = STORE_PATH) {
+export async function saveStore(store, path = STORE_PATH, { indent = 1 } = {}) {
   await mkdir(dirname(path), { recursive: true });
   // Write to a temporary file and rename so a crash mid-write cannot leave a truncated store.
   const tmp = `${path}.tmp`;
-  await writeFile(tmp, JSON.stringify(store, null, 1) + '\n');
+  await writeFile(tmp, JSON.stringify(store, null, indent) + '\n');
   await rename(tmp, path);
 }
 

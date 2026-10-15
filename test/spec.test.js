@@ -28,6 +28,16 @@ test('red flags', () => {
   assert.deepEqual(flags, ['Left-hand drive', 'Imported', 'Damp mentioned', '5 owners']);
 });
 
+test('damp is flagged only when it is said to be present', () => {
+  const damp = (description) => matchRedFlags({ features: [], description, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_RED_FLAGS)).some((f) => f.label === 'Damp mentioned');
+  for (const ok of ['10 year water ingress warranty', '100% dry - no damp found during cab check', 'comes with a full damp report', 'habcheck confirmed no damp and all equipment working', 'aluminium composite bodyshell, strong and damp-resistant', 'damp check 20 May 2026 - no issues reported', 'the damp check was all clear', 'damp checked', 'has never had damp', 'no evidence of damp']) {
+    assert.equal(damp(ok), false, `should not flag: ${ok}`);
+  }
+  for (const bad of ['isolated area of damp, measuring 22-40% in rear lower panel', 'slight sign of damp round the bottom of the dining area', 'some damp in the rear washroom', 'damp readings of 30% in the floor', 'damp repaired in 2023']) {
+    assert.equal(damp(bad), true, `should flag: ${bad}`);
+  }
+});
+
 test('comparison with similar adverts: model tier with median when few comps', () => {
   const mk = (id, make, model, year, price, extra = {}) => ({ id, make, model, year, price, status: 'active', ...extra });
   const adverts = [
@@ -80,12 +90,26 @@ test('deal scoring with motivation and red flags', () => {
   const stale = scoreDeal({ listedDate: '2026-07-01', priceHistory: [{ date: '2026-07-01', price: 50000 }, { date: '2026-09-01', price: 47000 }], value: null }, cfg, today);
   assert.equal(stale.motivated, true);
   assert.equal(stale.daysListed, 102);
-  assert.ok(stale.desperation > 40 && stale.desperation < 60, `desperation ${stale.desperation}`);
+  assert.equal(stale.listedReliable, true);
+  assert.ok(stale.desperation > 40 && stale.desperation < 50, `desperation ${stale.desperation}`);
   assert.equal(stale.isDeal, false, 'motivated but under the deal score');
+  const twoCuts = scoreDeal({ listedDate: '2026-06-01', priceHistory: [{ price: 50000 }, { price: 48000 }, { price: 45500 }], value: null }, cfg, today);
+  assert.equal(twoCuts.motivated, true);
+  assert.ok(twoCuts.desperation >= 70, `desperation ${twoCuts.desperation}`);
+  assert.equal(twoCuts.isDeal, true, 'two real cuts totalling 9% is worth a look');
   const longListed = scoreDeal({ listedDate: '2026-03-01', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null, sellerType: 'PRIVATE' }, cfg, today);
-  assert.equal(longListed.motivated, true, 'six months listed counts on its own');
-  assert.equal(longListed.desperation, 60);
-  assert.equal(longListed.isDeal, true);
+  assert.equal(longListed.motivated, true, 'a private seller seven months in counts');
+  assert.equal(longListed.desperation, 40);
+  assert.equal(longListed.isDeal, false, 'but time alone is not a deal');
+  const dealerSat = scoreDeal({ listedDate: '2026-03-01', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null, sellerType: 'TRADE', year: 2019 }, cfg, today);
+  assert.equal(dealerSat.motivated, false, 'dealer stock sat at the same price is not motivated');
+  assert.equal(dealerSat.desperation, 30);
+  const dealerOld = scoreDeal({ listedDate: '2023-04-26', priceHistory: [{ price: 50000 }], value: null, sellerType: 'TRADE', year: 2019 }, cfg, today);
+  assert.equal(dealerOld.listedReliable, false, 'a dealer record older than two years is not trusted');
+  assert.equal(dealerOld.desperation, 0);
+  const preReg = scoreDeal({ listedDate: '2025-12-16', priceHistory: [{ price: 50000 }], value: null, sellerType: 'TRADE', year: 2026 }, cfg, today);
+  assert.equal(preReg.listedReliable, false, 'an advert created before the van was registered is not trusted');
+  assert.equal(preReg.desperation, 0);
   const fresh = scoreDeal({ listedDate: '2026-10-10', priceHistory: [{ date: '2026-10-11', price: 50000 }], value: null }, cfg, today);
   assert.equal(fresh.motivated, false);
   assert.equal(fresh.desperation, 0);
