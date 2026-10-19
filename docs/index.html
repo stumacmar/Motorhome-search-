@@ -162,13 +162,14 @@
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
       <button data-show="gone" aria-pressed="false">Gone</button>
-      <button data-show="rules" aria-pressed="false" title="Live adverts outside the length or berth rules in search.config.json">Hidden by rules</button>
+      <button data-show="rules" aria-pressed="false" title="Live adverts hidden by the rules in search.config.json (berth count, no living equipment, or length when the length rule is set to hide)">Hidden by rules</button>
       <button data-show="hidden" aria-pressed="false" title="Adverts you hid with ✕">Hidden by me</button>
     </div>
     <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
     <label class="check"><input type="checkbox" id="private"> Private sellers only</label>
     <label class="check"><input type="checkbox" id="noflags" checked> Hide red flags</label>
     <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
+    <label class="check" id="mylenlabel" hidden title="Only adverts within the length range in search.config.json"><input type="checkbox" id="mylen"> My length only</label>
   </div>
   <p class="count" id="count"></p>
   <div class="grid" id="grid"></div>
@@ -198,8 +199,13 @@
   const wantedSpecs = new Set(starItems);
   const minStar = Math.min(starItems.length, Math.max(1, data.minWantedSpecs ?? 2));
   const today = new Date().toISOString().slice(0, 10);
-  // The first run recorded everything at once, so "first seen" only means "new" after that date.
-  const firstRun = adverts.reduce((min, a) => (a.firstSeen && (!min || a.firstSeen < min) ? a.firstSeen : min), null);
+  // A search's first run records everything it matches at once, so "first seen" only means "new to
+  // search" after the earliest date any of the advert's searches started.
+  const searchStart = {};
+  for (const a of adverts) for (const s of a.searches || []) if (a.firstSeen && (!searchStart[s] || a.firstSeen < searchStart[s])) searchStart[s] = a.firstSeen;
+  const startFor = (a) => (a.searches || []).reduce((min, s) => (searchStart[s] && (!min || searchStart[s] < min) ? searchStart[s] : min), null);
+  const lengthRule = data.lengthRule && (data.lengthRule.minMetres != null || data.lengthRule.maxMetres != null) ? data.lengthRule : null;
+  const lengthRangeText = lengthRule ? [lengthRule.minMetres != null ? lengthRule.minMetres : null, lengthRule.maxMetres != null ? lengthRule.maxMetres : null].map((v) => (v == null ? '?' : v.toFixed(2).replace(/\.?0+$/, ''))).join('–') + ' m' : '';
   for (const a of adverts) {
     const h = a.priceHistory || [];
     a._first = h[0]?.price ?? a.price;
@@ -210,7 +216,7 @@
     a._listed = Math.max(0, daysAgo(a._listedOn));
     a._listedSure = a.deal ? a.deal.listedReliable !== false : true;
     a._isNew = a._listed <= 7; // listed on Autotrader within the week
-    a._newToSearch = !a._isNew && a.firstSeen > firstRun && daysAgo(a.firstSeen) <= 7; // older advert that only just matched a search
+    a._newToSearch = !a._isNew && a.firstSeen > startFor(a) && daysAgo(a.firstSeen) <= 7; // older advert that only just matched a search
     a._wanted = (a.specs || []).filter((s) => wantedSpecs.has(s.label)).length;
     a._starHave = starItems.filter((l) => (a.specs || []).some((s) => s.label === l));
     a._starMissing = starItems.filter((l) => !a._starHave.includes(l));
@@ -226,7 +232,10 @@
     ? 'Last checked ' + gen.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
     : '';
 
-  const live = adverts.filter((a) => a.status === 'active' && !a.excluded);
+  const legend = document.getElementById('starlegend');
+  const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !(state.myLen && a.lengthOutside));
+  function renderStats() {
+  const live = liveNow();
   // [class, count, label, view it opens when tapped]
   const stats = [
     ['live', live.length, 'live adverts', 'active'],
@@ -242,19 +251,20 @@
     ['', live.filter((a) => a._listed >= 90 && a._listedSure).length, 'listed 90+ days', null],
     ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
     ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
+    ...(lengthRule && !state.myLen ? [['', adverts.filter((a) => a.status === 'active' && !a.excluded && a.lengthOutside).length, `outside ${lengthRangeText}`, null]] : []),
   ];
   document.getElementById('stats').innerHTML = stats.map(([c, n, l, show]) => `<div class="stat ${c}" ${show ? `data-show="${show}" role="button" tabindex="0" title="Show these"` : ''}><b>${n}</b><span>${l}</span></div>`).join('');
 
   // Star spec legend: each item with the number of live adverts carrying it. Tap one to see just those.
-  const legend = document.getElementById('starlegend');
   if (starItems.length) {
     const checked = live.filter((a) => a.details).length;
     legend.hidden = false;
     legend.innerHTML = `<span class="lead" title="Set in search.config.json as deals.wantedSpecs">★ Star spec</span>` +
       starItems.map((l) => `<button type="button" data-staritem="${esc(l)}" aria-pressed="false" title="Show live adverts with ${esc(l)}">${esc(l)} <b>${live.filter((a) => a._starHave.includes(l)).length}</b></button>`).join('') +
-      `<span title="Kit is read from each advert's own page; adverts not read yet cannot be scored">of ${checked} read</span>`;
+      `<span title="Kit is read from each advert's own page; adverts not read yet cannot be scored">of ${checked} read${state.myLen ? ' (' + lengthRangeText + ')' : ''}</span>`;
   }
   document.getElementById('starbtn').textContent = `☆ Star spec ${minStar}+`;
+  }
 
   const searches = Object.values(data.searches || {});
   document.getElementById('searches').innerHTML = searches.map((s) =>
@@ -267,7 +277,7 @@
   for (const a of adverts) if (a.make && a.status === 'active') makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
   for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
 
-  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '' };
+  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false };
   const PAGE = 48;
   let shown = PAGE;
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
@@ -277,6 +287,12 @@
   document.getElementById('private').checked = !!state.privateOnly;
   document.getElementById('noflags').checked = state.noFlags !== false;
   document.getElementById('knownlen').checked = !!state.knownLen;
+  if (lengthRule) {
+    document.getElementById('mylenlabel').hidden = false;
+    document.getElementById('mylenlabel').lastChild.textContent = ` My length only (${lengthRangeText})`;
+    document.getElementById('mylen').checked = !!state.myLen;
+  } else state.myLen = false;
+  renderStats();
   document.getElementById('sort').value = state.sort;
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
   if ([...makeSel.options].some((o) => o.value === state.make)) makeSel.value = state.make; else state.make = '';
@@ -351,7 +367,7 @@
           ${a.mileageText ? `<span>${esc(a.mileageText)}</span>` : ''}
           ${a.location ? `<span>${esc(a.location)}</span>` : ''}
           ${a.sellerType ? `<span>${a.sellerType === 'PRIVATE' ? 'Private' : 'Trade'}</span>` : ''}
-          ${a.length ? `<span title="Length from: ${esc(a.length.source)}">${a.length.metres.toFixed(2)} m</span>` : '<span title="No length in the advert, spec sheet or model name">length unknown</span>'}
+          ${a.length ? `<span title="Length from: ${esc(a.length.source)}${a.lengthOutside ? '. Outside your ' + lengthRangeText + ' range' : ''}">${a.length.metres.toFixed(2)} m${a.lengthOutside ? ' ⚑' : ''}</span>` : `<span title="No length in the advert, spec sheet or model name${a.lengthOutside ? '; treated as outside your range' : ''}">length unknown${a.lengthOutside ? ' ⚑' : ''}</span>`}
         </div>
         ${flagLine}
         ${starLine(a)}
@@ -386,6 +402,7 @@
       if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
       if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
       if (state.knownLen && !a.length) return false;
+      if (state.myLen && a.lengthOutside) return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
       if (state.make && a.make !== state.make) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
@@ -420,6 +437,7 @@
   document.getElementById('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
   document.getElementById('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
   document.getElementById('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
+  document.getElementById('mylen').addEventListener('change', resetAnd((e) => { state.myLen = e.target.checked; renderStats(); markShow(); }));
   document.getElementById('grid').addEventListener('click', (e) => {
     const star = e.target.closest('button[data-star]');
     const hide = e.target.closest('button[data-hide]');

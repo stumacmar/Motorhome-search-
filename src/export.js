@@ -4,11 +4,19 @@
 
 export const DASHBOARD_PATH = 'docs/data/dashboard.json';
 
-const DESCRIPTION_CHARS = 700;
-const HIDDEN_DESCRIPTION_CHARS = 200; // adverts hidden by the rules get a shorter blurb to keep the file small
+const DESCRIPTION_CHARS = 500;
+const HIDDEN_DESCRIPTION_CHARS = 160; // adverts hidden by the rules, or gone, get a shorter blurb to keep the file small
+
+/** The deal fields the dashboard and notifications read; the rest stays in listings.json. */
+function slimDeal(deal) {
+  if (!deal) return deal;
+  const { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, listedReliable, drops, totalDropPct, isDeal } = deal;
+  return { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, listedReliable, drops, totalDropPct, isDeal };
+}
 
 export function slimAdvert(a) {
   const d = a.details;
+  const brief = a.excluded || a.status !== 'active';
   return {
     id: a.id,
     title: a.title,
@@ -32,11 +40,12 @@ export function slimAdvert(a) {
     goneSince: a.goneSince,
     searches: a.searches,
     priceHistory: a.priceHistory,
-    specs: a.specs,
+    specs: brief ? (a.specs || []).map(({ label, value }) => ({ label, value })) : a.specs,
     redFlags: a.redFlags,
     value: a.value,
-    deal: a.deal,
+    deal: slimDeal(a.deal),
     length: a.length,
+    lengthOutside: a.lengthOutside,
     excluded: a.excluded,
     detailsError: a.detailsError ? { message: a.detailsError.message } : undefined,
     details: d
@@ -47,7 +56,7 @@ export function slimAdvert(a) {
           serviceHistory: d.serviceHistory,
           historyCheck: d.historyCheck,
           keySpec: { Berth: d.keySpec?.Berth, Gearbox: d.keySpec?.Gearbox, 'End layout': d.keySpec?.['End layout'], 'Bedroom layout': d.keySpec?.['Bedroom layout'] },
-          description: Array.from(d.description || '').slice(0, a.excluded ? HIDDEN_DESCRIPTION_CHARS : DESCRIPTION_CHARS).join(''),
+          description: Array.from(d.description || '').slice(0, brief ? HIDDEN_DESCRIPTION_CHARS : DESCRIPTION_CHARS).join(''),
           descriptionLength: d.descriptionLength,
         }
       : undefined,
@@ -65,6 +74,7 @@ export function slimStore(store) {
     generatedAt: store.generatedAt,
     wantedSpecs: store.wantedSpecs,
     minWantedSpecs: store.minWantedSpecs,
+    lengthRule: store.lengthRule,
     searches: store.searches,
     runs: (store.runs || []).slice(0, 14),
     hiddenByRules: Object.values(store.adverts).filter((a) => a.status === 'active' && a.excluded).length,

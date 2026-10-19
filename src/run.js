@@ -85,8 +85,14 @@ async function enrich(store, config, transport) {
     if (!advert.listedDate) advert.listedDate = listedDateFromId(advert.id) || advert.firstSeen;
     advert.length = inferLength(advert);
     delete advert.excluded;
-    const tooShort = lengthExclusion(advert, lengthRule);
-    if (tooShort) advert.excluded = tooShort;
+    delete advert.lengthOutside;
+    const outside = lengthExclusion(advert, lengthRule);
+    // In "flag" mode an advert outside the length range stays on the dashboard (behind a toggle)
+    // so the star spec can be scored across every motorhome; in "hide" mode it is hidden as before.
+    if (outside) {
+      if (lengthRule.mode === 'flag') advert.lengthOutside = outside;
+      else advert.excluded = outside;
+    }
     if (!advert.details) continue;
     advert.specs = matchSpecs(advert.details, compiled);
     advert.redFlags = matchRedFlags(advert.details, compiledFlags);
@@ -108,11 +114,15 @@ function logStarSpec(store) {
   const items = store.wantedSpecs || [];
   if (!items.length) return;
   const live = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.excluded && a.details);
-  const count = (label) => live.filter((a) => (a.specs || []).some((s) => s.label === label)).length;
-  const full = live.filter((a) => a.deal?.fullStarSpec).length;
-  const most = live.filter((a) => (a.deal?.starCount ?? 0) >= Math.max(1, items.length - 1)).length;
-  console.info(`\nStar spec across ${live.length} live adverts read: ` + items.map((l) => `${l} ${count(l)}`).join(' · '));
-  console.info(`  all ${items.length}: ${full} · at least ${Math.max(1, items.length - 1)}: ${most}`);
+  const count = (label, list) => list.filter((a) => (a.specs || []).some((s) => s.label === label)).length;
+  const full = (list) => list.filter((a) => a.deal?.fullStarSpec).length;
+  const most = (list) => list.filter((a) => (a.deal?.starCount ?? 0) >= Math.max(1, items.length - 1)).length;
+  console.info(`\nStar spec across ${live.length} live adverts read: ` + items.map((l) => `${l} ${count(l, live)}`).join(' · '));
+  console.info(`  all ${items.length}: ${full(live)} · at least ${Math.max(1, items.length - 1)}: ${most(live)}`);
+  const inRange = live.filter((a) => !a.lengthOutside);
+  if (inRange.length !== live.length) {
+    console.info(`  within the length range (${inRange.length}): ` + items.map((l) => `${l} ${count(l, inRange)}`).join(' · ') + ` · all ${items.length}: ${full(inRange)}`);
+  }
 }
 
 const dryRun = process.argv.includes('--dry-run');
@@ -191,6 +201,7 @@ async function main() {
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
+  store.lengthRule = config.length ? { mode: config.length.mode || 'hide', minMetres: config.length.minMetres ?? null, maxMetres: config.length.maxMetres ?? null, hideUnknown: !!config.length.hideUnknown } : null;
   logStarSpec(store);
   if (rescoreOnly) {
     await saveStore(store);

@@ -105,10 +105,49 @@
         "cat s",
         "cat n"
       ]
+    },
+    {
+      "name": "All motorhomes (star spec research)",
+      "_comment": "Every motorhome, campervan and van conversion on Autotrader in the price and year band, any length or body type, so the star spec can be scored across the whole market. The length rule below only flags these (dashboard toggle), it does not hide them.",
+      "criteria": {
+        "postcode": "SW1A 1AA",
+        "yearFrom": 2016,
+        "priceFrom": 25000,
+        "priceTo": 70000,
+        "excludeWriteOffs": true,
+        "sort": "datedesc"
+      },
+      "maxPages": 200,
+      "mustNotContain": [
+        "Transporter",
+        "T5",
+        "T6",
+        "T6.1",
+        "T7",
+        "California",
+        "Caddy",
+        "Multivan",
+        "Caravelle",
+        "ID Buzz",
+        "ID. Buzz",
+        "Marco Polo",
+        "Vito",
+        "Transit Custom",
+        "Nugget",
+        "Trafic",
+        "Vivaro",
+        "Expert",
+        "Dispatch",
+        "Proace",
+        "spares or repair",
+        "cat s",
+        "cat n"
+      ]
     }
   ],
   "length": {
-    "_comment": "Overall length in metres. Worked out from Autotrader's spec sheet, a figure stated in the advert, or the base vehicle and wheelbase code (e.g. Ducato L4 = 6.36 m). Adverts outside the range are hidden; hideUnknown hides adverts whose length cannot be worked out.",
+    "_comment": "Overall length in metres. Worked out from Autotrader's spec sheet, a figure stated in the advert, or the base vehicle and wheelbase code (e.g. Ducato L4 = 6.36 m). mode 'hide' takes adverts outside the range off the dashboard (they stay under Hidden by rules); mode 'flag' keeps them all in and gives the dashboard a 'My length only' toggle instead. hideUnknown treats adverts whose length cannot be worked out as outside the range.",
+    "mode": "flag",
     "minMetres": 6.25,
     "maxMetres": 7.0,
     "hideUnknown": false
