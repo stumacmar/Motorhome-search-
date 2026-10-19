@@ -202,6 +202,13 @@ async function main() {
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
   store.lengthRule = config.length ? { mode: config.length.mode || 'hide', minMetres: config.length.minMetres ?? null, maxMetres: config.length.maxMetres ?? null, hideUnknown: !!config.length.hideUnknown } : null;
+  // The day a search first ran: everything it matched that day is backlog, not "new to search".
+  // Derived once from the run history for searches that predate this field, then kept.
+  for (const s of Object.values(store.searches)) {
+    if (s.firstRun) continue;
+    const dates = (store.runs || []).filter((r) => r.searches.some((x) => x.name === s.name)).map((r) => r.date.slice(0, 10));
+    s.firstRun = dates.length ? dates.sort()[0] : today;
+  }
   logStarSpec(store);
   if (rescoreOnly) {
     await saveStore(store);

@@ -198,11 +198,15 @@
   const starItems = data.wantedSpecs || []; // the star spec, in the order set in search.config.json
   const wantedSpecs = new Set(starItems);
   const minStar = Math.min(starItems.length, Math.max(1, data.minWantedSpecs ?? 2));
+  const nearStar = starItems.length - 1; // one short of the full set
   const today = new Date().toISOString().slice(0, 10);
   // A search's first run records everything it matches at once, so "first seen" only means "new to
   // search" after the earliest date any of the advert's searches started.
   const searchStart = {};
-  for (const a of adverts) for (const s of a.searches || []) if (a.firstSeen && (!searchStart[s] || a.firstSeen < searchStart[s])) searchStart[s] = a.firstSeen;
+  for (const s of Object.values(data.searches || {})) if (s.firstRun) searchStart[s.name] = s.firstRun.slice(0, 10);
+  const earliestSeen = {}; // fallback for data written before firstRun was recorded
+  for (const a of adverts) for (const s of a.searches || []) if (a.firstSeen && (!earliestSeen[s] || a.firstSeen < earliestSeen[s])) earliestSeen[s] = a.firstSeen;
+  for (const s of Object.keys(earliestSeen)) if (!searchStart[s]) searchStart[s] = earliestSeen[s];
   const startFor = (a) => (a.searches || []).reduce((min, s) => (searchStart[s] && (!min || searchStart[s] < min) ? searchStart[s] : min), null);
   const lengthRule = data.lengthRule && (data.lengthRule.minMetres != null || data.lengthRule.maxMetres != null) ? data.lengthRule : null;
   const lengthRangeText = lengthRule ? [lengthRule.minMetres != null ? lengthRule.minMetres : null, lengthRule.maxMetres != null ? lengthRule.maxMetres : null].map((v) => (v == null ? '?' : v.toFixed(2).replace(/\.?0+$/, ''))).join('–') + ' m' : '';
@@ -244,6 +248,7 @@
     ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals'],
     ...(starItems.length ? [
       ['star', live.filter((a) => a._wanted === starItems.length).length, `full star spec (${starItems.length}/${starItems.length})`, 'starfull'],
+      ...(nearStar > minStar ? [['star', live.filter((a) => a._wanted >= nearStar).length, `${nearStar}+ of ${starItems.length} star items`, 'starnear']] : []),
       ['star', live.filter((a) => a._wanted >= minStar).length, `${minStar}+ of ${starItems.length} star items`, 'star'],
     ] : []),
     ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
@@ -393,6 +398,7 @@
       if (state.show === 'deals' && !a.deal?.isDeal) return false;
       if (state.show === 'star' && a._wanted < minStar) return false;
       if (state.show === 'starfull' && a._wanted < starItems.length) return false;
+      if (state.show === 'starnear' && a._wanted < nearStar) return false;
       if (state.starItem && !a._starHave.includes(state.starItem)) return false;
       if (state.show === 'under' && !a.deal?.underpriced) return false;
       if (state.show === 'motivated' && !a.deal?.motivated) return false;
@@ -466,7 +472,7 @@
     const b = e.target.closest('button[data-staritem]');
     if (!b) return;
     state.starItem = state.starItem === b.dataset.staritem ? '' : b.dataset.staritem;
-    if (state.starItem && !['active', 'star', 'starfull', 'deals', 'new', 'drops', 'shortlist'].includes(state.show)) state.show = 'active';
+    if (state.starItem && !['active', 'star', 'starnear', 'starfull', 'deals', 'new', 'drops', 'shortlist'].includes(state.show)) state.show = 'active';
     shown = PAGE;
     markShow();
     render();
