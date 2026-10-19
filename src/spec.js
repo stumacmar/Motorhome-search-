@@ -9,6 +9,9 @@ import { advertText } from './advert.js';
  * with "specs" in search.config.json.
  */
 export const DEFAULT_SPECS = [
+  // Alde wet central heating (radiators and underfloor pipes fed by a gas/electric boiler), as opposed to blown air.
+  // Sellers misspell it "Aldi" often enough to allow that when it is followed by a heating word.
+  { label: 'Alde heating', value: 3000, pattern: '\\balde\\b|\\baldi\\s+(wet|central|heating|heat)' },
   { label: 'Habitation air conditioning', value: 2200, pattern: 'truma aventa|dometic (freshjet|freshlight|fj\\d|harrier|b\\d{4})|roof[\\s-]?(mounted[\\s-]?)?air[\\s-]?con|habitation air[\\s-]?con|air[\\s-]?con(ditioning)? (unit )?(in|to|for) (the )?(habitation|living|rear|lounge|bedroom)|rear air[\\s-]?con|air[\\s-]?con(ditioning)? unit|(roof|habitation)[\\s-]?a\\/c' },
   { label: 'Cab air conditioning', value: 0, pattern: 'air[\\s-]?con(ditioning)?\\b|\\ba\\/c\\b|climate control' },
   { label: 'Self-levelling', value: 5500, pattern: 'self[\\s-]?levell?ing|levell?ing (system|jacks|legs)|hydraulic (jacks|levell?ing)|\\be\\s?&\\s?p\\b|e&amp;p' },
@@ -216,11 +219,30 @@ export function listedDateReliable(advert, daysListed) {
   return true;
 }
 
+/**
+ * The star spec: how many of the wanted items an advert has, which ones are
+ * missing, and whether that could be checked at all (an advert whose page has
+ * not been read yet has no features to match, so it is "unchecked", not 0).
+ */
+export function starSpec(advert, dealConfig) {
+  const items = dealConfig.wantedSpecs || [];
+  const have = new Set((advert.specs || []).map((s) => s.label));
+  const hits = items.filter((l) => have.has(l));
+  return {
+    items,
+    hits,
+    missing: items.filter((l) => !have.has(l)),
+    count: hits.length,
+    of: items.length,
+    full: items.length > 0 && hits.length === items.length,
+    checked: !!advert.details,
+  };
+}
+
 /** Decide whether an advert is worth a look, per the "deals" config. */
 export function scoreDeal(advert, dealConfig, today = new Date().toISOString().slice(0, 10)) {
-  const wanted = new Set(dealConfig.wantedSpecs || []);
-  const have = (advert.specs || []).map((s) => s.label);
-  const wantedHits = have.filter((l) => wanted.has(l));
+  const star = starSpec(advert, dealConfig);
+  const wantedHits = star.hits;
   const v = advert.value;
   const underpriced = !!v && v.pct <= -(dealConfig.underpricedPercent ?? 10);
   const highSpec = wantedHits.length >= (dealConfig.minWantedSpecs ?? 2);
@@ -261,6 +283,11 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     desperation,
     motivationReasons: reasons,
     wantedHits,
+    starCount: star.count,
+    starOf: star.of,
+    starMissing: star.missing,
+    starChecked: star.checked,
+    fullStarSpec: star.full,
     daysListed,
     listedReliable,
     drops,

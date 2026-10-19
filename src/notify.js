@@ -23,13 +23,21 @@ function marketText(a) {
   return bits.join(', ') || null;
 }
 
+/** "★★☆☆ 2/4 star spec: Alde heating, Self-levelling" for an advert whose page has been read. */
+export function starText(a, wantedSpecs = []) {
+  if (!wantedSpecs.length || !a.details) return null;
+  const have = new Set((a.specs || []).map((s) => s.label));
+  const hits = wantedSpecs.filter((l) => have.has(l));
+  const stars = '★'.repeat(hits.length) + '☆'.repeat(wantedSpecs.length - hits.length);
+  return `${stars} ${hits.length}/${wantedSpecs.length} star spec${hits.length ? ': ' + hits.join(', ') : ''}`;
+}
+
 function specText(a, wantedSpecs) {
   const labels = (a.specs || []).map((s) => s.label);
   if (!labels.length) return null;
-  const wanted = labels.filter((l) => wantedSpecs.includes(l));
   const other = labels.filter((l) => !wantedSpecs.includes(l));
-  const shown = [...wanted.map((l) => `✔ ${l}`), ...other.slice(0, Math.max(0, 5 - wanted.length))];
-  const more = labels.length - shown.length;
+  const shown = other.slice(0, 5);
+  const more = other.length - shown.length;
   return shown.join(' · ') + (more > 0 ? ` · +${more}` : '');
 }
 
@@ -42,6 +50,7 @@ function advertLine(a, wantedSpecs = []) {
   else if (a.value) flags.push(valueText(a));
   if (a.deal?.motivated) flags.push(`⏳ motivated ${a.deal.desperation}/100: ${(a.deal.motivationReasons || []).join(', ') || marketText(a)}`);
   else if (marketText(a) && a.deal?.daysListed > 0) flags.push(marketText(a));
+  const star = starText(a, wantedSpecs);
   const specs = specText(a, wantedSpecs);
   if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
   if (a.details?.owners) flags.push(`${a.details.owners} owner${a.details.owners === 1 ? '' : 's'}`);
@@ -49,6 +58,7 @@ function advertLine(a, wantedSpecs = []) {
   return (
     `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}` +
     (flags.length ? `\n${esc(flags.join(' · '))}` : '') +
+    (star ? `\n${esc(star)}` : '') +
     (specs ? `\n${esc(specs)}` : '') +
     (red.length ? `\n⚠️ ${esc(red.join(', '))}` : '')
   );
@@ -69,7 +79,7 @@ export function buildReport(results, { maxPerSection = 25, wantedSpecs = [] } = 
     const dealIds = new Set(deals.map((a) => a.id));
     if (deals.length) {
       parts.push(
-        `⭐ <b>${deals.length} worth a look</b> (underpriced, high spec or motivated seller)\n` +
+        `⭐ <b>${deals.length} worth a look</b> (underpriced, star spec or motivated seller)\n` +
           deals.slice(0, maxPerSection).map((a) => advertLine(a, wantedSpecs)).join('\n\n'),
       );
     }

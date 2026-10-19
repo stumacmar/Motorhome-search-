@@ -64,6 +64,7 @@ export function slimStore(store) {
     version: store.version,
     generatedAt: store.generatedAt,
     wantedSpecs: store.wantedSpecs,
+    minWantedSpecs: store.minWantedSpecs,
     searches: store.searches,
     runs: (store.runs || []).slice(0, 14),
     hiddenByRules: Object.values(store.adverts).filter((a) => a.status === 'active' && a.excluded).length,

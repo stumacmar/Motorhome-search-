@@ -103,6 +103,18 @@ async function enrich(store, config, transport) {
   return { fetched, failed, stillPending: Math.max(0, skipped) };
 }
 
+/** One line per star-spec item: how many live adverts carry it, and how many have the lot. */
+function logStarSpec(store) {
+  const items = store.wantedSpecs || [];
+  if (!items.length) return;
+  const live = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.excluded && a.details);
+  const count = (label) => live.filter((a) => (a.specs || []).some((s) => s.label === label)).length;
+  const full = live.filter((a) => a.deal?.fullStarSpec).length;
+  const most = live.filter((a) => (a.deal?.starCount ?? 0) >= Math.max(1, items.length - 1)).length;
+  console.info(`\nStar spec across ${live.length} live adverts read: ` + items.map((l) => `${l} ${count(l)}`).join(' · '));
+  console.info(`  all ${items.length}: ${full} · at least ${Math.max(1, items.length - 1)}: ${most}`);
+}
+
 const dryRun = process.argv.includes('--dry-run');
 const rescoreOnly = process.argv.includes('--rescore'); // recompute kit, value and deal flags from the stored data without touching Autotrader
 const configPath = process.argv.find((a) => a.endsWith('.json')) || 'search.config.json';
@@ -178,6 +190,8 @@ async function main() {
 
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
   store.wantedSpecs = config.deals?.wantedSpecs || [];
+  store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
+  logStarSpec(store);
   if (rescoreOnly) {
     await saveStore(store);
     await saveStore(slimStore(store), DASHBOARD_PATH, { indent: 0 }); // compact: the page downloads this on every visit

@@ -17,6 +17,47 @@ test('spec matching finds kit in features and description', () => {
   assert.ok(!labels.includes('Solar panel'));
 });
 
+test('Alde heating is matched, including the common misspelling, but not other words', () => {
+  const has = (description, features = []) => matchSpecs({ features, description, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SPECS)).some((m) => m.label === 'Alde heating');
+  assert.equal(has('The renowned Alde wet central heating system keeps it warm.'), true);
+  assert.equal(has('', ['Alde heating']), true);
+  assert.equal(has('GRP sides, aldi wet heating, cab aircon'), true);
+  assert.equal(has('Truma Combi 4E blown air heating. Near Aldeburgh.'), false);
+  assert.equal(has('Weekly shop at Aldi is a short walk away'), false);
+});
+
+test('star spec counts the wanted items and knows when the page was not read', async () => {
+  const { starSpec } = await import('../src/spec.js');
+  const cfg = { wantedSpecs: ['Alde heating', '360° camera', 'Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2 };
+  const two = starSpec({ details: {}, specs: [{ label: 'Alde heating' }, { label: 'Self-levelling' }, { label: 'Solar panel' }] }, cfg);
+  assert.deepEqual(two.hits, ['Alde heating', 'Self-levelling']);
+  assert.deepEqual(two.missing, ['360° camera', 'Habitation air conditioning']);
+  assert.equal(two.count, 2);
+  assert.equal(two.of, 4);
+  assert.equal(two.full, false);
+  assert.equal(two.checked, true);
+  const unread = starSpec({ specs: [] }, cfg);
+  assert.equal(unread.count, 0);
+  assert.equal(unread.checked, false);
+  const all = starSpec({ details: {}, specs: cfg.wantedSpecs.map((label) => ({ label })) }, cfg);
+  assert.equal(all.full, true);
+  const scored = scoreDeal({ details: {}, specs: [{ label: 'Alde heating' }, { label: '360° camera' }], value: null }, cfg, '2026-10-19');
+  assert.equal(scored.starCount, 2);
+  assert.equal(scored.starOf, 4);
+  assert.deepEqual(scored.starMissing, ['Habitation air conditioning', 'Self-levelling']);
+  assert.equal(scored.fullStarSpec, false);
+  assert.equal(scored.highSpec, true, 'two star items meets minWantedSpecs');
+  assert.equal(scored.isDeal, true);
+});
+
+test('notification shows the star spec line', async () => {
+  const { starText } = await import('../src/notify.js');
+  const wanted = ['Alde heating', '360° camera', 'Habitation air conditioning', 'Self-levelling'];
+  assert.equal(starText({ details: {}, specs: [{ label: 'Alde heating' }, { label: 'Awning' }, { label: 'Self-levelling' }] }, wanted), '★★☆☆ 2/4 star spec: Alde heating, Self-levelling');
+  assert.equal(starText({ details: {}, specs: [] }, wanted), '☆☆☆☆ 0/4 star spec');
+  assert.equal(starText({ specs: [] }, wanted), null, 'no line when the page has not been read');
+});
+
 test('cab-only air con is not habitation air con', () => {
   const labels = matchSpecs({ features: ['Air Conditioning'], description: 'Lovely van.', keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SPECS)).map((m) => m.label);
   assert.ok(labels.includes('Cab air conditioning'));
