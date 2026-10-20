@@ -318,7 +318,46 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   const motivated = evidence && desperation >= (dealConfig.motivatedScore ?? 40);
   const desperate = motivated && desperation >= (dealConfig.dealScore ?? 50);
 
+  // One number to rank on, 0 to 100, with the reasons kept so the card can show its working.
+  const thisYear = Number(today.slice(0, 4));
+  const parts = [];
+  const add = (label, pts, max) => { pts = Math.max(0, Math.min(max ?? pts, pts)); if (pts) parts.push({ label, pts: Math.round(pts * 10) / 10 }); return pts; };
+  let score = 0;
+  if (advert.details) {
+    score += add(`star spec ${star.count}/${star.of}`, star.of ? (star.count / star.of) * 35 : 0, 35);
+    score += add(`nice-to-have ×${niceHits.length}`, niceHits.length * 2.5, 10);
+  } else {
+    parts.push({ label: 'page not read yet (kit unknown)', pts: 0 });
+  }
+  const livePct = v ? v.pct : null;
+  const soldPct = advert.soldRef ? advert.soldRef.pct : null;
+  const pricePct = livePct != null && soldPct != null ? (livePct + soldPct) / 2 : livePct ?? soldPct;
+  score += pricePct == null ? add('price: nothing to compare with', 8) : add(`price ${pricePct <= 0 ? '' : '+'}${Math.round(pricePct)}% vs ${soldPct != null ? 'sold and live' : 'live'} similar`, 10 - 0.6 * pricePct, 20);
+  score += add(`seller motivation ${desperation}/100`, desperation * 0.15, 15);
+  let prov = 0;
+  const d = advert.details || {};
+  const has = (label) => signals.some((s) => s.label === label);
+  if (isPrivate) prov += add('private seller', 3);
+  if (/full/i.test(d.serviceHistory || '') || (advert.specs || []).some((s) => s.label === 'Full service history')) prov += add('full service history', 3);
+  if (has('One owner')) prov += add('one owner', 2);
+  if (has('Warranty included')) prov += add('warranty', 1);
+  if (has('Habitation check')) prov += add('habitation check', 1);
+  if (has('Cam belt done')) prov += add('cam belt done', 1);
+  const age = advert.year != null ? Math.max(0.5, thisYear - advert.year + 0.5) : null;
+  const mpy = advert.mileage != null && age ? advert.mileage / age : null;
+  if (mpy != null && mpy < 5000) prov += add('low mileage for its age', 3);
+  else if (mpy != null && mpy < 8000) prov += add('modest mileage for its age', 1);
+  if (advert.year != null && advert.year >= thisYear - 3) prov += add('three years old or less', 2);
+  score += Math.min(10, prov);
+  if (advert.relisted) score += add('re-listed (room to negotiate)', 2);
+  if (staleNoCut) score += add('due a price cut', 2);
+  for (const f of advert.redFlags || []) score -= add(`red flag: ${f.label}`, 25) ;
+  const pickScore = Math.max(0, Math.min(100, Math.round(score)));
+  for (const p of parts) if (/^red flag/.test(p.label)) p.pts = -p.pts;
+
   return {
+    pickScore,
+    pickParts: parts,
     underpriced,
     highSpec,
     motivated,
@@ -387,8 +426,9 @@ export function inferLength(advert) {
   for (const [k, v] of Object.entries(d.specs || {})) {
     if (/length/i.test(k)) {
       const n = parseFloat(String(v).replace(/,/g, ''));
-      if (n > 1000 && n < 12000) return { metres: Math.round(n / 10) / 100, source: 'spec sheet' };
-      if (n > 3 && n < 12) return { metres: Math.round(n * 100) / 100, source: 'spec sheet' };
+      // Under 4.3 m is a form default or a car-derived van, not a figure to trust.
+      if (n >= 4300 && n < 12000) return { metres: Math.round(n / 10) / 100, source: 'spec sheet' };
+      if (n >= 4.3 && n < 12) return { metres: Math.round(n * 100) / 100, source: 'spec sheet' };
     }
   }
 

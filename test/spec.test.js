@@ -291,3 +291,19 @@ test('fit facts are parsed from the spec sheet and placeholders dropped', async 
   assert.equal(parseFit({ details: { keySpec: {}, specs: {} } }).mtplmKg, null);
   assert.equal(parseFit({}), null);
 });
+
+test('pick score rewards star spec, price, motivation and provenance, and punishes red flags', () => {
+  const cfg = { wantedSpecs: ['Alde heating', '360° camera', 'Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2, niceToHave: ['Solar panel'], underpricedPercent: 10, staleDays: 90, motivatedScore: 40, dealScore: 50 };
+  const today = '2026-10-20';
+  const bare = scoreDeal({ details: {}, specs: [], priceHistory: [], value: null, year: 2018, mileage: 60000 }, cfg, today);
+  assert.equal(bare.pickScore, 9, 'unknown price comparison (8) plus modest mileage for its age (1)');
+  const good = scoreDeal({ details: { serviceHistory: 'Full service history' }, specs: [{ label: 'Alde heating' }, { label: 'Habitation air conditioning' }, { label: 'Self-levelling' }, { label: 'Solar panel' }], value: { pct: -12, comps: 10 }, soldRef: { pct: -8, n: 4 }, year: 2024, mileage: 9000, sellerType: 'PRIVATE', listedDate: '2026-10-10', priceHistory: [{ date: '2026-10-10', price: 60000 }], signals: [{ label: 'One owner', weight: 0 }] }, cfg, today);
+  // star 3/4 = 26.25, nice 2.5, price -10% = 16, motivation 10/100 = 1.5, provenance private 3 + fsh 3 + one owner 2 + low miles 3 + young 2 capped at 10
+  assert.equal(good.pickScore, 56);
+  assert.ok(good.pickParts.some((p) => p.label === 'star spec 3/4' && p.pts === 26.3), JSON.stringify(good.pickParts));
+  const flagged = scoreDeal({ details: {}, specs: cfg.wantedSpecs.map((label) => ({ label })), value: { pct: -20 }, redFlags: [{ label: 'Damp mentioned' }], priceHistory: [] }, cfg, today);
+  assert.ok(flagged.pickScore < 35, `red flag should cost 25: ${flagged.pickScore}`);
+  assert.ok(flagged.pickParts.some((p) => p.label === 'red flag: Damp mentioned' && p.pts === -25));
+  const unread = scoreDeal({ specs: [], priceHistory: [], value: { pct: 0 } }, cfg, today);
+  assert.ok(unread.pickParts.some((p) => /not read yet/.test(p.label)));
+});

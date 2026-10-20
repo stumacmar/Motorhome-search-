@@ -9,7 +9,7 @@
 import { readFile } from 'node:fs/promises';
 import { fetchSearch, filtersFromUrl, filtersFromCriteria, urlFromFilters } from './autotrader.js';
 import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearches } from './store.js';
-import { slimStore, DASHBOARD_PATH } from './export.js';
+import { slimStore, detailsStore, DASHBOARD_PATH, DETAILS_PATH } from './export.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
 import { compileSpecs, matchSpecs, matchRedFlags, matchSignals, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, looksUnconverted, DEFAULT_SPECS, DEFAULT_RED_FLAGS, DEFAULT_SIGNALS } from './spec.js';
@@ -227,6 +227,7 @@ async function main() {
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
   store.niceToHave = config.deals?.niceToHave || [];
+  store.topPickScore = config.deals?.topPickScore ?? 40;
   store.lengthRule = config.length ? { mode: config.length.mode || 'hide', minMetres: config.length.minMetres ?? null, maxMetres: config.length.maxMetres ?? null, hideUnknown: !!config.length.hideUnknown } : null;
   // The day a search first ran: everything it matched that day is backlog, not "new to search".
   // Derived once from the run history for searches that predate this field, then kept.
@@ -239,6 +240,7 @@ async function main() {
   if (rescoreOnly) {
     await saveStore(store);
     await saveStore(slimStore(store), DASHBOARD_PATH, { indent: 0 }); // compact: the page downloads this on every visit
+    await saveStore(detailsStore(store), DETAILS_PATH, { indent: 0 });
     console.info(`\nRescored ${Object.keys(store.adverts).length} adverts without fetching.`);
     return false;
   }
@@ -266,6 +268,7 @@ async function main() {
 
   await saveStore(store);
   await saveStore(slimStore(store), DASHBOARD_PATH, { indent: 0 }); // compact: the page downloads this on every visit
+  await saveStore(detailsStore(store), DETAILS_PATH, { indent: 0 });
   console.info(`\nSaved ${Object.keys(store.adverts).length} adverts (${pruned} pruned, ${enrichment.stillPending} still awaiting details)`);
 
   const failures = results.filter((r) => r.error).length;

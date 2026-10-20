@@ -2,129 +2,172 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Motorhome search</title>
-<meta name="description" content="Adverts matched by the daily Autotrader motorhome search, with price history.">
+<meta name="description" content="Adverts matched by the Autotrader motorhome search, ranked by pick score, with star spec, price history and market intelligence.">
+<meta name="theme-color" content="#0d6b5c">
 <link rel="icon" href="data:,">
 <style>
   :root {
     --bg: #f6f5f2; --card: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc;
     --accent: #0d6b5c; --accent-ink: #ffffff; --new: #0d6b5c; --drop: #b4412c; --gone: #9a9893;
+    --gold: #c98a00; --purple: #5b4bb5;
     --chip: #ecebe6; --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.05);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a;
       --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --gone: #777570;
+      --gold: #e0a72a; --purple: #8f7fe0;
       --chip: #2a2d35; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
     }
   }
   :root[data-theme="dark"] {
     --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a;
     --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --gone: #777570;
+    --gold: #e0a72a; --purple: #8f7fe0;
     --chip: #2a2d35; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: var(--accent); }
-  header { padding: 28px 16px 8px; max-width: 1180px; margin: 0 auto; }
+  button { font: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  header { padding: 24px 16px 8px; max-width: 1180px; margin: 0 auto; }
   h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -.01em; }
   .sub { color: var(--muted); margin: 0; }
-  main { max-width: 1180px; margin: 0 auto; padding: 0 16px 48px; }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 18px 0; }
-  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  main { max-width: 1180px; margin: 0 auto; padding: 0 16px 96px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 10px; margin: 16px 0; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; transition: border-color .15s; }
   .stat[data-show] { cursor: pointer; }
   .stat[data-show]:hover { border-color: var(--accent); }
   .stat[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
   @media (max-width: 600px) { .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; } .stat { padding: 8px 10px; } .stat b { font-size: 20px; } .stat span { font-size: 12px; line-height: 1.2; display: block; } }
   .stat b { display: block; font-size: 24px; line-height: 1.1; }
   .stat span { color: var(--muted); font-size: 13px; }
-  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b { color: #c98a00; } .stat.star b { color: #c98a00; }
-  .starlegend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -6px 0 14px; font-size: 13px; color: var(--muted); }
-  .starlegend .lead { font-weight: 600; color: #c98a00; }
-  .starlegend button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 999px; padding: 2px 10px; font: inherit; font-size: 12.5px; cursor: pointer; }
-  .starlegend button[aria-pressed="true"] { background: #c98a00; border-color: #c98a00; color: #fff; }
+  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b, .stat.star b { color: var(--gold); } .stat.pick b { color: var(--accent); }
+  .starlegend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -6px 0 12px; font-size: 13px; color: var(--muted); }
+  .starlegend .lead { font-weight: 600; color: var(--gold); }
+  .starlegend button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 999px; padding: 2px 10px; font-size: 12.5px; cursor: pointer; }
+  .starlegend button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
   .starlegend button b { font-weight: 600; }
-  .starspec { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; }
-  .starspec .stars { color: #c98a00; letter-spacing: 1px; font-size: 15px; }
-  .starspec .have { color: var(--ink); }
-  .starspec.unchecked .stars { color: var(--gone); }
-  .starspec .nice { color: var(--muted); }
-  .chip.signal { border-color: #5b4bb5; color: #5b4bb5; }
-  .tag.relist { background: #b4412c; color: #fff; }
-  .tag.newstock { background: var(--chip); color: var(--muted); border: 1px dashed var(--muted); }
-  .tag.sell { background: transparent; border: 1px solid var(--line); }
-  .tag.stale { background: transparent; border: 1px solid #5b4bb5; color: #5b4bb5; }
-  .fitrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -10px 0 14px; }
+  .searches { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 14px; }
+  .searches a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+  .searches .warn { color: var(--drop); }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px; position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 3; }
+  select, input[type=search], input[type=number] { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
+  input[type=search] { flex: 1 1 180px; min-width: 0; }
+  .toggle { display: flex; flex-wrap: wrap; gap: 2px; background: var(--chip); border-radius: 8px; padding: 2px; }
+  .toggle button { border: 0; background: transparent; color: var(--muted); padding: 6px 10px; border-radius: 6px; font-size: 13px; cursor: pointer; white-space: nowrap; }
+  .toggle button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+  .toggle button.top[aria-pressed="true"] { color: var(--accent); font-weight: 600; }
+  .fitrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }
   .fitrow select { font-size: 13px; padding: 6px 8px; }
   .fitrow .lead { font-size: 13px; color: var(--muted); }
-  .fitrow .clear { font-size: 13px; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 0; }
-  .fit { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 2px 8px; }
-  .searches { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
-  .searches a { font-size: 13px; color: var(--muted); text-decoration: none; }
-  .searches .warn { color: var(--drop); }
-  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 18px; position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 2; }
-  select, input[type=search] { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
-  input[type=search] { flex: 1 1 180px; min-width: 0; }
-  .toggle { display: inline-flex; gap: 2px; background: var(--chip); border-radius: 8px; padding: 2px; }
-  .toggle button { border: 0; background: transparent; color: var(--muted); padding: 6px 10px; border-radius: 6px; font: inherit; font-size: 13px; cursor: pointer; }
-  .toggle button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .linkbtn { font-size: 13px; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 0; }
+  .activefilters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+  .activefilters .af { border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 1px 9px; font-size: 12.5px; background: var(--card); cursor: pointer; }
+  .activefilters .af:hover { background: var(--accent); color: var(--accent-ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; position: relative; }
   .card.gone { opacity: .55; }
+  .card.changed { border-color: var(--accent); }
+  .card .photo { position: relative; display: block; }
   .card img, .card .noimg { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--chip); display: block; }
   .card .noimg { display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+  .score { position: absolute; top: 10px; left: 10px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 16px; color: #fff; background: #777; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: help; }
+  .score.s3 { background: #0d6b5c; } .score.s2 { background: #3b8f6a; } .score.s1 { background: #9a7b1e; } .score.s0 { background: #7d7a74; }
+  .score small { font-size: 9px; font-weight: 600; display: block; line-height: 1; margin-top: -2px; opacity: .9; }
+  .ribbon { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+  .ribbon span { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: rgba(0,0,0,.55); color: #fff; backdrop-filter: blur(4px); }
+  .ribbon span.new { background: var(--new); color: var(--accent-ink); }
+  .ribbon span.drop { background: var(--drop); }
+  .ribbon span.relist { background: #b4412c; }
   .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .title { font-weight: 600; font-size: 16px; line-height: 1.3; }
   .title a { color: inherit; text-decoration: none; }
   .title a:hover { text-decoration: underline; }
   .subtitle { color: var(--muted); font-size: 13px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .pricerow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .price { font-size: 20px; font-weight: 700; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .price s { color: var(--muted); font-weight: 400; font-size: 14px; }
   .price .delta { font-size: 13px; font-weight: 600; color: var(--drop); }
   .price .delta.up { color: var(--muted); }
+  .spark { height: 22px; width: 72px; }
+  .spark polyline { fill: none; stroke: var(--drop); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .spark.up polyline { stroke: var(--muted); }
   .meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 10px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
   .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
-  .tag.new { background: var(--new); color: var(--accent-ink); }
-  .tag.drop { background: var(--drop); color: #fff; }
   .tag.gone { background: var(--gone); color: #fff; }
-  .tag.deal { background: #c98a00; color: #fff; }
+  .tag.deal { background: var(--gold); color: #fff; }
   .tag.value { background: transparent; border: 1px solid var(--line); }
   .tag.value.under { border-color: var(--drop); color: var(--drop); font-weight: 600; }
+  .tag.motivated { background: var(--purple); color: #fff; }
+  .tag.star { background: var(--gold); color: #fff; }
+  .tag.newstock { background: var(--chip); color: var(--muted); border: 1px dashed var(--muted); }
+  .tag.sell { background: transparent; border: 1px solid var(--line); }
+  .tag.stale { background: transparent; border: 1px solid var(--purple); color: var(--purple); }
+  .tag.listed.unsure { border: 1px dashed var(--line); background: transparent; }
   .chips { display: flex; flex-wrap: wrap; gap: 4px; }
   .chip { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
   .chip.want { border-color: var(--accent); color: var(--accent); font-weight: 600; }
-  .desc { white-space: pre-wrap; margin-top: 4px; }
-  .tag.red { background: var(--drop); color: #fff; }
-  .tag.motivated { background: #5b4bb5; color: #fff; }
-  .tag.star { background: #c98a00; color: #fff; }
+  .chip.signal { border-color: var(--purple); color: var(--purple); }
+  .starspec { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; }
+  .starspec .stars { color: var(--gold); letter-spacing: 1px; font-size: 15px; }
+  .starspec .have { color: var(--ink); }
+  .starspec.unchecked .stars { color: var(--gone); }
+  .fit { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 2px 8px; }
   .flagline { color: var(--drop); font-size: 13px; }
   .cardtools { display: flex; gap: 6px; margin-left: auto; }
-  .cardtools button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; padding: 2px 8px; font: inherit; font-size: 13px; cursor: pointer; }
-  .cardtools button[aria-pressed="true"] { background: #c98a00; border-color: #c98a00; color: #fff; }
+  .cardtools button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; padding: 2px 8px; font-size: 13px; cursor: pointer; }
+  .cardtools button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
+  .cardtools button.cmp[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
   .titlerow { display: flex; align-items: flex-start; gap: 8px; }
   .titlerow .title { flex: 1; }
   textarea.note { width: 100%; min-height: 44px; margin-top: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; font-size: 13px; padding: 6px 8px; resize: vertical; }
   .range { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
-  .range input { width: 92px; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
-  .more { display: block; margin: 20px auto 0; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; cursor: pointer; }
-  .count { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  .range input { width: 92px; }
+  .more { display: block; margin: 20px auto 0; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  .count { color: var(--muted); font-size: 13px; margin: 0 0 10px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
   label.check { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
   details { font-size: 13px; color: var(--muted); }
   details summary { cursor: pointer; }
+  .desc { white-space: pre-wrap; margin-top: 4px; }
+  .why { margin: 4px 0 0; padding: 0; list-style: none; font-size: 12.5px; }
+  .why li { display: flex; justify-content: space-between; gap: 8px; }
+  .why li b { font-weight: 600; color: var(--ink); }
+  .why li.neg b { color: var(--drop); }
   .empty { color: var(--muted); padding: 40px 0; text-align: center; }
   footer { color: var(--muted); font-size: 13px; max-width: 1180px; margin: 0 auto; padding: 0 16px 32px; }
   .headrow { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
   .headrow > div:first-child { flex: 1 1 240px; }
   .refresh { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-  .refresh button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  .refresh button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 999px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
   .refresh .status { font-size: 13px; color: var(--muted); max-width: 340px; text-align: right; }
   .refresh .status.err { color: var(--drop); }
   .refresh .status a { color: inherit; }
   @media (max-width: 600px) { .refresh { align-items: flex-start; } .refresh .status { text-align: left; } }
   @media (max-width: 700px) { .controls { position: static; } }
-  .tag.listed.unsure { border: 1px dashed var(--line); background: transparent; }
+  .tray { position: fixed; left: 50%; transform: translateX(-50%); bottom: 14px; z-index: 5; background: var(--card); border: 1px solid var(--line); border-radius: 999px; box-shadow: 0 8px 30px rgba(0,0,0,.2); padding: 8px 10px 8px 16px; display: flex; gap: 10px; align-items: center; font-size: 13px; max-width: calc(100% - 24px); }
+  .tray button { border-radius: 999px; border: 0; padding: 7px 14px; cursor: pointer; font-weight: 600; }
+  .tray .go { background: var(--accent); color: var(--accent-ink); }
+  .tray .x { background: var(--chip); color: var(--muted); }
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 10; display: grid; place-items: center; padding: 16px; }
+  .modal .panel { background: var(--card); color: var(--ink); border-radius: 14px; max-width: 1100px; width: 100%; max-height: 90vh; overflow: auto; padding: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+  .modal h2 { margin: 0 0 10px; font-size: 18px; display: flex; justify-content: space-between; align-items: center; }
+  .modal table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .modal th, .modal td { text-align: left; vertical-align: top; padding: 6px 8px; border-top: 1px solid var(--line); }
+  .modal th { color: var(--muted); font-weight: 500; width: 140px; }
+  .modal td img { width: 100%; max-width: 260px; border-radius: 8px; aspect-ratio: 4/3; object-fit: cover; }
+  .modal .close { border: 0; background: var(--chip); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .best { background: color-mix(in srgb, var(--accent) 14%, transparent); border-radius: 6px; }
+  .toast { position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 13px; z-index: 6; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.on { opacity: 1; }
+  .skeleton { height: 220px; border-radius: 14px; background: linear-gradient(90deg, var(--chip) 25%, var(--card) 50%, var(--chip) 75%); background-size: 200% 100%; animation: sk 1.2s infinite; }
+  @keyframes sk { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 </style>
 </head>
 <body>
@@ -135,41 +178,44 @@
       <p class="sub" id="updated">Loading…</p>
     </div>
     <div class="refresh">
-      <button id="refresh" type="button" title="The search runs by itself every morning. To run it now, open Claude Code, go to Routines, and run “Daily motorhome search”. This page reloads itself when the new data arrives.">⟳ Refresh now</button>
+      <button id="refresh" type="button" title="The search runs by itself morning and evening. To run it now, open Claude Code, go to Routines, and run the motorhome search. This page reloads itself when the new data arrives.">⟳ Refresh now</button>
       <span class="status" id="refresh-status"></span>
     </div>
   </div>
 </header>
 <main>
-  <div class="stats" id="stats"></div>
+  <div class="stats" id="stats"><div class="skeleton" style="height:70px"></div><div class="skeleton" style="height:70px"></div><div class="skeleton" style="height:70px"></div></div>
   <div class="starlegend" id="starlegend" hidden></div>
   <div class="searches" id="searches"></div>
   <div class="controls">
-    <input type="search" id="q" placeholder="Filter by make, model, location…" aria-label="Filter adverts">
+    <input type="search" id="q" placeholder="Make, model, location…" aria-label="Filter adverts">
     <select id="search" aria-label="Search"><option value="">All searches</option></select>
     <select id="make" aria-label="Make"><option value="">All makes</option></select>
     <select id="sort" aria-label="Sort">
+      <option value="pick">Pick score</option>
       <option value="newest">Newest first</option>
       <option value="price-asc">Price: low to high</option>
       <option value="price-desc">Price: high to low</option>
       <option value="drop">Biggest price drop</option>
       <option value="value">Best value vs similar</option>
-      <option value="spec">Star spec: most items</option>
-      <option value="kit">Kit score (star ×3 + nice-to-have)</option>
-      <option value="sell">Sells fastest</option>
       <option value="sold">Cheapest vs sold similar</option>
+      <option value="spec">Star spec: most items</option>
+      <option value="kit">Kit score</option>
+      <option value="sell">Sells fastest</option>
+      <option value="desperation">Most motivated seller</option>
       <option value="listed">Longest listed</option>
-      <option value="length">Length</option>
       <option value="drops">Most price drops</option>
-      <option value="desperation">Most desperate seller</option>
+      <option value="length">Length</option>
       <option value="year">Year: newest</option>
       <option value="mileage">Mileage: lowest</option>
       <option value="distance">Distance: nearest</option>
     </select>
     <div class="toggle" role="group" aria-label="Show">
+      <button data-show="top" class="top" aria-pressed="false" id="topbtn" title="Adverts at or above the pick score bar">◆ Top picks</button>
       <button data-show="active" aria-pressed="true">Live</button>
+      <button data-show="sincevisit" aria-pressed="false" id="sincebtn" title="New, or changed price, since you last opened this page">Since last visit</button>
       <button data-show="deals" aria-pressed="false">Worth a look</button>
-      <button data-show="star" aria-pressed="false" id="starbtn" title="Adverts with enough of the star spec kit">☆ Star spec</button>
+      <button data-show="star" aria-pressed="false" id="starbtn">☆ Star spec</button>
       <button data-show="under" aria-pressed="false">Underpriced</button>
       <button data-show="motivated" aria-pressed="false">Motivated</button>
       <button data-show="stale" aria-pressed="false" title="Listed 50+ days with no price cut yet; dealers tend to cut at 60 to 90 days">Due a cut</button>
@@ -178,11 +224,11 @@
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
       <button data-show="gone" aria-pressed="false">Gone</button>
-      <button data-show="rules" aria-pressed="false" title="Live adverts hidden by the rules in search.config.json (berth count, no living equipment, or length when the length rule is set to hide)">Hidden by rules</button>
+      <button data-show="rules" aria-pressed="false" title="Live adverts hidden by the rules in search.config.json">Hidden by rules</button>
       <button data-show="hidden" aria-pressed="false" title="Adverts you hid with ✕">Hidden by me</button>
     </div>
     <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
-    <label class="check"><input type="checkbox" id="private"> Private sellers only</label>
+    <label class="check"><input type="checkbox" id="private"> Private only</label>
     <label class="check"><input type="checkbox" id="noflags" checked> Hide red flags</label>
     <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
     <label class="check" id="mylenlabel" hidden title="Only adverts within the length range in search.config.json"><input type="checkbox" id="mylen"> My length only</label>
@@ -199,20 +245,26 @@
     <select id="fmiles" aria-label="Distance"><option value="">Any distance</option><option value="50">≤ 50 miles</option><option value="100">≤ 100 miles</option><option value="150">≤ 150 miles</option><option value="250">≤ 250 miles</option></select>
     <select id="fstock" aria-label="Stock"><option value="">Used and new</option><option value="used">Used only</option><option value="new">New / ex-demo only</option></select>
     <label class="check"><input type="checkbox" id="feuro6"> Euro 6 only</label>
-    <button type="button" class="clear" id="fclear" hidden>Clear fit</button>
   </div>
+  <div class="activefilters" id="activefilters" hidden></div>
   <p class="count" id="count"></p>
-  <div class="grid" id="grid"></div>
+  <div class="grid" id="grid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
   <p class="empty" id="empty" hidden>Nothing matches.</p>
   <button class="more" id="more" hidden>Show more</button>
 </main>
-<footer>Data is refreshed morning and evening by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound.</footer>
+<footer>Data is refreshed morning and evening by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound. The pick score is a ranking aid, not a valuation.</footer>
+<div class="tray" id="tray" hidden><span id="traytext"></span><button class="go" id="traygo">Compare</button><button class="x" id="trayclear" title="Clear">✕</button></div>
+<div class="toast" id="toast"></div>
 <script>
 (async function () {
   const gbp = (n) => n == null ? '?' : '£' + Number(n).toLocaleString('en-GB');
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const daysAgo = (d) => Math.floor((Date.now() - new Date(d + 'T12:00:00Z')) / 864e5);
+  const $ = (id) => document.getElementById(id);
+  let toastTimer;
+  const toast = (msg) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2200); };
 
+  // ---- Data: the light cards file first, the descriptions and evidence afterwards ----
   let data;
   try {
     let res = await fetch('data/dashboard.json?' + Date.now());
@@ -220,26 +272,35 @@
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
   } catch (e) {
-    document.getElementById('updated').textContent = 'No data yet. Run the daily search once (Claude Code → Routines → Daily motorhome search → Run).';
+    $('updated').textContent = 'No data yet. Run the search once (Claude Code → Routines → Motorhome search → Run).';
+    $('grid').innerHTML = '';
     return;
   }
+  let detailsMap = null;
+  fetch('data/dashboard-details.json?' + Date.now()).then((r) => (r.ok ? r.json() : null)).then((m) => { if (m) { detailsMap = m; render(); } }).catch(() => {});
 
   const adverts = Object.values(data.adverts || {});
-  const starItems = data.wantedSpecs || []; // the star spec, in the order set in search.config.json
+  const byId = Object.fromEntries(adverts.map((a) => [a.id, a]));
+  const starItems = data.wantedSpecs || [];
   const wantedSpecs = new Set(starItems);
   const minStar = Math.min(starItems.length, Math.max(1, data.minWantedSpecs ?? 2));
-  const nearStar = starItems.length - 1; // one short of the full set
+  const nearStar = starItems.length - 1;
+  const topBar = data.topPickScore ?? 60;
   const today = new Date().toISOString().slice(0, 10);
-  // A search's first run records everything it matches at once, so "first seen" only means "new to
-  // search" after the earliest date any of the advert's searches started.
   const searchStart = {};
   for (const s of Object.values(data.searches || {})) if (s.firstRun) searchStart[s.name] = s.firstRun.slice(0, 10);
-  const earliestSeen = {}; // fallback for data written before firstRun was recorded
+  const earliestSeen = {};
   for (const a of adverts) for (const s of a.searches || []) if (a.firstSeen && (!earliestSeen[s] || a.firstSeen < earliestSeen[s])) earliestSeen[s] = a.firstSeen;
   for (const s of Object.keys(earliestSeen)) if (!searchStart[s]) searchStart[s] = earliestSeen[s];
   const startFor = (a) => (a.searches || []).reduce((min, s) => (searchStart[s] && (!min || searchStart[s] < min) ? searchStart[s] : min), null);
   const lengthRule = data.lengthRule && (data.lengthRule.minMetres != null || data.lengthRule.maxMetres != null) ? data.lengthRule : null;
-  const lengthRangeText = lengthRule ? [lengthRule.minMetres != null ? lengthRule.minMetres : null, lengthRule.maxMetres != null ? lengthRule.maxMetres : null].map((v) => (v == null ? '?' : v.toFixed(2).replace(/\.?0+$/, ''))).join('–') + ' m' : '';
+  const lengthRangeText = lengthRule ? [lengthRule.minMetres, lengthRule.maxMetres].map((v) => (v == null ? '?' : v.toFixed(2).replace(/\.?0+$/, ''))).join('–') + ' m' : '';
+
+  // What you saw last time, so changes since then can be marked.
+  let lastVisit = null;
+  try { lastVisit = localStorage.getItem('mh-lastvisit'); } catch {}
+  const visitStamp = data.generatedAt || new Date().toISOString();
+
   for (const a of adverts) {
     const h = a.priceHistory || [];
     a._first = h[0]?.price ?? a.price;
@@ -249,107 +310,129 @@
     a._listedOn = a.listedDate || a.firstSeen;
     a._listed = Math.max(0, daysAgo(a._listedOn));
     a._listedSure = a.deal ? a.deal.listedReliable !== false : true;
-    a._isNew = a._listed <= 7; // listed on Autotrader within the week
-    a._newToSearch = !a._isNew && a.firstSeen > startFor(a) && daysAgo(a.firstSeen) <= 7; // older advert that only just matched a search
+    a._isNew = a._listed <= 7;
+    a._newToSearch = !a._isNew && a.firstSeen > startFor(a) && daysAgo(a.firstSeen) <= 7;
     a._wanted = (a.specs || []).filter((s) => wantedSpecs.has(s.label)).length;
     a._starHave = starItems.filter((l) => (a.specs || []).some((s) => s.label === l));
     a._starMissing = starItems.filter((l) => !a._starHave.includes(l));
     a._drops = a.deal?.drops ?? 0;
     a._flags = (a.redFlags || []).length;
+    a._pick = a.deal?.pickScore ?? 0;
+    const lv = lastVisit ? lastVisit.slice(0, 10) : null;
+    a._sinceVisit = !!lv && a.status === 'active' && ((a.firstSeen && a.firstSeen > lv) || h.some((p, i) => i > 0 && p.date > lv));
+    a._text = [a.title, a.subTitle, a.make, a.model, a.location, a.fit?.bedLayout, a.fit?.endLayout, a.fit?.bodyType].join(' ').toLowerCase();
   }
-  let mine = { stars: {}, notes: {}, hidden: {} };
+  let mine = { stars: {}, notes: {}, hidden: {}, compare: [] };
   try { mine = Object.assign(mine, JSON.parse(localStorage.getItem('mh-mine') || '{}')); } catch {}
+  mine.compare = (mine.compare || []).filter((id) => byId[id]);
   const saveMine = () => { try { localStorage.setItem('mh-mine', JSON.stringify(mine)); } catch {} };
 
   const gen = data.generatedAt ? new Date(data.generatedAt) : null;
-  document.getElementById('updated').textContent = gen
-    ? 'Last checked ' + gen.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
-    : '';
+  $('updated').textContent = gen ? 'Last checked ' + gen.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + (lastVisit && lastVisit !== visitStamp ? ' · changes marked since the data of ' + new Date(lastVisit).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '') : '';
 
-  const legend = document.getElementById('starlegend');
-  const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !(state.myLen && a.lengthOutside));
-  function renderStats() {
-  const live = liveNow();
-  // [class, count, label, view it opens when tapped]
-  const stats = [
-    ['live', live.length, 'live adverts', 'active'],
-    ['new', live.filter((a) => a._isNew || a._newToSearch).length, 'new this week', 'new'],
-    ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week', 'drops'],
-    ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals'],
-    ...(starItems.length ? [
-      ['star', live.filter((a) => a._wanted === starItems.length).length, `full star spec (${starItems.length}/${starItems.length})`, 'starfull'],
-      ...(nearStar > minStar ? [['star', live.filter((a) => a._wanted >= nearStar).length, `${nearStar}+ of ${starItems.length} star items`, 'starnear']] : []),
-      ['star', live.filter((a) => a._wanted >= minStar).length, `${minStar}+ of ${starItems.length} star items`, 'star'],
-    ] : []),
-    ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
-    ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated'],
-    ['', live.filter((a) => a.deal?.staleNoCut).length, 'due a cut', 'stale'],
-    ['', live.filter((a) => a.relisted).length, 're-listed', 'relisted'],
-    ['', live.filter((a) => a._listed >= 90 && a._listedSure).length, 'listed 90+ days', null],
-    ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
-    ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
-    ...(lengthRule && !state.myLen ? [['', adverts.filter((a) => a.status === 'active' && !a.excluded && a.lengthOutside).length, `outside ${lengthRangeText}`, null]] : []),
-  ];
-  document.getElementById('stats').innerHTML = stats.map(([c, n, l, show]) => `<div class="stat ${c}" ${show ? `data-show="${show}" role="button" tabindex="0" title="Show these"` : ''}><b>${n}</b><span>${l}</span></div>`).join('');
-
-  // Star spec legend: each item with the number of live adverts carrying it. Tap one to see just those.
-  if (starItems.length) {
-    const checked = live.filter((a) => a.details).length;
-    legend.hidden = false;
-    legend.innerHTML = `<span class="lead" title="Set in search.config.json as deals.wantedSpecs">★ Star spec</span>` +
-      starItems.map((l) => `<button type="button" data-staritem="${esc(l)}" aria-pressed="false" title="Show live adverts with ${esc(l)}">${esc(l)} <b>${live.filter((a) => a._starHave.includes(l)).length}</b></button>`).join('') +
-      `<span title="Kit is read from each advert's own page; adverts not read yet cannot be scored">of ${checked} read${state.myLen ? ' (' + lengthRangeText + ')' : ''}</span>`;
+  // ---- State: in the address bar (shareable) and remembered locally ----
+  const DEFAULTS = { q: '', search: '', make: '', sort: 'pick', show: 'top', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false, fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false, ids: '' };
+  const state = { ...DEFAULTS };
+  const BOOLS = ['privateOnly', 'noFlags', 'knownLen', 'myLen', 'feuro6'];
+  try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
+  state.ids = '';
+  const hashParams = new URLSearchParams(location.hash.replace(/^#/, ''));
+  if ([...hashParams.keys()].length) {
+    Object.assign(state, DEFAULTS);
+    for (const [k, v] of hashParams) if (k in DEFAULTS) state[k] = BOOLS.includes(k) ? v === '1' : v;
+    if (hashParams.has('shortlist')) { state.ids = hashParams.get('shortlist'); state.show = 'shared'; }
   }
-  document.getElementById('starbtn').textContent = `☆ Star spec ${minStar}+`;
-  }
-
-  const searches = Object.values(data.searches || {});
-  document.getElementById('searches').innerHTML = searches.map((s) =>
-    `<a href="${esc(s.url || '#')}" target="_blank" rel="noopener" class="${s.error || s.truncated ? 'warn' : ''}" title="${esc(s.error || (s.truncated ? 'Only the first ' + s.read + ' of ' + s.total + ' results were read' : 'Open on Autotrader'))}">
-      ${s.error ? '⚠️ ' : ''}${esc(s.name)}${s.total != null ? ' · ' + (s.error ? 'failed' : s.total + ' on Autotrader') : ''}${s.truncated ? ' (cut short)' : ''}</a>`).join('');
-  const sel = document.getElementById('search');
-  for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
-  const makeSel = document.getElementById('make');
-  const makeCounts = new Map();
-  for (const a of adverts) if (a.make && a.status === 'active') makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
-  for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
-
-  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false, fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false };
   const PAGE = 48;
   let shown = PAGE;
-  try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
-  document.getElementById('q').value = state.q;
-  document.getElementById('pmin').value = state.pmin;
-  document.getElementById('pmax').value = state.pmax;
-  document.getElementById('private').checked = !!state.privateOnly;
-  document.getElementById('noflags').checked = state.noFlags !== false;
-  document.getElementById('knownlen').checked = !!state.knownLen;
+  function writeHash() {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(state)) { if (k === 'ids') continue; if (v !== DEFAULTS[k] && v !== '' && v !== false) p.set(k, BOOLS.includes(k) ? '1' : v); }
+    if (state.show === 'shared' && state.ids) p.set('shortlist', state.ids);
+    const h = p.toString();
+    history.replaceState(null, '', h ? '#' + h : location.pathname + location.search);
+    try { localStorage.setItem('mh-view', JSON.stringify({ ...state, ids: '' })); } catch {}
+  }
+
+  $('q').value = state.q; $('pmin').value = state.pmin; $('pmax').value = state.pmax;
+  $('private').checked = !!state.privateOnly; $('noflags').checked = state.noFlags !== false; $('knownlen').checked = !!state.knownLen;
   const bedCounts = new Map(), endCounts = new Map();
   for (const a of adverts) if (a.status === 'active' && a.fit) { if (a.fit.bedLayout) bedCounts.set(a.fit.bedLayout, (bedCounts.get(a.fit.bedLayout) || 0) + 1); if (a.fit.endLayout) endCounts.set(a.fit.endLayout, (endCounts.get(a.fit.endLayout) || 0) + 1); }
-  for (const [m, n] of [...bedCounts].sort((x, y) => y[1] - x[1])) document.getElementById('fbed').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
-  for (const [m, n] of [...endCounts].sort((x, y) => y[1] - x[1])) document.getElementById('fend').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
+  for (const [m, n] of [...bedCounts].sort((x, y) => y[1] - x[1])) $('fbed').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
+  for (const [m, n] of [...endCounts].sort((x, y) => y[1] - x[1])) $('fend').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
   const FIT_KEYS = ['fgear', 'fkg', 'fbhp', 'fberth', 'fbed', 'fend', 'fheight', 'fmiles', 'fstock'];
-  for (const k of FIT_KEYS) { const el = document.getElementById(k); if ([...el.options].some((o) => o.value === String(state[k] || ''))) el.value = state[k] || ''; else state[k] = ''; }
-  document.getElementById('feuro6').checked = !!state.feuro6;
-  const fitActive = () => FIT_KEYS.some((k) => state[k]) || state.feuro6;
-  const markFit = () => { document.getElementById('fclear').hidden = !fitActive(); };
-  markFit();
-  if (lengthRule) {
-    document.getElementById('mylenlabel').hidden = false;
-    document.getElementById('mylenlabel').lastChild.textContent = ` My length only (${lengthRangeText})`;
-    document.getElementById('mylen').checked = !!state.myLen;
-  } else state.myLen = false;
-  renderStats();
-  document.getElementById('sort').value = state.sort;
+  const FIT_LABELS = { fgear: (v) => v, fkg: (v) => '≤ ' + Number(v).toLocaleString('en-GB') + ' kg', fbhp: (v) => v + '+ bhp', fberth: (v) => v + '+ berth', fbed: (v) => v, fend: (v) => v, fheight: (v) => '≤ ' + Number(v).toFixed(2) + ' m high', fmiles: (v) => '≤ ' + v + ' miles', fstock: (v) => (v === 'new' ? 'new / ex-demo' : 'used only') };
+  for (const k of FIT_KEYS) { const el = $(k); if ([...el.options].some((o) => o.value === String(state[k] || ''))) el.value = state[k] || ''; else state[k] = ''; }
+  $('feuro6').checked = !!state.feuro6;
+  if (lengthRule) { $('mylenlabel').hidden = false; $('mylenlabel').lastChild.textContent = ` My length only (${lengthRangeText})`; $('mylen').checked = !!state.myLen; } else state.myLen = false;
+
+  const searches = Object.values(data.searches || {});
+  $('searches').innerHTML = searches.map((s) =>
+    `<a href="${esc(s.url || '#')}" target="_blank" rel="noopener" class="${s.error || s.truncated ? 'warn' : ''}" title="${esc(s.error || (s.truncated ? 'Only the first ' + s.read + ' of ' + s.total + ' results were read' : 'Open on Autotrader'))}">${s.error ? '⚠️ ' : ''}${esc(s.name)}${s.total != null ? ' · ' + (s.error ? 'failed' : s.total.toLocaleString('en-GB')) : ''}${s.truncated ? ' (cut short)' : ''}</a>`).join('');
+  const sel = $('search');
+  for (const s of searches) sel.insertAdjacentHTML('beforeend', `<option value="${esc(s.name)}">${esc(s.name)}</option>`);
+  const makeSel = $('make');
+  const makeCounts = new Map();
+  for (const a of adverts) if (a.make && a.status === 'active' && !a.excluded) makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
+  for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
+  $('sort').value = [...$('sort').options].some((o) => o.value === state.sort) ? state.sort : 'pick';
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
   if ([...makeSel.options].some((o) => o.value === state.make)) makeSel.value = state.make; else state.make = '';
   if (!starItems.includes(state.starItem)) state.starItem = '';
+  if (!lastVisit && state.show === 'sincevisit') state.show = 'top';
+
+  // ---- Stats and legend, recomputed when the length toggle changes ----
+  const legend = $('starlegend');
+  const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !(state.myLen && a.lengthOutside));
+  function renderStats() {
+    const live = liveNow();
+    const stats = [
+      ['pick', live.filter((a) => a._pick >= topBar && !a._flags).length, `top picks (score ${topBar}+)`, 'top'],
+      ['live', live.length, 'live adverts', 'active'],
+      ...(lastVisit ? [['new', live.filter((a) => a._sinceVisit).length, 'since your last visit', 'sincevisit']] : []),
+      ['new', live.filter((a) => a._isNew || a._newToSearch).length, 'new this week', 'new'],
+      ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week', 'drops'],
+      ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals'],
+      ...(starItems.length ? [
+        ['star', live.filter((a) => a._wanted === starItems.length).length, `full star spec (${starItems.length}/${starItems.length})`, 'starfull'],
+        ...(nearStar > minStar ? [['star', live.filter((a) => a._wanted >= nearStar).length, `${nearStar}+ of ${starItems.length} star items`, 'starnear']] : []),
+        ['star', live.filter((a) => a._wanted >= minStar).length, `${minStar}+ of ${starItems.length} star items`, 'star'],
+      ] : []),
+      ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
+      ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated'],
+      ['', live.filter((a) => a.deal?.staleNoCut).length, 'due a cut', 'stale'],
+      ['', live.filter((a) => a.relisted).length, 're-listed', 'relisted'],
+      ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
+      ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
+      ...(lengthRule && !state.myLen ? [['', live.filter((a) => a.lengthOutside).length, `outside ${lengthRangeText}`, null]] : []),
+    ];
+    $('stats').innerHTML = stats.map(([c, n, l, show]) => `<div class="stat ${c}" ${show ? `data-show="${show}" role="button" tabindex="0" title="Show these"` : ''}><b>${n.toLocaleString('en-GB')}</b><span>${l}</span></div>`).join('');
+    if (starItems.length) {
+      const checked = live.filter((a) => a.details).length;
+      legend.hidden = false;
+      legend.innerHTML = `<span class="lead" title="Set in search.config.json as deals.wantedSpecs">★ Star spec</span>` +
+        starItems.map((l) => `<button type="button" data-staritem="${esc(l)}" aria-pressed="false" title="Show live adverts with ${esc(l)}">${esc(l)} <b>${live.filter((a) => a._starHave.includes(l)).length}</b></button>`).join('') +
+        `<span title="Kit is read from each advert's own page; adverts not read yet cannot be scored">of ${checked.toLocaleString('en-GB')} read${state.myLen ? ' (' + lengthRangeText + ')' : ''}</span>` +
+        (data.sellDays ? `<span title="Median days from listing to gone across ${data.sellDays.n} adverts that have gone">· market sells in ~${data.sellDays.median}d</span>` : '');
+    }
+    $('starbtn').textContent = `☆ Star spec ${minStar}+`;
+    $('sincebtn').hidden = !lastVisit;
+  }
+  renderStats();
   function markShow() {
     document.querySelectorAll('.toggle button, .stat[data-show]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.show === state.show)));
     document.querySelectorAll('[data-staritem]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.staritem === state.starItem)));
   }
   markShow();
 
+  // ---- Cards ----
+  const scoreClass = (n) => (n >= topBar ? 's3' : n >= 45 ? 's2' : n >= 30 ? 's1' : 's0');
+  function sparkline(h) {
+    if (!h || h.length < 2) return '';
+    const prices = h.map((p) => p.price);
+    const min = Math.min(...prices), max = Math.max(...prices);
+    const pts = prices.map((p, i) => `${(i / (prices.length - 1)) * 70 + 1},${max === min ? 11 : 20 - ((p - min) / (max - min)) * 18 + 1}`).join(' ');
+    return `<svg class="spark ${prices.at(-1) > prices[0] ? 'up' : ''}" viewBox="0 0 72 22" aria-label="Price history"><title>${h.map((p) => p.date + ' ' + gbp(p.price)).join(', ')}</title><polyline points="${pts}"/></svg>`;
+  }
   function starLine(a) {
     if (!starItems.length || a.status !== 'active') return '';
     if (!a.details) return `<div class="starspec unchecked" title="The advert page has not been read yet, so its kit is unknown"><span class="stars">${'☆'.repeat(starItems.length)}</span><span>star spec not checked yet</span></div>`;
@@ -360,13 +443,20 @@
       (a._starMissing.length && n ? `<span>missing ${esc(a._starMissing.join(', '))}</span>` : '') +
       ((a.deal?.niceHits || []).length ? `<span class="nice" title="Nice-to-have kit (one point each in the kit score)">+ ${esc(a.deal.niceHits.join(', '))}</span>` : '') + `</div>`;
   }
-
+  function whyList(a) {
+    const parts = a.deal?.pickParts || [];
+    if (!parts.length) return '';
+    return `<ul class="why">${parts.map((p) => `<li class="${p.pts < 0 ? 'neg' : ''}"><span>${esc(p.label)}</span><b>${p.pts > 0 ? '+' : ''}${p.pts}</b></li>`).join('')}<li><span>pick score</span><b>${a._pick}</b></li></ul>`;
+  }
+  function fitLine(a) {
+    const f = a.fit;
+    if (!f) return '';
+    const bits = [f.mtplmKg ? `<span title="MTPLM (plated weight)${f.payloadKg ? ', payload ' + f.payloadKg.toLocaleString('en-GB') + ' kg' : ''}">${f.mtplmKg.toLocaleString('en-GB')} kg${f.mtplmKg <= 3500 ? ' ✓B' : ''}</span>` : '', f.bhp ? `<span>${f.bhp} bhp</span>` : '', f.gearbox ? `<span>${esc(f.gearbox.toLowerCase())}</span>` : '', f.berth ? `<span>${f.berth} berth</span>` : '', f.bedLayout ? `<span>${esc(f.bedLayout.toLowerCase())}</span>` : '', f.endLayout ? `<span>${esc(f.endLayout.toLowerCase())}</span>` : '', f.heightM ? `<span title="Height">${f.heightM.toFixed(2)} m high</span>` : '', f.euro ? `<span>Euro ${f.euro}</span>` : ''].filter(Boolean);
+    return bits.length ? `<div class="fit">${bits.join('')}</div>` : '';
+  }
   function card(a) {
+    const ev = detailsMap?.[a.id];
     const tags = [];
-    if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
-    else if (a._isNew) tags.push(`<span class="tag new">new ${a._listed === 0 ? 'today' : a._listed + 'd ago'}</span>`);
-    else if (a._newToSearch) tags.push(`<span class="tag new" title="Listed ${esc(a._listedOn)}; only matched a search ${esc(a.firstSeen)}">new to search</span>`);
-    if (a._recentDrop) tags.push(`<span class="tag drop">price drop</span>`);
     if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
     if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
     if (a.deal?.highSpec) tags.push(`<span class="tag deal" title="Has ${a._starHave.length} of the ${starItems.length} star spec items">★ star spec ${a._starHave.length}/${starItems.length}</span>`);
@@ -377,47 +467,50 @@
       const tip = `Expected ${gbp(a.value.expected)} net of kit from ${a.value.comps} live ${basis} adverts of a similar age${a.value.adjusted ? ', adjusted for age and mileage' : ''}${kit >= 500 ? '. Kit allowed for: ' + gbp(kit) : ''}`;
       tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="${esc(tip)}">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit >= 1000 ? ' · ' + gbp(kit) + ' kit' : ''}</span>`);
     }
+    if (a.soldRef) tags.push(`<span class="tag value ${a.soldRef.pct <= -10 ? 'under' : ''}" title="Median asking price of ${a.soldRef.n} same-model adverts within two years of its age when they went off sale: ${gbp(a.soldRef.median)}">${a.soldRef.pct <= 0 ? '−' : '+'}${Math.abs(a.soldRef.pct)}% vs ${a.soldRef.n} sold</span>`);
     if (a.status === 'active') {
-      const why = a._listedSure
-        ? `Advert created on Autotrader ${a._listedOn} (from the advert id, the date Autotrader sorts newest-first by)`
-        : `Advert record created ${a._listedOn}, but it is a dealer advert older than the vehicle or than two years, so it may have been listed ahead of arrival or re-published; not counted towards the motivated score`;
+      const why = a._listedSure ? `Advert created on Autotrader ${a._listedOn} (from the advert id, the date Autotrader sorts newest-first by)` : `Advert record created ${a._listedOn}, but it is a dealer advert older than the vehicle or than two years, so it may have been listed ahead of arrival or re-published; not counted towards the motivated score`;
       tags.push(`<span class="tag listed ${a._listedSure ? '' : 'unsure'}" title="${esc(why)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd' + (a._listedSure ? '' : '?')}</span>`);
-    }
+    } else if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
     if (a._drops) tags.push(`<span class="tag" title="Price drops since we started watching">${a._drops} drop${a._drops > 1 ? 's' : ''} (${a.deal?.totalDropPct ?? ''}%)</span>`);
     if (a.deal?.staleNoCut) tags.push(`<span class="tag stale" title="Listed ${a._listed} days with no price cut yet. Dealers tend to cut at 60 to 90 days; worth watching or a low offer">due a cut</span>`);
-    if (a.relisted) tags.push(`<span class="tag relist" title="Same make, model, year and mileage as advert ${esc(a.relisted.of)}, which went off sale ${esc(a.relisted.goneSince || '')}. A sale that fell through, a returned van, or a dealer resetting the listing age">re-listed${a.relisted.lastPrice ? ' · was ' + gbp(a.relisted.lastPrice) : ''}</span>`);
     if (a.newStock) tags.push(`<span class="tag newstock" title="This year's or last year's van with delivery mileage from a dealer: priced off the list price, so left out of the used-market comparison">new / ex-demo</span>`);
     if (a.market) tags.push(`<span class="tag sell" title="Median days from listing to gone for ${a.market.basis === 'market' ? 'the whole market' : 'this ' + a.market.basis} (${a.market.n} seen)">${a.market.basis === 'market' ? 'market' : 'this ' + a.market.basis} sells in ~${a.market.median}d</span>`);
-    if (a.soldRef) tags.push(`<span class="tag value ${a.soldRef.pct <= -10 ? 'under' : ''}" title="Median asking price of ${a.soldRef.n} same-model adverts within two years of its age when they went off sale: ${gbp(a.soldRef.median)}">${a.soldRef.pct <= 0 ? '−' : '+'}${Math.abs(a.soldRef.pct)}% vs ${a.soldRef.n} sold</span>`);
     if (a.excluded) tags.push(`<span class="tag gone">hidden: ${esc(a.excluded)}</span>`);
-    for (const s of a.searches || []) tags.push(`<span class="tag">${esc(s)}</span>`);
+    const ribbon = [];
+    if (a.status === 'active' && a._isNew) ribbon.push(`<span class="new">new ${a._listed === 0 ? 'today' : a._listed + 'd ago'}</span>`);
+    else if (a.status === 'active' && a._newToSearch) ribbon.push(`<span class="new" title="Listed ${esc(a._listedOn)}; only matched a search ${esc(a.firstSeen)}">new to search</span>`);
+    if (a._recentDrop) ribbon.push(`<span class="drop">price drop</span>`);
+    if (a.relisted) ribbon.push(`<span class="relist" title="Same make, model, year and mileage as advert ${esc(a.relisted.of)}, which went off sale ${esc(a.relisted.goneSince || '')}. A sale that fell through, a returned van, or a dealer resetting the listing age">re-listed${a.relisted.lastPrice ? ' · was ' + gbp(a.relisted.lastPrice) : ''}</span>`);
+    if (a._sinceVisit && !a._isNew) ribbon.push(`<span title="New or changed price since you last opened this page">since your visit</span>`);
     const specs = (a.specs || []).slice().sort((x, y) => (wantedSpecs.has(y.label) ? 1 : 0) - (wantedSpecs.has(x.label) ? 1 : 0));
-    const sigs = (a.signals || []).map((s) => `<span class="chip signal" title="${esc(s.evidence || '')}">💬 ${esc(s.label)}</span>`).join('');
-    const chips = specs.length || sigs ? `<div class="chips">${sigs}${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(s.evidence || '')}">${esc(s.label)}</span>`).join('')}</div>` : '';
-    const f = a.fit;
-    const fitLine = f ? `<div class="fit">${[f.mtplmKg ? `<span title="MTPLM (plated weight)${f.payloadKg ? ', payload ' + f.payloadKg.toLocaleString('en-GB') + ' kg' : ''}">${f.mtplmKg.toLocaleString('en-GB')} kg${f.mtplmKg <= 3500 ? ' ✓B' : ''}</span>` : '', f.bhp ? `<span>${f.bhp} bhp</span>` : '', f.gearbox ? `<span>${esc(f.gearbox.toLowerCase())}</span>` : '', f.berth ? `<span>${f.berth} berth</span>` : '', f.bedLayout ? `<span>${esc(f.bedLayout.toLowerCase())}</span>` : '', f.endLayout ? `<span>${esc(f.endLayout.toLowerCase())}</span>` : '', f.heightM ? `<span title="Height">${f.heightM.toFixed(2)} m high</span>` : '', f.euro ? `<span>Euro ${f.euro}</span>` : ''].filter(Boolean).join('')}</div>` : '';
+    const sigs = (a.signals || []).map((s) => `<span class="chip signal" title="${esc(ev?.signals?.[s.label] || 'Seller signal')}">💬 ${esc(s.label)}</span>`).join('');
+    const chips = specs.length || sigs ? `<div class="chips">${sigs}${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(ev?.specs?.[s.label] || s.label)}">${esc(s.label)}</span>`).join('')}</div>` : '';
     const d = a.details;
-    const facts = d ? [d.chassis, d.keySpec?.Berth ? d.keySpec.Berth + ' berth' : null, d.keySpec?.Gearbox, d.owners ? d.owners + ' owner' + (d.owners === 1 ? '' : 's') : null, d.serviceHistory, d.historyCheck ? 'History check ' + d.historyCheck.toLowerCase() : null].filter(Boolean) : [];
-    const flagLine = (a.redFlags || []).length ? `<div class="flagline" title="${esc(a.redFlags.map((f) => f.evidence).join(' | '))}">⚠ ${esc(a.redFlags.map((f) => f.label).join(', '))}</div>` : '';
-    const detailsBlock = d
-      ? `<details><summary>Details</summary>${esc(facts.join(' · '))}${d.description ? `<div class="desc">${esc(d.description)}${d.descriptionLength > d.description.length ? '…' : ''}</div>` : ''}</details>`
+    const facts = d ? [d.chassis, d.bodyType, d.owners ? d.owners + ' owner' + (d.owners === 1 ? '' : 's') : null, d.serviceHistory, d.historyCheck ? 'History check ' + d.historyCheck.toLowerCase() : null, (a.searches || []).length > 1 ? 'In ' + a.searches.length + ' searches' : null].filter(Boolean) : [];
+    const flagLine = (a.redFlags || []).length ? `<div class="flagline" title="${esc(a.redFlags.map((f) => ev?.redFlags?.[f.label] || f.label).join(' | '))}">⚠ ${esc(a.redFlags.map((f) => f.label).join(', '))}</div>` : '';
+    const descBlock = d
+      ? `<details><summary>Details</summary>${esc(facts.join(' · '))}${ev ? (ev.description ? `<div class="desc">${esc(ev.description)}${d.descriptionLength > ev.description.length ? '…' : ''}</div>` : '') : (detailsMap ? '' : '<div class="desc">Loading description…</div>')}</details>`
       : (a.status === 'active' ? `<details><summary>Details</summary>${a.detailsError ? 'Could not read the advert page: ' + esc(a.detailsError.message) : 'Not read yet; picked up on a later run.'}</details>` : '');
-    const hist = (a.priceHistory || []).length > 1
-      ? `<details><summary>Price history</summary>${a.priceHistory.map((p) => `${p.date}: ${gbp(p.price)}`).join('<br>')}</details>` : '';
-    const delta = a._drop > 0 ? `<s>${gbp(a._first)}</s><span class="delta">−${gbp(a._drop)}</span>`
-      : a._drop < 0 ? `<s>${gbp(a._first)}</s><span class="delta up">+${gbp(-a._drop)}</span>` : '';
-    return `<article class="card ${a.status === 'gone' ? 'gone' : ''}">
-      ${a.image ? `<a href="${esc(a.url)}" target="_blank" rel="noopener"><img src="${esc(a.image)}" alt="" loading="lazy"></a>` : '<div class="noimg">No photo</div>'}
+    const whyBlock = a.status === 'active' && a.deal ? `<details><summary>Why ${a._pick}/100</summary>${whyList(a)}</details>` : '';
+    const delta = a._drop > 0 ? `<s>${gbp(a._first)}</s><span class="delta">−${gbp(a._drop)}</span>` : a._drop < 0 ? `<s>${gbp(a._first)}</s><span class="delta up">+${gbp(-a._drop)}</span>` : '';
+    const inCompare = mine.compare.includes(a.id);
+    return `<article class="card ${a.status === 'gone' ? 'gone' : ''} ${a._sinceVisit ? 'changed' : ''}" data-id="${a.id}">
+      <a class="photo" href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : '<div class="noimg">No photo</div>'}
+        ${a.status === 'active' && a.deal ? `<span class="score ${scoreClass(a._pick)}" title="Pick score ${a._pick}/100: ${esc((a.deal.pickParts || []).map((p) => p.label + ' ' + (p.pts > 0 ? '+' : '') + p.pts).join(', '))}">${a._pick}<small>pick</small></span>` : ''}
+        ${ribbon.length ? `<span class="ribbon">${ribbon.join('')}</span>` : ''}
+      </a>
       <div class="body">
         <div class="titlerow">
           <div class="title"><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></div>
           <div class="cardtools">
+            <button data-cmp="${a.id}" class="cmp" aria-pressed="${inCompare ? 'true' : 'false'}" title="${inCompare ? 'Remove from compare' : 'Add to compare (up to 3)'}">⇄</button>
             <button data-star="${a.id}" aria-pressed="${mine.stars[a.id] ? 'true' : 'false'}" title="Shortlist">★</button>
             <button data-hide="${a.id}" title="${mine.hidden[a.id] ? 'Unhide' : 'Hide'}">${mine.hidden[a.id] ? '↺' : '✕'}</button>
           </div>
         </div>
         ${a.subTitle ? `<div class="subtitle">${esc(a.subTitle)}</div>` : ''}
-        <div class="price">${gbp(a._last)} ${delta}</div>
+        <div class="pricerow"><div class="price">${gbp(a._last)} ${delta}</div>${sparkline(a.priceHistory)}</div>
         <div class="meta">
           ${a.registeredYear || a.year ? `<span>${esc(a.registeredYear || a.year)}</span>` : ''}
           ${a.mileageText ? `<span>${esc(a.mileageText)}</span>` : ''}
@@ -427,142 +520,232 @@
         </div>
         ${flagLine}
         ${starLine(a)}
-        ${fitLine}
+        ${fitLine(a)}
         ${chips}
-        ${hist}
-        ${detailsBlock}
+        ${whyBlock}
+        ${descBlock}
         ${mine.stars[a.id] || mine.notes[a.id] ? `<textarea class="note" data-note="${a.id}" placeholder="Your notes…">${esc(mine.notes[a.id] || '')}</textarea>` : ''}
         <div class="tags">${tags.join('')}</div>
       </div>
     </article>`;
   }
 
-  function render() {
+  // ---- Filtering, sorting, rendering ----
+  function passes(a) {
     const q = state.q.trim().toLowerCase();
-    let list = adverts.filter((a) => {
-      if (state.show === 'hidden') return !!mine.hidden[a.id];
-      if (mine.hidden[a.id]) return false;
-      if (state.show === 'rules') { if (a.status !== 'active' || !a.excluded) return false; }
-      else if (state.show === 'gone') { if (a.status !== 'gone' || a.excluded) return false; }
-      else if (a.status !== 'active' || a.excluded) return false;
-      if (state.show === 'new' && !a._isNew && !a._newToSearch) return false;
-      if (state.show === 'drops' && !a._recentDrop) return false;
-      if (state.show === 'deals' && !a.deal?.isDeal) return false;
-      if (state.show === 'star' && a._wanted < minStar) return false;
-      if (state.show === 'starfull' && a._wanted < starItems.length) return false;
-      if (state.show === 'starnear' && a._wanted < nearStar) return false;
-      if (state.starItem && !a._starHave.includes(state.starItem)) return false;
-      if (state.show === 'under' && !a.deal?.underpriced) return false;
-      if (state.show === 'motivated' && !a.deal?.motivated) return false;
-      if (state.show === 'shortlist' && !mine.stars[a.id]) return false;
-      if (state.pmin && !(a._last >= Number(state.pmin))) return false;
-      if (state.pmax && !(a._last <= Number(state.pmax))) return false;
-      if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
-      if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
-      if (state.knownLen && !a.length) return false;
-      if (state.myLen && a.lengthOutside) return false;
-      if (state.show === 'stale' && !a.deal?.staleNoCut) return false;
-      if (state.show === 'relisted' && !a.relisted) return false;
-      const f = a.fit || {};
-      if (state.fgear && f.gearbox && f.gearbox !== state.fgear) return false;
-      if (state.fkg && f.mtplmKg && f.mtplmKg > Number(state.fkg)) return false;
-      if (state.fbhp && f.bhp && f.bhp < Number(state.fbhp)) return false;
-      if (state.fberth && f.berth && f.berth < Number(state.fberth)) return false;
-      if (state.fbed && f.bedLayout !== state.fbed) return false;
-      if (state.fend && f.endLayout !== state.fend) return false;
-      if (state.fheight && f.heightM && f.heightM > Number(state.fheight)) return false;
-      if (state.fmiles && a.distanceMiles != null && a.distanceMiles > Number(state.fmiles)) return false;
-      if (state.fstock === 'used' && a.newStock) return false;
-      if (state.fstock === 'new' && !a.newStock) return false;
-      if (state.feuro6 && f.euro != null && f.euro < 6) return false;
-      if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
-      if (state.make && a.make !== state.make) return false;
-      if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
-      return true;
-    });
-    const by = {
-      newest: (x, y) => (y._listedOn || '').localeCompare(x._listedOn || '') || y.id.localeCompare(x.id),
-      'price-asc': (x, y) => (x._last ?? 1e12) - (y._last ?? 1e12),
-      'price-desc': (x, y) => (y._last ?? -1) - (x._last ?? -1),
-      drop: (x, y) => y._drop - x._drop,
-      value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
-      spec: (x, y) => y._wanted - x._wanted || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
-      kit: (x, y) => (y.deal?.kitScore ?? 0) - (x.deal?.kitScore ?? 0) || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
-      sell: (x, y) => (x.market?.median ?? 999) - (y.market?.median ?? 999),
-      sold: (x, y) => (x.soldRef?.pct ?? 999) - (y.soldRef?.pct ?? 999),
-      listed: (x, y) => y._listed - x._listed,
-      length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
-      drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
-      desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._drops - x._drops || y._listed - x._listed,
-      year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
-      mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
-      distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
-    };
-    list.sort(by[state.sort] || by.newest);
-    document.getElementById('count').textContent = list.length ? `${list.length} advert${list.length === 1 ? '' : 's'}${list.length > shown ? ', showing ' + shown : ''}` : '';
-    document.getElementById('grid').innerHTML = list.slice(0, shown).map(card).join('');
-    document.getElementById('empty').hidden = list.length > 0;
-    document.getElementById('more').hidden = list.length <= shown;
-    try { localStorage.setItem('mh-view', JSON.stringify(state)); } catch {}
+    if (state.show === 'shared') return state.ids.split(',').includes(a.id);
+    if (state.show === 'hidden') return !!mine.hidden[a.id];
+    if (mine.hidden[a.id]) return false;
+    if (state.show === 'rules') { if (a.status !== 'active' || !a.excluded) return false; }
+    else if (state.show === 'gone') { if (a.status !== 'gone' || a.excluded) return false; }
+    else if (a.status !== 'active' || a.excluded) return false;
+    if (state.show === 'top' && (a._pick < topBar || a._flags)) return false;
+    if (state.show === 'sincevisit' && !a._sinceVisit) return false;
+    if (state.show === 'new' && !a._isNew && !a._newToSearch) return false;
+    if (state.show === 'drops' && !a._recentDrop) return false;
+    if (state.show === 'deals' && !a.deal?.isDeal) return false;
+    if (state.show === 'star' && a._wanted < minStar) return false;
+    if (state.show === 'starfull' && a._wanted < starItems.length) return false;
+    if (state.show === 'starnear' && a._wanted < nearStar) return false;
+    if (state.starItem && !a._starHave.includes(state.starItem)) return false;
+    if (state.show === 'under' && !a.deal?.underpriced) return false;
+    if (state.show === 'motivated' && !a.deal?.motivated) return false;
+    if (state.show === 'stale' && !a.deal?.staleNoCut) return false;
+    if (state.show === 'relisted' && !a.relisted) return false;
+    if (state.show === 'shortlist' && !mine.stars[a.id]) return false;
+    if (state.pmin && !(a._last >= Number(state.pmin))) return false;
+    if (state.pmax && !(a._last <= Number(state.pmax))) return false;
+    if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
+    if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
+    if (state.knownLen && !a.length) return false;
+    if (state.myLen && a.lengthOutside) return false;
+    const f = a.fit || {};
+    if (state.fgear && f.gearbox && f.gearbox !== state.fgear) return false;
+    if (state.fkg && f.mtplmKg && f.mtplmKg > Number(state.fkg)) return false;
+    if (state.fbhp && f.bhp && f.bhp < Number(state.fbhp)) return false;
+    if (state.fberth && f.berth && f.berth < Number(state.fberth)) return false;
+    if (state.fbed && f.bedLayout !== state.fbed) return false;
+    if (state.fend && f.endLayout !== state.fend) return false;
+    if (state.fheight && f.heightM && f.heightM > Number(state.fheight)) return false;
+    if (state.fmiles && a.distanceMiles != null && a.distanceMiles > Number(state.fmiles)) return false;
+    if (state.fstock === 'used' && a.newStock) return false;
+    if (state.fstock === 'new' && !a.newStock) return false;
+    if (state.feuro6 && f.euro != null && f.euro < 6) return false;
+    if (state.search && !(a.searches || []).includes(state.search) && a.status !== 'gone') return false;
+    if (state.make && a.make !== state.make) return false;
+    if (q && !a._text.includes(q)) return false;
+    return true;
+  }
+  const by = {
+    pick: (x, y) => y._pick - x._pick || (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
+    newest: (x, y) => (y._listedOn || '').localeCompare(x._listedOn || '') || y.id.localeCompare(x.id),
+    'price-asc': (x, y) => (x._last ?? 1e12) - (y._last ?? 1e12),
+    'price-desc': (x, y) => (y._last ?? -1) - (x._last ?? -1),
+    drop: (x, y) => y._drop - x._drop,
+    value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
+    sold: (x, y) => (x.soldRef?.pct ?? 999) - (y.soldRef?.pct ?? 999),
+    spec: (x, y) => y._wanted - x._wanted || y._pick - x._pick,
+    kit: (x, y) => (y.deal?.kitScore ?? 0) - (x.deal?.kitScore ?? 0) || y._pick - x._pick,
+    sell: (x, y) => (x.market?.median ?? 999) - (y.market?.median ?? 999) || y._pick - x._pick,
+    desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._drops - x._drops || y._listed - x._listed,
+    listed: (x, y) => y._listed - x._listed,
+    drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
+    length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
+    year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
+    mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
+    distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
+  };
+  function activeFilterChips() {
+    const chips = [];
+    const add = (label, clear) => chips.push({ label, clear });
+    if (state.q) add(`“${state.q}”`, () => { state.q = ''; $('q').value = ''; });
+    if (state.search) add(state.search, () => { state.search = ''; sel.value = ''; });
+    if (state.make) add(state.make, () => { state.make = ''; makeSel.value = ''; });
+    if (state.pmin || state.pmax) add(`£${state.pmin || '0'} to £${state.pmax || '∞'}`, () => { state.pmin = state.pmax = ''; $('pmin').value = $('pmax').value = ''; });
+    if (state.privateOnly) add('private only', () => { state.privateOnly = false; $('private').checked = false; });
+    if (state.knownLen) add('known length', () => { state.knownLen = false; $('knownlen').checked = false; });
+    if (state.myLen) add(`my length ${lengthRangeText}`, () => { state.myLen = false; $('mylen').checked = false; renderStats(); markShow(); });
+    if (state.starItem) add('★ ' + state.starItem, () => { state.starItem = ''; });
+    for (const k of FIT_KEYS) if (state[k]) add(FIT_LABELS[k](state[k]), () => { state[k] = ''; $(k).value = ''; });
+    if (state.feuro6) add('Euro 6', () => { state.feuro6 = false; $('feuro6').checked = false; });
+    return chips;
+  }
+  let chipClears = [];
+  function render() {
+    const list = adverts.filter(passes);
+    list.sort(by[state.sort] || by.pick);
+    const chips = activeFilterChips();
+    chipClears = chips.map((c) => c.clear);
+    $('activefilters').hidden = !chips.length;
+    $('activefilters').innerHTML = chips.length ? 'Filters: ' + chips.map((c, i) => `<button type="button" class="af" data-clear="${i}" title="Remove this filter">${esc(c.label)} ✕</button>`).join('') + ` <button type="button" class="linkbtn" data-clear="all">Clear all</button>` : '';
+    const viewName = { top: `top picks (score ${topBar}+)`, shared: 'a shared shortlist' }[state.show];
+    $('count').innerHTML = list.length ? `<span>${list.length.toLocaleString('en-GB')} advert${list.length === 1 ? '' : 's'}${viewName ? ' in ' + viewName : ''}${list.length > shown ? ', showing ' + shown : ''}</span>` +
+      (state.show === 'shortlist' && list.length ? `<button type="button" class="linkbtn" id="share">Share shortlist</button><button type="button" class="linkbtn" id="copylist">Copy as text</button>` : '') +
+      (state.show === 'shared' ? `<button type="button" class="linkbtn" id="adopt">Add these to my shortlist</button>` : '') +
+      `<button type="button" class="linkbtn" id="sharelink" title="Copy a link to this exact view">Copy link to view</button>` : '';
+    $('grid').innerHTML = list.slice(0, shown).map(card).join('');
+    $('empty').hidden = list.length > 0;
+    $('empty').textContent = state.show === 'top' ? `Nothing scores ${topBar} or more with the current filters. Try Live, or lower deals.topPickScore in search.config.json.` : state.show === 'sincevisit' ? 'Nothing new or changed since you last looked.' : 'Nothing matches.';
+    $('more').hidden = list.length <= shown;
+    renderTray();
+    writeHash();
   }
   const resetAnd = (fn) => (e) => { fn(e); shown = PAGE; render(); };
-  document.getElementById('more').addEventListener('click', () => { shown += PAGE; render(); });
-  document.getElementById('pmin').addEventListener('change', resetAnd((e) => { state.pmin = e.target.value; }));
-  document.getElementById('pmax').addEventListener('change', resetAnd((e) => { state.pmax = e.target.value; }));
-  document.getElementById('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
-  document.getElementById('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
-  document.getElementById('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
-  document.getElementById('mylen').addEventListener('change', resetAnd((e) => { state.myLen = e.target.checked; renderStats(); markShow(); }));
-  for (const k of FIT_KEYS) document.getElementById(k).addEventListener('change', resetAnd((e) => { state[k] = e.target.value; markFit(); }));
-  document.getElementById('feuro6').addEventListener('change', resetAnd((e) => { state.feuro6 = e.target.checked; markFit(); }));
-  document.getElementById('fclear').addEventListener('click', resetAnd(() => { for (const k of FIT_KEYS) { state[k] = ''; document.getElementById(k).value = ''; } state.feuro6 = false; document.getElementById('feuro6').checked = false; markFit(); }));
-  document.getElementById('grid').addEventListener('click', (e) => {
-    const star = e.target.closest('button[data-star]');
-    const hide = e.target.closest('button[data-hide]');
-    if (star) { const id = star.dataset.star; if (mine.stars[id]) delete mine.stars[id]; else mine.stars[id] = 1; saveMine(); render(); }
-    if (hide) { const id = hide.dataset.hide; if (mine.hidden[id]) delete mine.hidden[id]; else mine.hidden[id] = 1; saveMine(); render(); }
+  $('more').addEventListener('click', () => { shown += PAGE; render(); });
+  $('pmin').addEventListener('change', resetAnd((e) => { state.pmin = e.target.value; }));
+  $('pmax').addEventListener('change', resetAnd((e) => { state.pmax = e.target.value; }));
+  $('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
+  $('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
+  $('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
+  $('mylen').addEventListener('change', resetAnd((e) => { state.myLen = e.target.checked; renderStats(); markShow(); }));
+  for (const k of FIT_KEYS) $(k).addEventListener('change', resetAnd((e) => { state[k] = e.target.value; }));
+  $('feuro6').addEventListener('change', resetAnd((e) => { state.feuro6 = e.target.checked; }));
+  $('activefilters').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-clear]');
+    if (!b) return;
+    if (b.dataset.clear === 'all') chipClears.forEach((c) => c()); else chipClears[Number(b.dataset.clear)]?.();
+    shown = PAGE; markShow(); render();
   });
-  document.getElementById('grid').addEventListener('input', (e) => {
-    const note = e.target.closest('textarea[data-note]');
-    if (!note) return;
-    if (note.value.trim()) mine.notes[note.dataset.note] = note.value; else delete mine.notes[note.dataset.note];
-    saveMine();
-  });
-
-  document.getElementById('q').addEventListener('input', resetAnd((e) => { state.q = e.target.value; }));
+  $('q').addEventListener('input', resetAnd((e) => { state.q = e.target.value; }));
   sel.addEventListener('change', resetAnd((e) => { state.search = e.target.value; }));
   makeSel.addEventListener('change', resetAnd((e) => { state.make = e.target.value; }));
-  document.getElementById('sort').addEventListener('change', resetAnd((e) => { state.sort = e.target.value; }));
-  function setShow(show) {
-    state.show = show;
-    shown = PAGE;
-    markShow();
-    render();
-  }
+  $('sort').addEventListener('change', resetAnd((e) => { state.sort = e.target.value; }));
+  function setShow(show) { state.show = show; shown = PAGE; markShow(); render(); }
   document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setShow(b.dataset.show)));
   legend.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-staritem]');
     if (!b) return;
     state.starItem = state.starItem === b.dataset.staritem ? '' : b.dataset.staritem;
-    if (state.starItem && !['active', 'star', 'starnear', 'starfull', 'deals', 'new', 'drops', 'shortlist', 'stale', 'relisted', 'under', 'motivated'].includes(state.show)) state.show = 'active';
-    shown = PAGE;
-    markShow();
-    render();
+    if (state.starItem && ['gone', 'rules', 'hidden', 'shared'].includes(state.show)) state.show = 'active';
+    shown = PAGE; markShow(); render();
   });
-  document.getElementById('stats').addEventListener('click', (e) => { const t = e.target.closest('.stat[data-show]'); if (t) setShow(t.dataset.show); });
-  document.getElementById('stats').addEventListener('keydown', (e) => { const t = e.target.closest('.stat[data-show]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setShow(t.dataset.show); } });
+  $('stats').addEventListener('click', (e) => { const t = e.target.closest('.stat[data-show]'); if (t) setShow(t.dataset.show); });
+  $('stats').addEventListener('keydown', (e) => { const t = e.target.closest('.stat[data-show]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setShow(t.dataset.show); } });
+
+  // ---- Card tools: shortlist, hide, notes, compare ----
+  $('grid').addEventListener('click', (e) => {
+    const star = e.target.closest('button[data-star]');
+    const hide = e.target.closest('button[data-hide]');
+    const cmp = e.target.closest('button[data-cmp]');
+    if (star) { const id = star.dataset.star; if (mine.stars[id]) delete mine.stars[id]; else mine.stars[id] = 1; saveMine(); render(); }
+    if (hide) { const id = hide.dataset.hide; if (mine.hidden[id]) delete mine.hidden[id]; else mine.hidden[id] = 1; saveMine(); render(); }
+    if (cmp) {
+      const id = cmp.dataset.cmp;
+      if (mine.compare.includes(id)) mine.compare = mine.compare.filter((x) => x !== id);
+      else if (mine.compare.length >= 3) { toast('Compare holds three. Remove one first.'); return; }
+      else mine.compare.push(id);
+      saveMine(); render();
+    }
+  });
+  $('grid').addEventListener('input', (e) => {
+    const note = e.target.closest('textarea[data-note]');
+    if (!note) return;
+    if (note.value.trim()) mine.notes[note.dataset.note] = note.value; else delete mine.notes[note.dataset.note];
+    saveMine();
+  });
+  const copy = async (text, msg) => { try { await navigator.clipboard.writeText(text); toast(msg); } catch { prompt('Copy this:', text); } };
+  $('count').addEventListener('click', (e) => {
+    const t = e.target;
+    if (t.id === 'sharelink') copy(location.href, 'Link to this view copied');
+    if (t.id === 'share') { const ids = Object.keys(mine.stars).filter((id) => byId[id]); const url = location.origin + location.pathname + '#shortlist=' + ids.join(','); copy(url, 'Shortlist link copied'); }
+    if (t.id === 'copylist') {
+      const lines = Object.keys(mine.stars).filter((id) => byId[id]).map((id) => byId[id]).sort(by.pick).map((a) => `${a.title} · ${gbp(a._last)} · ${a.registeredYear || a.year || ''} · ${a.mileageText || ''} · pick ${a._pick}${a._starHave.length ? ' · ' + a._starHave.join(', ') : ''}${mine.notes[a.id] ? ' · note: ' + mine.notes[a.id].replace(/\s+/g, ' ') : ''}\n${a.url}`);
+      copy(lines.join('\n\n'), 'Shortlist copied as text');
+    }
+    if (t.id === 'adopt') { for (const id of state.ids.split(',')) if (byId[id]) mine.stars[id] = 1; saveMine(); setShow('shortlist'); toast('Added to your shortlist'); }
+  });
+
+  // ---- Compare tray and table ----
+  function renderTray() {
+    const tray = $('tray');
+    tray.hidden = mine.compare.length === 0;
+    if (!tray.hidden) $('traytext').textContent = mine.compare.length + ' to compare: ' + mine.compare.map((id) => byId[id]?.title || id).join(' · ');
+  }
+  $('trayclear').addEventListener('click', () => { mine.compare = []; saveMine(); render(); });
+  $('traygo').addEventListener('click', () => {
+    const list = mine.compare.map((id) => byId[id]).filter(Boolean);
+    if (list.length < 2) { toast('Pick at least two to compare.'); return; }
+    const num = (fn, best) => { const vals = list.map(fn); const ok = vals.filter((v) => v != null && Number.isFinite(v)); const target = ok.length ? (best === 'min' ? Math.min(...ok) : Math.max(...ok)) : null; return vals.map((v) => ({ v, best: v != null && v === target && ok.length > 1 })); };
+    const rows = [
+      ['', list.map((a) => `<a href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="">` : ''}<br><b>${esc(a.title)}</b></a><br><span style="color:var(--muted)">${esc(a.subTitle || '')}</span>`)],
+      ['Pick score', num((a) => a._pick, 'max').map((x) => `<b>${x.v}</b>/100`), num((a) => a._pick, 'max')],
+      ['Price', num((a) => a._last, 'min').map((x) => gbp(x.v)), num((a) => a._last, 'min')],
+      ['Vs similar live', num((a) => a.value?.pct, 'min').map((x) => (x.v == null ? '—' : (x.v > 0 ? '+' : '') + x.v + '%')), num((a) => a.value?.pct, 'min')],
+      ['Vs sold', num((a) => a.soldRef?.pct, 'min').map((x) => (x.v == null ? '—' : (x.v > 0 ? '+' : '') + x.v + '%')), num((a) => a.soldRef?.pct, 'min')],
+      ['Year', num((a) => a.year, 'max').map((x) => (x.v == null ? '—' : String(x.v))), num((a) => a.year, 'max')],
+      ['Mileage', num((a) => a.mileage, 'min').map((x) => (x.v == null ? '—' : x.v.toLocaleString('en-GB'))), num((a) => a.mileage, 'min')],
+      ['Star spec', num((a) => a._starHave.length, 'max').map((x, i) => `${'★'.repeat(x.v)}${'☆'.repeat(starItems.length - x.v)} ${list[i]._starHave.join(', ')}`), num((a) => a._starHave.length, 'max')],
+      ['Nice-to-have', list.map((a) => (a.deal?.niceHits || []).join(', ') || '—')],
+      ['Length', list.map((a) => (a.length ? a.length.metres.toFixed(2) + ' m' + (a.lengthOutside ? ' ⚑' : '') : 'unknown'))],
+      ['Weight', list.map((a) => (a.fit?.mtplmKg ? a.fit.mtplmKg.toLocaleString('en-GB') + ' kg' + (a.fit.payloadKg ? ', payload ' + a.fit.payloadKg + ' kg' : '') : '—'))],
+      ['Engine', list.map((a) => [a.fit?.engineL ? a.fit.engineL + 'L' : null, a.fit?.bhp ? a.fit.bhp + ' bhp' : null, a.fit?.gearbox].filter(Boolean).join(' ') || '—')],
+      ['Layout', list.map((a) => [a.fit?.berth ? a.fit.berth + ' berth' : null, a.fit?.bedLayout, a.fit?.endLayout].filter(Boolean).join(' · ') || '—')],
+      ['Height', list.map((a) => (a.fit?.heightM ? a.fit.heightM.toFixed(2) + ' m' : '—'))],
+      ['Seller', list.map((a) => [a.sellerType === 'PRIVATE' ? 'Private' : 'Trade', a.location].filter(Boolean).join(' · '))],
+      ['Listed', list.map((a) => `${a._listed}d${a._listedSure ? '' : '?'}${a._drops ? ', ' + a._drops + ' drop' + (a._drops > 1 ? 's' : '') + ' (' + a.deal?.totalDropPct + '%)' : ''}${a.market ? ', this ' + a.market.basis + ' sells in ~' + a.market.median + 'd' : ''}`)],
+      ['Seller signals', list.map((a) => (a.signals || []).map((s) => s.label).join(', ') || '—')],
+      ['Motivation', list.map((a) => `${a.deal?.desperation ?? 0}/100${(a.deal?.motivationReasons || []).length ? ': ' + a.deal.motivationReasons.join(', ') : ''}`)],
+      ['Red flags', list.map((a) => (a.redFlags || []).map((f) => f.label).join(', ') || 'none')],
+      ['Other kit', list.map((a) => (a.specs || []).map((s) => s.label).filter((l) => !wantedSpecs.has(l) && !(a.deal?.niceHits || []).includes(l)).join(', ') || '—')],
+      ['Your notes', list.map((a) => esc(mine.notes[a.id] || '—'))],
+    ];
+    const html = `<div class="modal" id="modal"><div class="panel"><h2>Compare <button class="close" id="modalclose">Close</button></h2><table>${rows.map(([label, cells, marks]) => `<tr><th>${esc(label)}</th>${cells.map((c, i) => `<td class="${marks?.[i]?.best ? 'best' : ''}">${c}</td>`).join('')}</tr>`).join('')}</table></div></div>`;
+    document.body.insertAdjacentHTML('beforeend', html);
+    const close = () => $('modal')?.remove();
+    $('modalclose').addEventListener('click', close);
+    $('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') close(); });
+    document.addEventListener('keydown', function onKey(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); } });
+  });
+
   render();
+  try { localStorage.setItem('mh-lastvisit', visitStamp); } catch {}
 
   // ---- Refresh ----
-  // The search runs by itself every morning from a Claude Code routine, which also pushes the
-  // data here. A manual run is started from Claude Code (Routines → Daily motorhome search →
-  // Run). This page cannot start it, but it can notice when new data lands and reload itself.
-  const refreshBtn = document.getElementById('refresh');
-  const statusEl = document.getElementById('refresh-status');
+  const refreshBtn = $('refresh');
+  const statusEl = $('refresh-status');
   const setStatus = (html, err) => { statusEl.innerHTML = html; statusEl.classList.toggle('err', !!err); };
   const RUN_HOURS_UK = ['06:54', '18:54'];
   let watching = false;
-
   function nextRunText() {
     const now = new Date();
     const uk = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }).replace(/(\d+)\/(\d+)\/(\d+), (.*)/, '$3-$2-$1T$4'));
@@ -574,7 +757,6 @@
     return 'tomorrow at ' + RUN_HOURS_UK[0] + ' UK time';
   }
   setStatus('Updates by itself morning and evening; next run ' + nextRunText() + '.');
-
   async function watchForNewData(generatedBefore, maxMinutes) {
     if (watching) return;
     watching = true;
@@ -585,21 +767,16 @@
         const probe = await fetch('data/dashboard.json?' + Date.now(), { cache: 'no-store' }).then((r) => r.json()).catch(() => null);
         if (probe && probe.generatedAt && probe.generatedAt !== generatedBefore) { location.reload(); return; }
         const m = Math.round((Date.now() - started) / 60000);
-        setStatus('Watching for new data… ' + m + ' min. A run takes 5 to 15 minutes, then a minute to publish. This page reloads itself.');
+        setStatus('Watching for new data… ' + m + ' min. A run takes 10 to 20 minutes, then a minute to publish. This page reloads itself.');
       }
       setStatus('No new data arrived in ' + maxMinutes + ' minutes. If you started the routine, check it in Claude Code.', true);
-    } finally {
-      watching = false;
-    }
+    } finally { watching = false; }
   }
-
   refreshBtn.addEventListener('click', () => {
-    setStatus('To run the search now: open <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>, go to <b>Routines</b>, open <b>Daily motorhome search</b> and press <b>Run</b> (or ask Claude in the project chat to refresh). This page will reload itself when the new data arrives.');
-    watchForNewData(data.generatedAt, 30);
+    setStatus('To run the search now: open <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>, go to <b>Routines</b>, open the motorhome search and press <b>Run</b> (or ask Claude in the project chat to refresh). This page will reload itself when the new data arrives.');
+    watchForNewData(data.generatedAt, 60);
   });
-
-  // If the data is older than the last scheduled run, a run may be in progress: watch quietly.
-  if (data.generatedAt && Date.now() - new Date(data.generatedAt) > 20 * 3600000) watchForNewData(data.generatedAt, 15);
+  if (data.generatedAt && Date.now() - new Date(data.generatedAt) > 14 * 3600000) watchForNewData(data.generatedAt, 15);
 })();
 </script>
 </body>
