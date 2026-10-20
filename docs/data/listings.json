@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-10-20T05:51:27.490Z",
+ "generatedAt": "2026-10-20T06:11:11.736Z",
  "searches": {
   "6.25–7 m, all body types (Autotrader length)": {
    "name": "6.25–7 m, all body types (Autotrader length)",
@@ -16,7 +16,7 @@
    "name": "Campervans and van conversions (length from advert)",
    "url": "https://www.autotrader.co.uk/motorhome-search?body-type=Campervan&body-type=Van+Conversion&exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-20",
-   "total": 2559,
+   "total": 2557,
    "read": 1503,
    "truncated": false,
    "error": null,
@@ -26,8 +26,8 @@
    "name": "All motorhomes (star spec research)",
    "url": "https://www.autotrader.co.uk/motorhome-search?exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-10-20",
-   "total": 6428,
-   "read": 5150,
+   "total": 6427,
+   "read": 5149,
    "truncated": false,
    "error": null,
    "firstRun": "2026-10-19"
@@ -120152,8 +120152,7 @@
    "lastSeen": "2026-10-20",
    "status": "active",
    "searches": [
-    "Campervans and van conversions (length from advert)",
-    "All motorhomes (star spec research)"
+    "Campervans and van conversions (length from advert)"
    ],
    "priceHistory": [
     {
@@ -1116151,6 +1116150,32 @@
   }
  },
  "runs": [
+  {
+   "date": "2026-10-20T06:11:11.736Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "All motorhomes (star spec research)",
+     "error": null,
+     "added": 0,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-10-20T05:51:27.490Z",
    "searches": [
