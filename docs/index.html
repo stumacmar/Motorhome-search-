@@ -49,6 +49,17 @@
   .starspec .stars { color: #c98a00; letter-spacing: 1px; font-size: 15px; }
   .starspec .have { color: var(--ink); }
   .starspec.unchecked .stars { color: var(--gone); }
+  .starspec .nice { color: var(--muted); }
+  .chip.signal { border-color: #5b4bb5; color: #5b4bb5; }
+  .tag.relist { background: #b4412c; color: #fff; }
+  .tag.newstock { background: var(--chip); color: var(--muted); border: 1px dashed var(--muted); }
+  .tag.sell { background: transparent; border: 1px solid var(--line); }
+  .tag.stale { background: transparent; border: 1px solid #5b4bb5; color: #5b4bb5; }
+  .fitrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -10px 0 14px; }
+  .fitrow select { font-size: 13px; padding: 6px 8px; }
+  .fitrow .lead { font-size: 13px; color: var(--muted); }
+  .fitrow .clear { font-size: 13px; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 0; }
+  .fit { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 2px 8px; }
   .searches { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
   .searches a { font-size: 13px; color: var(--muted); text-decoration: none; }
   .searches .warn { color: var(--drop); }
@@ -144,6 +155,9 @@
       <option value="drop">Biggest price drop</option>
       <option value="value">Best value vs similar</option>
       <option value="spec">Star spec: most items</option>
+      <option value="kit">Kit score (star ×3 + nice-to-have)</option>
+      <option value="sell">Sells fastest</option>
+      <option value="sold">Cheapest vs sold similar</option>
       <option value="listed">Longest listed</option>
       <option value="length">Length</option>
       <option value="drops">Most price drops</option>
@@ -158,6 +172,8 @@
       <button data-show="star" aria-pressed="false" id="starbtn" title="Adverts with enough of the star spec kit">☆ Star spec</button>
       <button data-show="under" aria-pressed="false">Underpriced</button>
       <button data-show="motivated" aria-pressed="false">Motivated</button>
+      <button data-show="stale" aria-pressed="false" title="Listed 50+ days with no price cut yet; dealers tend to cut at 60 to 90 days">Due a cut</button>
+      <button data-show="relisted" aria-pressed="false" title="The same van back under a new advert">Re-listed</button>
       <button data-show="shortlist" aria-pressed="false">★ Shortlist</button>
       <button data-show="new" aria-pressed="false">New this week</button>
       <button data-show="drops" aria-pressed="false">Price drops</button>
@@ -171,12 +187,26 @@
     <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
     <label class="check" id="mylenlabel" hidden title="Only adverts within the length range in search.config.json"><input type="checkbox" id="mylen"> My length only</label>
   </div>
+  <div class="fitrow" id="fitrow" title="From Autotrader's spec sheet. Adverts whose sheet does not say are kept.">
+    <span class="lead">Fit:</span>
+    <select id="fgear" aria-label="Gearbox"><option value="">Any gearbox</option><option value="Automatic">Automatic</option><option value="Manual">Manual</option></select>
+    <select id="fkg" aria-label="Weight"><option value="">Any weight</option><option value="3500">≤ 3,500 kg (B licence)</option><option value="3850">≤ 3,850 kg</option><option value="4250">≤ 4,250 kg</option></select>
+    <select id="fbhp" aria-label="Power"><option value="">Any power</option><option value="140">140+ bhp</option><option value="160">160+ bhp</option><option value="170">170+ bhp</option></select>
+    <select id="fberth" aria-label="Berth"><option value="">Any berth</option><option value="2">2+ berth</option><option value="3">3+ berth</option><option value="4">4+ berth</option><option value="5">5+ berth</option></select>
+    <select id="fbed" aria-label="Bed layout"><option value="">Any bed</option></select>
+    <select id="fend" aria-label="End layout"><option value="">Any end layout</option></select>
+    <select id="fheight" aria-label="Height"><option value="">Any height</option><option value="2.7">≤ 2.70 m</option><option value="2.9">≤ 2.90 m</option><option value="3.0">≤ 3.00 m</option><option value="3.2">≤ 3.20 m</option></select>
+    <select id="fmiles" aria-label="Distance"><option value="">Any distance</option><option value="50">≤ 50 miles</option><option value="100">≤ 100 miles</option><option value="150">≤ 150 miles</option><option value="250">≤ 250 miles</option></select>
+    <select id="fstock" aria-label="Stock"><option value="">Used and new</option><option value="used">Used only</option><option value="new">New / ex-demo only</option></select>
+    <label class="check"><input type="checkbox" id="feuro6"> Euro 6 only</label>
+    <button type="button" class="clear" id="fclear" hidden>Clear fit</button>
+  </div>
   <p class="count" id="count"></p>
   <div class="grid" id="grid"></div>
   <p class="empty" id="empty" hidden>Nothing matches.</p>
   <button class="more" id="more" hidden>Show more</button>
 </main>
-<footer>Data is refreshed every morning by the daily search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound.</footer>
+<footer>Data is refreshed morning and evening by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound.</footer>
 <script>
 (async function () {
   const gbp = (n) => n == null ? '?' : '£' + Number(n).toLocaleString('en-GB');
@@ -253,6 +283,8 @@
     ] : []),
     ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
     ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated'],
+    ['', live.filter((a) => a.deal?.staleNoCut).length, 'due a cut', 'stale'],
+    ['', live.filter((a) => a.relisted).length, 're-listed', 'relisted'],
     ['', live.filter((a) => a._listed >= 90 && a._listedSure).length, 'listed 90+ days', null],
     ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
     ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
@@ -282,7 +314,7 @@
   for (const a of adverts) if (a.make && a.status === 'active') makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
   for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
 
-  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false };
+  const state = { q: '', search: '', make: '', sort: 'newest', show: 'active', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false, fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false };
   const PAGE = 48;
   let shown = PAGE;
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
@@ -292,6 +324,16 @@
   document.getElementById('private').checked = !!state.privateOnly;
   document.getElementById('noflags').checked = state.noFlags !== false;
   document.getElementById('knownlen').checked = !!state.knownLen;
+  const bedCounts = new Map(), endCounts = new Map();
+  for (const a of adverts) if (a.status === 'active' && a.fit) { if (a.fit.bedLayout) bedCounts.set(a.fit.bedLayout, (bedCounts.get(a.fit.bedLayout) || 0) + 1); if (a.fit.endLayout) endCounts.set(a.fit.endLayout, (endCounts.get(a.fit.endLayout) || 0) + 1); }
+  for (const [m, n] of [...bedCounts].sort((x, y) => y[1] - x[1])) document.getElementById('fbed').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
+  for (const [m, n] of [...endCounts].sort((x, y) => y[1] - x[1])) document.getElementById('fend').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
+  const FIT_KEYS = ['fgear', 'fkg', 'fbhp', 'fberth', 'fbed', 'fend', 'fheight', 'fmiles', 'fstock'];
+  for (const k of FIT_KEYS) { const el = document.getElementById(k); if ([...el.options].some((o) => o.value === String(state[k] || ''))) el.value = state[k] || ''; else state[k] = ''; }
+  document.getElementById('feuro6').checked = !!state.feuro6;
+  const fitActive = () => FIT_KEYS.some((k) => state[k]) || state.feuro6;
+  const markFit = () => { document.getElementById('fclear').hidden = !fitActive(); };
+  markFit();
   if (lengthRule) {
     document.getElementById('mylenlabel').hidden = false;
     document.getElementById('mylenlabel').lastChild.textContent = ` My length only (${lengthRangeText})`;
@@ -315,7 +357,8 @@
     const tip = `Star spec ${n}/${starItems.length}` + (n ? '. Has: ' + a._starHave.join(', ') : '') + (a._starMissing.length ? '. Missing: ' + a._starMissing.join(', ') : '');
     return `<div class="starspec" title="${esc(tip)}"><span class="stars">${'★'.repeat(n)}${'☆'.repeat(starItems.length - n)}</span>` +
       `<span class="have">${n}/${starItems.length}${n ? ' ' + esc(a._starHave.join(' · ')) : ''}</span>` +
-      (a._starMissing.length && n ? `<span>missing ${esc(a._starMissing.join(', '))}</span>` : '') + `</div>`;
+      (a._starMissing.length && n ? `<span>missing ${esc(a._starMissing.join(', '))}</span>` : '') +
+      ((a.deal?.niceHits || []).length ? `<span class="nice" title="Nice-to-have kit (one point each in the kit score)">+ ${esc(a.deal.niceHits.join(', '))}</span>` : '') + `</div>`;
   }
 
   function card(a) {
@@ -341,10 +384,18 @@
       tags.push(`<span class="tag listed ${a._listedSure ? '' : 'unsure'}" title="${esc(why)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd' + (a._listedSure ? '' : '?')}</span>`);
     }
     if (a._drops) tags.push(`<span class="tag" title="Price drops since we started watching">${a._drops} drop${a._drops > 1 ? 's' : ''} (${a.deal?.totalDropPct ?? ''}%)</span>`);
+    if (a.deal?.staleNoCut) tags.push(`<span class="tag stale" title="Listed ${a._listed} days with no price cut yet. Dealers tend to cut at 60 to 90 days; worth watching or a low offer">due a cut</span>`);
+    if (a.relisted) tags.push(`<span class="tag relist" title="Same make, model, year and mileage as advert ${esc(a.relisted.of)}, which went off sale ${esc(a.relisted.goneSince || '')}. A sale that fell through, a returned van, or a dealer resetting the listing age">re-listed${a.relisted.lastPrice ? ' · was ' + gbp(a.relisted.lastPrice) : ''}</span>`);
+    if (a.newStock) tags.push(`<span class="tag newstock" title="This year's or last year's van with delivery mileage from a dealer: priced off the list price, so left out of the used-market comparison">new / ex-demo</span>`);
+    if (a.market) tags.push(`<span class="tag sell" title="Median days from listing to gone for ${a.market.basis === 'market' ? 'the whole market' : 'this ' + a.market.basis} (${a.market.n} seen)">${a.market.basis === 'market' ? 'market' : 'this ' + a.market.basis} sells in ~${a.market.median}d</span>`);
+    if (a.soldRef) tags.push(`<span class="tag value ${a.soldRef.pct <= -10 ? 'under' : ''}" title="Median asking price of ${a.soldRef.n} same-model adverts within two years of its age when they went off sale: ${gbp(a.soldRef.median)}">${a.soldRef.pct <= 0 ? '−' : '+'}${Math.abs(a.soldRef.pct)}% vs ${a.soldRef.n} sold</span>`);
     if (a.excluded) tags.push(`<span class="tag gone">hidden: ${esc(a.excluded)}</span>`);
     for (const s of a.searches || []) tags.push(`<span class="tag">${esc(s)}</span>`);
     const specs = (a.specs || []).slice().sort((x, y) => (wantedSpecs.has(y.label) ? 1 : 0) - (wantedSpecs.has(x.label) ? 1 : 0));
-    const chips = specs.length ? `<div class="chips">${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(s.evidence)}">${esc(s.label)}</span>`).join('')}</div>` : '';
+    const sigs = (a.signals || []).map((s) => `<span class="chip signal" title="${esc(s.evidence || '')}">💬 ${esc(s.label)}</span>`).join('');
+    const chips = specs.length || sigs ? `<div class="chips">${sigs}${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(s.evidence || '')}">${esc(s.label)}</span>`).join('')}</div>` : '';
+    const f = a.fit;
+    const fitLine = f ? `<div class="fit">${[f.mtplmKg ? `<span title="MTPLM (plated weight)${f.payloadKg ? ', payload ' + f.payloadKg.toLocaleString('en-GB') + ' kg' : ''}">${f.mtplmKg.toLocaleString('en-GB')} kg${f.mtplmKg <= 3500 ? ' ✓B' : ''}</span>` : '', f.bhp ? `<span>${f.bhp} bhp</span>` : '', f.gearbox ? `<span>${esc(f.gearbox.toLowerCase())}</span>` : '', f.berth ? `<span>${f.berth} berth</span>` : '', f.bedLayout ? `<span>${esc(f.bedLayout.toLowerCase())}</span>` : '', f.endLayout ? `<span>${esc(f.endLayout.toLowerCase())}</span>` : '', f.heightM ? `<span title="Height">${f.heightM.toFixed(2)} m high</span>` : '', f.euro ? `<span>Euro ${f.euro}</span>` : ''].filter(Boolean).join('')}</div>` : '';
     const d = a.details;
     const facts = d ? [d.chassis, d.keySpec?.Berth ? d.keySpec.Berth + ' berth' : null, d.keySpec?.Gearbox, d.owners ? d.owners + ' owner' + (d.owners === 1 ? '' : 's') : null, d.serviceHistory, d.historyCheck ? 'History check ' + d.historyCheck.toLowerCase() : null].filter(Boolean) : [];
     const flagLine = (a.redFlags || []).length ? `<div class="flagline" title="${esc(a.redFlags.map((f) => f.evidence).join(' | '))}">⚠ ${esc(a.redFlags.map((f) => f.label).join(', '))}</div>` : '';
@@ -376,6 +427,7 @@
         </div>
         ${flagLine}
         ${starLine(a)}
+        ${fitLine}
         ${chips}
         ${hist}
         ${detailsBlock}
@@ -409,6 +461,20 @@
       if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
       if (state.knownLen && !a.length) return false;
       if (state.myLen && a.lengthOutside) return false;
+      if (state.show === 'stale' && !a.deal?.staleNoCut) return false;
+      if (state.show === 'relisted' && !a.relisted) return false;
+      const f = a.fit || {};
+      if (state.fgear && f.gearbox && f.gearbox !== state.fgear) return false;
+      if (state.fkg && f.mtplmKg && f.mtplmKg > Number(state.fkg)) return false;
+      if (state.fbhp && f.bhp && f.bhp < Number(state.fbhp)) return false;
+      if (state.fberth && f.berth && f.berth < Number(state.fberth)) return false;
+      if (state.fbed && f.bedLayout !== state.fbed) return false;
+      if (state.fend && f.endLayout !== state.fend) return false;
+      if (state.fheight && f.heightM && f.heightM > Number(state.fheight)) return false;
+      if (state.fmiles && a.distanceMiles != null && a.distanceMiles > Number(state.fmiles)) return false;
+      if (state.fstock === 'used' && a.newStock) return false;
+      if (state.fstock === 'new' && !a.newStock) return false;
+      if (state.feuro6 && f.euro != null && f.euro < 6) return false;
       if (state.search && !(a.searches || []).includes(state.search) && !(a.status === 'gone')) return false;
       if (state.make && a.make !== state.make) return false;
       if (q && ![a.title, a.subTitle, a.make, a.model, a.location].join(' ').toLowerCase().includes(q)) return false;
@@ -421,6 +487,9 @@
       drop: (x, y) => y._drop - x._drop,
       value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
       spec: (x, y) => y._wanted - x._wanted || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
+      kit: (x, y) => (y.deal?.kitScore ?? 0) - (x.deal?.kitScore ?? 0) || (y.specs?.length ?? 0) - (x.specs?.length ?? 0),
+      sell: (x, y) => (x.market?.median ?? 999) - (y.market?.median ?? 999),
+      sold: (x, y) => (x.soldRef?.pct ?? 999) - (y.soldRef?.pct ?? 999),
       listed: (x, y) => y._listed - x._listed,
       length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
       drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
@@ -444,6 +513,9 @@
   document.getElementById('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
   document.getElementById('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
   document.getElementById('mylen').addEventListener('change', resetAnd((e) => { state.myLen = e.target.checked; renderStats(); markShow(); }));
+  for (const k of FIT_KEYS) document.getElementById(k).addEventListener('change', resetAnd((e) => { state[k] = e.target.value; markFit(); }));
+  document.getElementById('feuro6').addEventListener('change', resetAnd((e) => { state.feuro6 = e.target.checked; markFit(); }));
+  document.getElementById('fclear').addEventListener('click', resetAnd(() => { for (const k of FIT_KEYS) { state[k] = ''; document.getElementById(k).value = ''; } state.feuro6 = false; document.getElementById('feuro6').checked = false; markFit(); }));
   document.getElementById('grid').addEventListener('click', (e) => {
     const star = e.target.closest('button[data-star]');
     const hide = e.target.closest('button[data-hide]');
@@ -472,7 +544,7 @@
     const b = e.target.closest('button[data-staritem]');
     if (!b) return;
     state.starItem = state.starItem === b.dataset.staritem ? '' : b.dataset.staritem;
-    if (state.starItem && !['active', 'star', 'starnear', 'starfull', 'deals', 'new', 'drops', 'shortlist'].includes(state.show)) state.show = 'active';
+    if (state.starItem && !['active', 'star', 'starnear', 'starfull', 'deals', 'new', 'drops', 'shortlist', 'stale', 'relisted', 'under', 'motivated'].includes(state.show)) state.show = 'active';
     shown = PAGE;
     markShow();
     render();
@@ -488,18 +560,20 @@
   const refreshBtn = document.getElementById('refresh');
   const statusEl = document.getElementById('refresh-status');
   const setStatus = (html, err) => { statusEl.innerHTML = html; statusEl.classList.toggle('err', !!err); };
-  const RUN_HOUR_UK = '06:54';
+  const RUN_HOURS_UK = ['06:54', '18:54'];
   let watching = false;
 
   function nextRunText() {
     const now = new Date();
     const uk = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }).replace(/(\d+)\/(\d+)\/(\d+), (.*)/, '$3-$2-$1T$4'));
-    const [h, m] = RUN_HOUR_UK.split(':').map(Number);
-    const todayRun = new Date(uk); todayRun.setHours(h, m, 0, 0);
-    const isToday = uk < todayRun;
-    return (isToday ? 'today' : 'tomorrow') + ' at ' + RUN_HOUR_UK + ' UK time';
+    for (const t of RUN_HOURS_UK) {
+      const [h, m] = t.split(':').map(Number);
+      const run = new Date(uk); run.setHours(h, m, 0, 0);
+      if (uk < run) return 'today at ' + t + ' UK time';
+    }
+    return 'tomorrow at ' + RUN_HOURS_UK[0] + ' UK time';
   }
-  setStatus('Updates by itself every morning; next run ' + nextRunText() + '.');
+  setStatus('Updates by itself morning and evening; next run ' + nextRunText() + '.');
 
   async function watchForNewData(generatedBefore, maxMinutes) {
     if (watching) return;

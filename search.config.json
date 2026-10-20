@@ -4,14 +4,16 @@
   "maxPages": 200,
   "keepGoneDays": 90,
   "details": {
-    "_comment": "Each new advert's page is fetched once to read its features and description. maxFetchesPerRun caps how many per run; delayMs is the pause between requests; adverts whose page says fewer berths than excludeIfBerthBelow are treated as unconverted vans and hidden.",
+    "_comment": "Each new advert's page is fetched once to read its features and description. maxFetchesPerRun caps how many per run; delayMs is the pause between requests; adverts whose page says fewer berths than excludeIfBerthBelow are treated as unconverted vans and hidden. refetchTruncated re-reads adverts stored with a cut-short description (up to maxRefetchesPerRun a run) so kit mentioned late in a long blurb is not missed.",
     "maxFetchesPerRun": 3000,
     "delayMs": 900,
     "excludeIfBerthBelow": 2,
-    "retryFailedAfterDays": 3
+    "retryFailedAfterDays": 3,
+    "refetchTruncated": true,
+    "maxRefetchesPerRun": 2500
   },
   "deals": {
-    "_comment": "wantedSpecs is the star spec: the kit you most want, matched against each advert's page. Every advert is scored out of this list (shown as stars on the dashboard and in notifications). An advert is 'worth a look' if it has at least minWantedSpecs of them, or its price net of kit is underpricedPercent below similar live adverts, or its desperation score (0-100: price cuts seen up to 60, time listed up to 30, private seller 10) reaches dealScore. A seller counts as motivated at motivatedScore, but only with evidence: a price cut, or a private seller listed longer than staleDays. Any red flag removes it from the list. Labels must match the spec list in src/spec.js (or a top-level 'specs' override).",
+    "_comment": "wantedSpecs is the star spec: the kit you most want, matched against each advert's page. Every advert is scored out of this list (shown as stars on the dashboard and in notifications). niceToHave is the second tier: each counts one point in the kit score against three per star item. staleNoCutDays flags adverts listed that long with no price cut yet, once the job has watched them for staleNoCutWatchDays (earlier cuts are invisible to it). An advert is 'worth a look' if it has at least minWantedSpecs of them, or its price net of kit is underpricedPercent below similar live adverts, or its desperation score (0-100: price cuts seen up to 60, time listed up to 30, private seller 10) reaches dealScore. A seller counts as motivated at motivatedScore, but only with evidence: a price cut, or a private seller listed longer than staleDays. Any red flag removes it from the list. Labels must match the spec list in src/spec.js (or a top-level 'specs' override).",
     "wantedSpecs": [
       "Alde heating",
       "360° camera",
@@ -19,6 +21,15 @@
       "Self-levelling"
     ],
     "minWantedSpecs": 2,
+    "niceToHave": [
+      "Rear air suspension",
+      "Solar panel",
+      "Lithium battery",
+      "Automatic",
+      "Tow bar"
+    ],
+    "staleNoCutDays": 50,
+    "staleNoCutWatchDays": 14,
     "underpricedPercent": 10,
     "minComparables": 3,
     "staleDays": 90,

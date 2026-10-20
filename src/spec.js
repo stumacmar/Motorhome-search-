@@ -41,8 +41,26 @@ export const DEFAULT_RED_FLAGS = [
   { label: 'Spares or repair', pattern: 'spares or repair|non[\\s-]?runner' },
 ];
 
+/**
+ * Things a seller says that tell you how to approach them. `weight` feeds the
+ * desperation score (and counts as evidence of a motivated seller); the rest
+ * are shown as signals on the card. Override with "signals" in search.config.json.
+ */
+export const DEFAULT_SIGNALS = [
+  { label: 'Open to offers', weight: 10, pattern: '\\bono\\b|\\bovno\\b|open to (sensible |reasonable |all |any )?offers|offers (invited|considered|welcome)|or near(est)? offer|make (me|us) an offer|no (silly|stupid) offers' },
+  { label: 'Needs a quick sale', weight: 15, pattern: 'quick sale|must (sell|go)|urgent(ly)? (sale|sell)|relocat|emigrat|bereave|ill[\\s-]?health|no longer (able|needed|used|use|required)|reluctant(ly)? (sale|selling)|forces? (the )?sale|priced (to|for a quick) sell|genuine reason for sale' },
+  { label: 'Reduced', weight: 5, pattern: '\\breduced\\b|price (drop|cut|reduction)|now only|was £' },
+  { label: 'Part exchange welcome', pattern: 'part[\\s-]?ex(change)?|\\bpx\\b' },
+  { label: 'One owner', pattern: '\\b(one|1|single) (lady |careful |private |previous |former |family )?owner|^owners: 1$' },
+  { label: 'Cam belt done', pattern: 'cam[\\s-]?belt|timing (belt|chain)' },
+  { label: 'New tyres', pattern: 'new tyres' },
+  { label: 'Warranty included', pattern: '\\d+ (month|year)s? (?:\\w+ )?warranty|warranty included|comes with (a |full )?warranty|warranted' },
+  { label: 'Habitation check', pattern: 'hab(itation)? (check|service)|damp (check|report|test)' },
+  { label: 'Winterised', pattern: 'winteris|double floor|heated (tank|waste|floor)' },
+];
+
 export function compileSpecs(specs = DEFAULT_SPECS) {
-  return specs.map((s) => ({ label: s.label, value: s.value || 0, re: new RegExp(s.pattern, 'im') }));
+  return specs.map((s) => ({ label: s.label, value: s.value || 0, weight: s.weight || 0, re: new RegExp(s.pattern, 'im') }));
 }
 
 function evidenceFor(text, m) {
@@ -69,6 +87,18 @@ export function matchSpecs(details, compiled) {
     matched.splice(matched.indexOf(cab), 1);
   }
   return matched;
+}
+
+/** Seller signals in the advert text, with evidence. */
+export function matchSignals(details, compiledSignals) {
+  const text = advertText(details);
+  const found = [];
+  for (const { label, weight, re } of compiledSignals) {
+    const m = re.exec(text);
+    if (m) found.push({ label, weight, evidence: evidenceFor(text, m) });
+  }
+  if (details.owners === 1 && !found.some((s) => s.label === 'One owner')) found.push({ label: 'One owner', weight: 0, evidence: '1 previous owner' });
+  return found;
 }
 
 export function matchRedFlags(details, compiledFlags) {
@@ -142,7 +172,8 @@ function comparableKeys(a) {
  */
 export function compareWithSimilar(adverts, { minComparables = 3 } = {}) {
   const thisYear = new Date().getFullYear();
-  const live = adverts.filter((a) => a.status === 'active' && !a.excluded && a.price != null && a.year != null);
+  // New and ex-demo stock is priced off the list price, not the used market, so it is left out on both sides.
+  const live = adverts.filter((a) => a.status === 'active' && !a.excluded && !a.newStock && a.price != null && a.year != null);
   const groups = new Map();
   const point = (a) => ({ id: a.id, year: a.year, age: thisYear - a.year, miles: a.mileage ?? 30000, y: a.price - kitValue(a) });
   for (const a of live) {
@@ -243,6 +274,9 @@ export function starSpec(advert, dealConfig) {
 export function scoreDeal(advert, dealConfig, today = new Date().toISOString().slice(0, 10)) {
   const star = starSpec(advert, dealConfig);
   const wantedHits = star.hits;
+  const nice = new Set(dealConfig.niceToHave || []);
+  const niceHits = (advert.specs || []).map((s) => s.label).filter((l) => nice.has(l));
+  const signals = advert.signals || [];
   const v = advert.value;
   const underpriced = !!v && v.pct <= -(dealConfig.underpricedPercent ?? 10);
   const highSpec = wantedHits.length >= (dealConfig.minWantedSpecs ?? 2);
@@ -264,15 +298,23 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   const cutScore = Math.min(30, Math.max(0, -totalDropPct) * 3);
   const timeScore = Math.max(0, Math.min(30, ((days - 30) / 150) * 30));
   const privateScore = isPrivate ? 10 : 0;
-  const desperation = Math.round(dropScore + cutScore + timeScore + privateScore);
+  // What the seller says ("open to offers", "must sell", "reduced") adds up to 25.
+  const signalScore = Math.min(25, signals.reduce((n, s) => n + (s.weight || 0), 0));
+  const desperation = Math.min(100, Math.round(dropScore + cutScore + timeScore + privateScore + signalScore));
   const reasons = [];
   if (drops) reasons.push(`${drops} price cut${drops > 1 ? 's' : ''}, ${Math.abs(totalDropPct)}% in total`);
   if (daysListed != null && daysListed >= 30) reasons.push(`listed ${daysListed} days${listedReliable ? '' : ' (dealer record, not counted)'}`);
   if (isPrivate) reasons.push('private seller');
+  for (const s of signals) if (s.weight) reasons.push(s.label.toLowerCase());
   // Time alone never makes a seller "motivated": a dealer advert that has sat
   // for months at the same price is more likely overpriced than a bargain. It
-  // takes a price cut we have seen, or a private seller past staleDays.
-  const evidence = drops > 0 || (isPrivate && listedReliable && daysListed >= staleDays);
+  // takes a price cut we have seen, a private seller past staleDays, or the
+  // seller saying so.
+  const evidence = drops > 0 || (isPrivate && listedReliable && daysListed >= staleDays) || signalScore >= 10;
+  // Dealers tend to cut at 60 to 90 days; an advert that has sat this long without one is due.
+  // Cuts before the job started watching are invisible, so it also has to have been watched a while.
+  const watchedDays = advert.firstSeen ? daysBetween(advert.firstSeen, today) : 0;
+  const staleNoCut = listedReliable && drops === 0 && daysListed >= (dealConfig.staleNoCutDays ?? 50) && watchedDays >= (dealConfig.staleNoCutWatchDays ?? 14);
   const motivated = evidence && desperation >= (dealConfig.motivatedScore ?? 40);
   const desperate = motivated && desperation >= (dealConfig.dealScore ?? 50);
 
@@ -283,6 +325,9 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     desperation,
     motivationReasons: reasons,
     wantedHits,
+    niceHits,
+    kitScore: star.count * 3 + niceHits.length,
+    staleNoCut,
     starCount: star.count,
     starOf: star.of,
     starMissing: star.missing,

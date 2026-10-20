@@ -10,8 +10,8 @@ const HIDDEN_DESCRIPTION_CHARS = 160; // adverts hidden by the rules, or gone, g
 /** The deal fields the dashboard and notifications read; the rest stays in listings.json. */
 function slimDeal(deal) {
   if (!deal) return deal;
-  const { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, listedReliable, drops, totalDropPct, isDeal } = deal;
-  return { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, listedReliable, drops, totalDropPct, isDeal };
+  const { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal } = deal;
+  return { underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal };
 }
 
 export function slimAdvert(a) {
@@ -42,6 +42,12 @@ export function slimAdvert(a) {
     priceHistory: a.priceHistory,
     specs: brief ? (a.specs || []).map(({ label, value }) => ({ label, value })) : a.specs,
     redFlags: a.redFlags,
+    signals: brief ? (a.signals || []).map(({ label }) => ({ label })) : a.signals,
+    fit: a.fit,
+    newStock: a.newStock,
+    market: a.market,
+    soldRef: a.soldRef,
+    relisted: a.relisted,
     value: a.value,
     deal: slimDeal(a.deal),
     length: a.length,
@@ -74,7 +80,9 @@ export function slimStore(store) {
     generatedAt: store.generatedAt,
     wantedSpecs: store.wantedSpecs,
     minWantedSpecs: store.minWantedSpecs,
+    niceToHave: store.niceToHave,
     lengthRule: store.lengthRule,
+    sellDays: store.sellDays,
     searches: store.searches,
     runs: (store.runs || []).slice(0, 14),
     hiddenByRules: Object.values(store.adverts).filter((a) => a.status === 'active' && a.excluded).length,

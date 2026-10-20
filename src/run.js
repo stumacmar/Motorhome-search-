@@ -12,7 +12,8 @@ import { loadStore, saveStore, mergeSearchResults, pruneStore, dropRemovedSearch
 import { slimStore, DASHBOARD_PATH } from './export.js';
 import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.js';
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
-import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, looksUnconverted, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from './spec.js';
+import { compileSpecs, matchSpecs, matchRedFlags, matchSignals, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, looksUnconverted, DEFAULT_SPECS, DEFAULT_RED_FLAGS, DEFAULT_SIGNALS } from './spec.js';
+import { isNewStock, sellDaysStats, typicalSellDays, goneBenchmark, findRelisted, parseFit } from './market.js';
 import { BrowserTransport } from './autotrader.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -28,16 +29,25 @@ async function enrich(store, config, transport) {
   const minBerth = config.details?.excludeIfBerthBelow ?? 2;
   const compiled = compileSpecs(config.specs || DEFAULT_SPECS);
   const compiledFlags = compileSpecs(config.redFlags || DEFAULT_RED_FLAGS);
+  const compiledSignals = compileSpecs(config.signals || DEFAULT_SIGNALS);
   const dealConfig = config.deals || {};
   const todayMs = Date.now();
 
-  const pending = Object.values(store.adverts)
+  const unread = Object.values(store.adverts)
     .filter((a) => a.status === 'active' && !a.details)
     .filter((a) => !a.detailsError || todayMs - new Date(a.detailsError.date) > retryAfterDays * 864e5)
     .sort((x, y) => (y.firstSeen || '').localeCompare(x.firstSeen || '') || y.id.localeCompare(x.id))
     .slice(0, maxFetches);
+  // Adverts read when the store kept a shorter description: read again so kit listed late in a long blurb is seen.
+  const maxRefetches = rescoreOnly || config.details?.refetchTruncated === false ? 0 : config.details?.maxRefetchesPerRun ?? 500;
+  const truncated = Object.values(store.adverts)
+    .filter((a) => a.status === 'active' && a.details && !a.details.refetched && a.details.descriptionLength > (a.details.description || '').length)
+    .filter((a) => !a.detailsError || todayMs - new Date(a.detailsError.date) > retryAfterDays * 864e5)
+    .sort((x, y) => (y.firstSeen || '').localeCompare(x.firstSeen || '') || y.id.localeCompare(x.id))
+    .slice(0, Math.max(0, maxRefetches));
+  const pending = [...unread, ...truncated];
 
-  if (pending.length) console.info(`\nFetching details for ${pending.length} advert(s)`);
+  if (pending.length) console.info(`\nFetching details for ${pending.length} advert(s)${truncated.length ? ` (${truncated.length} re-read for the full description)` : ''}`);
   let fetched = 0;
   let failed = 0;
   let consecutiveFailures = 0;
@@ -62,6 +72,7 @@ async function enrich(store, config, transport) {
         continue;
       }
       delete details._text;
+      details.refetched = true; // read with the current description cap
       advert.details = details;
       delete advert.detailsError;
       fetched++;
@@ -96,13 +107,24 @@ async function enrich(store, config, transport) {
     if (!advert.details) continue;
     advert.specs = matchSpecs(advert.details, compiled);
     advert.redFlags = matchRedFlags(advert.details, compiledFlags);
+    advert.signals = matchSignals(advert.details, compiledSignals);
+    advert.fit = parseFit(advert);
     const berth = Number(advert.details.keySpec?.Berth);
     if (!advert.excluded && minBerth && Number.isFinite(berth) && berth > 0 && berth < minBerth) advert.excluded = `${berth} berth`;
     if (!advert.excluded && looksUnconverted(advert)) advert.excluded = 'no living equipment described';
   }
-  const values = compareWithSimilar(Object.values(store.adverts), dealConfig);
-  for (const advert of Object.values(store.adverts)) {
+  const adverts = Object.values(store.adverts);
+  const thisYear = new Date().getFullYear();
+  for (const advert of adverts) advert.newStock = isNewStock(advert, thisYear) ? true : undefined; // gone adverts too, so identical new stock is not read as a re-listing
+  const values = compareWithSimilar(adverts, dealConfig);
+  const sold = goneBenchmark(adverts, dealConfig);
+  const sellStats = sellDaysStats(adverts);
+  store.sellDays = sellStats.all;
+  for (const advert of adverts) {
     advert.value = values[advert.id] || null;
+    advert.soldRef = sold[advert.id] || null;
+    advert.market = advert.status === 'active' ? typicalSellDays(advert, sellStats) : null;
+    advert.relisted = advert.status === 'active' ? findRelisted(advert, adverts) : null;
     advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
   }
   const skipped = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.details).length - failed;
@@ -123,6 +145,9 @@ function logStarSpec(store) {
   if (inRange.length !== live.length) {
     console.info(`  within the length range (${inRange.length}): ` + items.map((l) => `${l} ${count(l, inRange)}`).join(' · ') + ` · all ${items.length}: ${full(inRange)}`);
   }
+  const n = (f) => live.filter(f).length;
+  console.info(`  re-listed ${n((a) => a.relisted)} · new/ex-demo stock ${n((a) => a.newStock)} · stale with no cut ${n((a) => a.deal?.staleNoCut)} · open to offers ${n((a) => (a.signals || []).some((s) => s.label === 'Open to offers'))} · quick sale ${n((a) => (a.signals || []).some((s) => s.label === 'Needs a quick sale'))}` +
+    (store.sellDays ? ` · median days to sell ${store.sellDays.median} (${store.sellDays.n} seen)` : ''));
 }
 
 const dryRun = process.argv.includes('--dry-run');
@@ -201,6 +226,7 @@ async function main() {
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
+  store.niceToHave = config.deals?.niceToHave || [];
   store.lengthRule = config.length ? { mode: config.length.mode || 'hide', minMetres: config.length.minMetres ?? null, maxMetres: config.length.maxMetres ?? null, hideUnknown: !!config.length.hideUnknown } : null;
   // The day a search first ran: everything it matched that day is backlog, not "new to search".
   // Derived once from the run history for searches that predate this field, then kept.
@@ -229,7 +255,7 @@ async function main() {
   });
   store.runs = store.runs.slice(0, 60);
 
-  const report = buildReport(results, { wantedSpecs: config.deals?.wantedSpecs || [] });
+  const report = buildReport(results, { wantedSpecs: config.deals?.wantedSpecs || [], minStars: config.deals?.minWantedSpecs ?? 2 });
   const dashboardUrl = process.env.DASHBOARD_URL || config.dashboardUrl || null;
 
   if (dryRun) {

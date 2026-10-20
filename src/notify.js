@@ -20,7 +20,17 @@ function marketText(a) {
   const bits = [];
   if (d.daysListed != null) bits.push(d.daysListed === 0 ? 'listed today' : `listed ${d.daysListed}d`);
   if (d.drops) bits.push(`${d.drops} drop${d.drops > 1 ? 's' : ''} (${d.totalDropPct}%)`);
+  if (d.staleNoCut) bits.push('no cut yet');
+  if (a.market) bits.push(`${a.market.basis === 'market' ? 'market' : 'this ' + a.market.basis} usually sells in ~${a.market.median}d`);
+  if (a.soldRef) bits.push(`similar went at ~${gbp(a.soldRef.median)} (${a.soldRef.n})`);
   return bits.join(', ') || null;
+}
+
+/** "3,500 kg · 140 bhp · auto · 4 berth · drop-down bed" from the spec sheet. */
+function fitText(a) {
+  const f = a.fit;
+  if (!f) return null;
+  return [f.mtplmKg ? f.mtplmKg.toLocaleString('en-GB') + ' kg' : null, f.bhp ? f.bhp + ' bhp' : null, f.gearbox ? f.gearbox.toLowerCase() : null, f.berth ? f.berth + ' berth' : null, f.bedLayout ? f.bedLayout.toLowerCase() : null, f.heightM ? f.heightM.toFixed(2) + ' m high' : null].filter(Boolean).join(' · ') || null;
 }
 
 /** "★★☆☆ 2/4 star spec: Alde heating, Self-levelling" for an advert whose page has been read. */
@@ -50,7 +60,12 @@ function advertLine(a, wantedSpecs = []) {
   else if (a.value) flags.push(valueText(a));
   if (a.deal?.motivated) flags.push(`⏳ motivated ${a.deal.desperation}/100: ${(a.deal.motivationReasons || []).join(', ') || marketText(a)}`);
   else if (marketText(a) && a.deal?.daysListed > 0) flags.push(marketText(a));
+  if (a.relisted) flags.push(`🔁 re-listed${a.relisted.lastPrice ? ', was ' + gbp(a.relisted.lastPrice) : ''}${a.relisted.goneSince ? ', off sale since ' + a.relisted.goneSince : ''}`);
+  if (a.newStock) flags.push('new / ex-demo stock');
+  const signals = (a.signals || []).map((s) => s.label);
+  if (signals.length) flags.push('💬 ' + signals.join(', '));
   const star = starText(a, wantedSpecs);
+  const fit = fitText(a);
   const specs = specText(a, wantedSpecs);
   if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
   if (a.details?.owners) flags.push(`${a.details.owners} owner${a.details.owners === 1 ? '' : 's'}`);
@@ -59,15 +74,31 @@ function advertLine(a, wantedSpecs = []) {
     `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}` +
     (flags.length ? `\n${esc(flags.join(' · '))}` : '') +
     (star ? `\n${esc(star)}` : '') +
+    (fit ? `\n${esc(fit)}` : '') +
     (specs ? `\n${esc(specs)}` : '') +
     (red.length ? `\n⚠️ ${esc(red.join(', '))}` : '')
   );
 }
 
 /** Build the per-search report lines shared by both channels (HTML). */
-export function buildReport(results, { maxPerSection = 25, wantedSpecs = [] } = {}) {
+export function buildReport(results, { maxPerSection = 25, wantedSpecs = [], minStars = 2 } = {}) {
   const sections = [];
   let anything = false;
+  // Lead with the adverts that matter most, across every search: new adverts with enough of the
+  // star spec, new private adverts with any of it, and re-listed vans.
+  const lead = new Map();
+  for (const r of results) {
+    for (const a of r.added || []) {
+      const stars = a.deal?.starCount ?? 0;
+      if (stars >= minStars || (a.sellerType === 'PRIVATE' && stars >= 1) || a.relisted) lead.set(a.id, a);
+    }
+    for (const c of r.priceDrops || []) if ((c.advert.deal?.starCount ?? 0) >= minStars) lead.set(c.advert.id, c.advert);
+  }
+  if (lead.size) {
+    anything = true;
+    const list = [...lead.values()].sort((x, y) => (y.deal?.starCount ?? 0) - (x.deal?.starCount ?? 0) || (x.price ?? 0) - (y.price ?? 0));
+    sections.push(`🌟 <b>${list.length} star spec hit${list.length > 1 ? 's' : ''}</b> (new or reduced with ${minStars}+ star items, new private adverts with any, re-listed)\n` + list.slice(0, maxPerSection).map((a) => advertLine(a, wantedSpecs)).join('\n\n'));
+  }
   for (const r of results) {
     if (r.error) {
       sections.push(`<b>${esc(r.name)}</b>\n⚠️ Search failed: ${esc(r.error)}`);

@@ -218,3 +218,76 @@ test('unconverted van detection', async () => {
   assert.equal(looksUnconverted({ details: { features: [], description: 'Nothing said.', keySpec: { Berth: '2' }, specs: {} } }), false);
   assert.equal(looksUnconverted({}), false);
 });
+
+test('seller signals are matched and feed the desperation score', async () => {
+  const { matchSignals, DEFAULT_SIGNALS } = await import('../src/spec.js');
+  const sig = (description, extra = {}) => matchSignals({ features: [], description, keySpec: {}, specs: {}, ...extra }, compileSpecs(DEFAULT_SIGNALS)).map((s) => s.label);
+  assert.deepEqual(sig('£45,000 ONO. Reluctant sale due to ill health. Part exchange welcome.'), ['Open to offers', 'Needs a quick sale', 'Part exchange welcome']);
+  assert.deepEqual(sig('One owner from new, cam belt done at 40k, 12 months warranty, habitation check Sept 2026.'), ['One owner', 'Cam belt done', 'Warranty included', 'Habitation check']);
+  assert.deepEqual(sig('Lovely van, viewing recommended.', { owners: 1 }), ['One owner']);
+  assert.deepEqual(sig('Lovely van, viewing recommended.'), []);
+  const cfg = { wantedSpecs: [], minWantedSpecs: 2, underpricedPercent: 10, staleDays: 90, motivatedScore: 40, dealScore: 50, staleNoCutDays: 50 };
+  const today = '2026-10-20';
+  const talker = scoreDeal({ details: {}, listedDate: '2026-10-01', priceHistory: [{ date: '2026-10-19', price: 50000 }], sellerType: 'PRIVATE', signals: [{ label: 'Needs a quick sale', weight: 15 }, { label: 'Open to offers', weight: 10 }] }, cfg, today);
+  assert.equal(talker.desperation, 35, 'private 10 + signals 25');
+  assert.ok(talker.motivationReasons.includes('needs a quick sale'));
+  assert.equal(talker.motivated, false, 'under the motivated score');
+  const stale = scoreDeal({ details: {}, listedDate: '2026-08-20', firstSeen: '2026-09-20', priceHistory: [{ date: '2026-09-20', price: 50000 }], sellerType: 'TRADE', year: 2019 }, cfg, today);
+  assert.equal(stale.staleNoCut, true, '61 days listed, watched 30, no cut');
+  const justWatched = scoreDeal({ details: {}, listedDate: '2026-08-20', firstSeen: '2026-10-15', priceHistory: [{ date: '2026-10-15', price: 50000 }], sellerType: 'TRADE', year: 2019 }, cfg, today);
+  assert.equal(justWatched.staleNoCut, false, 'only watched five days, earlier cuts would be invisible');
+  const cut = scoreDeal({ details: {}, listedDate: '2026-08-20', firstSeen: '2026-09-20', priceHistory: [{ date: '2026-09-20', price: 50000 }, { date: '2026-10-19', price: 48000 }], sellerType: 'TRADE', year: 2019 }, cfg, today);
+  assert.equal(cut.staleNoCut, false);
+  const kit = scoreDeal({ details: {}, specs: [{ label: 'Alde heating' }, { label: 'Solar panel' }, { label: 'Tow bar' }], priceHistory: [] }, { ...cfg, wantedSpecs: ['Alde heating', '360° camera'], niceToHave: ['Solar panel', 'Tow bar', 'Lithium battery'] }, today);
+  assert.equal(kit.kitScore, 5, 'one star item (3) plus two nice-to-haves');
+  assert.deepEqual(kit.niceHits, ['Solar panel', 'Tow bar']);
+});
+
+test('market intelligence: new stock, days to sell, sold benchmark, re-listing', async () => {
+  const { isNewStock, sellDaysStats, typicalSellDays, goneBenchmark, findRelisted } = await import('../src/market.js');
+  assert.equal(isNewStock({ year: 2026, mileage: null, sellerType: 'TRADE' }, 2026), true);
+  assert.equal(isNewStock({ year: 2025, mileage: 120, sellerType: 'TRADE' }, 2026), true);
+  assert.equal(isNewStock({ year: 2025, mileage: 900, sellerType: 'TRADE' }, 2026), true, 'delivery mileage');
+  assert.equal(isNewStock({ year: 2025, mileage: 8000, sellerType: 'TRADE' }, 2026), false);
+  assert.equal(isNewStock({ year: 2026, mileage: null, sellerType: 'PRIVATE' }, 2026), false);
+
+  const gone = (id, make, model, year, listed, goneSince, price, mileage = 20000, extra = {}) => ({ id, make, model, year, listedDate: listed, goneSince, status: 'gone', sellerType: 'PRIVATE', mileage, priceHistory: [{ date: listed, price }], ...extra });
+  const adverts = [];
+  for (let i = 0; i < 6; i++) adverts.push(gone('g' + i, 'Swift', 'Escape 694', 2019 + (i % 2), '2026-08-01', `2026-08-${String(10 + i * 4).padStart(2, '0')}`, 40000 + i * 1000));
+  for (let i = 0; i < 9; i++) adverts.push(gone('m' + i, 'Swift', 'Other', 2018, '2026-07-01', '2026-09-01', 30000));
+  const live = { id: 'L', make: 'Swift', model: 'Escape 694', year: 2020, status: 'active', price: 38000, mileage: 20100, listedDate: '2026-10-01', registeredYear: '2020 (20 reg)' };
+  adverts.push(live);
+  const stats = sellDaysStats(adverts);
+  assert.equal(stats.byModel['swift|escape 694'].n, 6);
+  assert.equal(stats.byModel['swift|escape 694'].median, 19);
+  assert.equal(stats.byMake.swift.median, 62);
+  assert.deepEqual(typicalSellDays(live, stats), { median: 19, n: 6, basis: 'model' });
+  assert.deepEqual(typicalSellDays({ make: 'Swift', model: 'Unknown' }, stats), { median: 62, n: 15, basis: 'make' });
+  assert.equal(typicalSellDays({ make: 'Hymer', model: 'B' }, stats), null, 'not enough across the market yet');
+  const bench = goneBenchmark(adverts);
+  assert.equal(bench.L.n, 6);
+  assert.equal(bench.L.median, 42500);
+  assert.equal(bench.L.pct, -10.6);
+  // the live advert matches g5 (same model, year 2020, mileage within 300) which went off sale
+  adverts[5].mileage = 20000; adverts[5].year = 2020; adverts[5].registeredYear = '2020 (20 reg)';
+  const r = findRelisted(live, adverts);
+  assert.equal(r.of, 'g5');
+  assert.equal(r.lastPrice, 45000);
+  assert.equal(findRelisted({ ...live, mileage: 31000 }, adverts), null, 'mileage too different');
+});
+
+test('fit facts are parsed from the spec sheet and placeholders dropped', async () => {
+  const { parseFit } = await import('../src/market.js');
+  const f = parseFit({ title: 'Fiat Ducato', details: { keySpec: { Berth: '4', Seats: '4', Gearbox: 'Automatic', 'Engine size power': '2.2L (140BHP)', GVW: 'MTPLM: 3,500kg', 'Emission class': 'Euro 6', 'End layout': 'End bedroom', 'Bedroom layout': 'Drop-down bed', Dimensions: 'L:6,990mm x W:2,350mm x H:2,900mm' }, specs: { MTPLM: '3,500kg', Payload: '3,500kg', Height: '2,000mm', Width: '2,350mm' }, bodyType: 'Low Profile' } });
+  assert.equal(f.mtplmKg, 3500);
+  assert.equal(f.payloadKg, null, 'a 3,500 kg payload is the MTPLM in the wrong box');
+  assert.equal(f.heightM, 2.9, '2,000 mm is a form default; the dimensions line is used instead');
+  assert.equal(f.bhp, 140);
+  assert.equal(f.engineL, 2.2);
+  assert.equal(f.gearbox, 'Automatic');
+  assert.equal(f.berth, 4);
+  assert.equal(f.euro, 6);
+  assert.equal(f.bedLayout, 'Drop-down bed');
+  assert.equal(parseFit({ details: { keySpec: {}, specs: {} } }).mtplmKg, null);
+  assert.equal(parseFit({}), null);
+});

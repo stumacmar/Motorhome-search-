@@ -6,6 +6,7 @@
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 const REQUEST_TIMEOUT_MS = 30_000;
+export const DESCRIPTION_MAX = 6000; // characters of description kept; long dealer blurbs list kit near the end
 
 export function advertUrl(id) {
   return `https://www.autotrader.co.uk/motorhome-details/${id}`;
@@ -43,7 +44,7 @@ export function summariseAdvert(a) {
 
   return {
     fetchedAt: new Date().toISOString().slice(0, 10),
-    description: Array.from(description).slice(0, 1500).join(''), // Array.from keeps emoji pairs whole
+    description: Array.from(description).slice(0, DESCRIPTION_MAX).join(''), // Array.from keeps emoji pairs whole
     descriptionLength: description.length,
     features: [...new Set(features)],
     keySpec,
