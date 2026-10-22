@@ -10,21 +10,21 @@
 <style>
   :root {
     --bg: #f6f5f2; --card: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc;
-    --accent: #0d6b5c; --accent-ink: #ffffff; --new: #0d6b5c; --drop: #b4412c; --gone: #9a9893;
+    --accent: #0d6b5c; --accent-ink: #ffffff; --new: #0d6b5c; --drop: #b4412c; --drop-deep: #7d2311; --gone: #9a9893;
     --gold: #c98a00; --purple: #5b4bb5;
     --chip: #ecebe6; --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.05);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a;
-      --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --gone: #777570;
+      --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --drop-deep: #c2432a; --gone: #777570;
       --gold: #e0a72a; --purple: #8f7fe0;
       --chip: #2a2d35; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
     }
   }
   :root[data-theme="dark"] {
     --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a;
-    --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --gone: #777570;
+    --accent: #3fb59e; --accent-ink: #0d1412; --new: #3fb59e; --drop: #e5765d; --drop-deep: #c2432a; --gone: #777570;
     --gold: #e0a72a; --purple: #8f7fe0;
     --chip: #2a2d35; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
   }
@@ -35,45 +35,68 @@
   a { color: var(--accent); }
   button { font: inherit; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  header { padding: 24px 16px 8px; max-width: 1180px; margin: 0 auto; }
+  header { padding: 24px 16px 4px; max-width: 1180px; margin: 0 auto; }
   h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -.01em; }
-  .sub { color: var(--muted); margin: 0; }
+  .sub { color: var(--muted); margin: 0; font-size: 14px; }
   main { max-width: 1180px; margin: 0 auto; padding: 0 16px 96px; }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 10px; margin: 16px 0; }
-  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; transition: border-color .15s; }
+  h2.section { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 14px 0 6px; font-weight: 600; }
+  /* Your triage states */
+  .mine { display: flex; flex-wrap: wrap; gap: 6px; }
+  .mine button { border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 7px 13px; font-size: 13.5px; cursor: pointer; display: inline-flex; gap: 7px; align-items: center; }
+  .mine button b { font-weight: 700; font-size: 15px; }
+  .mine button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); color: var(--accent); }
+  .mine button.top b { color: var(--accent); }
+  .mine button.bin[aria-pressed="true"] { border-color: var(--drop); box-shadow: inset 0 0 0 1px var(--drop); color: var(--drop); }
+  /* Market tiles */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(124px, 1fr)); gap: 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; transition: border-color .15s; }
   .stat[data-show] { cursor: pointer; }
   .stat[data-show]:hover { border-color: var(--accent); }
   .stat[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-  @media (max-width: 600px) { .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; } .stat { padding: 8px 10px; } .stat b { font-size: 20px; } .stat span { font-size: 12px; line-height: 1.2; display: block; } }
-  .stat b { display: block; font-size: 24px; line-height: 1.1; }
-  .stat span { color: var(--muted); font-size: 13px; }
-  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b, .stat.star b { color: var(--gold); } .stat.pick b { color: var(--accent); }
-  .starlegend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -6px 0 12px; font-size: 13px; color: var(--muted); }
+  @media (max-width: 600px) { .stats { grid-template-columns: repeat(3, 1fr); gap: 6px; } .stat { padding: 8px 10px; } .stat b { font-size: 19px; } .stat span { font-size: 11.5px; line-height: 1.2; display: block; } }
+  .stat b { display: block; font-size: 22px; line-height: 1.1; }
+  .stat span { color: var(--muted); font-size: 12.5px; }
+  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b, .stat.star b { color: var(--gold); }
+  .starlegend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0 0; font-size: 13px; color: var(--muted); }
   .starlegend .lead { font-weight: 600; color: var(--gold); }
   .starlegend button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 999px; padding: 2px 10px; font-size: 12.5px; cursor: pointer; }
   .starlegend button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
   .starlegend button b { font-weight: 600; }
-  .searches { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 14px; }
-  .searches a { font-size: 12.5px; color: var(--muted); text-decoration: none; }
+  .searches { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 8px 0 0; }
+  .searches a { font-size: 12px; color: var(--muted); text-decoration: none; }
   .searches .warn { color: var(--drop); }
-  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px; position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 3; }
+  /* Controls */
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 8px; position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 3; }
   select, input[type=search], input[type=number] { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
-  input[type=search] { flex: 1 1 180px; min-width: 0; }
-  .toggle { display: flex; flex-wrap: wrap; gap: 2px; background: var(--chip); border-radius: 8px; padding: 2px; }
-  .toggle button { border: 0; background: transparent; color: var(--muted); padding: 6px 10px; border-radius: 6px; font-size: 13px; cursor: pointer; white-space: nowrap; }
-  .toggle button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-  .toggle button.top[aria-pressed="true"] { color: var(--accent); font-weight: 600; }
-  .fitrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }
+  input[type=search] { flex: 1 1 160px; min-width: 0; }
+  .range { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
+  .range input { width: 88px; }
+  label.check { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
+  .refine { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+  .refine .lead { font-weight: 600; color: var(--ink); }
+  .seg { display: inline-flex; flex-wrap: wrap; gap: 2px; background: var(--chip); border-radius: 8px; padding: 2px; }
+  .seg button { border: 0; background: transparent; color: var(--muted); padding: 4px 10px; border-radius: 6px; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+  .seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+  .fitrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px; }
   .fitrow select { font-size: 13px; padding: 6px 8px; }
   .fitrow .lead { font-size: 13px; color: var(--muted); }
+  details.fitwrap { margin: 0 0 10px; }
+  details.fitwrap summary { font-size: 13px; color: var(--accent); cursor: pointer; list-style: none; }
+  details.fitwrap summary::-webkit-details-marker { display: none; }
   .linkbtn { font-size: 13px; color: var(--accent); background: none; border: 0; cursor: pointer; padding: 0; }
-  .activefilters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+  .linkbtn.danger { color: var(--drop); }
+  .activefilters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 10px; font-size: 13px; color: var(--muted); }
   .activefilters .af { border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 1px 9px; font-size: 12.5px; background: var(--card); cursor: pointer; }
   .activefilters .af:hover { background: var(--accent); color: var(--accent-ink); }
+  .count { color: var(--muted); font-size: 13px; margin: 0 0 10px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .count .viewname { color: var(--ink); font-weight: 600; }
+  /* Cards */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; position: relative; }
   .card.gone { opacity: .55; }
   .card.changed { border-color: var(--accent); }
+  .card.seen .photo img { filter: grayscale(.5); opacity: .75; }
+  .card.binned { opacity: .6; }
   .card .photo { position: relative; display: block; }
   .card img, .card .noimg { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--chip); display: block; }
   .card .noimg { display: grid; place-items: center; color: var(--muted); font-size: 13px; }
@@ -83,8 +106,11 @@
   .ribbon { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
   .ribbon span { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: rgba(0,0,0,.55); color: #fff; backdrop-filter: blur(4px); }
   .ribbon span.new { background: var(--new); color: var(--accent-ink); }
-  .ribbon span.drop { background: var(--drop); }
+  .ribbon span.cut.small { background: rgba(0,0,0,.55); }
+  .ribbon span.cut.mid { background: var(--drop); }
+  .ribbon span.cut.big { background: var(--drop-deep); font-size: 12px; }
   .ribbon span.relist { background: #b4412c; }
+  .ribbon span.seenpill { background: rgba(0,0,0,.4); font-weight: 500; }
   .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .title { font-weight: 600; font-size: 16px; line-height: 1.3; }
   .title a { color: inherit; text-decoration: none; }
@@ -105,6 +131,7 @@
   .tag.deal { background: var(--gold); color: #fff; }
   .tag.value { background: transparent; border: 1px solid var(--line); }
   .tag.value.under { border-color: var(--drop); color: var(--drop); font-weight: 600; }
+  .tag.value.under.deep { background: var(--drop); color: #fff; }
   .tag.motivated { background: var(--purple); color: #fff; }
   .tag.star { background: var(--gold); color: #fff; }
   .tag.newstock { background: var(--chip); color: var(--muted); border: 1px dashed var(--muted); }
@@ -121,18 +148,16 @@
   .starspec.unchecked .stars { color: var(--gone); }
   .fit { color: var(--muted); font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 2px 8px; }
   .flagline { color: var(--drop); font-size: 13px; }
-  .cardtools { display: flex; gap: 6px; margin-left: auto; }
-  .cardtools button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; padding: 2px 8px; font-size: 13px; cursor: pointer; }
-  .cardtools button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
-  .cardtools button.cmp[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
   .titlerow { display: flex; align-items: flex-start; gap: 8px; }
   .titlerow .title { flex: 1; }
+  .cardtools { display: flex; gap: 5px; margin-left: auto; flex-shrink: 0; }
+  .cardtools button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; padding: 2px 7px; font-size: 13px; cursor: pointer; line-height: 1.5; }
+  .cardtools button.starbtn[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
+  .cardtools button.cmp[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .cardtools button.seenbtn[aria-pressed="true"] { background: var(--muted); border-color: var(--muted); color: var(--card); }
+  .cardtools button.binbtn[aria-pressed="true"] { background: var(--drop); border-color: var(--drop); color: #fff; }
   textarea.note { width: 100%; min-height: 44px; margin-top: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; font-size: 13px; padding: 6px 8px; resize: vertical; }
-  .range { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
-  .range input { width: 92px; }
   .more { display: block; margin: 20px auto 0; padding: 10px 22px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
-  .count { color: var(--muted); font-size: 13px; margin: 0 0 10px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  label.check { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); font-size: 13px; }
   details { font-size: 13px; color: var(--muted); }
   details summary { cursor: pointer; }
   .desc { white-space: pre-wrap; margin-top: 4px; }
@@ -184,55 +209,54 @@
   </div>
 </header>
 <main>
-  <div class="stats" id="stats"><div class="skeleton" style="height:70px"></div><div class="skeleton" style="height:70px"></div><div class="skeleton" style="height:70px"></div></div>
+  <h2 class="section">Your triage</h2>
+  <div class="mine" id="mine"></div>
+  <h2 class="section">The market</h2>
+  <div class="stats" id="stats"><div class="skeleton" style="height:60px"></div><div class="skeleton" style="height:60px"></div><div class="skeleton" style="height:60px"></div></div>
   <div class="starlegend" id="starlegend" hidden></div>
   <div class="searches" id="searches"></div>
   <div class="controls">
     <input type="search" id="q" placeholder="Make, model, location…" aria-label="Filter adverts">
-    <select id="search" aria-label="Search"><option value="">All searches</option></select>
     <select id="make" aria-label="Make"><option value="">All makes</option></select>
     <select id="sort" aria-label="Sort">
-      <option value="pick">Pick score</option>
-      <option value="newest">Newest first</option>
-      <option value="price-asc">Price: low to high</option>
-      <option value="price-desc">Price: high to low</option>
-      <option value="drop">Biggest price drop</option>
-      <option value="value">Best value vs similar</option>
-      <option value="sold">Cheapest vs sold similar</option>
-      <option value="spec">Star spec: most items</option>
-      <option value="kit">Kit score</option>
-      <option value="sell">Sells fastest</option>
-      <option value="desperation">Most motivated seller</option>
-      <option value="listed">Longest listed</option>
-      <option value="drops">Most price drops</option>
-      <option value="length">Length</option>
-      <option value="year">Year: newest</option>
-      <option value="mileage">Mileage: lowest</option>
-      <option value="distance">Distance: nearest</option>
+      <option value="auto">Sort: best for this view</option>
+      <optgroup label="Ranking">
+        <option value="pick">Pick score</option>
+        <option value="kit">Kit score</option>
+        <option value="spec">Star spec: most items</option>
+      </optgroup>
+      <optgroup label="Price">
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="drop-pct">Biggest cut (%)</option>
+        <option value="drop">Biggest cut (£)</option>
+        <option value="drops">Most cuts</option>
+        <option value="value">Cheapest vs similar live</option>
+        <option value="sold">Cheapest vs sold</option>
+      </optgroup>
+      <optgroup label="Seller">
+        <option value="desperation">Most motivated seller</option>
+        <option value="listed">Longest listed</option>
+        <option value="sell">Sells fastest</option>
+      </optgroup>
+      <optgroup label="Vehicle">
+        <option value="newest">Newest listed</option>
+        <option value="year">Year: newest</option>
+        <option value="mileage">Mileage: lowest</option>
+        <option value="length">Length</option>
+        <option value="distance">Distance: nearest</option>
+      </optgroup>
     </select>
-    <div class="toggle" role="group" aria-label="Show">
-      <button data-show="top" class="top" aria-pressed="false" id="topbtn" title="Adverts at or above the pick score bar">◆ Top picks</button>
-      <button data-show="active" aria-pressed="true">Live</button>
-      <button data-show="sincevisit" aria-pressed="false" id="sincebtn" title="New, or changed price, since you last opened this page">Since last visit</button>
-      <button data-show="deals" aria-pressed="false">Worth a look</button>
-      <button data-show="star" aria-pressed="false" id="starbtn">☆ Star spec</button>
-      <button data-show="under" aria-pressed="false">Underpriced</button>
-      <button data-show="motivated" aria-pressed="false">Motivated</button>
-      <button data-show="stale" aria-pressed="false" title="Listed 50+ days with no price cut yet; dealers tend to cut at 60 to 90 days">Due a cut</button>
-      <button data-show="relisted" aria-pressed="false" title="The same van back under a new advert">Re-listed</button>
-      <button data-show="shortlist" aria-pressed="false">★ Shortlist</button>
-      <button data-show="new" aria-pressed="false">New this week</button>
-      <button data-show="drops" aria-pressed="false">Price drops</button>
-      <button data-show="gone" aria-pressed="false">Gone</button>
-      <button data-show="rules" aria-pressed="false" title="Live adverts hidden by the rules in search.config.json">Hidden by rules</button>
-      <button data-show="hidden" aria-pressed="false" title="Adverts you hid with ✕">Hidden by me</button>
-    </div>
+    <select id="search" aria-label="Search"><option value="">All searches</option></select>
     <span class="range">£ <input type="number" id="pmin" placeholder="min" step="1000" aria-label="Minimum price"> to <input type="number" id="pmax" placeholder="max" step="1000" aria-label="Maximum price"></span>
     <label class="check"><input type="checkbox" id="private"> Private only</label>
     <label class="check"><input type="checkbox" id="noflags" checked> Hide red flags</label>
-    <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
+    <label class="check"><input type="checkbox" id="hideseen"> Hide seen</label>
     <label class="check" id="mylenlabel" hidden title="Only adverts within the length range in search.config.json"><input type="checkbox" id="mylen"> My length only</label>
+    <label class="check"><input type="checkbox" id="knownlen"> Known length only</label>
   </div>
+  <div class="refine" id="refine" hidden></div>
+  <details class="fitwrap" id="fitwrap"><summary id="fitsummary">Fit filters ▾</summary>
   <div class="fitrow" id="fitrow" title="From Autotrader's spec sheet. Adverts whose sheet does not say are kept.">
     <span class="lead">Fit:</span>
     <select id="fgear" aria-label="Gearbox"><option value="">Any gearbox</option><option value="Automatic">Automatic</option><option value="Manual">Manual</option></select>
@@ -246,13 +270,14 @@
     <select id="fstock" aria-label="Stock"><option value="">Used and new</option><option value="used">Used only</option><option value="new">New / ex-demo only</option></select>
     <label class="check"><input type="checkbox" id="feuro6"> Euro 6 only</label>
   </div>
+  </details>
   <div class="activefilters" id="activefilters" hidden></div>
   <p class="count" id="count"></p>
   <div class="grid" id="grid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
   <p class="empty" id="empty" hidden>Nothing matches.</p>
   <button class="more" id="more" hidden>Show more</button>
 </main>
-<footer>Data is refreshed four times a day on weekdays and three times at weekends by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound. The pick score is a ranking aid, not a valuation.</footer>
+<footer>Data is refreshed four times a day on weekdays and three times at weekends by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound. The pick score is a ranking aid, not a valuation. Your shortlist, seen marks, bin and notes live in this browser; use “Copy sync link” to carry them to another device.</footer>
 <div class="tray" id="tray" hidden><span id="traytext"></span><button class="go" id="traygo">Compare</button><button class="x" id="trayclear" title="Clear">✕</button></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -262,7 +287,9 @@
   const daysAgo = (d) => Math.floor((Date.now() - new Date(d + 'T12:00:00Z')) / 864e5);
   const $ = (id) => document.getElementById(id);
   let toastTimer;
-  const toast = (msg) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2200); };
+  const toast = (msg) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2400); };
+  const b64e = (s) => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const b64d = (s) => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))));
 
   // ---- Data: the light cards file first, the descriptions and evidence afterwards ----
   let data;
@@ -273,7 +300,7 @@
     data = await res.json();
   } catch (e) {
     $('updated').textContent = 'No data yet. Run the search once (Claude Code → Routines → Motorhome search → Run).';
-    $('grid').innerHTML = '';
+    $('grid').innerHTML = ''; $('stats').innerHTML = '';
     return;
   }
   let detailsMap = null;
@@ -284,9 +311,7 @@
   const starItems = data.wantedSpecs || [];
   const wantedSpecs = new Set(starItems);
   const minStar = Math.min(starItems.length, Math.max(1, data.minWantedSpecs ?? 2));
-  const nearStar = starItems.length - 1;
-  const topBar = data.topPickScore ?? 60;
-  const today = new Date().toISOString().slice(0, 10);
+  const topBar = data.topPickScore ?? 40;
   const searchStart = {};
   for (const s of Object.values(data.searches || {})) if (s.firstRun) searchStart[s.name] = s.firstRun.slice(0, 10);
   const earliestSeen = {};
@@ -296,7 +321,6 @@
   const lengthRule = data.lengthRule && (data.lengthRule.minMetres != null || data.lengthRule.maxMetres != null) ? data.lengthRule : null;
   const lengthRangeText = lengthRule ? [lengthRule.minMetres, lengthRule.maxMetres].map((v) => (v == null ? '?' : v.toFixed(2).replace(/\.?0+$/, ''))).join('–') + ' m' : '';
 
-  // What you saw last time, so changes since then can be marked.
   let lastVisit = null;
   try { lastVisit = localStorage.getItem('mh-lastvisit'); } catch {}
   const visitStamp = data.generatedAt || new Date().toISOString();
@@ -306,6 +330,7 @@
     a._first = h[0]?.price ?? a.price;
     a._last = h.at(-1)?.price ?? a.price;
     a._drop = a._first != null && a._last != null ? a._first - a._last : 0;
+    a._cutPct = a._first > 0 && a._drop > 0 ? Math.round((a._drop / a._first) * 1000) / 10 : 0; // total cut since first seen
     a._recentDrop = h.length > 1 && daysAgo(h.at(-1).date) <= 7 && h.at(-1).price < h.at(-2).price;
     a._listedOn = a.listedDate || a.firstSeen;
     a._listed = Math.max(0, daysAgo(a._listedOn));
@@ -318,30 +343,51 @@
     a._drops = a.deal?.drops ?? 0;
     a._flags = (a.redFlags || []).length;
     a._pick = a.deal?.pickScore ?? 0;
+    a._underPct = a.value ? -a.value.pct : null; // positive = under similar
     const lv = lastVisit ? lastVisit.slice(0, 10) : null;
     a._sinceVisit = !!lv && a.status === 'active' && ((a.firstSeen && a.firstSeen > lv) || h.some((p, i) => i > 0 && p.date > lv));
     a._text = [a.title, a.subTitle, a.make, a.model, a.location, a.fit?.bedLayout, a.fit?.endLayout, a.fit?.bodyType].join(' ').toLowerCase();
   }
-  let mine = { stars: {}, notes: {}, hidden: {}, compare: [] };
+
+  // ---- Your triage: shortlist, seen, bin, notes, compare. Local to this browser; a sync link carries them over. ----
+  let mine = { stars: {}, seen: {}, hidden: {}, notes: {}, compare: [] };
   try { mine = Object.assign(mine, JSON.parse(localStorage.getItem('mh-mine') || '{}')); } catch {}
+  mine.seen ||= {}; mine.hidden ||= {}; mine.stars ||= {}; mine.notes ||= {};
   mine.compare = (mine.compare || []).filter((id) => byId[id]);
   const saveMine = () => { try { localStorage.setItem('mh-mine', JSON.stringify(mine)); } catch {} };
+  const inBin = (a) => !!mine.hidden[a.id];
+  const isSeen = (a) => !!mine.seen[a.id];
+  const hashIn = new URLSearchParams(location.hash.replace(/^#/, ''));
+  if (hashIn.has('sync')) {
+    try {
+      const inc = JSON.parse(b64d(hashIn.get('sync')));
+      let n = 0;
+      for (const k of ['stars', 'seen', 'hidden']) for (const id of Object.keys(inc[k] || {})) { if (!mine[k][id]) n++; mine[k][id] = inc[k][id]; }
+      for (const [id, note] of Object.entries(inc.notes || {})) if (!mine.notes[id]) mine.notes[id] = note;
+      saveMine();
+      toast(`Synced from link: ${n} new mark${n === 1 ? '' : 's'} (${Object.keys(inc.stars || {}).length} shortlisted, ${Object.keys(inc.seen || {}).length} seen, ${Object.keys(inc.hidden || {}).length} binned)`);
+    } catch { toast('That sync link could not be read.'); }
+    hashIn.delete('sync');
+  }
 
   const gen = data.generatedAt ? new Date(data.generatedAt) : null;
   $('updated').textContent = gen ? 'Last checked ' + gen.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + (lastVisit && lastVisit !== visitStamp ? ' · changes marked since the data of ' + new Date(lastVisit).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '') : '';
 
   // ---- State: in the address bar (shareable) and remembered locally ----
-  const DEFAULTS = { q: '', search: '', make: '', sort: 'pick', show: 'top', pmin: '', pmax: '', privateOnly: false, noFlags: true, knownLen: false, starItem: '', myLen: false, fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false, ids: '' };
+  const DEFAULTS = { q: '', search: '', make: '', sort: 'auto', show: 'top', pmin: '', pmax: '', privateOnly: false, noFlags: true, hideSeen: false, knownLen: false, starItem: '', myLen: false,
+    minCut: 0, minCuts: 1, minUnder: 10, minStars: minStar, minScore: topBar,
+    fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false, ids: '' };
   const state = { ...DEFAULTS };
-  const BOOLS = ['privateOnly', 'noFlags', 'knownLen', 'myLen', 'feuro6'];
+  const BOOLS = ['privateOnly', 'noFlags', 'hideSeen', 'knownLen', 'myLen', 'feuro6'];
+  const NUMS = ['minCut', 'minCuts', 'minUnder', 'minStars', 'minScore'];
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
   state.ids = '';
-  const hashParams = new URLSearchParams(location.hash.replace(/^#/, ''));
-  if ([...hashParams.keys()].length) {
+  if ([...hashIn.keys()].length) {
     Object.assign(state, DEFAULTS);
-    for (const [k, v] of hashParams) if (k in DEFAULTS) state[k] = BOOLS.includes(k) ? v === '1' : v;
-    if (hashParams.has('shortlist')) { state.ids = hashParams.get('shortlist'); state.show = 'shared'; }
+    for (const [k, v] of hashIn) if (k in DEFAULTS) state[k] = BOOLS.includes(k) ? v === '1' : NUMS.includes(k) ? Number(v) : v;
+    if (hashIn.has('shortlist')) { state.ids = hashIn.get('shortlist'); state.show = 'shared'; }
   }
+  for (const k of NUMS) if (!Number.isFinite(Number(state[k]))) state[k] = DEFAULTS[k];
   const PAGE = 48;
   let shown = PAGE;
   function writeHash() {
@@ -354,7 +400,7 @@
   }
 
   $('q').value = state.q; $('pmin').value = state.pmin; $('pmax').value = state.pmax;
-  $('private').checked = !!state.privateOnly; $('noflags').checked = state.noFlags !== false; $('knownlen').checked = !!state.knownLen;
+  $('private').checked = !!state.privateOnly; $('noflags').checked = state.noFlags !== false; $('hideseen').checked = !!state.hideSeen; $('knownlen').checked = !!state.knownLen;
   const bedCounts = new Map(), endCounts = new Map();
   for (const a of adverts) if (a.status === 'active' && a.fit) { if (a.fit.bedLayout) bedCounts.set(a.fit.bedLayout, (bedCounts.get(a.fit.bedLayout) || 0) + 1); if (a.fit.endLayout) endCounts.set(a.fit.endLayout, (endCounts.get(a.fit.endLayout) || 0) + 1); }
   for (const [m, n] of [...bedCounts].sort((x, y) => y[1] - x[1])) $('fbed').insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
@@ -363,6 +409,8 @@
   const FIT_LABELS = { fgear: (v) => v, fkg: (v) => '≤ ' + Number(v).toLocaleString('en-GB') + ' kg', fbhp: (v) => v + '+ bhp', fberth: (v) => v + '+ berth', fbed: (v) => v, fend: (v) => v, fheight: (v) => '≤ ' + Number(v).toFixed(2) + ' m high', fmiles: (v) => '≤ ' + v + ' miles', fstock: (v) => (v === 'new' ? 'new / ex-demo' : 'used only') };
   for (const k of FIT_KEYS) { const el = $(k); if ([...el.options].some((o) => o.value === String(state[k] || ''))) el.value = state[k] || ''; else state[k] = ''; }
   $('feuro6').checked = !!state.feuro6;
+  const fitActive = () => FIT_KEYS.some((k) => state[k]) || state.feuro6;
+  if (fitActive()) $('fitwrap').open = true;
   if (lengthRule) { $('mylenlabel').hidden = false; $('mylenlabel').lastChild.textContent = ` My length only (${lengthRangeText})`; $('mylen').checked = !!state.myLen; } else state.myLen = false;
 
   const searches = Object.values(data.searches || {});
@@ -374,38 +422,47 @@
   const makeCounts = new Map();
   for (const a of adverts) if (a.make && a.status === 'active' && !a.excluded) makeCounts.set(a.make, (makeCounts.get(a.make) || 0) + 1);
   for (const [m, n] of [...makeCounts].sort((x, y) => x[0].localeCompare(y[0]))) makeSel.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)} (${n})</option>`);
-  $('sort').value = [...$('sort').options].some((o) => o.value === state.sort) ? state.sort : 'pick';
+  $('sort').value = [...$('sort').options].some((o) => o.value === state.sort) ? state.sort : 'auto';
   if ([...sel.options].some((o) => o.value === state.search)) sel.value = state.search; else state.search = '';
   if ([...makeSel.options].some((o) => o.value === state.make)) makeSel.value = state.make; else state.make = '';
   if (!starItems.includes(state.starItem)) state.starItem = '';
   if (!lastVisit && state.show === 'sincevisit') state.show = 'top';
 
-  // ---- Stats and legend, recomputed when the length toggle changes ----
+  // ---- Triage strip, market tiles and legend ----
   const legend = $('starlegend');
-  const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !(state.myLen && a.lengthOutside));
+  const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !inBin(a) && !(state.myLen && a.lengthOutside));
+  const VIEW_NAMES = { top: 'Top picks', active: 'Live', sincevisit: 'Since your last visit', shortlist: 'Shortlist', seen: 'Seen', hidden: 'Bin', shared: 'a shared shortlist', deals: 'Worth a look', star: 'Star spec', under: 'Underpriced', drops: 'Price cuts', motivated: 'Motivated sellers', stale: 'Due a cut', relisted: 'Re-listed', new: 'New this week', gone: 'Gone', rules: 'Hidden by rules' };
   function renderStats() {
     const live = liveNow();
-    const stats = [
-      ['pick', live.filter((a) => a._pick >= topBar && !a._flags).length, `top picks (score ${topBar}+)`, 'top'],
-      ['live', live.length, 'live adverts', 'active'],
-      ...(lastVisit ? [['new', live.filter((a) => a._sinceVisit).length, 'since your last visit', 'sincevisit']] : []),
-      ['new', live.filter((a) => a._isNew || a._newToSearch).length, 'new this week', 'new'],
-      ['drop', live.filter((a) => a._recentDrop).length, 'price drops this week', 'drops'],
-      ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals'],
-      ...(starItems.length ? [
-        ['star', live.filter((a) => a._wanted === starItems.length).length, `full star spec (${starItems.length}/${starItems.length})`, 'starfull'],
-        ...(nearStar > minStar ? [['star', live.filter((a) => a._wanted >= nearStar).length, `${nearStar}+ of ${starItems.length} star items`, 'starnear']] : []),
-        ['star', live.filter((a) => a._wanted >= minStar).length, `${minStar}+ of ${starItems.length} star items`, 'star'],
-      ] : []),
-      ['drop', live.filter((a) => a.deal?.underpriced).length, 'underpriced', 'under'],
-      ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated'],
-      ['', live.filter((a) => a.deal?.staleNoCut).length, 'due a cut', 'stale'],
-      ['', live.filter((a) => a.relisted).length, 're-listed', 'relisted'],
-      ['gone', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7).length, 'gone this week', 'gone'],
-      ['', adverts.filter((a) => a.status === 'active' && a.excluded).length, 'hidden by rules', 'rules'],
-      ...(lengthRule && !state.myLen ? [['', live.filter((a) => a.lengthOutside).length, `outside ${lengthRangeText}`, null]] : []),
+    const mineRow = [
+      ['top', '◆', live.filter((a) => a._pick >= state.minScore && !a._flags && !isSeen(a)).length, `Top picks ${state.minScore}+`, 'top', 'Unseen adverts at or above the pick score bar: the ones to look at next'],
+      ...(lastVisit ? [['', '✦', live.filter((a) => a._sinceVisit).length, 'Since last visit', 'sincevisit', 'New, or changed price, since you last opened this page']] : []),
+      ['', '★', adverts.filter((a) => mine.stars[a.id] && a.status === 'active').length, 'Shortlist', 'shortlist', 'Adverts you starred'],
+      ['', '👁', adverts.filter((a) => isSeen(a) && !inBin(a) && a.status === 'active').length, 'Seen', 'seen', 'Adverts you marked as seen but have not decided on'],
+      ['bin', '🗑', adverts.filter((a) => inBin(a)).length, 'Bin', 'hidden', 'Adverts you looked at and ruled out; kept out of every other view and count'],
     ];
-    $('stats').innerHTML = stats.map(([c, n, l, show]) => `<div class="stat ${c}" ${show ? `data-show="${show}" role="button" tabindex="0" title="Show these"` : ''}><b>${n.toLocaleString('en-GB')}</b><span>${l}</span></div>`).join('');
+    $('mine').innerHTML = mineRow.map(([c, icon, n, label, show, tip]) => `<button type="button" class="${c}" data-show="${show}" aria-pressed="false" title="${esc(tip)}">${icon} ${label} <b>${n.toLocaleString('en-GB')}</b></button>`).join('');
+    const stats = [
+      ['live', live.length, 'live adverts', 'active', null],
+      ['new', live.filter((a) => a._isNew || a._newToSearch).length, 'new this week', 'new', null],
+      ['drop', live.filter((a) => a._recentDrop).length, 'price cuts this week', 'drops', { minCut: 0, minCuts: 1 }],
+      ['drop', live.filter((a) => a._recentDrop && a._cutPct >= 5).length, 'cuts of 5%+', 'drops', { minCut: 5, minCuts: 1 }],
+      ['drop', live.filter((a) => a._underPct >= 10).length, 'underpriced 10%+', 'under', { minUnder: 10 }],
+      ['drop', live.filter((a) => a._underPct >= 20).length, 'underpriced 20%+', 'under', { minUnder: 20 }],
+      ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals', null],
+      ...(starItems.length ? [
+        ['star', live.filter((a) => a._wanted >= minStar).length, `star spec ${minStar}+ of ${starItems.length}`, 'star', { minStars: minStar }],
+        ['star', live.filter((a) => a._wanted >= starItems.length - 1).length, `star spec ${starItems.length - 1}+`, 'star', { minStars: starItems.length - 1 }],
+        ['star', live.filter((a) => a._wanted === starItems.length).length, `full star spec`, 'star', { minStars: starItems.length }],
+      ] : []),
+      ['', live.filter((a) => a.deal?.motivated).length, 'motivated sellers', 'motivated', null],
+      ['', live.filter((a) => a.deal?.staleNoCut).length, 'due a cut', 'stale', null],
+      ['', live.filter((a) => a.relisted).length, 're-listed', 'relisted', null],
+      ['', adverts.filter((a) => a.status === 'gone' && daysAgo(a.goneSince) <= 7 && !inBin(a)).length, 'gone this week', 'gone', null],
+      ['', adverts.filter((a) => a.status === 'active' && a.excluded && !inBin(a)).length, 'hidden by rules', 'rules', null],
+      ...(lengthRule && !state.myLen ? [['', live.filter((a) => a.lengthOutside).length, `outside ${lengthRangeText}`, null, null]] : []),
+    ];
+    $('stats').innerHTML = stats.map(([c, n, l, show, set]) => `<div class="stat ${c}" ${show ? `data-show="${show}" ${set ? `data-set='${JSON.stringify(set)}'` : ''} role="button" tabindex="0" title="Show these"` : ''}><b>${n.toLocaleString('en-GB')}</b><span>${l}</span></div>`).join('');
     if (starItems.length) {
       const checked = live.filter((a) => a.details).length;
       legend.hidden = false;
@@ -414,18 +471,46 @@
         `<span title="Kit is read from each advert's own page; adverts not read yet cannot be scored">of ${checked.toLocaleString('en-GB')} read${state.myLen ? ' (' + lengthRangeText + ')' : ''}</span>` +
         (data.sellDays ? `<span title="Median days from listing to gone across ${data.sellDays.n} adverts that have gone">· market sells in ~${data.sellDays.median}d</span>` : '');
     }
-    $('starbtn').textContent = `☆ Star spec ${minStar}+`;
-    $('sincebtn').hidden = !lastVisit;
   }
-  renderStats();
   function markShow() {
-    document.querySelectorAll('.toggle button, .stat[data-show]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.show === state.show)));
+    document.querySelectorAll('.mine button, .stat[data-show]').forEach((x) => {
+      let on = x.dataset.show === state.show;
+      if (on && x.dataset.set) { const set = JSON.parse(x.dataset.set); on = Object.entries(set).every(([k, v]) => state[k] === v); }
+      x.setAttribute('aria-pressed', String(on));
+    });
     document.querySelectorAll('[data-staritem]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.staritem === state.starItem)));
   }
-  markShow();
+
+  // ---- Refine row: grades for the view you are in ----
+  function seg(key, options, fmt) {
+    return `<span class="seg" data-key="${key}">${options.map((v) => `<button type="button" data-val="${v}" aria-pressed="${String(state[key] === v)}">${fmt(v)}</button>`).join('')}</span>`;
+  }
+  function renderRefine() {
+    const r = $('refine');
+    const parts = [];
+    if (state.show === 'drops') {
+      parts.push(`<span class="lead">Cut size</span>` + seg('minCut', [0, 2, 5, 10, 15], (v) => (v ? v + '%+' : 'any')));
+      parts.push(`<span class="lead">Cuts</span>` + seg('minCuts', [1, 2, 3], (v) => v + '+'));
+    } else if (state.show === 'under') {
+      parts.push(`<span class="lead">Under similar by</span>` + seg('minUnder', [10, 15, 20, 25], (v) => v + '%+'));
+    } else if (state.show === 'star' && starItems.length) {
+      parts.push(`<span class="lead">Star items</span>` + seg('minStars', Array.from({ length: starItems.length }, (_, i) => i + 1), (v) => (v === starItems.length ? 'all ' + v : v + '+')));
+    } else if (state.show === 'top') {
+      parts.push(`<span class="lead">Pick score</span>` + seg('minScore', [...new Set([topBar, 50, 60])].sort((a, b) => a - b), (v) => v + '+'));
+    }
+    r.hidden = !parts.length;
+    r.innerHTML = parts.join('');
+  }
+  $('refine').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-val]');
+    if (!b) return;
+    state[b.parentElement.dataset.key] = Number(b.dataset.val);
+    shown = PAGE; renderStats(); markShow(); render();
+  });
 
   // ---- Cards ----
-  const scoreClass = (n) => (n >= topBar ? 's3' : n >= 45 ? 's2' : n >= 30 ? 's1' : 's0');
+  const scoreClass = (n) => (n >= topBar ? 's3' : n >= 30 ? 's2' : n >= 20 ? 's1' : 's0');
+  const cutClass = (pct) => (pct >= 10 ? 'big' : pct >= 5 ? 'mid' : 'small');
   function sparkline(h) {
     if (!h || h.length < 2) return '';
     const prices = h.map((p) => p.price);
@@ -456,6 +541,7 @@
   }
   function card(a) {
     const ev = detailsMap?.[a.id];
+    const binned = inBin(a), seen = isSeen(a);
     const tags = [];
     if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
     if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
@@ -465,14 +551,14 @@
       const basis = { model: 'same-model', chassis: 'same-chassis, berth and body', make: 'same-make' }[a.value.basis] || a.value.basis;
       const kit = a.price != null && a.value.net != null ? a.price - a.value.net : 0;
       const tip = `Expected ${gbp(a.value.expected)} net of kit from ${a.value.comps} live ${basis} adverts of a similar age${a.value.adjusted ? ', adjusted for age and mileage' : ''}${kit >= 500 ? '. Kit allowed for: ' + gbp(kit) : ''}`;
-      tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''}" title="${esc(tip)}">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit >= 1000 ? ' · ' + gbp(kit) + ' kit' : ''}</span>`);
+      tags.push(`<span class="tag value ${a.value.pct <= -10 ? 'under' : ''} ${a.value.pct <= -20 ? 'deep' : ''}" title="${esc(tip)}">${a.value.pct <= 0 ? '−' : '+'}${Math.abs(a.value.pct)}% vs ${a.value.comps} similar${kit >= 1000 ? ' · ' + gbp(kit) + ' kit' : ''}</span>`);
     }
     if (a.soldRef) tags.push(`<span class="tag value ${a.soldRef.pct <= -10 ? 'under' : ''}" title="Median asking price of ${a.soldRef.n} same-model adverts within two years of its age when they went off sale: ${gbp(a.soldRef.median)}">${a.soldRef.pct <= 0 ? '−' : '+'}${Math.abs(a.soldRef.pct)}% vs ${a.soldRef.n} sold</span>`);
     if (a.status === 'active') {
       const why = a._listedSure ? `Advert created on Autotrader ${a._listedOn} (from the advert id, the date Autotrader sorts newest-first by)` : `Advert record created ${a._listedOn}, but it is a dealer advert older than the vehicle or than two years, so it may have been listed ahead of arrival or re-published; not counted towards the motivated score`;
       tags.push(`<span class="tag listed ${a._listedSure ? '' : 'unsure'}" title="${esc(why)}">${a._listed === 0 ? 'listed today' : 'listed ' + a._listed + 'd' + (a._listedSure ? '' : '?')}</span>`);
     } else if (a.status === 'gone') tags.push(`<span class="tag gone">gone ${a.goneSince ? daysAgo(a.goneSince) + 'd ago' : ''}</span>`);
-    if (a._drops) tags.push(`<span class="tag" title="Price drops since we started watching">${a._drops} drop${a._drops > 1 ? 's' : ''} (${a.deal?.totalDropPct ?? ''}%)</span>`);
+    if (a._drops) tags.push(`<span class="tag" title="Price cuts since we started watching">${a._drops} cut${a._drops > 1 ? 's' : ''} · ${a._cutPct}% in total</span>`);
     if (a.deal?.staleNoCut) tags.push(`<span class="tag stale" title="Listed ${a._listed} days with no price cut yet. Dealers tend to cut at 60 to 90 days; worth watching or a low offer">due a cut</span>`);
     if (a.newStock) tags.push(`<span class="tag newstock" title="This year's or last year's van with delivery mileage from a dealer: priced off the list price, so left out of the used-market comparison">new / ex-demo</span>`);
     if (a.market) tags.push(`<span class="tag sell" title="Median days from listing to gone for ${a.market.basis === 'market' ? 'the whole market' : 'this ' + a.market.basis} (${a.market.n} seen)">${a.market.basis === 'market' ? 'market' : 'this ' + a.market.basis} sells in ~${a.market.median}d</span>`);
@@ -480,9 +566,10 @@
     const ribbon = [];
     if (a.status === 'active' && a._isNew) ribbon.push(`<span class="new">new ${a._listed === 0 ? 'today' : a._listed + 'd ago'}</span>`);
     else if (a.status === 'active' && a._newToSearch) ribbon.push(`<span class="new" title="Listed ${esc(a._listedOn)}; only matched a search ${esc(a.firstSeen)}">new to search</span>`);
-    if (a._recentDrop) ribbon.push(`<span class="drop">price drop</span>`);
+    if (a._recentDrop) ribbon.push(`<span class="cut ${cutClass(a._cutPct)}" title="${a._drops} price cut${a._drops > 1 ? 's' : ''}, ${a._cutPct}% off the first price we saw (${gbp(a._first)})">−${a._cutPct}%${a._drops > 1 ? ' · ' + a._drops + ' cuts' : ''}</span>`);
     if (a.relisted) ribbon.push(`<span class="relist" title="Same make, model, year and mileage as advert ${esc(a.relisted.of)}, which went off sale ${esc(a.relisted.goneSince || '')}. A sale that fell through, a returned van, or a dealer resetting the listing age">re-listed${a.relisted.lastPrice ? ' · was ' + gbp(a.relisted.lastPrice) : ''}</span>`);
     if (a._sinceVisit && !a._isNew) ribbon.push(`<span title="New or changed price since you last opened this page">since your visit</span>`);
+    if (seen && !binned) ribbon.push(`<span class="seenpill">seen</span>`);
     const specs = (a.specs || []).slice().sort((x, y) => (wantedSpecs.has(y.label) ? 1 : 0) - (wantedSpecs.has(x.label) ? 1 : 0));
     const sigs = (a.signals || []).map((s) => `<span class="chip signal" title="${esc(ev?.signals?.[s.label] || 'Seller signal')}">💬 ${esc(s.label)}</span>`).join('');
     const chips = specs.length || sigs ? `<div class="chips">${sigs}${specs.map((s) => `<span class="chip ${wantedSpecs.has(s.label) ? 'want' : ''}" title="${esc(ev?.specs?.[s.label] || s.label)}">${esc(s.label)}</span>`).join('')}</div>` : '';
@@ -495,7 +582,7 @@
     const whyBlock = a.status === 'active' && a.deal ? `<details><summary>Why ${a._pick}/100</summary>${whyList(a)}</details>` : '';
     const delta = a._drop > 0 ? `<s>${gbp(a._first)}</s><span class="delta">−${gbp(a._drop)}</span>` : a._drop < 0 ? `<s>${gbp(a._first)}</s><span class="delta up">+${gbp(-a._drop)}</span>` : '';
     const inCompare = mine.compare.includes(a.id);
-    return `<article class="card ${a.status === 'gone' ? 'gone' : ''} ${a._sinceVisit ? 'changed' : ''}" data-id="${a.id}">
+    return `<article class="card ${a.status === 'gone' ? 'gone' : ''} ${a._sinceVisit ? 'changed' : ''} ${seen ? 'seen' : ''} ${binned ? 'binned' : ''}" data-id="${a.id}">
       <a class="photo" href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : '<div class="noimg">No photo</div>'}
         ${a.status === 'active' && a.deal ? `<span class="score ${scoreClass(a._pick)}" title="Pick score ${a._pick}/100: ${esc((a.deal.pickParts || []).map((p) => p.label + ' ' + (p.pts > 0 ? '+' : '') + p.pts).join(', '))}">${a._pick}<small>pick</small></span>` : ''}
         ${ribbon.length ? `<span class="ribbon">${ribbon.join('')}</span>` : ''}
@@ -505,8 +592,9 @@
           <div class="title"><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></div>
           <div class="cardtools">
             <button data-cmp="${a.id}" class="cmp" aria-pressed="${inCompare ? 'true' : 'false'}" title="${inCompare ? 'Remove from compare' : 'Add to compare (up to 3)'}">⇄</button>
-            <button data-star="${a.id}" aria-pressed="${mine.stars[a.id] ? 'true' : 'false'}" title="Shortlist">★</button>
-            <button data-hide="${a.id}" title="${mine.hidden[a.id] ? 'Unhide' : 'Hide'}">${mine.hidden[a.id] ? '↺' : '✕'}</button>
+            <button data-star="${a.id}" class="starbtn" aria-pressed="${mine.stars[a.id] ? 'true' : 'false'}" title="${mine.stars[a.id] ? 'Remove from shortlist' : 'Shortlist'}">★</button>
+            <button data-seen="${a.id}" class="seenbtn" aria-pressed="${seen ? 'true' : 'false'}" title="${seen ? 'Unmark seen' : 'Mark as seen (looked, undecided)'}">👁</button>
+            <button data-bin="${a.id}" class="binbtn" aria-pressed="${binned ? 'true' : 'false'}" title="${binned ? 'Restore from bin' : 'Bin: looked at it, don’t want it'}">${binned ? '↺' : '🗑'}</button>
           </div>
         </div>
         ${a.subTitle ? `<div class="subtitle">${esc(a.subTitle)}</div>` : ''}
@@ -524,7 +612,7 @@
         ${chips}
         ${whyBlock}
         ${descBlock}
-        ${mine.stars[a.id] || mine.notes[a.id] ? `<textarea class="note" data-note="${a.id}" placeholder="Your notes…">${esc(mine.notes[a.id] || '')}</textarea>` : ''}
+        ${mine.stars[a.id] || mine.notes[a.id] || binned ? `<textarea class="note" data-note="${a.id}" placeholder="${binned ? 'Why not? (optional)' : 'Your notes…'}">${esc(mine.notes[a.id] || '')}</textarea>` : ''}
         <div class="tags">${tags.join('')}</div>
       </div>
     </article>`;
@@ -534,29 +622,29 @@
   function passes(a) {
     const q = state.q.trim().toLowerCase();
     if (state.show === 'shared') return state.ids.split(',').includes(a.id);
-    if (state.show === 'hidden') return !!mine.hidden[a.id];
-    if (mine.hidden[a.id]) return false;
-    if (state.show === 'rules') { if (a.status !== 'active' || !a.excluded) return false; }
+    if (state.show === 'hidden') return inBin(a);
+    if (inBin(a)) return false;
+    if (state.show === 'shortlist') { if (!mine.stars[a.id]) return false; }
+    else if (state.show === 'seen') { if (!isSeen(a) || a.status !== 'active') return false; }
+    else if (state.show === 'rules') { if (a.status !== 'active' || !a.excluded) return false; }
     else if (state.show === 'gone') { if (a.status !== 'gone' || a.excluded) return false; }
     else if (a.status !== 'active' || a.excluded) return false;
-    if (state.show === 'top' && (a._pick < topBar || a._flags)) return false;
+    if (state.show === 'top' && (a._pick < state.minScore || a._flags || isSeen(a))) return false;
     if (state.show === 'sincevisit' && !a._sinceVisit) return false;
     if (state.show === 'new' && !a._isNew && !a._newToSearch) return false;
-    if (state.show === 'drops' && !a._recentDrop) return false;
+    if (state.show === 'drops' && !(a._recentDrop && a._cutPct >= state.minCut && a._drops >= state.minCuts)) return false;
     if (state.show === 'deals' && !a.deal?.isDeal) return false;
-    if (state.show === 'star' && a._wanted < minStar) return false;
-    if (state.show === 'starfull' && a._wanted < starItems.length) return false;
-    if (state.show === 'starnear' && a._wanted < nearStar) return false;
+    if (state.show === 'star' && a._wanted < state.minStars) return false;
     if (state.starItem && !a._starHave.includes(state.starItem)) return false;
-    if (state.show === 'under' && !a.deal?.underpriced) return false;
+    if (state.show === 'under' && !(a._underPct != null && a._underPct >= state.minUnder)) return false;
     if (state.show === 'motivated' && !a.deal?.motivated) return false;
     if (state.show === 'stale' && !a.deal?.staleNoCut) return false;
     if (state.show === 'relisted' && !a.relisted) return false;
-    if (state.show === 'shortlist' && !mine.stars[a.id]) return false;
+    if (state.hideSeen && isSeen(a) && !['shortlist', 'seen', 'hidden'].includes(state.show)) return false;
     if (state.pmin && !(a._last >= Number(state.pmin))) return false;
     if (state.pmax && !(a._last <= Number(state.pmax))) return false;
     if (state.privateOnly && a.sellerType !== 'PRIVATE') return false;
-    if (state.noFlags && a._flags && state.show !== 'shortlist' && state.show !== 'hidden') return false;
+    if (state.noFlags && a._flags && !['shortlist', 'seen', 'hidden'].includes(state.show)) return false;
     if (state.knownLen && !a.length) return false;
     if (state.myLen && a.lengthOutside) return false;
     const f = a.fit || {};
@@ -581,7 +669,9 @@
     newest: (x, y) => (y._listedOn || '').localeCompare(x._listedOn || '') || y.id.localeCompare(x.id),
     'price-asc': (x, y) => (x._last ?? 1e12) - (y._last ?? 1e12),
     'price-desc': (x, y) => (y._last ?? -1) - (x._last ?? -1),
+    'drop-pct': (x, y) => y._cutPct - x._cutPct || y._drop - x._drop,
     drop: (x, y) => y._drop - x._drop,
+    drops: (x, y) => y._drops - x._drops || y._cutPct - x._cutPct,
     value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
     sold: (x, y) => (x.soldRef?.pct ?? 999) - (y.soldRef?.pct ?? 999),
     spec: (x, y) => y._wanted - x._wanted || y._pick - x._pick,
@@ -589,12 +679,15 @@
     sell: (x, y) => (x.market?.median ?? 999) - (y.market?.median ?? 999) || y._pick - x._pick,
     desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._drops - x._drops || y._listed - x._listed,
     listed: (x, y) => y._listed - x._listed,
-    drops: (x, y) => y._drops - x._drops || (x.deal?.totalDropPct ?? 0) - (y.deal?.totalDropPct ?? 0),
     length: (x, y) => (x.length?.metres ?? 99) - (y.length?.metres ?? 99),
     year: (x, y) => (y.year ?? 0) - (x.year ?? 0),
     mileage: (x, y) => (x.mileage ?? 1e12) - (y.mileage ?? 1e12),
     distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
+    gone: (x, y) => (y.goneSince || '').localeCompare(x.goneSince || ''),
   };
+  const VIEW_SORT = { drops: 'drop-pct', under: 'value', star: 'spec', motivated: 'desperation', stale: 'listed', new: 'newest', gone: 'gone', sincevisit: 'newest' };
+  const SORT_NAMES = { pick: 'pick score', 'drop-pct': 'biggest cut', value: 'cheapest vs similar', spec: 'most star items', desperation: 'most motivated', listed: 'longest listed', newest: 'newest', gone: 'most recently gone' };
+  const effectiveSort = () => (state.sort === 'auto' ? (VIEW_SORT[state.show] || 'pick') : state.sort);
   function activeFilterChips() {
     const chips = [];
     const add = (label, clear) => chips.push({ label, clear });
@@ -603,6 +696,7 @@
     if (state.make) add(state.make, () => { state.make = ''; makeSel.value = ''; });
     if (state.pmin || state.pmax) add(`£${state.pmin || '0'} to £${state.pmax || '∞'}`, () => { state.pmin = state.pmax = ''; $('pmin').value = $('pmax').value = ''; });
     if (state.privateOnly) add('private only', () => { state.privateOnly = false; $('private').checked = false; });
+    if (state.hideSeen) add('hiding seen', () => { state.hideSeen = false; $('hideseen').checked = false; });
     if (state.knownLen) add('known length', () => { state.knownLen = false; $('knownlen').checked = false; });
     if (state.myLen) add(`my length ${lengthRangeText}`, () => { state.myLen = false; $('mylen').checked = false; renderStats(); markShow(); });
     if (state.starItem) add('★ ' + state.starItem, () => { state.starItem = ''; });
@@ -613,20 +707,25 @@
   let chipClears = [];
   function render() {
     const list = adverts.filter(passes);
-    list.sort(by[state.sort] || by.pick);
+    list.sort(by[effectiveSort()] || by.pick);
     const chips = activeFilterChips();
     chipClears = chips.map((c) => c.clear);
     $('activefilters').hidden = !chips.length;
     $('activefilters').innerHTML = chips.length ? 'Filters: ' + chips.map((c, i) => `<button type="button" class="af" data-clear="${i}" title="Remove this filter">${esc(c.label)} ✕</button>`).join('') + ` <button type="button" class="linkbtn" data-clear="all">Clear all</button>` : '';
-    const viewName = { top: `top picks (score ${topBar}+)`, shared: 'a shared shortlist' }[state.show];
-    $('count').innerHTML = list.length ? `<span>${list.length.toLocaleString('en-GB')} advert${list.length === 1 ? '' : 's'}${viewName ? ' in ' + viewName : ''}${list.length > shown ? ', showing ' + shown : ''}</span>` +
+    $('fitsummary').textContent = fitActive() ? 'Fit filters (on) ▾' : 'Fit filters ▾';
+    const viewName = VIEW_NAMES[state.show] || state.show;
+    const sortNote = state.sort === 'auto' ? ` · sorted by ${SORT_NAMES[effectiveSort()] || effectiveSort()}` : '';
+    $('count').innerHTML = `<span><span class="viewname">${esc(viewName)}</span> · ${list.length.toLocaleString('en-GB')} advert${list.length === 1 ? '' : 's'}${list.length > shown ? ', showing ' + shown : ''}${sortNote}</span>` +
       (state.show === 'shortlist' && list.length ? `<button type="button" class="linkbtn" id="share">Share shortlist</button><button type="button" class="linkbtn" id="copylist">Copy as text</button>` : '') +
+      (state.show === 'hidden' && list.length ? `<button type="button" class="linkbtn danger" id="emptybin">Empty bin</button>` : '') +
+      (['shortlist', 'seen', 'hidden'].includes(state.show) ? `<button type="button" class="linkbtn" id="synclink" title="Copy a link that carries your shortlist, seen marks, bin and notes to another device">Copy sync link</button>` : '') +
       (state.show === 'shared' ? `<button type="button" class="linkbtn" id="adopt">Add these to my shortlist</button>` : '') +
-      `<button type="button" class="linkbtn" id="sharelink" title="Copy a link to this exact view">Copy link to view</button>` : '';
+      `<button type="button" class="linkbtn" id="sharelink" title="Copy a link to this exact view">Copy link to view</button>`;
     $('grid').innerHTML = list.slice(0, shown).map(card).join('');
     $('empty').hidden = list.length > 0;
-    $('empty').textContent = state.show === 'top' ? `Nothing scores ${topBar} or more with the current filters. Try Live, or lower deals.topPickScore in search.config.json.` : state.show === 'sincevisit' ? 'Nothing new or changed since you last looked.' : 'Nothing matches.';
+    $('empty').textContent = { top: `Nothing unseen scores ${state.minScore} or more with the current filters. Lower the bar above, or look at Live.`, sincevisit: 'Nothing new or changed since you last looked.', hidden: 'The bin is empty. Use 🗑 on a card when you have looked at a van and don’t want it.', seen: 'Nothing marked as seen yet. Use 👁 on a card for “looked, undecided”.', shortlist: 'Nothing shortlisted yet. Use ★ on a card.', drops: 'No cuts match that grade this week.' }[state.show] || 'Nothing matches.';
     $('more').hidden = list.length <= shown;
+    renderRefine();
     renderTray();
     writeHash();
   }
@@ -636,6 +735,7 @@
   $('pmax').addEventListener('change', resetAnd((e) => { state.pmax = e.target.value; }));
   $('private').addEventListener('change', resetAnd((e) => { state.privateOnly = e.target.checked; }));
   $('noflags').addEventListener('change', resetAnd((e) => { state.noFlags = e.target.checked; }));
+  $('hideseen').addEventListener('change', resetAnd((e) => { state.hideSeen = e.target.checked; }));
   $('knownlen').addEventListener('change', resetAnd((e) => { state.knownLen = e.target.checked; }));
   $('mylen').addEventListener('change', resetAnd((e) => { state.myLen = e.target.checked; renderStats(); markShow(); }));
   for (const k of FIT_KEYS) $(k).addEventListener('change', resetAnd((e) => { state[k] = e.target.value; }));
@@ -650,8 +750,16 @@
   sel.addEventListener('change', resetAnd((e) => { state.search = e.target.value; }));
   makeSel.addEventListener('change', resetAnd((e) => { state.make = e.target.value; }));
   $('sort').addEventListener('change', resetAnd((e) => { state.sort = e.target.value; }));
-  function setShow(show) { state.show = show; shown = PAGE; markShow(); render(); }
-  document.querySelectorAll('.toggle button').forEach((b) => b.addEventListener('click', () => setShow(b.dataset.show)));
+  function setShow(show, set) {
+    state.show = show;
+    if (set) Object.assign(state, set);
+    shown = PAGE; renderStats(); markShow(); render();
+    if (window.scrollY > 500) $('count').scrollIntoView({ block: 'start' });
+  }
+  const onShowClick = (e) => { const t = e.target.closest('[data-show]'); if (t) setShow(t.dataset.show, t.dataset.set ? JSON.parse(t.dataset.set) : null); };
+  $('mine').addEventListener('click', onShowClick);
+  $('stats').addEventListener('click', onShowClick);
+  $('stats').addEventListener('keydown', (e) => { const t = e.target.closest('.stat[data-show]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setShow(t.dataset.show, t.dataset.set ? JSON.parse(t.dataset.set) : null); } });
   legend.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-staritem]');
     if (!b) return;
@@ -659,16 +767,21 @@
     if (state.starItem && ['gone', 'rules', 'hidden', 'shared'].includes(state.show)) state.show = 'active';
     shown = PAGE; markShow(); render();
   });
-  $('stats').addEventListener('click', (e) => { const t = e.target.closest('.stat[data-show]'); if (t) setShow(t.dataset.show); });
-  $('stats').addEventListener('keydown', (e) => { const t = e.target.closest('.stat[data-show]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setShow(t.dataset.show); } });
 
-  // ---- Card tools: shortlist, hide, notes, compare ----
+  // ---- Card tools ----
   $('grid').addEventListener('click', (e) => {
     const star = e.target.closest('button[data-star]');
-    const hide = e.target.closest('button[data-hide]');
+    const bin = e.target.closest('button[data-bin]');
+    const seenB = e.target.closest('button[data-seen]');
     const cmp = e.target.closest('button[data-cmp]');
-    if (star) { const id = star.dataset.star; if (mine.stars[id]) delete mine.stars[id]; else mine.stars[id] = 1; saveMine(); render(); }
-    if (hide) { const id = hide.dataset.hide; if (mine.hidden[id]) delete mine.hidden[id]; else mine.hidden[id] = 1; saveMine(); render(); }
+    if (star) { const id = star.dataset.star; if (mine.stars[id]) delete mine.stars[id]; else { mine.stars[id] = 1; delete mine.hidden[id]; } saveMine(); renderStats(); markShow(); render(); }
+    if (seenB) { const id = seenB.dataset.seen; if (mine.seen[id]) delete mine.seen[id]; else mine.seen[id] = new Date().toISOString().slice(0, 10); saveMine(); renderStats(); markShow(); render(); }
+    if (bin) {
+      const id = bin.dataset.bin;
+      if (mine.hidden[id]) { delete mine.hidden[id]; toast('Restored'); }
+      else { mine.hidden[id] = new Date().toISOString().slice(0, 10); delete mine.stars[id]; mine.compare = mine.compare.filter((x) => x !== id); toast('Binned. Find it under 🗑 Bin.'); }
+      saveMine(); renderStats(); markShow(); render();
+    }
     if (cmp) {
       const id = cmp.dataset.cmp;
       if (mine.compare.includes(id)) mine.compare = mine.compare.filter((x) => x !== id);
@@ -687,15 +800,17 @@
   $('count').addEventListener('click', (e) => {
     const t = e.target;
     if (t.id === 'sharelink') copy(location.href, 'Link to this view copied');
-    if (t.id === 'share') { const ids = Object.keys(mine.stars).filter((id) => byId[id]); const url = location.origin + location.pathname + '#shortlist=' + ids.join(','); copy(url, 'Shortlist link copied'); }
+    if (t.id === 'share') { const ids = Object.keys(mine.stars).filter((id) => byId[id]); copy(location.origin + location.pathname + '#shortlist=' + ids.join(','), 'Shortlist link copied'); }
+    if (t.id === 'synclink') { const payload = { stars: mine.stars, seen: mine.seen, hidden: mine.hidden, notes: mine.notes }; copy(location.origin + location.pathname + '#sync=' + b64e(JSON.stringify(payload)), 'Sync link copied: open it on your other device'); }
     if (t.id === 'copylist') {
       const lines = Object.keys(mine.stars).filter((id) => byId[id]).map((id) => byId[id]).sort(by.pick).map((a) => `${a.title} · ${gbp(a._last)} · ${a.registeredYear || a.year || ''} · ${a.mileageText || ''} · pick ${a._pick}${a._starHave.length ? ' · ' + a._starHave.join(', ') : ''}${mine.notes[a.id] ? ' · note: ' + mine.notes[a.id].replace(/\s+/g, ' ') : ''}\n${a.url}`);
       copy(lines.join('\n\n'), 'Shortlist copied as text');
     }
     if (t.id === 'adopt') { for (const id of state.ids.split(',')) if (byId[id]) mine.stars[id] = 1; saveMine(); setShow('shortlist'); toast('Added to your shortlist'); }
+    if (t.id === 'emptybin') { const n = Object.keys(mine.hidden).length; if (confirm(`Empty the bin? ${n} advert${n === 1 ? '' : 's'} will come back into the views.`)) { mine.hidden = {}; saveMine(); renderStats(); markShow(); render(); toast('Bin emptied'); } }
   });
 
-  // ---- Compare tray and table ----
+  // ---- Compare ----
   function renderTray() {
     const tray = $('tray');
     tray.hidden = mine.compare.length === 0;
@@ -710,6 +825,7 @@
       ['', list.map((a) => `<a href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="">` : ''}<br><b>${esc(a.title)}</b></a><br><span style="color:var(--muted)">${esc(a.subTitle || '')}</span>`)],
       ['Pick score', num((a) => a._pick, 'max').map((x) => `<b>${x.v}</b>/100`), num((a) => a._pick, 'max')],
       ['Price', num((a) => a._last, 'min').map((x) => gbp(x.v)), num((a) => a._last, 'min')],
+      ['Cuts so far', list.map((a) => (a._drops ? `${a._drops} cut${a._drops > 1 ? 's' : ''}, −${a._cutPct}%` : 'none'))],
       ['Vs similar live', num((a) => a.value?.pct, 'min').map((x) => (x.v == null ? '—' : (x.v > 0 ? '+' : '') + x.v + '%')), num((a) => a.value?.pct, 'min')],
       ['Vs sold', num((a) => a.soldRef?.pct, 'min').map((x) => (x.v == null ? '—' : (x.v > 0 ? '+' : '') + x.v + '%')), num((a) => a.soldRef?.pct, 'min')],
       ['Year', num((a) => a.year, 'max').map((x) => (x.v == null ? '—' : String(x.v))), num((a) => a.year, 'max')],
@@ -722,7 +838,7 @@
       ['Layout', list.map((a) => [a.fit?.berth ? a.fit.berth + ' berth' : null, a.fit?.bedLayout, a.fit?.endLayout].filter(Boolean).join(' · ') || '—')],
       ['Height', list.map((a) => (a.fit?.heightM ? a.fit.heightM.toFixed(2) + ' m' : '—'))],
       ['Seller', list.map((a) => [a.sellerType === 'PRIVATE' ? 'Private' : 'Trade', a.location].filter(Boolean).join(' · '))],
-      ['Listed', list.map((a) => `${a._listed}d${a._listedSure ? '' : '?'}${a._drops ? ', ' + a._drops + ' drop' + (a._drops > 1 ? 's' : '') + ' (' + a.deal?.totalDropPct + '%)' : ''}${a.market ? ', this ' + a.market.basis + ' sells in ~' + a.market.median + 'd' : ''}`)],
+      ['Listed', list.map((a) => `${a._listed}d${a._listedSure ? '' : '?'}${a.market ? ', this ' + a.market.basis + ' sells in ~' + a.market.median + 'd' : ''}`)],
       ['Seller signals', list.map((a) => (a.signals || []).map((s) => s.label).join(', ') || '—')],
       ['Motivation', list.map((a) => `${a.deal?.desperation ?? 0}/100${(a.deal?.motivationReasons || []).length ? ': ' + a.deal.motivationReasons.join(', ') : ''}`)],
       ['Red flags', list.map((a) => (a.redFlags || []).map((f) => f.label).join(', ') || 'none')],
@@ -737,6 +853,8 @@
     document.addEventListener('keydown', function onKey(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); } });
   });
 
+  renderStats();
+  markShow();
   render();
   try { localStorage.setItem('mh-lastvisit', visitStamp); } catch {}
 
@@ -779,7 +897,7 @@
     setStatus('To run the search now: open <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>, go to <b>Routines</b>, open the motorhome search and press <b>Run</b> (or ask Claude in the project chat to refresh). This page will reload itself when the new data arrives.');
     watchForNewData(data.generatedAt, 60);
   });
-  if (data.generatedAt && Date.now() - new Date(data.generatedAt) > 14 * 3600000) watchForNewData(data.generatedAt, 15);
+  if (data.generatedAt && Date.now() - new Date(data.generatedAt) > 8 * 3600000) watchForNewData(data.generatedAt, 15);
 })();
 </script>
 </body>
