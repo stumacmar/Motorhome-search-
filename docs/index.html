@@ -178,7 +178,7 @@
       <p class="sub" id="updated">Loading…</p>
     </div>
     <div class="refresh">
-      <button id="refresh" type="button" title="The search runs by itself morning and evening. To run it now, open Claude Code, go to Routines, and run the motorhome search. This page reloads itself when the new data arrives.">⟳ Refresh now</button>
+      <button id="refresh" type="button" title="The search runs by itself several times a day. To run it now, open Claude Code, go to Routines, and run the motorhome search. This page reloads itself when the new data arrives.">⟳ Refresh now</button>
       <span class="status" id="refresh-status"></span>
     </div>
   </div>
@@ -252,7 +252,7 @@
   <p class="empty" id="empty" hidden>Nothing matches.</p>
   <button class="more" id="more" hidden>Show more</button>
 </main>
-<footer>Data is refreshed morning and evening by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound. The pick score is a ranking aid, not a valuation.</footer>
+<footer>Data is refreshed four times a day on weekdays and three times at weekends by the search routine. Adverts link to Autotrader; prices and availability are theirs, not ours. “Listed” is the age of the advert record, which is what Autotrader sorts newest-first by; dealer stock can be listed before it arrives or re-published under the same advert, so long figures on trade adverts are an upper bound. The pick score is a ranking aid, not a valuation.</footer>
 <div class="tray" id="tray" hidden><span id="traytext"></span><button class="go" id="traygo">Compare</button><button class="x" id="trayclear" title="Clear">✕</button></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -744,19 +744,22 @@
   const refreshBtn = $('refresh');
   const statusEl = $('refresh-status');
   const setStatus = (html, err) => { statusEl.innerHTML = html; statusEl.classList.toggle('err', !!err); };
-  const RUN_HOURS_UK = ['06:54', '18:54'];
+  // Weekdays follow dealer hours; weekends follow private sellers. Set in the Claude Code routines.
+  const RUN_HOURS_UK = { weekday: ['07:24', '13:24', '18:24', '21:24'], weekend: ['09:24', '14:24', '21:24'] };
   let watching = false;
   function nextRunText() {
     const now = new Date();
     const uk = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }).replace(/(\d+)\/(\d+)\/(\d+), (.*)/, '$3-$2-$1T$4'));
-    for (const t of RUN_HOURS_UK) {
+    const hoursFor = (d) => (d.getDay() === 0 || d.getDay() === 6 ? RUN_HOURS_UK.weekend : RUN_HOURS_UK.weekday);
+    for (const t of hoursFor(uk)) {
       const [h, m] = t.split(':').map(Number);
       const run = new Date(uk); run.setHours(h, m, 0, 0);
       if (uk < run) return 'today at ' + t + ' UK time';
     }
-    return 'tomorrow at ' + RUN_HOURS_UK[0] + ' UK time';
+    const tomorrow = new Date(uk); tomorrow.setDate(tomorrow.getDate() + 1);
+    return 'tomorrow at ' + hoursFor(tomorrow)[0] + ' UK time';
   }
-  setStatus('Updates by itself morning and evening; next run ' + nextRunText() + '.');
+  setStatus('Updates by itself four times a day on weekdays and three at weekends; next run ' + nextRunText() + '.');
   async function watchForNewData(generatedBefore, maxMinutes) {
     if (watching) return;
     watching = true;

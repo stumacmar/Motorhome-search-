@@ -45,7 +45,7 @@ On the dashboard you can filter by search, make, price, seller type and fit, sta
 
 ## Where it runs
 
-**Current setup: a Claude Code routine.** A scheduled routine in the owner's Claude Code account wakes a runner session in the cloud twice a day, at 06:54 and 18:54 UK time; it runs `node src/run.js`, pushes `docs/data` to this repo, and sends a phone summary. That cloud environment is not blocked by Autotrader. It can be paused or deleted from the Routines page in Claude Code.
+**Current setup: a Claude Code routine.** A scheduled routine in the owner's Claude Code account wakes a runner session in the cloud four times on weekdays (07:24, 13:24, 18:24 and 21:24 UK time, following dealer hours) and three times at weekends (09:24, 14:24 and 21:24, following private sellers); it runs `node src/run.js`, pushes `docs/data` to this repo, and sends a phone summary. That cloud environment is not blocked by Autotrader. It can be paused or deleted from the Routines page in Claude Code.
 
 **Autotrader blocks GitHub's own runners.** Every request from a GitHub-hosted runner gets HTTP 403, with or without a browser, so the scheduled job cannot run on `ubuntu-latest`. It needs a machine on an ordinary home or office connection. The cleanest way is a **self-hosted GitHub Actions runner**: the same workflow, schedule, commit-back and dashboard, just executed on your own machine.
 
