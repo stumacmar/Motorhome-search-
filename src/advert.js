@@ -20,9 +20,35 @@ export function parseAdvertHtml(html) {
     throw new Error('advert page had no embedded data (page structure changed?)');
   }
   const data = JSON.parse(JSON.parse(`"${m[1]}"`));
-  const advert = data?.loaderData?.['motorhome-details']?.aggregatorAdvert;
+  const loader = data?.loaderData?.['motorhome-details'];
+  const advert = loader?.aggregatorAdvert || normaliseSplitAdvert(loader);
   if (!advert) throw new Error('advert data missing from page (removed advert?)');
   return summariseAdvert(advert);
+}
+
+/**
+ * Since late October 2026 the page splits the old aggregatorAdvert into
+ * `advert` (description, history, pricing) and `vehicleData` (features, key
+ * specs, spec sheet). Rebuild the old shape so summariseAdvert reads either.
+ */
+function normaliseSplitAdvert(loader) {
+  const advert = loader?.advert;
+  if (!advert) return null;
+  const vehicle = loader.vehicleData || {};
+  const featureGroups = [
+    ...(vehicle.features?.categories || []),
+    ...(vehicle.features?.highlights || []).flatMap((h) => h.groups || []),
+  ];
+  return {
+    ...advert,
+    featuresWithDisclaimer: { features: featureGroups },
+    keySpecification: vehicle.keySpecification || [],
+    specs: vehicle.specifications || [],
+    details: {
+      ...advert.details,
+      vehicle: { ...advert.details?.vehicle, imported: vehicle.imported === true ? 'True' : advert.details?.vehicle?.imported },
+    },
+  };
 }
 
 const str = (v) => (v == null ? null : String(v));

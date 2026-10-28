@@ -181,6 +181,39 @@ test('advert page parser', () => {
   assert.throws(() => parseAdvertHtml('<title>Just a moment...</title>'), /Cloudflare/);
 });
 
+test('advert page parser reads the split layout (advert + vehicleData)', () => {
+  const data = {
+    loaderData: {
+      'motorhome-details': {
+        advert: {
+          description: { text: ['Lovely van with Alde heating.'] },
+          history: { ownersData: { value: '3' }, serviceHistory: { description: 'Full service history', historyType: 'FULL' }, vehicleCheck: { status: 'PASSED', statusText: '5 checks passed' } },
+          details: { pricing: { marketPriceRating: { value: 'GOOD' } } },
+        },
+        vehicleData: {
+          imported: false,
+          keySpecification: [{ label: 'Berth', value: '4' }],
+          specifications: [{ category: 'Details', items: [{ name: 'Chassis make', value: 'Fiat' }, { name: 'Body type', value: 'Motorhome' }] }],
+          features: {
+            highlights: [{ groups: [{ items: [{ name: 'Alde Heating' }] }] }],
+            categories: [{ items: [{ name: 'Alde Heating' }, { name: 'Solar Panel' }] }],
+          },
+        },
+      },
+    },
+  };
+  const html = `<script>window.__staticRouterHydrationData = JSON.parse(${JSON.stringify(JSON.stringify(data))});</script>`;
+  const d = parseAdvertHtml(html);
+  assert.deepEqual(d.features, ['Alde Heating', 'Solar Panel']);
+  assert.equal(d.keySpec.Berth, '4');
+  assert.equal(d.chassis, 'Fiat');
+  assert.equal(d.bodyType, 'Motorhome');
+  assert.equal(d.owners, 3);
+  assert.equal(d.historyCheck, 'PASSED (5 checks passed)');
+  assert.equal(d.marketPriceRating, 'GOOD');
+  assert.equal(d.imported, false);
+});
+
 test('length inference', async () => {
   const { inferLength, lengthExclusion } = await import('../src/spec.js');
   const rule = { minMetres: 6.25, maxMetres: 7 };
