@@ -42,6 +42,14 @@ export function starText(a, wantedSpecs = []) {
   return `${stars} ${hits.length}/${wantedSpecs.length} star spec${hits.length ? ': ' + hits.join(', ') : ''}`;
 }
 
+/** "Quality A 66/100 · Bürstner · for the money 78 · 🏆 2 award wins". */
+export function qualityText(a) {
+  const q = a.quality;
+  if (!q) return null;
+  const wins = (q.awards || []).filter((x) => x.result === 'W').length;
+  return [`Quality ${q.grade} ${q.score}/100`, q.brand, q.forMoney != null ? `for the money ${q.forMoney}` : null, wins ? `🏆 ${wins} award win${wins === 1 ? '' : 's'}` : null].filter(Boolean).join(' · ');
+}
+
 function specText(a, wantedSpecs) {
   const labels = (a.specs || []).map((s) => s.label);
   if (!labels.length) return null;
@@ -65,6 +73,7 @@ function advertLine(a, wantedSpecs = []) {
   const signals = (a.signals || []).map((s) => s.label);
   if (signals.length) flags.push('💬 ' + signals.join(', '));
   const star = starText(a, wantedSpecs);
+  const quality = qualityText(a);
   const fit = fitText(a);
   const specs = specText(a, wantedSpecs);
   if (a.details?.serviceHistory && /full/i.test(a.details.serviceHistory)) flags.push('FSH');
@@ -74,6 +83,7 @@ function advertLine(a, wantedSpecs = []) {
     `<a href="${a.url}">${esc(a.title)}</a> — <b>${gbp(a.price)}</b>\n${esc(bits)}` +
     (flags.length ? `\n${esc(flags.join(' · '))}` : '') +
     (star ? `\n${esc(star)}` : '') +
+    (quality ? `\n${esc(quality)}` : '') +
     (fit ? `\n${esc(fit)}` : '') +
     (specs ? `\n${esc(specs)}` : '') +
     (red.length ? `\n⚠️ ${esc(red.join(', '))}` : '')

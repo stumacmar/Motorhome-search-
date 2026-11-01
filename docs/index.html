@@ -54,7 +54,7 @@
   .stat[data-show]:hover { border-color: var(--accent); }
   .stat[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); color: var(--accent); }
   .stat b { font-size: 14.5px; color: var(--ink); }
-  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b, .stat.star b { color: var(--gold); }
+  .stat.new b { color: var(--new); } .stat.drop b { color: var(--drop); } .stat.deal b, .stat.star b { color: var(--gold); } .stat.qual b { color: #0d6b5c; }
   .strip { display: flex; flex-wrap: wrap; gap: 6px; }
   @media (max-width: 700px) {
     .strip, .stats { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px 6px; }
@@ -154,6 +154,12 @@
   .chip { font-size: 11.5px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
   .chip.want { border-color: var(--accent); color: var(--accent); font-weight: 600; }
   .chip.signal { border-color: var(--purple); color: var(--purple); }
+  .quality { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; margin-top: 2px; }
+  .qgrade { font-weight: 700; color: #fff; border-radius: 4px; padding: 0 6px; font-size: 12px; line-height: 18px; cursor: help; }
+  .qa { background: #0d6b5c; } .qb { background: #3b8f6a; } .qc { background: #9a7b1e; } .qd { background: #7d7a74; }
+  .qfm { cursor: help; } .qfm.good { color: #0d6b5c; font-weight: 600; } .qfm.poor { color: #a04030; }
+  .qbadge { position: absolute; top: 60px; left: 14px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 14px; color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.3); cursor: help; line-height: 1; }
+  .qbadge small { font-size: 7px; font-weight: 600; display: block; margin-top: -6px; opacity: .9; }
   .starspec { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; }
   .starspec .stars { color: var(--gold); letter-spacing: 1px; font-size: 15px; }
   .starspec .have { color: var(--ink); }
@@ -241,6 +247,8 @@
       <optgroup label="Ranking">
         <option value="pick">Pick score</option>
         <option value="kit">Kit score</option>
+        <option value="quality">Quality score</option>
+        <option value="qfm">Quality for money</option>
         <option value="spec">Star spec: most items</option>
       </optgroup>
       <optgroup label="Price">
@@ -360,6 +368,8 @@
     a._drops = a.deal?.drops ?? 0;
     a._flags = (a.redFlags || []).length;
     a._pick = a.deal?.pickScore ?? 0;
+    a._q = a.quality?.score ?? null;
+    a._qfm = a.quality?.forMoney ?? null;
     a._underPct = a.value ? -a.value.pct : null; // positive = under similar
     const lv = lastVisit ? lastVisit.slice(0, 10) : null;
     a._sinceVisit = !!lv && a.status === 'active' && ((a.firstSeen && a.firstSeen > lv) || h.some((p, i) => i > 0 && p.date > lv));
@@ -392,11 +402,11 @@
 
   // ---- State: in the address bar (shareable) and remembered locally ----
   const DEFAULTS = { q: '', search: '', make: '', sort: 'auto', show: 'top', pmin: '', pmax: '', privateOnly: false, noFlags: true, hideSeen: false, knownLen: false, starItem: '', myLen: false,
-    minCut: 0, minCuts: 1, minUnder: 10, minStars: minStar, minScore: topBar,
+    minCut: 0, minCuts: 1, minUnder: 10, minStars: minStar, minScore: topBar, minQfm: 70,
     fgear: '', fkg: '', fbhp: '', fberth: '', fbed: '', fend: '', fheight: '', fmiles: '', fstock: '', feuro6: false, ids: '' };
   const state = { ...DEFAULTS };
   const BOOLS = ['privateOnly', 'noFlags', 'hideSeen', 'knownLen', 'myLen', 'feuro6'];
-  const NUMS = ['minCut', 'minCuts', 'minUnder', 'minStars', 'minScore'];
+  const NUMS = ['minCut', 'minCuts', 'minUnder', 'minStars', 'minScore', 'minQfm'];
   try { Object.assign(state, JSON.parse(localStorage.getItem('mh-view') || '{}')); } catch {}
   state.ids = '';
   if ([...hashIn.keys()].length) {
@@ -455,7 +465,7 @@
   // ---- Triage strip, market tiles and legend ----
   const legend = $('starlegend');
   const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !inBin(a) && !(state.myLen && a.lengthOutside));
-  const VIEW_NAMES = { top: 'Top picks', active: 'Live', sincevisit: 'Since your last visit', shortlist: 'Shortlist', seen: 'Seen', hidden: 'Bin', shared: 'a shared shortlist', deals: 'Worth a look', star: 'Star spec', under: 'Underpriced', drops: 'Price cuts', motivated: 'Motivated sellers', stale: 'Due a cut', relisted: 'Re-listed', new: 'New this week', gone: 'Gone', rules: 'Hidden by rules' };
+  const VIEW_NAMES = { top: 'Top picks', active: 'Live', sincevisit: 'Since your last visit', shortlist: 'Shortlist', seen: 'Seen', hidden: 'Bin', shared: 'a shared shortlist', deals: 'Worth a look', quality: 'Quality buys', star: 'Star spec', under: 'Underpriced', drops: 'Price cuts', motivated: 'Motivated sellers', stale: 'Due a cut', relisted: 'Re-listed', new: 'New this week', gone: 'Gone', rules: 'Hidden by rules' };
   function renderStats() {
     const live = liveNow();
     const mineRow = [
@@ -474,6 +484,8 @@
       ['drop', live.filter((a) => a._underPct >= 10).length, 'underpriced 10%+', 'under', { minUnder: 10 }],
       ['drop', live.filter((a) => a._underPct >= 20).length, 'underpriced 20%+', 'under', { minUnder: 20 }],
       ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals', null],
+      ['qual', live.filter((a) => a._qfm >= 70).length, 'quality buys 70+', 'quality', { minQfm: 70 }],
+      ['qual', live.filter((a) => a._qfm >= 80).length, 'quality buys 80+', 'quality', { minQfm: 80 }],
       ...(starItems.length ? [
         ['star', live.filter((a) => a._wanted >= minStar).length, `star spec ${minStar}+ of ${starItems.length}`, 'star', { minStars: minStar }],
         ['star', live.filter((a) => a._wanted >= starItems.length - 1).length, `star spec ${starItems.length - 1}+`, 'star', { minStars: starItems.length - 1 }],
@@ -519,6 +531,8 @@
       parts.push(`<span class="lead">Under similar by</span>` + seg('minUnder', [10, 15, 20, 25], (v) => v + '%+'));
     } else if (state.show === 'star' && starItems.length) {
       parts.push(`<span class="lead">Star items</span>` + seg('minStars', Array.from({ length: starItems.length }, (_, i) => i + 1), (v) => (v === starItems.length ? 'all ' + v : v + '+')));
+    } else if (state.show === 'quality') {
+      parts.push(`<span class="lead" title="Quality score set against the price, compared with live vans of the same age and body type. 50 is what that money normally buys">Quality for money</span>` + seg('minQfm', [60, 65, 70, 75, 80], (v) => v + '+'));
     } else if (state.show === 'top') {
       parts.push(`<span class="lead">Pick score</span>` + seg('minScore', [...new Set([topBar, 50, 60])].sort((a, b) => a - b), (v) => v + '+'));
     }
@@ -556,6 +570,24 @@
     const parts = a.deal?.pickParts || [];
     if (!parts.length) return '';
     return `<ul class="why">${parts.map((p) => `<li class="${p.pts < 0 ? 'neg' : ''}"><span>${esc(p.label)}</span><b>${p.pts > 0 ? '+' : ''}${p.pts}</b></li>`).join('')}<li><span>pick score</span><b>${a._pick}</b></li></ul>`;
+  }
+  const GRADE_CLASS = { 'A+': 'qa', A: 'qa', B: 'qb', C: 'qc', D: 'qd' };
+  const BODY_NAMES = { van: 'campervan', coach: 'coachbuilt', aclass: 'A-class', all: 'van' };
+  function qualityLine(a) {
+    const q = a.quality;
+    if (!q || a.status !== 'active') return '';
+    const peer = detailsMap?.[a.id]?.quality?.peer;
+    const fm = q.forMoney != null
+      ? `<span class="qfm ${q.forMoney >= 70 ? 'good' : q.forMoney < 40 ? 'poor' : ''}" title="Quality for money ${q.forMoney}: 50 is the quality the money normally buys. Priced at ${q.priceIndex}× the usual ${a.year || ''} ${peer ? BODY_NAMES[peer.body] + ' (' + gbp(peer.price) + ', quality ' + peer.quality + ', ' + peer.n + ' live)' : 'van of its type'}">for the money ${q.forMoney}</span>`
+      : '';
+    return `<div class="quality"><span class="qgrade ${GRADE_CLASS[q.grade]}" title="Quality score ${q.score}/100 from owner surveys, build tier, model awards and base vehicle. Open “Why quality” for the working">${q.grade}</span><span>quality ${q.score}${q.brand ? ' · ' + esc(q.brand) : ''}</span>${q.awards ? `<span title="Model-line awards 2020 to 2026">🏆 ${q.awards}</span>` : ''}${fm}</div>`;
+  }
+  function qualityWhy(a) {
+    const w = detailsMap?.[a.id]?.quality;
+    if (!a.quality || a.status !== 'active') return '';
+    if (!w) return `<details><summary>Why quality ${a.quality.score}</summary>${detailsMap ? 'No breakdown saved.' : 'Loading…'}</details>`;
+    const awards = (w.awards || []).map((x) => `<li><span>${{ W: '🏆 Winner', HC: 'Highly commended', SL: 'Shortlisted' }[x.result] || x.result}: ${esc(x.label)}</span></li>`).join('');
+    return `<details><summary>Why quality ${a.quality.score}</summary><ul class="why">${(w.parts || []).map((p) => `<li class="${p.pts < 0 ? 'neg' : ''}"><span>${esc(p.label)}</span><b>${p.pts > 0 ? '+' : ''}${p.pts}</b></li>`).join('')}<li><span>quality score (${esc(a.quality.grade)})</span><b>${a.quality.score}</b></li>${awards}</ul></details>`;
   }
   function fitLine(a) {
     const f = a.fit;
@@ -609,6 +641,7 @@
     return `<article class="card ${a.status === 'gone' ? 'gone' : ''} ${a._sinceVisit ? 'changed' : ''} ${seen ? 'seen' : ''} ${binned ? 'binned' : ''}" data-id="${a.id}">
       <a class="photo" href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="" loading="lazy">` : '<div class="noimg">No photo</div>'}
         ${a.status === 'active' && a.deal ? `<span class="score ${scoreClass(a._pick)}" title="Pick score ${a._pick}/100: ${esc((a.deal.pickParts || []).map((p) => p.label + ' ' + (p.pts > 0 ? '+' : '') + p.pts).join(', '))}">${a._pick}<small>pick</small></span>` : ''}
+        ${a.status === 'active' && a.quality ? `<span class="qbadge ${GRADE_CLASS[a.quality.grade]}" title="Quality ${a.quality.score}/100${a._qfm != null ? ', quality for money ' + a._qfm : ''}">${a.quality.grade}<small>quality</small></span>` : ''}
         ${ribbon.length ? `<span class="ribbon">${ribbon.join('')}</span>` : ''}
       </a>
       <div class="body">
@@ -632,9 +665,11 @@
         </div>
         ${flagLine}
         ${starLine(a)}
+        ${qualityLine(a)}
         ${fitLine(a)}
         ${chips}
         ${whyBlock}
+        ${qualityWhy(a)}
         ${descBlock}
         ${mine.stars[a.id] || mine.notes[a.id] || binned ? `<textarea class="note" data-note="${a.id}" placeholder="${binned ? 'Why not? (optional)' : 'Your notes…'}">${esc(mine.notes[a.id] || '')}</textarea>` : ''}
         <div class="tags">${tags.join('')}</div>
@@ -658,6 +693,7 @@
     if (state.show === 'new' && !a._isNew && !a._newToSearch) return false;
     if (state.show === 'drops' && !(a._recentDrop && a._cutPct >= state.minCut && a._drops >= state.minCuts)) return false;
     if (state.show === 'deals' && !a.deal?.isDeal) return false;
+    if (state.show === 'quality' && !(a._qfm != null && a._qfm >= state.minQfm)) return false;
     if (state.show === 'star' && a._wanted < state.minStars) return false;
     if (state.starItem && !a._starHave.includes(state.starItem)) return false;
     if (state.show === 'under' && !(a._underPct != null && a._underPct >= state.minUnder)) return false;
@@ -699,6 +735,8 @@
     value: (x, y) => (x.value?.pct ?? 999) - (y.value?.pct ?? 999),
     sold: (x, y) => (x.soldRef?.pct ?? 999) - (y.soldRef?.pct ?? 999),
     spec: (x, y) => y._wanted - x._wanted || y._pick - x._pick,
+    quality: (x, y) => (y._q ?? -1) - (x._q ?? -1) || (y._qfm ?? -1) - (x._qfm ?? -1),
+    qfm: (x, y) => (y._qfm ?? -1) - (x._qfm ?? -1) || (y._q ?? -1) - (x._q ?? -1),
     kit: (x, y) => (y.deal?.kitScore ?? 0) - (x.deal?.kitScore ?? 0) || y._pick - x._pick,
     sell: (x, y) => (x.market?.median ?? 999) - (y.market?.median ?? 999) || y._pick - x._pick,
     desperation: (x, y) => (y.deal?.desperation ?? 0) - (x.deal?.desperation ?? 0) || y._drops - x._drops || y._listed - x._listed,
@@ -709,8 +747,8 @@
     distance: (x, y) => (x.distanceMiles ?? 1e12) - (y.distanceMiles ?? 1e12),
     gone: (x, y) => (y.goneSince || '').localeCompare(x.goneSince || ''),
   };
-  const VIEW_SORT = { drops: 'drop-pct', under: 'value', star: 'spec', motivated: 'desperation', stale: 'listed', new: 'newest', gone: 'gone', sincevisit: 'newest' };
-  const SORT_NAMES = { pick: 'pick score', 'drop-pct': 'biggest cut', value: 'cheapest vs similar', spec: 'most star items', desperation: 'most motivated', listed: 'longest listed', newest: 'newest', gone: 'most recently gone' };
+  const VIEW_SORT = { quality: 'qfm', drops: 'drop-pct', under: 'value', star: 'spec', motivated: 'desperation', stale: 'listed', new: 'newest', gone: 'gone', sincevisit: 'newest' };
+  const SORT_NAMES = { pick: 'pick score', quality: 'quality score', qfm: 'quality for money', 'drop-pct': 'biggest cut', value: 'cheapest vs similar', spec: 'most star items', desperation: 'most motivated', listed: 'longest listed', newest: 'newest', gone: 'most recently gone' };
   const effectiveSort = () => (state.sort === 'auto' ? (VIEW_SORT[state.show] || 'pick') : state.sort);
   function activeFilterChips() {
     const chips = [];
@@ -829,7 +867,7 @@
     if (t.id === 'share') { const ids = Object.keys(mine.stars).filter((id) => byId[id]); copy(location.origin + location.pathname + '#shortlist=' + ids.join(','), 'Shortlist link copied'); }
     if (t.id === 'synclink') { const payload = { stars: mine.stars, seen: mine.seen, hidden: mine.hidden, notes: mine.notes }; copy(location.origin + location.pathname + '#sync=' + b64e(JSON.stringify(payload)), 'Sync link copied: open it on your other device'); }
     if (t.id === 'copylist') {
-      const lines = Object.keys(mine.stars).filter((id) => byId[id]).map((id) => byId[id]).sort(by.pick).map((a) => `${a.title} · ${gbp(a._last)} · ${a.registeredYear || a.year || ''} · ${a.mileageText || ''} · pick ${a._pick}${a._starHave.length ? ' · ' + a._starHave.join(', ') : ''}${mine.notes[a.id] ? ' · note: ' + mine.notes[a.id].replace(/\s+/g, ' ') : ''}\n${a.url}`);
+      const lines = Object.keys(mine.stars).filter((id) => byId[id]).map((id) => byId[id]).sort(by.pick).map((a) => `${a.title} · ${gbp(a._last)} · ${a.registeredYear || a.year || ''} · ${a.mileageText || ''} · pick ${a._pick}${a.quality ? ' · quality ' + a.quality.grade + ' ' + a.quality.score + (a._qfm != null ? ' (for the money ' + a._qfm + ')' : '') : ''}${a._starHave.length ? ' · ' + a._starHave.join(', ') : ''}${mine.notes[a.id] ? ' · note: ' + mine.notes[a.id].replace(/\s+/g, ' ') : ''}\n${a.url}`);
       copy(lines.join('\n\n'), 'Shortlist copied as text');
     }
     if (t.id === 'adopt') { for (const id of state.ids.split(',')) if (byId[id]) mine.stars[id] = 1; saveMine(); setShow('shortlist'); toast('Added to your shortlist'); }
@@ -850,6 +888,8 @@
     const rows = [
       ['', list.map((a) => `<a href="${esc(a.url)}" target="_blank" rel="noopener">${a.image ? `<img src="${esc(a.image)}" alt="">` : ''}<br><b>${esc(a.title)}</b></a><br><span style="color:var(--muted)">${esc(a.subTitle || '')}</span>`)],
       ['Pick score', num((a) => a._pick, 'max').map((x) => `<b>${x.v}</b>/100`), num((a) => a._pick, 'max')],
+      ['Quality', num((a) => a._q, 'max').map((x, i) => (x.v == null ? '—' : `<b>${list[i].quality.grade}</b> ${x.v}/100${list[i].quality.brand ? ' · ' + esc(list[i].quality.brand) : ''}`)), num((a) => a._q, 'max')],
+      ['Quality for money', num((a) => a._qfm, 'max').map((x) => (x.v == null ? '—' : String(x.v))), num((a) => a._qfm, 'max')],
       ['Price', num((a) => a._last, 'min').map((x) => gbp(x.v)), num((a) => a._last, 'min')],
       ['Cuts so far', list.map((a) => (a._drops ? `${a._drops} cut${a._drops > 1 ? 's' : ''}, −${a._cutPct}%` : 'none'))],
       ['Vs similar live', num((a) => a.value?.pct, 'min').map((x) => (x.v == null ? '—' : (x.v > 0 ? '+' : '') + x.v + '%')), num((a) => a.value?.pct, 'min')],

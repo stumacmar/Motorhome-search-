@@ -340,3 +340,38 @@ test('pick score rewards star spec, price, motivation and provenance, and punish
   const unread = scoreDeal({ specs: [], priceHistory: [], value: { pct: 0 } }, cfg, today);
   assert.ok(unread.pickParts.some((p) => /not read yet/.test(p.label)));
 });
+
+test('quality score ranks brands by owner surveys, build tier, awards and base vehicle', async () => {
+  const { rateQuality, brandOf, gradeFor } = await import('../src/quality.js');
+  const q = (make, model, title, extra = {}) => rateQuality({ make, model, title, year: 2021, details: { chassis: 'Fiat Ducato' }, ...extra });
+  const hymer = q('Hymer', 'B-Class', 'Hymer B-Class MasterLine T 780');
+  const swift = q('Swift', 'Escape 674', 'Swift Escape 674');
+  const elddis = q('Elddis', 'Encore 255', 'Elddis Encore 255');
+  assert.ok(hymer.score > swift.score && swift.score > elddis.score, `${hymer.score} > ${swift.score} > ${elddis.score}`);
+  assert.ok(elddis.parts.some((p) => p.pts < 0 && /factory/.test(p.label)));
+  assert.equal(brandOf({ make: 'Adria', model: 'Sun Living', title: 'Adria Sun Living S 70' }).name, 'Sun Living');
+  // A model-line award adds points, but only for vans of roughly that generation.
+  const nuevo = q('Auto-Sleepers', 'Nuevo EK', 'Auto-Sleepers Nuevo EK');
+  const plain = q('Auto-Sleepers', 'Kingham', 'Auto-Sleepers Kingham');
+  assert.ok(nuevo.awards.length >= 2 && nuevo.score > plain.score);
+  const oldNuevo = rateQuality({ make: 'Auto-Sleepers', model: 'Nuevo', title: 'Auto-Sleepers Nuevo', year: 2010 });
+  assert.equal(oldNuevo.awards.length, 0);
+  // Mercedes base scores above Fiat.
+  assert.ok(q('Hymer', 'ML-T 570', 'Hymer ML-T 570', { details: { chassis: 'Mercedes Sprinter' } }).score > q('Hymer', 'ML-T 570', 'Hymer ML-T 570').score);
+  assert.equal(gradeFor(80), 'A+');
+  assert.equal(gradeFor(10), 'D');
+});
+
+test('quality for money sets quality against the usual price for the age and body', async () => {
+  const { rateQuality, rateQualityForMoney } = await import('../src/quality.js');
+  const vans = [];
+  for (let i = 0; i < 14; i++) vans.push({ id: 's' + i, status: 'active', make: 'Swift', model: 'Escape', title: 'Swift Escape 674', year: 2020, price: 48000 + i * 200, fit: { bodyType: 'Coach Built' } });
+  const cheapHymer = { id: 'h1', status: 'active', make: 'Hymer', model: 'B-Class', title: 'Hymer B-Class', year: 2020, price: 48000, fit: { bodyType: 'Coach Built' } };
+  const dearHymer = { ...cheapHymer, id: 'h2', price: 80000 };
+  const all = [...vans, cheapHymer, dearHymer];
+  for (const a of all) a.quality = rateQuality(a);
+  rateQualityForMoney(all);
+  assert.ok(cheapHymer.quality.forMoney > 60, `cheap Hymer ${cheapHymer.quality.forMoney}`);
+  assert.ok(dearHymer.quality.forMoney < cheapHymer.quality.forMoney);
+  assert.ok(Math.abs(vans[7].quality.forMoney - 50) <= 3, `typical Swift ${vans[7].quality.forMoney}`);
+});

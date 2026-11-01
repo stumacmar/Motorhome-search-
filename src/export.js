@@ -53,6 +53,7 @@ export function slimAdvert(a) {
     relisted: a.relisted,
     value: a.value,
     deal: slimDeal(a.deal),
+    quality: a.quality ? { score: a.quality.score, grade: a.quality.grade, brand: a.quality.brand, forMoney: a.quality.forMoney, priceIndex: a.quality.priceIndex, awards: a.quality.awards.length || undefined } : undefined,
     length: a.length,
     lengthOutside: a.lengthOutside,
     excluded: a.excluded,
@@ -74,8 +75,12 @@ export function slimAdvert(a) {
 /** The heavier text per live advert: description and the evidence behind each chip. Keyed by advert id. */
 export function detailsFor(a) {
   const d = a.details;
-  if (!d || a.status !== 'active') return null;
+  if (a.status !== 'active') return null;
+  // The quality score's working: components, awards and the price peer group.
+  const quality = a.quality ? { parts: a.quality.parts, awards: a.quality.awards, peer: a.quality.peer } : undefined;
+  if (!d) return quality ? { quality } : null;
   return {
+    quality,
     description: Array.from(d.description || '').slice(0, a.excluded ? HIDDEN_DESCRIPTION_CHARS : DESCRIPTION_CHARS).join(''),
     specs: evidence(a.specs),
     signals: evidence(a.signals),

@@ -14,6 +14,7 @@ import { buildReport, sendTelegram, sendEmail, channelsFromEnv } from './notify.
 import { fetchAdvertDirect, fetchAdvertViaBrowser } from './advert.js';
 import { compileSpecs, matchSpecs, matchRedFlags, matchSignals, compareWithSimilar, scoreDeal, listedDateFromId, inferLength, lengthExclusion, looksUnconverted, DEFAULT_SPECS, DEFAULT_RED_FLAGS, DEFAULT_SIGNALS } from './spec.js';
 import { isNewStock, sellDaysStats, typicalSellDays, goneBenchmark, findRelisted, parseFit } from './market.js';
+import { rateQuality, rateQualityForMoney } from './quality.js';
 import { BrowserTransport } from './autotrader.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -126,7 +127,9 @@ async function enrich(store, config, transport) {
     advert.market = advert.status === 'active' ? typicalSellDays(advert, sellStats) : null;
     advert.relisted = advert.status === 'active' ? findRelisted(advert, adverts) : null;
     advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
+    advert.quality = advert.status === 'active' ? rateQuality(advert) : null;
   }
+  rateQualityForMoney(adverts);
   const skipped = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.details).length - failed;
   return { fetched, failed, stillPending: Math.max(0, skipped) };
 }
