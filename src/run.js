@@ -126,10 +126,10 @@ async function enrich(store, config, transport) {
     advert.soldRef = sold[advert.id] || null;
     advert.market = advert.status === 'active' ? typicalSellDays(advert, sellStats) : null;
     advert.relisted = advert.status === 'active' ? findRelisted(advert, adverts) : null;
-    advert.quality = advert.status === 'active' ? rateQuality(advert) : null; // before the deal: the pick score uses it
-    advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
+    advert.quality = advert.status === 'active' ? rateQuality(advert) : null;
   }
-  rateQualityForMoney(adverts);
+  rateQualityForMoney(adverts); // before the deal: the pick score uses quality for money
+  for (const advert of adverts) advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
   const skipped = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.details).length - failed;
   return { fetched, failed, stillPending: Math.max(0, skipped) };
 }
