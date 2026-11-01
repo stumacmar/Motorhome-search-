@@ -126,8 +126,8 @@ async function enrich(store, config, transport) {
     advert.soldRef = sold[advert.id] || null;
     advert.market = advert.status === 'active' ? typicalSellDays(advert, sellStats) : null;
     advert.relisted = advert.status === 'active' ? findRelisted(advert, adverts) : null;
+    advert.quality = advert.status === 'active' ? rateQuality(advert) : null; // before the deal: the pick score uses it
     advert.deal = advert.status === 'active' ? scoreDeal(advert, dealConfig) : null;
-    advert.quality = advert.status === 'active' ? rateQuality(advert) : null;
   }
   rateQualityForMoney(adverts);
   const skipped = Object.values(store.adverts).filter((a) => a.status === 'active' && !a.details).length - failed;

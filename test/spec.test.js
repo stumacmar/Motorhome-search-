@@ -375,3 +375,15 @@ test('quality for money sets quality against the usual price for the age and bod
   assert.ok(dearHymer.quality.forMoney < cheapHymer.quality.forMoney);
   assert.ok(Math.abs(vans[7].quality.forMoney - 50) <= 3, `typical Swift ${vans[7].quality.forMoney}`);
 });
+
+test('pick score gives up to 10 points for build quality', async () => {
+  const { rateQuality } = await import('../src/quality.js');
+  const base = { status: 'active', year: 2021, price: 50000, details: { chassis: 'Fiat Ducato' }, specs: [], signals: [], redFlags: [], priceHistory: [{ date: '2026-10-01', price: 50000 }], firstSeen: '2026-10-01', listedDate: '2026-10-01' };
+  const hymer = { ...base, make: 'Hymer', model: 'B-Class', title: 'Hymer B-Class' };
+  const elddis = { ...base, make: 'Elddis', model: 'Encore', title: 'Elddis Encore 255' };
+  for (const a of [hymer, elddis]) a.quality = rateQuality(a);
+  const cfg = { wantedSpecs: [], niceToHave: [] };
+  const h = scoreDeal(hymer, cfg, '2026-11-01'), e = scoreDeal(elddis, cfg, '2026-11-01');
+  assert.ok(h.pickScore > e.pickScore, `${h.pickScore} > ${e.pickScore}`);
+  assert.ok(h.pickParts.some((p) => /^quality /.test(p.label) && p.pts <= 10));
+});

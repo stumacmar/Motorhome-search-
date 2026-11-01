@@ -349,6 +349,8 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   else if (mpy != null && mpy < 8000) prov += add('modest mileage for its age', 1);
   if (advert.year != null && advert.year >= thisYear - 3) prov += add('three years old or less', 2);
   score += Math.min(10, prov);
+  // Build quality (src/quality.js), up to 10: a quality score of 30 earns nothing, 80 or more full marks.
+  if (advert.quality) score += add(`quality ${advert.quality.grade} ${advert.quality.score}/100`, (advert.quality.score - 30) / 5, 10);
   if (advert.relisted) score += add('re-listed (room to negotiate)', 2);
   if (staleNoCut) score += add('due a price cut', 2);
   for (const f of advert.redFlags || []) score -= add(`red flag: ${f.label}`, 25) ;
