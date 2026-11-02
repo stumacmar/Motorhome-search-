@@ -5,7 +5,7 @@
 //                                 Club Owner Satisfaction Awards (owner surveys of
 //                                 reliability, build, dealer and warranty)
 //   build tier          up to 30  expert standing of the brand (premium, upper-mid,
-//                                 volume, value, budget sub-brand, specialist converter)
+//                                 small specialist converter, volume, value, budget sub-brand)
 //   model awards        up to 15  Practical Motorhome Awards and European Innovation
 //                                 Awards won or commended by this model line
 //   base vehicle        up to 10  owner satisfaction with the chassis (VW, Mercedes,
@@ -59,7 +59,7 @@ const BASE_VEHICLE = {
 // Build tier: points out of 30, from expert reviews and where each brand sits in its group.
 const TIER = {
   premium: { pts: 30, label: 'premium build' },
-  specialist: { pts: 28, label: 'specialist converter' },
+  specialist: { pts: 20, label: 'small specialist converter' },
   upper: { pts: 25, label: 'upper-mid build' },
   volume: { pts: 17, label: 'volume build' },
   value: { pts: 17, label: 'value build' },
@@ -587,10 +587,17 @@ export function brandOf(advert) {
   return null;
 }
 
+// These come from the survey's separate van-converter table: small, loyal owner groups
+// and a higher Gold bar (85% against 80%), so their scores run about 8 points hotter
+// than the motorhome manufacturer tables. Taken down by that much to sit on one scale.
+const CONVERTER_TABLE = new Set(['bilbos', 'wellhouse', 'murvi', 'vantage', 'consort', 'devon', 'wildax', 'vwcalifornia']);
+const CONVERTER_OFFSET = 8;
+
 /** Owner satisfaction, %: recent years count more, and pre-owned scores more than new (this is a used-van search). */
 function ownerSatisfaction(key) {
   const years = OSA[key];
   if (!years) return null;
+  const offset = CONVERTER_TABLE.has(key) ? CONVERTER_OFFSET : 0;
   const yearWeight = { 2025: 1, 2024: 0.9, 2023: 0.8, 2022: 0.7, 2020: 0.5 };
   let sum = 0, w = 0, n = 0;
   for (const [y, [fresh, used]] of Object.entries(years)) {
@@ -598,7 +605,7 @@ function ownerSatisfaction(key) {
     if (fresh != null) { sum += fresh * yw * 0.4; w += yw * 0.4; n++; }
     if (used != null) { sum += used * yw * 0.6; w += yw * 0.6; n++; }
   }
-  return w ? { pct: sum / w, n } : null;
+  return w ? { pct: sum / w - offset, n, converter: offset > 0 } : null;
 }
 
 function baseVehicleOf(advert) {
@@ -636,7 +643,7 @@ export function rateQuality(advert) {
     const share = brand.osaShare ?? 1;
     const own = Math.max(0, Math.min(45, ((osa.pct - 70) / 18) * 45));
     const pts = own * share + 15 * (1 - share); // a cheaper sub-brand only partly inherits its group's score
-    score += add(`owners rate ${osaKey === brand.key ? brand.name : 'its group'} ${osa.pct.toFixed(1)}%${share < 1 ? ' (group, part credit)' : ''}`, pts);
+    score += add(`owners rate ${osaKey === brand.key ? brand.name : 'its group'} ${osa.pct.toFixed(1)}%${osa.converter ? ' (van-converter survey, put on the motorhome scale)' : ''}${share < 1 ? ' (group, part credit)' : ''}`, pts);
   } else {
     score += add(brand ? `${brand.name}: too few owners surveyed` : 'brand not in the owner surveys', 15);
   }
