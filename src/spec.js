@@ -57,6 +57,9 @@ export const DEFAULT_SIGNALS = [
   { label: 'Warranty included', pattern: '\\d+ (month|year)s? (?:\\w+ )?warranty|warranty included|comes with (a |full )?warranty|warranted' },
   { label: 'Habitation check', pattern: 'hab(itation)? (check|service)|damp (check|report|test)' },
   { label: 'Winterised', pattern: 'winteris|double floor|heated (tank|waste|floor)' },
+  // Brokers sell for a private owner for a fee (Motorhome Depot: £3k or 10%) and give no warranty:
+  // dealer-style prices with private-sale cover, so offer accordingly.
+  { label: 'Broker sale (no warranty)', pattern: 'motorhome depot|motorhome pig|as (a|the) broker|brokerage|on behalf of (the|a|our) (owner|vendor|client|customer|seller)|sale or return|private (vendor|seller|owner) (via|through)' },
 ];
 
 export function compileSpecs(specs = DEFAULT_SPECS) {

@@ -389,3 +389,12 @@ test('pick score gives up to 10 points for quality per pound', async () => {
   assert.ok(h.pickParts.some((p) => /^quality for money 78/.test(p.label) && p.pts > 9 && p.pts <= 10));
   assert.ok(!e.pickParts.some((p) => /^quality for money/.test(p.label) && p.pts > 1));
 });
+
+test('broker sales are tagged', async () => {
+  const { matchSignals, compileSpecs, DEFAULT_SIGNALS } = await import('../src/spec.js');
+  const has = (description) => matchSignals({ features: [], description, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SIGNALS)).some((s) => s.label === 'Broker sale (no warranty)');
+  assert.equal(has('Motorhome Depot Derbyshire are pleased to present this 2017 IH'), true);
+  assert.equal(has('Offered by Motorhome Pig as a broker.'), true);
+  assert.equal(has('Sold on behalf of the owner, viewing by appointment'), true);
+  assert.equal(has('Full dealer warranty, part exchange welcome'), false);
+});
