@@ -130,6 +130,10 @@ export const BRANDS = [
   { key: 'euramobil', name: 'Eura Mobil', tier: 'upper', match: /eura ?mobil/i },
   { key: 'morelo', name: 'Morelo', tier: 'premium', match: /\bmorelo\b/i },
   { key: 'megamobil', name: 'Mega Mobil', tier: 'upper', match: /mega ?mobil/i },
+  // IH: no owner-survey score (too few owners), but reviewed as one of the best-built UK
+  // van conversions (Practical Motorhome 2017, Caravan and Motorhome Club judges). Owners
+  // report recurring cracks in the rear GRP panel, so check the rear corners.
+  { key: 'ih', name: 'IH', tier: 'upper', match: /^ih$|\bih\b(?=[\s-]+(?:motorhomes|n-?class|tio|fiat|citro[eë]n|peugeot|mercedes|vw|volkswagen|\d{3}))/i, risk: 'rear fibreglass panel cracks reported by owners (check the rear corners)' },
   { key: 'mototrek', name: 'Moto-Trek', tier: 'specialist', match: /moto[\s-]?trek/i },
   { key: 'hillside', name: 'Hillside Leisure', tier: 'volume', match: /\bhillside\b/i },
   { key: 'bodans', name: 'Bodans', tier: 'volume', match: /\bbodans\b/i },
