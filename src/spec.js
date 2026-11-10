@@ -14,7 +14,7 @@ export const DEFAULT_SPECS = [
   { label: 'Alde heating', value: 3000, pattern: '\\balde\\b|\\baldi\\s+(wet|central|heating|heat)' },
   { label: 'Habitation air conditioning', value: 2200, pattern: 'truma aventa|dometic (freshjet|freshlight|fj\\d|harrier|b\\d{4})|roof[\\s-]?(mounted[\\s-]?)?air[\\s-]?con|habitation air[\\s-]?con|air[\\s-]?con(ditioning)? (unit )?(in|to|for) (the )?(habitation|living|rear|lounge|bedroom)|rear air[\\s-]?con|air[\\s-]?con(ditioning)? unit|(roof|habitation)[\\s-]?a\\/c' },
   { label: 'Cab air conditioning', value: 0, pattern: 'air[\\s-]?con(ditioning)?\\b|\\ba\\/c\\b|climate control' },
-  { label: 'Self-levelling', value: 5500, pattern: 'self[\\s-]?levell?ing|levell?ing (system|jacks|legs)|hydraulic (jacks|levell?ing)|\\be\\s?&\\s?p\\b|e&amp;p' },
+  { label: 'Self-levelling', value: 5500, pattern: 'self[\\s-]*levell?(ing|ers?)|auto(matic)?[\\s-]*levell?(ing|ers?)(?![\\s-]*(head|light|lamp|beam))|levell?ing (system|jacks|legs)|hydr(au|o|a)lic (jacks|levell?(ing|ers?))|\\be\\s?&\\s?p\\b|e&amp;p|\\bhpc (hydraulic|levell?|self|jacks|system)|goldschmitt (hydraulic|levell?ing|jacks|self)|levelmatic|al-?ko (hy4|hydraulic)|\\bhy4\\b' },
   { label: 'Rear air suspension', value: 2000, pattern: 'air[\\s-]?suspension|air[\\s-]?ride|\\bvb[\\s-]?air|goldschmitt|semi[\\s-]?air|dunlop air' },
   { label: '360° camera', value: 450, pattern: '\\b360\\s*(°|degree|deg\\b|cam)|surround[\\s-]?view|bird\'?s[\\s-]?eye' },
   { label: 'Reversing camera', value: 200, pattern: 'revers(e|ing)[\\s-]?cam|rear[\\s-]?(view[\\s-]?)?cam' },

@@ -26,6 +26,16 @@ test('Alde heating is matched, including the common misspelling, but not other w
   assert.equal(has('Weekly shop at Aldi is a short walk away'), false);
 });
 
+test('self-levelling is matched under its many names, but not ramps, wheel jacks or headlights', () => {
+  const has = (description) => matchSpecs({ features: [], description, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SPECS)).some((m) => m.label === 'Self-levelling');
+  for (const yes of ['HPC Hydraulic self levellers fitted', 'Auto levelling system', 'automatic leveling', 'Hydrolic levelling', 'hydraulic levellers', 'Self -levelling', 'Goldschmitt hydraulic jacks', 'Levelmatic fitted', 'AL-KO HY4 jacks', 'E&P levelling']) {
+    assert.equal(has(yes), true, yes);
+  }
+  for (const no of ['Levelling ramps included', 'Tool kit and hydraulic jack', 'Headlights - levelling control', 'automatic levelling headlights', 'Wind down stabilising jacks', 'Dometic HPC fridge', 'Goldschmitt air suspension']) {
+    assert.equal(has(no), false, no);
+  }
+});
+
 test('star spec counts the wanted items and knows when the page was not read', async () => {
   const { starSpec } = await import('../src/spec.js');
   const cfg = { wantedSpecs: ['Alde heating', '360° camera', 'Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2 };
