@@ -106,7 +106,7 @@ async function enrich(store, config, transport) {
       else advert.excluded = outside;
     }
     if (!advert.details) continue;
-    advert.specs = matchSpecs(advert.details, compiled);
+    advert.specs = matchSpecs(advert.details, compiled, advert.title);
     advert.redFlags = matchRedFlags(advert.details, compiledFlags);
     advert.signals = matchSignals(advert.details, compiledSignals);
     advert.fit = parseFit(advert);

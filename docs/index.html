@@ -373,7 +373,7 @@
     a._underPct = a.value ? -a.value.pct : null; // positive = under similar
     const lv = lastVisit ? lastVisit.slice(0, 10) : null;
     a._sinceVisit = !!lv && a.status === 'active' && ((a.firstSeen && a.firstSeen > lv) || h.some((p, i) => i > 0 && p.date > lv));
-    a._text = [a.title, a.subTitle, a.make, a.model, a.location, a.fit?.bedLayout, a.fit?.endLayout, a.fit?.bodyType].join(' ').toLowerCase();
+    a._text = [a.title, a.subTitle, a.make, a.model, a.location, a.fit?.bedLayout, a.fit?.endLayout, a.fit?.bodyType, ...(a.specs || []).map((s) => s.label)].join(' ').toLowerCase();
   }
 
   // ---- Your triage: shortlist, seen, bin, notes, compare. Local to this browser; a sync link carries them over. ----

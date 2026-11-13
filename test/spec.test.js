@@ -36,6 +36,22 @@ test('self-levelling is matched under its many names, but not ramps, wheel jacks
   }
 });
 
+test('rear lounge with a drop-down bed is tagged on panel vans only, using the title for the model name', () => {
+  const c = compileSpecs(DEFAULT_SPECS);
+  const has = (title, description, specs = {}) => matchSpecs({ features: [], description, keySpec: {}, specs }, c, title).some((m) => m.label === 'Rear lounge + drop-down bed');
+  assert.equal(has('Burstner B66 C644', 'Lovely van'), true);
+  assert.equal(has('Burstner B66 644 C', ''), true);
+  assert.equal(has('Auto-Trail Expedition 67 Flex', ''), true);
+  assert.equal(has('Auto-Trail Expedition 67', 'Electric drop-down bed over the rear lounge'), true);
+  assert.equal(has('Fiat Ducato', 'Electric drop-down bed over the rear lounge', { 'Body type': 'Campervan' }), true);
+  // Coachbuilts put the drop-down bed over a front lounge, and the B66 600 C has a fixed bed.
+  assert.equal(has('Swift Escape 694', 'Drop-down double bed above the lounge', { 'Body type': 'Motorhome' }), false);
+  assert.equal(has('Burstner B66 600 C', 'Fixed rear bed'), false);
+  assert.equal(has('Hymer B644', ''), false);
+  // The title only feeds this tag: a model called Solaris is not a solar panel.
+  assert.equal(matchSpecs({ features: [], description: '', keySpec: {}, specs: {} }, c, 'Wildax Solaris XL').some((m) => m.label === 'Solar panel'), false);
+});
+
 test('star spec counts the wanted items and knows when the page was not read', async () => {
   const { starSpec } = await import('../src/spec.js');
   const cfg = { wantedSpecs: ['Alde heating', '360° camera', 'Habitation air conditioning', 'Self-levelling'], minWantedSpecs: 2 };

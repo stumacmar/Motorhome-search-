@@ -27,6 +27,9 @@ export const DEFAULT_SPECS = [
   { label: 'Tow bar', value: 500, pattern: 'tow[\\s-]?bar' },
   { label: 'Awning', value: 600, pattern: 'awning|wind[\\s-]?out canopy' },
   { label: 'Satellite TV', value: 800, pattern: 'sat(ellite)?[\\s-]?(dish|dome|system|tv)|oyster' },
+  // Panel vans with a rear lounge under a drop-down bed (rare: B66 644 C / Eliseo 644, Auto-Trail Expedition 67 Flex,
+  // MegaMobil Lounge, La Strada Avanti R, Nomade Space). Coachbuilts are excluded: their drop-down bed is over a front lounge.
+  { label: 'Rear lounge + drop-down bed', value: 0, useTitle: true, pattern: '\\b(b66|eliseo)\\b[^\\n]{0,15}644\\b|\\bc ?644\\b|\\b644 ?c\\b|expedition 67 flex|^(?=[\\s\\S]*expedition 67)(?=[\\s\\S]*drop[\\s-]?down)|mega[\\s-]?lounge|la strada avanti r\\b|nomade space|^(?=[\\s\\S]*^body type: (campervan|camper van))(?=[\\s\\S]*(drop[\\s-]?down|lift|electric) (double )?bed (above|over) the rear)' },
   { label: 'Full service history', value: 0, pattern: 'full (service|main dealer|dealer) history|\\bfsh\\b|^service history: full' },
 ];
 
@@ -63,7 +66,7 @@ export const DEFAULT_SIGNALS = [
 ];
 
 export function compileSpecs(specs = DEFAULT_SPECS) {
-  return specs.map((s) => ({ label: s.label, value: s.value || 0, weight: s.weight || 0, re: new RegExp(s.pattern, 'im') }));
+  return specs.map((s) => ({ label: s.label, value: s.value || 0, weight: s.weight || 0, useTitle: !!s.useTitle, re: new RegExp(s.pattern, 'im') }));
 }
 
 function evidenceFor(text, m) {
@@ -76,12 +79,16 @@ function evidenceFor(text, m) {
 }
 
 /** Which of the specs an advert has, with a short piece of evidence for each. */
-export function matchSpecs(details, compiled) {
+export function matchSpecs(details, compiled, title = '') {
   const text = advertText(details);
+  // Specs marked useTitle also see the title, which carries the model name (e.g. "Burstner B66 C644") the page
+  // text often leaves out. Others don't: model names like "Solaris" or "Roadcruiser" would read as kit.
+  const withTitle = title ? `title: ${title.toLowerCase()}\n${text}` : text;
   const matched = [];
-  for (const { label, value, re } of compiled) {
-    const m = re.exec(text);
-    if (m) matched.push({ label, value, evidence: evidenceFor(text, m) });
+  for (const { label, value, re, useTitle } of compiled) {
+    const t = useTitle ? withTitle : text;
+    const m = re.exec(t);
+    if (m) matched.push({ label, value, evidence: evidenceFor(t, m) });
   }
   // A generic "air con" mention counts as cab air con only when nothing points at a habitation unit.
   const hab = matched.find((s) => s.label === 'Habitation air conditioning');
