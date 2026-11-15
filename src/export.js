@@ -13,8 +13,8 @@ const evidence = (list) => Object.fromEntries((list || []).filter((s) => s.evide
 /** The deal fields the dashboard and notifications read; the rest stays in listings.json. */
 function slimDeal(deal) {
   if (!deal) return deal;
-  const { pickScore, pickParts, underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal } = deal;
-  return { pickScore, pickParts, underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal };
+  const { pickScore, pickParts, underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal, brief, nearMiss } = deal;
+  return { pickScore, pickParts, underpriced, highSpec, motivated, desperation, motivationReasons, starCount, starOf, niceHits, kitScore, staleNoCut, listedReliable, drops, totalDropPct, isDeal, brief, nearMiss };
 }
 
 export function slimAdvert(a) {
