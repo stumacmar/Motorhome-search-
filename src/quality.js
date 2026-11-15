@@ -114,6 +114,8 @@ export const BRANDS = [
   { key: 'joa', name: 'Joa Camp', tier: 'budget', osa: 'pilote', osaShare: 0.5, match: /\bjoa\b/i },
   { key: 'itineo', name: 'Itineo', tier: 'budget', osa: 'rapido', osaShare: 0.5, match: /\bitineo\b/i },
   { key: 'dreamer', name: 'Dreamer', tier: 'budget', osa: 'rapido', osaShare: 0.5, match: /\bdreamer\b/i },
+  // Italian-built, owned by the Rapido group; sellers often list it under make 'Rapido' ("Rapido PLA Privilege 390").
+  { key: 'pla', name: 'PLA', tier: 'value', osa: 'rapido', osaShare: 0.5, match: /\bpla\b|plein[\s-]?air/i },
   { key: 'globecar', name: 'Globecar', tier: 'value', match: /\bglobe ?car\b/i },
   { key: 'possl', name: 'Pössl', tier: 'value', match: /p[oö]e?ssl/i },
   { key: 'panama', name: 'Panama', tier: 'value', match: /\bpanama\b/i },
@@ -685,7 +687,9 @@ export function rateQuality(advert) {
   if (brand?.risk) score += add(brand.risk, -3);
 
   const final = Math.max(0, Math.min(100, Math.round(score)));
-  return { score: final, grade: gradeFor(final), brand: brand?.name || null, tier: brand?.tier || 'unknown', parts, awards };
+  // The group a sub-brand belongs to (Bessacarr -> Swift), so a brand you avoid takes its sub-brands with it.
+  const group = brand?.osa ? BRANDS.find((b) => b.key === brand.osa)?.name || brand.name : brand?.name || null;
+  return { score: final, grade: gradeFor(final), brand: brand?.name || null, group, tier: brand?.tier || 'unknown', parts, awards };
 }
 
 // ---------------------------------------------------------------------------

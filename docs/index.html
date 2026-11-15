@@ -141,6 +141,9 @@
   .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
   .tag.gone { background: var(--gone); color: #fff; }
   .tag.deal { background: var(--gold); color: #fff; }
+  .tag.brief { background: var(--good, #1a7f4b); color: #fff; }
+  .tag.near { background: transparent; border: 1px solid var(--good, #1a7f4b); color: var(--good, #1a7f4b); }
+  .tag.avoid { background: transparent; border: 1px dashed var(--drop); color: var(--drop); }
   .tag.value { background: transparent; border: 1px solid var(--line); }
   .tag.value.under { border-color: var(--drop); color: var(--drop); font-weight: 600; }
   .tag.value.under.deep { background: var(--drop); color: #fff; }
@@ -465,7 +468,7 @@
   // ---- Triage strip, market tiles and legend ----
   const legend = $('starlegend');
   const liveNow = () => adverts.filter((a) => a.status === 'active' && !a.excluded && !inBin(a) && !(state.myLen && a.lengthOutside));
-  const VIEW_NAMES = { top: 'Top picks', active: 'Live', sincevisit: 'Since your last visit', shortlist: 'Shortlist', seen: 'Seen', hidden: 'Bin', shared: 'a shared shortlist', deals: 'Worth a look', quality: 'Quality buys', star: 'Star spec', under: 'Underpriced', drops: 'Price cuts', motivated: 'Motivated sellers', stale: 'Due a cut', relisted: 'Re-listed', new: 'New this week', gone: 'Gone', rules: 'Hidden by rules' };
+  const VIEW_NAMES = { top: 'Top picks', active: 'Live', sincevisit: 'Since your last visit', shortlist: 'Shortlist', seen: 'Seen', hidden: 'Bin', shared: 'a shared shortlist', deals: 'Worth a look', near: 'Near misses', quality: 'Quality buys', star: 'Star spec', under: 'Underpriced', drops: 'Price cuts', motivated: 'Motivated sellers', stale: 'Due a cut', relisted: 'Re-listed', new: 'New this week', gone: 'Gone', rules: 'Hidden by rules' };
   function renderStats() {
     const live = liveNow();
     const mineRow = [
@@ -484,6 +487,7 @@
       ['drop', live.filter((a) => a._underPct >= 10).length, 'underpriced 10%+', 'under', { minUnder: 10 }],
       ['drop', live.filter((a) => a._underPct >= 20).length, 'underpriced 20%+', 'under', { minUnder: 20 }],
       ['deal', live.filter((a) => a.deal?.isDeal).length, 'worth a look', 'deals', null],
+      ...(live.some((a) => a.deal?.brief) ? [['deal', live.filter((a) => a.deal?.nearMiss).length, 'near misses', 'near', null]] : []),
       ['qual', live.filter((a) => a._qfm >= 70).length, 'quality buys 70+', 'quality', { minQfm: 70 }],
       ['qual', live.filter((a) => a._qfm >= 80).length, 'quality buys 80+', 'quality', { minQfm: 80 }],
       ...(starItems.length ? [
@@ -600,6 +604,11 @@
     const binned = inBin(a), seen = isSeen(a);
     const tags = [];
     if (mine.stars[a.id]) tags.push(`<span class="tag star">★ shortlisted</span>`);
+    const br = a.deal?.brief;
+    if (br?.ok) tags.push(`<span class="tag brief" title="Meets your brief: ${esc(br.met.join(', '))}${br.unknown.length ? ' (not known: ' + esc(br.unknown.join(', ')) + ')' : ''}">✓ your brief</span>`);
+    else if (br?.near) tags.push(`<span class="tag near" title="Has ${esc(br.met.join(', '))}">near miss · no ${esc(br.missing[0])}</span>`);
+    if (br?.avoided) tags.push(`<span class="tag avoid" title="On your avoid list (weak owner-satisfaction scores)">avoid · ${esc(br.avoided)}</span>`);
+    if (br?.bonus?.length) tags.push(`<span class="tag brief" title="Bonus kit from your brief">+ ${esc(br.bonus.join(', '))}</span>`);
     if (a.deal?.underpriced) tags.push(`<span class="tag deal">underpriced</span>`);
     if (a.deal?.highSpec) tags.push(`<span class="tag deal" title="Has ${a._starHave.length} of the ${starItems.length} star spec items">★ star spec ${a._starHave.length}/${starItems.length}</span>`);
     if (a.deal?.motivated) tags.push(`<span class="tag motivated" title="Seller looks motivated (${a.deal.desperation}/100): ${esc((a.deal.motivationReasons || []).join(', '))}">motivated · ${a.deal.desperation}/100</span>`);
@@ -699,6 +708,7 @@
     if (state.show === 'under' && !(a._underPct != null && a._underPct >= state.minUnder)) return false;
     if (state.show === 'motivated' && !a.deal?.motivated) return false;
     if (state.show === 'stale' && !a.deal?.staleNoCut) return false;
+    if (state.show === 'near' && !a.deal?.nearMiss) return false;
     if (state.show === 'relisted' && !a.relisted) return false;
     if (state.hideSeen && isSeen(a) && !['shortlist', 'seen', 'hidden'].includes(state.show)) return false;
     if (state.pmin && !(a._last >= Number(state.pmin))) return false;

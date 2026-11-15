@@ -1,6 +1,7 @@
 // Spec matching, kit pricing and "is this underpriced?" scoring.
 
 import { advertText } from './advert.js';
+import { brandOf } from './quality.js';
 
 /**
  * Kit worth knowing about. Each entry is matched (case-insensitively) against
@@ -30,6 +31,9 @@ export const DEFAULT_SPECS = [
   // Panel vans with a rear lounge under a drop-down bed (rare: B66 644 C / Eliseo 644, Auto-Trail Expedition 67 Flex,
   // MegaMobil Lounge, La Strada Avanti R, Nomade Space). Coachbuilts are excluded: their drop-down bed is over a front lounge.
   { label: 'Rear lounge + drop-down bed', value: 0, useTitle: true, pattern: '\\b(b66|eliseo)\\b[^\\n]{0,15}644\\b|\\bc ?644\\b|\\b644 ?c\\b|expedition 67 flex|^(?=[\\s\\S]*expedition 67)(?=[\\s\\S]*drop[\\s-]?down)|mega[\\s-]?lounge|la strada avanti r\\b|nomade space|^(?=[\\s\\S]*^body type: (campervan|camper van))(?=[\\s\\S]*(drop[\\s-]?down|lift|electric) (double )?bed (above|over) the rear)' },
+  // Layout and heating for the brief (deals.brief in search.config.json). Autotrader's own end-layout field counts too.
+  { label: 'End lounge', value: 0, pattern: '^end layout: end lounge|\\b(rear|end)[\\s-]+(u[\\s-]?shaped[\\s-]+)?lounge' },
+  { label: 'Underfloor heating', value: 0, pattern: 'under[\\s-]?floor heating|floor heating|heated floor' },
   { label: 'Full service history', value: 0, pattern: 'full (service|main dealer|dealer) history|\\bfsh\\b|^service history: full' },
 ];
 
@@ -62,7 +66,7 @@ export const DEFAULT_SIGNALS = [
   { label: 'Winterised', pattern: 'winteris|double floor|heated (tank|waste|floor)' },
   // Brokers sell for a private owner for a fee (Motorhome Depot: £3k or 10%) and give no warranty:
   // dealer-style prices with private-sale cover, so offer accordingly.
-  { label: 'Broker sale (no warranty)', pattern: 'motorhome depot|motorhome pig|as (a|the) broker|brokerage|on behalf of (the|a|our) (owner|vendor|client|customer|seller)|sale or return|private (vendor|seller|owner) (via|through)' },
+  { label: 'Broker sale (no warranty)', pattern: 'motorhome depot|motorhome pig|as (a|the) broker|(?<!not a |not an )brokerage|on behalf of (the|a|our) (owner|vendor|client|customer|seller)|sale or return|private (vendor|seller|owner) (via|through)' },
 ];
 
 export function compileSpecs(specs = DEFAULT_SPECS) {
@@ -164,12 +168,19 @@ function fitPrice(comps) {
   return (age, miles) => mY + b * (age - mAge) + c * (miles - mMi);
 }
 
+// A cheaper sub-brand listed under its group's make ("Rapido PLA Privilege") is priced against its own kind, not the group's.
+function compareMake(a) {
+  const b = brandOf(a);
+  return b && b.osa !== undefined && (b.osaShare ?? 1) < 1 ? b.name : a.make;
+}
+
 function comparableKeys(a) {
   const d = a.details || {};
   const keys = [];
-  if (a.make && a.model) keys.push({ basis: 'model', key: `model|${norm(a.make)}|${norm(a.model)}`, span: 2, min: 3 });
+  const make = compareMake(a);
+  if (make && a.model) keys.push({ basis: 'model', key: `model|${norm(make)}|${norm(a.model)}`, span: 2, min: 3 });
   if (d.chassis && d.keySpec?.Berth) keys.push({ basis: 'chassis', key: `chassis|${norm(d.chassis)}|${norm(d.bodyType)}|${d.keySpec.Berth}`, span: 2, min: 5 });
-  if (a.make) keys.push({ basis: 'make', key: `make|${norm(a.make)}`, span: 1, min: 6 });
+  if (make) keys.push({ basis: 'make', key: `make|${norm(make)}`, span: 1, min: 6 });
   return keys;
 }
 
@@ -281,6 +292,29 @@ export function starSpec(advert, dealConfig) {
 }
 
 /** Decide whether an advert is worth a look, per the "deals" config. */
+/**
+ * The buyer's brief (deals.brief): must-haves an advert either meets or misses, brands to avoid,
+ * and bonus kit. ok = every must-have met; near = exactly one missed. A brand on the avoid list
+ * (or a sub-brand of one) is never ok or near.
+ */
+export function briefCheck(advert, brief) {
+  if (!brief) return null;
+  const labels = new Set((advert.specs || []).map((s) => s.label));
+  const met = [], missing = [], unknown = [];
+  const check = (label, ok) => (ok === null ? unknown : ok ? met : missing).push(label);
+  if (brief.usedOnly) check('used', !advert.newStock && !/^new$/i.test(advert.condition || ''));
+  if (brief.endLounge) check('end lounge', labels.has('End lounge') || labels.has('Rear lounge + drop-down bed'));
+  if (brief.maxMetres) check(`up to ${brief.maxMetres} m`, advert.length?.metres ? advert.length.metres <= brief.maxMetres : null);
+  if (brief.heating?.length) check('good heating', brief.heating.some((l) => labels.has(l)));
+  for (const l of brief.mustHave || []) check(l.toLowerCase(), labels.has(l));
+  const avoid = (brief.avoidBrands || []).map((b) => b.toLowerCase());
+  const q = advert.quality || {};
+  const avoided = [q.brand, q.group, advert.make].find((b) => b && avoid.includes(b.toLowerCase())) || null;
+  const bonus = (brief.bonus || []).filter((l) => labels.has(l));
+  const read = !!advert.details;
+  return { ok: read && !avoided && missing.length === 0, near: read && !avoided && missing.length === 1, met, missing, unknown, avoided, bonus };
+}
+
 export function scoreDeal(advert, dealConfig, today = new Date().toISOString().slice(0, 10)) {
   const star = starSpec(advert, dealConfig);
   const wantedHits = star.hits;
@@ -363,11 +397,16 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
   // 40 or below earns nothing, 80 or more full marks. 50 is what the money normally buys.
   const qfm = advert.quality?.forMoney;
   if (qfm != null) score += add(`quality for money ${qfm} (quality ${advert.quality.grade} ${advert.quality.score})`, (qfm - 40) / 4, 10);
+  const brief = briefCheck(advert, dealConfig.brief);
+  if (brief?.ok) score += add('meets your brief', 15);
+  else if (brief?.near) score += add(`near miss (no ${brief.missing[0]})`, 5);
+  if (brief?.bonus.length) score += add(`bonus: ${brief.bonus.join(', ').toLowerCase()}`, 3 * brief.bonus.length, 6);
+  if (brief?.avoided) score -= add(`brand you avoid (${brief.avoided})`, 15);
   if (advert.relisted) score += add('re-listed (room to negotiate)', 2);
   if (staleNoCut) score += add('due a price cut', 2);
   for (const f of advert.redFlags || []) score -= add(`red flag: ${f.label}`, 25) ;
   const pickScore = Math.max(0, Math.min(100, Math.round(score)));
-  for (const p of parts) if (/^red flag/.test(p.label)) p.pts = -p.pts;
+  for (const p of parts) if (/^(red flag|brand you avoid)/.test(p.label)) p.pts = -p.pts;
 
   return {
     pickScore,
@@ -391,7 +430,10 @@ export function scoreDeal(advert, dealConfig, today = new Date().toISOString().s
     drops,
     totalDropPct,
     redFlags,
-    isDeal: (underpriced || highSpec || desperate) && redFlags === 0,
+    brief,
+    nearMiss: !!brief?.near && redFlags === 0,
+    // With a brief, "worth a look" means it meets the brief; price and seller signals then rank it.
+    isDeal: (brief ? brief.ok : underpriced || highSpec || desperate) && redFlags === 0,
   };
 }
 

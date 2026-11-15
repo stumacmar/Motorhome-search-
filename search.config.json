@@ -35,7 +35,32 @@
     "minComparables": 3,
     "staleDays": 90,
     "motivatedScore": 40,
-    "dealScore": 50
+    "dealScore": 50,
+    "brief": {
+      "_comment": "Your buyer's brief. 'Worth a look' now means an advert meets every must-have here and has no red flags; price and seller signals then rank it (pick score +15). Missing exactly one must-have makes it a 'near miss' (+5). heating: any one of these labels counts (Alde wet heating, modern diesel heating such as Truma Combi D, or underfloor heating); plain gas blown-air does not. avoidBrands: makes with the weakest owner-satisfaction scores in the Caravan and Motorhome Club surveys (weighted, 2020 to 2025: Elddis 74.6%, Chausson 75.0%, Swift 77.1%, Auto-Trail 77.1%, Pilote 77.5%, Bailey 77.7%) plus their sub-brands (Bessacarr, Ace, Compass, Joa and so on); they never count as worth a look and lose 15 pick points. bonus: nice extras, +3 each. A-class motorhomes are allowed.",
+      "usedOnly": true,
+      "endLounge": true,
+      "maxMetres": 7.5,
+      "heating": [
+        "Alde heating",
+        "Diesel heater",
+        "Underfloor heating"
+      ],
+      "mustHave": [
+        "Self-levelling"
+      ],
+      "bonus": [
+        "Habitation air conditioning"
+      ],
+      "avoidBrands": [
+        "Bailey",
+        "Elddis",
+        "Swift",
+        "Auto-Trail",
+        "Chausson",
+        "Pilote"
+      ]
+    }
   },
   "searches": [
     {
@@ -161,7 +186,7 @@
     "_comment": "Overall length in metres. Worked out from Autotrader's spec sheet, a figure stated in the advert, or the base vehicle and wheelbase code (e.g. Ducato L4 = 6.36 m). mode 'hide' takes adverts outside the range off the dashboard (they stay under Hidden by rules); mode 'flag' keeps them all in and gives the dashboard a 'My length only' toggle instead. hideUnknown treats adverts whose length cannot be worked out as outside the range.",
     "mode": "flag",
     "minMetres": 6.25,
-    "maxMetres": 7.0,
+    "maxMetres": 7.5,
     "hideUnknown": false
   }
 }

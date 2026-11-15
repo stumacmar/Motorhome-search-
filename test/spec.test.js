@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { compileSpecs, matchSpecs, matchRedFlags, compareWithSimilar, scoreDeal, listedDateFromId, priceDrops, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from '../src/spec.js';
+import { compileSpecs, matchSpecs, matchRedFlags, DEFAULT_SIGNALS, compareWithSimilar, scoreDeal, listedDateFromId, priceDrops, DEFAULT_SPECS, DEFAULT_RED_FLAGS } from '../src/spec.js';
 import { parseAdvertHtml } from '../src/advert.js';
 
 test('spec matching finds kit in features and description', () => {
@@ -50,6 +50,42 @@ test('rear lounge with a drop-down bed is tagged on panel vans only, using the t
   assert.equal(has('Hymer B644', ''), false);
   // The title only feeds this tag: a model called Solaris is not a solar panel.
   assert.equal(matchSpecs({ features: [], description: '', keySpec: {}, specs: {} }, c, 'Wildax Solaris XL').some((m) => m.label === 'Solar panel'), false);
+});
+
+test('the brief: worth a look only when every must-have is met, near miss when one is missing, avoided brands never', async () => {
+  const { briefCheck, matchSignals } = await import('../src/spec.js');
+  const brief = { usedOnly: true, endLounge: true, maxMetres: 7.5, heating: ['Alde heating', 'Diesel heater', 'Underfloor heating'], mustHave: ['Self-levelling'], bonus: ['Habitation air conditioning'], avoidBrands: ['Bailey', 'Swift'] };
+  const van = (labels, extra = {}) => ({ details: {}, length: { metres: 7.2 }, quality: { brand: 'Hymer', group: 'Hymer' }, specs: labels.map((label) => ({ label })), ...extra });
+  const all = ['End lounge', 'Alde heating', 'Self-levelling', 'Habitation air conditioning'];
+  const ok = briefCheck(van(all), brief);
+  assert.equal(ok.ok, true);
+  assert.deepEqual(ok.bonus, ['Habitation air conditioning']);
+  const near = briefCheck(van(['End lounge', 'Alde heating']), brief);
+  assert.equal(near.ok, false);
+  assert.equal(near.near, true);
+  assert.deepEqual(near.missing, ['self-levelling']);
+  // Diesel heating counts as good heating; plain blown air (no heating label) does not.
+  assert.equal(briefCheck(van(['End lounge', 'Diesel heater', 'Self-levelling']), brief).ok, true);
+  assert.deepEqual(briefCheck(van(['End lounge', 'Self-levelling']), brief).missing, ['good heating']);
+  assert.equal(briefCheck(van(all, { length: { metres: 7.8 } }), brief).ok, false);
+  assert.equal(briefCheck(van(all, { newStock: true }), brief).ok, false);
+  // A sub-brand of an avoided make (Bessacarr is Swift) is out, however well it fits.
+  const bess = briefCheck(van(all, { quality: { brand: 'Bessacarr', group: 'Swift' } }), brief);
+  assert.equal(bess.avoided, 'Swift');
+  assert.equal(bess.ok, false);
+  assert.equal(bess.near, false);
+  // "Not a brokerage unit" is a dealer saying it is their own stock.
+  const sig = (t) => matchSignals({ features: [], description: t, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SIGNALS)).some((x) => x.label === 'Broker sale (no warranty)');
+  assert.equal(sig('Please note, this vehicle is not a brokerage unit and comes with 12 months warranty'), false);
+  assert.equal(sig('Sold on a brokerage basis for the owner'), true);
+});
+
+test('a cheaper sub-brand sold under its group make is rated as itself', async () => {
+  const { rateQuality } = await import('../src/quality.js');
+  const q = rateQuality({ make: 'Rapido', model: 'PLA Privilege 390', title: 'Rapido PLA Privilege 390', year: 2019 });
+  assert.equal(q.brand, 'PLA');
+  assert.equal(q.group, 'Rapido');
+  assert.ok(q.score < rateQuality({ make: 'Rapido', model: '8096 dF', title: 'Rapido 8096 dF', year: 2019 }).score);
 });
 
 test('star spec counts the wanted items and knows when the page was not read', async () => {

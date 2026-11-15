@@ -126,6 +126,12 @@ async function enrich(store, config, transport) {
     advert.soldRef = sold[advert.id] || null;
     advert.market = advert.status === 'active' ? typicalSellDays(advert, sellStats) : null;
     advert.relisted = advert.status === 'active' ? findRelisted(advert, adverts) : null;
+    // A re-listed advert whose new page came back without a description keeps what the original said
+    // (kit, seller signals and warnings such as "4 owners"), so a re-list cannot wash them away.
+    const orig = advert.relisted && store.adverts[advert.relisted.of];
+    if (orig?.details?.description && advert.details && !advert.details.description) {
+      advert.specs = orig.specs; advert.signals = orig.signals; advert.redFlags = orig.redFlags; advert.inheritedFrom = orig.id;
+    } else delete advert.inheritedFrom;
     advert.quality = advert.status === 'active' ? rateQuality(advert) : null;
   }
   rateQualityForMoney(adverts); // before the deal: the pick score uses quality for money
