@@ -309,7 +309,11 @@ export function briefCheck(advert, brief) {
   for (const l of brief.mustHave || []) check(l.toLowerCase(), labels.has(l));
   const avoid = (brief.avoidBrands || []).map((b) => b.toLowerCase());
   const q = advert.quality || {};
-  const avoided = [q.brand, q.group, advert.make].find((b) => b && avoid.includes(b.toLowerCase())) || null;
+  let avoided = [q.brand, q.group, advert.make].find((b) => b && avoid.includes(b.toLowerCase())) || null;
+  // Only brands built to one of these tiers count (src/quality.js: premium, upper, volume, value, budget...).
+  if (!avoided && brief.brandTiers?.length && advert.quality && !brief.brandTiers.includes(q.tier || 'unknown')) {
+    avoided = `${q.brand || advert.make || 'unrated brand'} (${q.tier || 'unknown'} build)`;
+  }
   const bonus = (brief.bonus || []).filter((l) => labels.has(l));
   const read = !!advert.details;
   return { ok: read && !avoided && missing.length === 0, near: read && !avoided && missing.length === 1, met, missing, unknown, avoided, bonus };

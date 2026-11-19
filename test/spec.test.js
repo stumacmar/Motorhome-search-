@@ -74,6 +74,13 @@ test('the brief: worth a look only when every must-have is met, near miss when o
   assert.equal(bess.avoided, 'Swift');
   assert.equal(bess.ok, false);
   assert.equal(bess.near, false);
+  // With brandTiers, only premium and upper-build makes count; a value brand is out however well it fits.
+  const tiered = { ...brief, brandTiers: ['premium', 'upper'] };
+  assert.equal(briefCheck(van(all, { quality: { brand: 'Adria', group: 'Adria', tier: 'upper' } }), tiered).ok, true);
+  const beni = briefCheck(van(all, { quality: { brand: 'Benimar', group: 'Benimar', tier: 'value' } }), tiered);
+  assert.equal(beni.ok, false);
+  assert.equal(beni.near, false);
+  assert.match(beni.avoided, /Benimar/);
   // "Not a brokerage unit" is a dealer saying it is their own stock.
   const sig = (t) => matchSignals({ features: [], description: t, keySpec: {}, specs: {} }, compileSpecs(DEFAULT_SIGNALS)).some((x) => x.label === 'Broker sale (no warranty)');
   assert.equal(sig('Please note, this vehicle is not a brokerage unit and comes with 12 months warranty'), false);

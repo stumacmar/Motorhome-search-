@@ -37,7 +37,7 @@
     "motivatedScore": 40,
     "dealScore": 50,
     "brief": {
-      "_comment": "Your buyer's brief. 'Worth a look' now means an advert meets every must-have here and has no red flags; price and seller signals then rank it (pick score +15). Missing exactly one must-have makes it a 'near miss' (+5). heating: any one of these labels counts (Alde wet heating, modern diesel heating such as Truma Combi D, or underfloor heating); plain gas blown-air does not. avoidBrands: makes with the weakest owner-satisfaction scores in the Caravan and Motorhome Club surveys (weighted, 2020 to 2025: Elddis 74.6%, Chausson 75.0%, Swift 77.1%, Auto-Trail 77.1%, Pilote 77.5%, Bailey 77.7%) plus their sub-brands (Bessacarr, Ace, Compass, Joa and so on); they never count as worth a look and lose 15 pick points. bonus: nice extras, +3 each. A-class motorhomes are allowed.",
+      "_comment": "Your buyer's brief. 'Worth a look' now means an advert meets every must-have here and has no red flags; price and seller signals then rank it (pick score +15). Missing exactly one must-have makes it a 'near miss' (+5). heating: any one of these labels counts (Alde wet heating, modern diesel heating such as Truma Combi D, or underfloor heating); plain gas blown-air does not. avoidBrands: makes with the weakest owner-satisfaction scores in the Caravan and Motorhome Club surveys (weighted, 2020 to 2025: Elddis 74.6%, Chausson 75.0%, Swift 77.1%, Auto-Trail 77.1%, Pilote 77.5%, Bailey 77.7%) plus their sub-brands (Bessacarr, Ace, Compass, Joa and so on); they never count as worth a look and lose 15 pick points. bonus: nice extras, +3 each. A-class motorhomes are allowed. brandTiers: only makes rated premium or upper build in src/quality.js count (Hymer, Carthago, Niesmann+Bischoff, Frankia, Le Voyageur, Rapido, Morelo; Laika, Bürstner, Dethleffs, Knaus, Adria, Westfalia, VW California, Eura Mobil, Mega Mobil, IH). Volume British makes, value brands such as Benimar, Roller Team and McLouis, and budget sub-brands (Sun Living, Carado, Malibu...) are treated like the avoid list.",
       "usedOnly": true,
       "endLounge": true,
       "maxMetres": 7.5,
@@ -59,6 +59,10 @@
         "Auto-Trail",
         "Chausson",
         "Pilote"
+      ],
+      "brandTiers": [
+        "premium",
+        "upper"
       ]
     }
   },
