@@ -16,6 +16,7 @@ import { compileSpecs, matchSpecs, matchRedFlags, matchSignals, compareWithSimil
 import { isNewStock, sellDaysStats, typicalSellDays, goneBenchmark, findRelisted, parseFit } from './market.js';
 import { rateQuality, rateQualityForMoney } from './quality.js';
 import { BrowserTransport } from './autotrader.js';
+import { updateHistory, updateSoldLog, HISTORY_PATH, SOLD_LOG_PATH } from './history.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -232,6 +233,8 @@ async function main() {
   const removed = rescoreOnly ? [] : dropRemovedSearches(store, configured, today);
   if (removed.length) console.info(`\nRemoved searches no longer in config: ${removed.join(', ')}`);
 
+  // The market history and sold log are written before pruning, which forgets gone adverts after keepGoneDays.
+  if (!rescoreOnly && !dryRun) await recordMarket(store, today, config.history || {});
   const pruned = pruneStore(store, today, config.keepGoneDays ?? 90);
   store.wantedSpecs = config.deals?.wantedSpecs || [];
   store.minWantedSpecs = config.deals?.minWantedSpecs ?? 2;
@@ -318,3 +321,19 @@ main()
     console.error(err);
     process.exitCode = 1;
   });
+
+/** Today's market snapshot and any newly gone adverts, appended to the permanent history files. */
+async function recordMarket(store, today, { backfillFrom = '2026-10-20' } = {}) {
+  const all = Object.values(store.adverts);
+  const history = updateHistory(await readJson(HISTORY_PATH), all, today, { backfillFrom });
+  const sold = (await readJson(SOLD_LOG_PATH)) || { version: 1, adverts: {} };
+  const added = updateSoldLog(sold, all);
+  await saveStore(history, HISTORY_PATH);
+  await saveStore(sold, SOLD_LOG_PATH, { indent: 0 });
+  const t = history.days[today];
+  console.info(`\nMarket history: ${Object.keys(history.days).length} days · today ${t.used.n} used adverts, median £${t.used.median?.toLocaleString('en-GB')}, like-for-like index ${t.lfl} · sold log +${added} (${Object.keys(sold.adverts).length} in all)`);
+}
+
+async function readJson(path) {
+  try { return JSON.parse(await readFile(path, 'utf8')); } catch (err) { if (err.code === 'ENOENT') return null; throw err; }
+}

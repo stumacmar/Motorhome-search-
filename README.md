@@ -184,3 +184,12 @@ The job's log (Actions tab) says which search failed and why. The likely causes,
 - **`Gateway HTTP 403`** on every search: Autotrader is blocking the machine's IP address. This is what GitHub-hosted runners get; see "Where it runs". On your own machine it means your IP has been blocked, usually temporarily: wait a day, and consider running less often.
 - **`no searchResults.listings`** or **`Gateway error: Cannot query field …`**: Autotrader changed its search API. Compare the request the live site sends (browser dev tools → Network → `at-gateway`) with `LISTINGS_QUERY` in `src/autotrader.js`.
 - **`Unknown criteria key`**: a typo in `search.config.json`.
+
+## Market tracker
+
+Every run also records the state of the whole market the searches cover, kept permanently (the main store forgets gone adverts after `keepGoneDays`):
+
+- `docs/data/market-history.json`: one snapshot a day. Median asking prices (with the middle half and mileage) by model year, body type, build quality, seller and brand; newly listed, gone, price cuts and rises; and a **like-for-like index**, the same vans' asking prices chained day to day, so changes in what is for sale cannot move it.
+- `docs/data/sold-log.json`: every advert that left Autotrader, with first and last asking price, number of cuts and days listed. "Left" means sold, withdrawn or moved; prices are asking prices.
+
+`docs/market.html` (linked from the dashboard) shows the trends. The history was backfilled from 20 October 2026, the first day all three searches ran (`history.backfillFrom` in `search.config.json` sets this for a fresh store).

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motorhome market tracker</title>
+<meta name="description" content="How asking prices move across the Autotrader motorhomes the search covers: a like-for-like price index, prices by age, body, brand and seller, listing flows and what left the market.">
+<meta name="theme-color" content="#0d6b5c">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #f6f5f2; --card: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e4e2dc; --grid: #ecebe6;
+    --accent: #0d6b5c; --up: #0d6b5c; --down: #b4412c; --bar: #2a78d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a; --grid: #2a2d35;
+      --accent: #3fb59e; --up: #3fb59e; --down: #e5765d; --bar: #3987e5;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15161a; --card: #1f2127; --ink: #ecebe6; --muted: #a3a29c; --line: #2f323a; --grid: #2a2d35;
+    --accent: #3fb59e; --up: #3fb59e; --down: #e5765d; --bar: #3987e5;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  main, header { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 24px; }
+  h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -.01em; }
+  h2 { font-size: 17px; margin: 28px 0 4px; }
+  .sub, .note { color: var(--muted); font-size: 14px; margin: 0; }
+  .note { margin: 4px 0 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 16px 0 0; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+  .tile .k { font-size: 12.5px; color: var(--muted); }
+  .tile .v { font-size: 26px; font-weight: 650; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+  .tile .d { font-size: 13px; color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; position: relative; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg text { fill: var(--muted); font-size: 11px; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12.5px; padding: 6px 9px; border-radius: 8px; white-space: nowrap; transform: translate(-50%, -110%); display: none; z-index: 2; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .up { color: var(--up); } .down { color: var(--down); }
+  .muted { color: var(--muted); }
+  footer { max-width: 1080px; margin: 32px auto; padding: 0 16px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <p class="sub"><a href="./">← Back to the search</a></p>
+  <h1>Motorhome market tracker</h1>
+  <p class="sub" id="span">Loading…</p>
+</header>
+<main>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Like-for-like asking price index</h2>
+  <p class="note">The same vans' asking prices, chained day by day (100 = the first day). Only re-pricing of vans already for sale moves it; what comes and goes cannot. Used vans only.</p>
+  <div class="card" id="lflcard"><div class="tip" id="lfltip"></div><svg id="lfl" viewBox="0 0 960 260" role="img" aria-label="Like-for-like asking price index by day"></svg></div>
+
+  <h2>Price cuts per day</h2>
+  <p class="note">Adverts whose asking price fell that day.</p>
+  <div class="card" id="cutcard"><div class="tip" id="cuttip"></div><svg id="cuts" viewBox="0 0 960 200" role="img" aria-label="Number of price cuts per day"></svg></div>
+
+  <h2>Week by week</h2>
+  <div class="card scroll"><table id="weeks"></table></div>
+
+  <h2>Median asking price by model year</h2>
+  <p class="note">Used vans live on the latest day, against four weeks earlier. A move here mixes real price changes with changes in what is for sale; the index above is the cleaner signal.</p>
+  <div class="card scroll"><table id="byYear"></table></div>
+
+  <h2>By body type, build quality and seller</h2>
+  <div class="card scroll"><table id="bySeg"></table></div>
+
+  <h2>By brand</h2>
+  <p class="note">Brands with at least 15 live used adverts.</p>
+  <div class="card scroll"><table id="byBrand"></table></div>
+
+  <h2>What left the market</h2>
+  <p class="note" id="soldnote">Loading the sold log…</p>
+  <div class="tiles" id="soldtiles"></div>
+  <div class="card scroll" style="margin-top:10px"><table id="soldYear"></table></div>
+</main>
+<footer id="method">
+  Asking prices of adverts matched by the searches (2016 on, £25,000 to £70,000), one snapshot a day from every run, kept permanently in
+  <a href="data/market-history.json">market-history.json</a>; every advert that leaves Autotrader goes into <a href="data/sold-log.json">sold-log.json</a>.
+  "Left the market" means sold, withdrawn or moved, and its price is the last asking price, not the sale price. Days before the tracker started running daily were rebuilt from stored price histories.
+</footer>
+<script>
+const gbp = (n) => n == null ? '–' : '£' + Math.round(n).toLocaleString('en-GB');
+const pct = (n, dp = 1) => n == null || !isFinite(n) ? '–' : (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n).toFixed(dp) + '%';
+const cls = (n) => n > 0.05 ? 'up' : n < -0.05 ? 'down' : 'muted';
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const fmtDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+const median = (xs) => { const s = xs.filter((x) => x != null).sort((a, b) => a - b); return s.length ? (s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2) : null; };
+const daysBefore = (d, n) => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() - n); return t.toISOString().slice(0, 10); };
+
+function tiles(el, items) {
+  el.innerHTML = items.map(([k, v, d]) => `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d || ''}</div></div>`).join('');
+}
+
+// One-series line chart with a crosshair tooltip.
+function lineChart(svg, tip, points, fmt) {
+  const W = 960, H = 260, L = 48, R = 12, T = 12, B = 26;
+  const ys = points.map((p) => p.y), lo = Math.min(...ys), hi = Math.max(...ys);
+  const pad = Math.max(0.2, (hi - lo) * 0.15), y0 = lo - pad, y1 = hi + pad;
+  const x = (i) => L + (points.length < 2 ? 0 : (i * (W - L - R)) / (points.length - 1));
+  const y = (v) => T + (H - T - B) * (1 - (v - y0) / (y1 - y0));
+  const ticks = [y0, (y0 + y1) / 2, y1].map((v) => Math.round(v * 10) / 10);
+  let s = ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)"/><text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${t}</text>`).join('');
+  const step = Math.max(1, Math.ceil(points.length / 8));
+  points.forEach((p, i) => { if (i % step === 0 || i === points.length - 1) s += `<text x="${x(i)}" y="${H - 6}" text-anchor="middle">${fmtDay(p.d)}</text>`; });
+  s += `<polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="${points.map((p, i) => `${x(i)},${y(p.y)}`).join(' ')}"/>`;
+  const last = points[points.length - 1];
+  s += `<circle cx="${x(points.length - 1)}" cy="${y(last.y)}" r="4" fill="var(--accent)" stroke="var(--card)" stroke-width="2"/>`;
+  s += `<text x="${x(points.length - 1) - 8}" y="${y(last.y) - 10}" text-anchor="end" style="fill:var(--ink);font-weight:600">${fmt(last)}</text>`;
+  s += `<line id="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/><circle id="xd" r="4" fill="var(--accent)" stroke="var(--card)" stroke-width="2" visibility="hidden"/>`;
+  s += `<rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="hit"/>`;
+  svg.innerHTML = s;
+  const hit = svg.querySelector('#hit'), xh = svg.querySelector('#xh'), xd = svg.querySelector('#xd');
+  const move = (ev) => {
+    const r = svg.getBoundingClientRect(), sx = ((ev.clientX - r.left) / r.width) * W;
+    const i = Math.max(0, Math.min(points.length - 1, Math.round(((sx - L) / (W - L - R)) * (points.length - 1))));
+    const p = points[i];
+    xh.setAttribute('x1', x(i)); xh.setAttribute('x2', x(i)); xh.setAttribute('visibility', 'visible');
+    xd.setAttribute('cx', x(i)); xd.setAttribute('cy', y(p.y)); xd.setAttribute('visibility', 'visible');
+    tip.innerHTML = `<b>${fmtDay(p.d)}</b> · ${fmt(p)}`;
+    tip.style.display = 'block'; tip.style.left = (x(i) / W) * r.width + 'px'; tip.style.top = (y(p.y) / H) * r.height + 12 + 'px';
+  };
+  hit.addEventListener('pointermove', move); hit.addEventListener('pointerdown', move);
+  hit.addEventListener('pointerleave', () => { tip.style.display = 'none'; xh.setAttribute('visibility', 'hidden'); xd.setAttribute('visibility', 'hidden'); });
+}
+
+// One-series bar chart with a tooltip per bar.
+function barChart(svg, tip, points, fmt) {
+  const W = 960, H = 200, L = 40, R = 12, T = 12, B = 26;
+  const max = Math.max(1, ...points.map((p) => p.y));
+  const bw = (W - L - R) / points.length, y = (v) => T + (H - T - B) * (1 - v / max);
+  let s = [0, Math.round(max / 2), max].map((t) => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)"/><text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${t}</text>`).join('');
+  const step = Math.max(1, Math.ceil(points.length / 8));
+  points.forEach((p, i) => {
+    const x = L + i * bw, h = Math.max(0, H - B - y(p.y));
+    if (h > 0) s += `<path d="M${x + 1},${H - B} V${y(p.y) + 2} q0,-2 2,-2 H${x + bw - 3} q2,0 2,2 V${H - B} Z" fill="var(--bar)" opacity="${p.partial ? 0.45 : 1}"/>`;
+    s += `<rect x="${x}" y="${T}" width="${bw}" height="${H - T - B}" fill="transparent" data-i="${i}"/>`;
+    if (i % step === 0 || i === points.length - 1) s += `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle">${fmtDay(p.d)}</text>`;
+  });
+  svg.innerHTML = s;
+  svg.querySelectorAll('rect[data-i]').forEach((r) => {
+    const show = () => { const p = points[+r.dataset.i], b = svg.getBoundingClientRect(); tip.innerHTML = `<b>${fmtDay(p.d)}</b> · ${fmt(p)}`; tip.style.display = 'block'; tip.style.left = ((+r.getAttribute('x') + bw / 2) / W) * b.width + 'px'; tip.style.top = (y(p.y) / H) * b.height + 12 + 'px'; };
+    r.addEventListener('pointerenter', show); r.addEventListener('pointerdown', show);
+    r.addEventListener('pointerleave', () => { tip.style.display = 'none'; });
+  });
+}
+
+function compareRows(nowSeg, thenSeg, keys, label = (k) => k) {
+  return keys.map((k) => {
+    const a = nowSeg[k], b = thenSeg?.[k];
+    const ch = a && b && b.median ? ((a.median - b.median) / b.median) * 100 : null;
+    return `<tr><td>${esc(label(k))}</td><td>${a?.n ?? '–'}</td><td>${gbp(a?.median)}</td><td class="muted">${gbp(a?.p25)} – ${gbp(a?.p75)}</td><td>${a?.miles != null ? Math.round(a.miles).toLocaleString('en-GB') : '–'}</td><td>${gbp(b?.median)}</td><td class="${cls(ch)}">${pct(ch)}</td></tr>`;
+  }).join('');
+}
+const HEAD = (first, then) => `<tr><th>${first}</th><th>Live</th><th>Median now</th><th>Middle half</th><th>Median miles</th><th>${then}</th><th>Change</th></tr>`;
+
+async function main() {
+  const h = await (await fetch('data/market-history.json?t=' + Date.now())).json();
+  const days = Object.keys(h.days).sort();
+  const last = h.days[days[days.length - 1]];
+  const refDay = days.find((d) => d >= daysBefore(last.date, 28)) || days[0];
+  const ref = h.days[refDay];
+  const wk = days.find((d) => d >= daysBefore(last.date, 7)) || days[0];
+  document.getElementById('span').textContent = `${days.length} days tracked, ${fmtDay(days[0])} to ${fmtDay(last.date)} · updated ${h.updated}`;
+
+  const lflAll = ((last.lfl - 100) / 100) * 100;
+  const lfl28 = ((last.lfl - ref.lfl) / ref.lfl) * 100;
+  const lfl7 = ((last.lfl - h.days[wk].lfl) / h.days[wk].lfl) * 100;
+  const recent = days.filter((d) => d > daysBefore(last.date, 7));
+  const sum = (k) => recent.reduce((n, d) => n + (h.days[d].flows?.[k] || 0), 0);
+  tiles(document.getElementById('tiles'), [
+    ['Like-for-like asking prices', `<span class="${cls(lflAll)}">${pct(lflAll)}</span>`, `since ${fmtDay(days[0])} · ${pct(lfl28)} in 4 weeks · ${pct(lfl7)} in 7 days`],
+    ['Median used asking price', gbp(last.used.median), `${gbp(ref.used.median)} four weeks ago · ${last.used.n.toLocaleString('en-GB')} live used`],
+    ['Price cuts, last 7 days', sum('cuts').toLocaleString('en-GB'), `${sum('rises')} rises`],
+    ['Newly listed / gone, last 7 days', `${sum('listed')} / ${sum('gone')}`, sum('listed') >= sum('gone') ? 'supply growing or steady' : 'more leaving than arriving'],
+  ]);
+
+  lineChart(document.getElementById('lfl'), document.getElementById('lfltip'), days.map((d) => ({ d, y: h.days[d].lfl })), (p) => `index ${p.y.toFixed(2)} (${pct(p.y - 100, 2)})`);
+  barChart(document.getElementById('cuts'), document.getElementById('cuttip'), days.map((d) => ({ d, y: h.days[d].flows?.cuts || 0, m: h.days[d].flows?.medianCutPct, partial: d === last.date })), (p) => `${p.y} cuts${p.m != null ? `, median ${p.m}%` : ''}${p.partial ? ' (so far)' : ''}`);
+
+  // Weeks (Monday to Sunday).
+  const monday = (d) => { const t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() - ((t.getUTCDay() + 6) % 7)); return t.toISOString().slice(0, 10); };
+  const weeks = {};
+  for (const d of days) (weeks[monday(d)] ||= []).push(h.days[d]);
+  const wrows = Object.entries(weeks).sort((a, b) => b[0].localeCompare(a[0])).map(([w, list]) => {
+    const s = (k) => list.reduce((n, x) => n + (x.flows?.[k] || 0), 0);
+    const first = list[0], end = list[list.length - 1];
+    const ch = ((end.lfl - (h.days[daysBefore(first.date, 1)]?.lfl ?? first.lfl)) / (h.days[daysBefore(first.date, 1)]?.lfl ?? first.lfl)) * 100;
+    const partial = list.length < 7 ? ` <span class="muted">(${end.date === last.date ? 'so far' : 'from ' + fmtDay(first.date)})</span>` : '';
+    return `<tr><td>w/c ${fmtDay(w)}${partial}</td><td>${s('listed')}</td><td>${s('gone')}</td><td>${s('cuts')}</td><td>${s('rises')}</td><td>${end.used.n.toLocaleString('en-GB')}</td><td>${gbp(end.used.median)}</td><td class="${cls(ch)}">${pct(ch, 2)}</td></tr>`;
+  });
+  document.getElementById('weeks').innerHTML = `<tr><th>Week</th><th>Newly listed</th><th>Gone</th><th>Cuts</th><th>Rises</th><th>Live used</th><th>Median asking</th><th>Like-for-like</th></tr>` + wrows.join('');
+
+  const then = `${fmtDay(refDay)}`;
+  document.getElementById('byYear').innerHTML = HEAD('Model year', then) + compareRows(last.byYear, ref.byYear, Object.keys(last.byYear).sort().reverse());
+  const segKeys = (o) => Object.keys(o).sort((a, b) => o[b].n - o[a].n);
+  document.getElementById('bySeg').innerHTML = HEAD('Segment', then) + compareRows(last.byBody, ref.byBody, segKeys(last.byBody)) + compareRows(last.byTier, ref.byTier, segKeys(last.byTier)) + compareRows(last.bySeller, ref.bySeller, segKeys(last.bySeller));
+  document.getElementById('byBrand').innerHTML = HEAD('Brand', then) + compareRows(last.byBrand, ref.byBrand, segKeys(last.byBrand));
+
+  // Sold log: adverts that left in the last 30 days.
+  try {
+    const log = await (await fetch('data/sold-log.json?t=' + Date.now())).json();
+    const since = daysBefore(last.date, 30);
+    const gone = Object.values(log.adverts).filter((a) => a.gone > since && !a.newStock);
+    const cut = gone.filter((a) => a.cuts > 0);
+    const off = gone.filter((a) => a.firstPrice > 0).map((a) => ((a.firstPrice - a.lastPrice) / a.firstPrice) * 100);
+    document.getElementById('soldnote').textContent = `Used adverts that left Autotrader in the last 30 days (sold, withdrawn or moved): ${gone.length.toLocaleString('en-GB')}. Prices are the last asking price. The sold log holds ${Object.keys(log.adverts).length.toLocaleString('en-GB')} adverts in all.`;
+    tiles(document.getElementById('soldtiles'), [
+      ['Median days listed', median(gone.map((a) => a.days)) ?? '–', 'listing date to gone'],
+      ['Cut before going', gone.length ? Math.round((cut.length / gone.length) * 100) + '%' : '–', `median total cut ${pct(-median(cut.map((a) => ((a.firstPrice - a.lastPrice) / a.firstPrice) * 100)))}`],
+      ['Median last asking price', gbp(median(gone.map((a) => a.lastPrice))), `average cut from first price ${pct(-(off.reduce((s, x) => s + x, 0) / (off.length || 1)))}`],
+    ]);
+    const byY = {};
+    for (const a of gone) if (a.year >= 2016) (byY[a.year] ||= []).push(a);
+    document.getElementById('soldYear').innerHTML = `<tr><th>Model year</th><th>Left market</th><th>Median last asking</th><th>Live median now</th><th>Median days listed</th><th>Cut first</th></tr>` +
+      Object.keys(byY).sort().reverse().map((y) => { const l = byY[y]; return `<tr><td>${y}</td><td>${l.length}</td><td>${gbp(median(l.map((a) => a.lastPrice)))}</td><td>${gbp(last.byYear[y]?.median)}</td><td>${median(l.map((a) => a.days)) ?? '–'}</td><td>${Math.round((l.filter((a) => a.cuts > 0).length / l.length) * 100)}%</td></tr>`; }).join('');
+  } catch (e) {
+    document.getElementById('soldnote').textContent = 'The sold log could not be loaded.';
+  }
+}
+main().catch((e) => { document.getElementById('span').textContent = 'Could not load the market history: ' + e.message; });
+</script>
+</body>
+</html>
