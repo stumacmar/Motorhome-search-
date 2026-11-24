@@ -2351,7 +2351,7 @@
    "lflN": 4006,
    "flows": {
     "listed": 76,
-    "gone": 89,
+    "gone": 88,
     "cuts": 29,
     "rises": 9,
     "medianCutPct": 4
@@ -3532,7 +3532,7 @@
    "lflN": 4029,
    "flows": {
     "listed": 75,
-    "gone": 66,
+    "gone": 65,
     "cuts": 32,
     "rises": 1,
     "medianCutPct": 3
@@ -10702,7 +10702,7 @@
    "lflN": 4192,
    "flows": {
     "listed": 65,
-    "gone": 75,
+    "gone": 74,
     "cuts": 51,
     "rises": 21,
     "medianCutPct": 4
@@ -11098,7 +11098,7 @@
    "lflN": 4191,
    "flows": {
     "listed": 68,
-    "gone": 75,
+    "gone": 74,
     "cuts": 63,
     "rises": 17,
     "medianCutPct": 4
@@ -13141,7 +13141,7 @@
    "lflN": 4287,
    "flows": {
     "listed": 13,
-    "gone": 24,
+    "gone": 23,
     "cuts": 15,
     "rises": 3,
     "medianCutPct": 3
@@ -13551,7 +13551,7 @@
    "lflN": 4182,
    "flows": {
     "listed": 53,
-    "gone": 126,
+    "gone": 89,
     "cuts": 23,
     "rises": 10,
     "medianCutPct": 3

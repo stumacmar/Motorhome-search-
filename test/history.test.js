@@ -42,3 +42,13 @@ test('history backfills once, then adds a day per run; the sold log keeps gone a
   assert.equal(updateSoldLog(log, [a, g]), 0);
   assert.deepEqual({ first: log.adverts.g.firstPrice, last: log.adverts.g.lastPrice, cuts: log.adverts.g.cuts, days: log.adverts.g.days }, { first: 42000, last: 40000, cuts: 1, days: 2 });
 });
+
+test('sold log drops adverts that are back on sale', () => {
+  const log = { version: 1, adverts: {} };
+  const a = { id: 'x', title: 'Van', make: 'Hymer', status: 'gone', goneSince: '2026-11-20', listedDate: '2026-11-01', price: 50000, priceHistory: [{ date: '2026-11-01', price: 50000 }] };
+  assert.equal(updateSoldLog(log, [a]), 1);
+  a.status = 'active';
+  delete a.goneSince;
+  updateSoldLog(log, [a]);
+  assert.equal(log.adverts.x, undefined);
+});

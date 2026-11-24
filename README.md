@@ -192,4 +192,6 @@ Every run also records the state of the whole market the searches cover, kept pe
 - `docs/data/market-history.json`: one snapshot a day. Median asking prices (with the middle half and mileage) by model year, body type, build quality, seller and brand; newly listed, gone, price cuts and rises; and a **like-for-like index**, the same vans' asking prices chained day to day, so changes in what is for sale cannot move it.
 - `docs/data/sold-log.json`: every advert that left Autotrader, with first and last asking price, number of cuts and days listed. "Left" means sold, withdrawn or moved; prices are asking prices.
 
+Autotrader's results sometimes leave an advert out for a run. So an advert only counts as gone once a search has missed it on `missesToGone` runs in a row (default 2, set in `search.config.json`), dated from the first miss, and a search that hit its page limit records no misses. An advert that comes back after being marked gone is reported as **back on sale**, not new, and leaves the sold log.
+
 `docs/market.html` (linked from the dashboard) shows the trends. The history was backfilled from 20 October 2026, the first day all three searches ran (`history.backfillFrom` in `search.config.json` sets this for a fresh store).

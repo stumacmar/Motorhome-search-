@@ -141,6 +141,9 @@ export function buildReport(results, { maxPerSection = 25, wantedSpecs = [], min
             .join('\n'),
       );
     }
+    if (r.back?.length) {
+      parts.push(`↩️ ${r.back.length} back on sale (missing from an earlier search, not new): ` + r.back.slice(0, 10).map((a) => esc(a.title)).join(', ') + (r.back.length > 10 ? '…' : ''));
+    }
     if (r.gone.length) {
       parts.push(`🚫 ${r.gone.length} gone: ` + r.gone.slice(0, 10).map((a) => esc(a.title)).join(', ') + (r.gone.length > 10 ? '…' : ''));
     }

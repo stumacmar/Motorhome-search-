@@ -157,16 +157,28 @@ export function updateHistory(history, all, today, { backfillFrom = null } = {})
   const before = Object.keys(history.days).filter((d) => d < today).sort();
   const prev = before.length ? history.days[before[before.length - 1]] : null;
   history.days[today] = snapshotFor(all, today, prev);
+  // An advert is only confirmed gone a run or two after it was first missed, and goneSince is
+  // backdated to that first miss; recount the last week's gone flows so those days include it.
+  const goneOn = {};
+  for (const a of all) if (inScope(a) && a.status === 'gone' && a.goneSince) goneOn[a.goneSince] = (goneOn[a.goneSince] || 0) + 1;
+  for (const d of Object.keys(history.days).sort().slice(-7)) {
+    const snap = history.days[d];
+    if (snap.flows) snap.flows.gone = goneOn[d] || 0;
+  }
   history.updated = today;
   return history;
 }
 
-/** Appends every advert that has left the market and is not logged yet. */
+/**
+ * Appends every advert that has left the market and is not logged yet, and drops
+ * logged adverts that are back on sale (they had only dropped out of the results).
+ */
 export function updateSoldLog(log, all) {
   log ||= { version: 1, adverts: {} };
   log.note = 'Adverts that left Autotrader (sold, withdrawn or moved). Prices are asking prices; days = listing date to the day it was noticed gone.';
   let added = 0;
   for (const a of all) {
+    if (a.status === 'active' && log.adverts[a.id]) delete log.adverts[a.id];
     if (a.status !== 'gone' || !a.goneSince || a.excluded || log.adverts[a.id]) continue;
     const h = a.priceHistory || [];
     const first = h[0]?.price ?? a.price;

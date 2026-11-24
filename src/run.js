@@ -196,7 +196,7 @@ async function main() {
       if (filteredOut) console.info(`  ${filteredOut} excluded by mustContain/mustNotContain`);
       if (fetched.truncated) console.warn(`  only the first ${listings.length} of ${fetched.totalResults} results were read; narrow the search or raise maxPages`);
 
-      const diff = mergeSearchResults(store, name, listings, today);
+      const diff = mergeSearchResults(store, name, listings, today, { missesToGone: config.missesToGone ?? 2, complete: !fetched.truncated });
       store.searches[name] = {
         name,
         url: searchUrl,
@@ -207,11 +207,11 @@ async function main() {
         error: null,
       };
       results.push({ name, total: fetched.totalResults, ...diff });
-      console.info(`  new ${diff.added.length}, price drops ${diff.priceDrops.length}, rises ${diff.priceRises.length}, gone ${diff.gone.length}`);
+      console.info(`  new ${diff.added.length}, back on sale ${diff.back.length}, price drops ${diff.priceDrops.length}, rises ${diff.priceRises.length}, gone ${diff.gone.length}`);
     } catch (err) {
       console.error(`  FAILED: ${err.message}`);
       store.searches[name] = { ...(store.searches[name] || {}), name, lastRun: today, error: err.message };
-      results.push({ name, error: err.message, added: [], priceDrops: [], priceRises: [], gone: [], deals: [] });
+      results.push({ name, error: err.message, added: [], back: [], priceDrops: [], priceRises: [], gone: [], deals: [] });
     }
   }
   let enrichment = { fetched: 0, failed: 0, stillPending: 0 };
@@ -263,6 +263,7 @@ async function main() {
       name: r.name,
       error: r.error || null,
       added: r.added.length,
+      back: r.back.length,
       priceDrops: r.priceDrops.length,
       gone: r.gone.length,
     })),

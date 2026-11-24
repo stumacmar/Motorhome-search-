@@ -18,9 +18,13 @@ test('second run reports only new, drops and gone', () => {
   const r = mergeSearchResults(store, 'S', [advert('1', 90), advert('3', 300)], '2026-10-02');
   assert.deepEqual(r.added.map((a) => a.id), ['3']);
   assert.deepEqual(r.priceDrops.map((c) => [c.advert.id, c.from, c.to]), [['1', 100, 90]]);
-  assert.deepEqual(r.gone.map((a) => a.id), ['2']);
+  assert.equal(r.gone.length, 0, 'one miss is not enough');
+  assert.equal(store.adverts['2'].status, 'active');
+  const r2 = mergeSearchResults(store, 'S', [advert('1', 90), advert('3', 300)], '2026-10-03');
+  assert.deepEqual(r2.gone.map((a) => a.id), ['2']);
   assert.equal(store.adverts['2'].status, 'gone');
-  assert.equal(store.adverts['2'].goneSince, '2026-10-02');
+  assert.equal(store.adverts['2'].goneSince, '2026-10-02', 'dated from the first miss');
+  assert.equal(store.adverts['2'].misses, undefined);
   assert.equal(store.adverts['1'].priceHistory.length, 2);
   assert.equal(store.adverts['1'].firstSeen, '2026-10-01');
 });
@@ -39,27 +43,54 @@ test('advert shared by two searches only goes when both lose it', () => {
   const r1 = mergeSearchResults(store, 'B', [advert('1', 100)], '2026-10-01');
   assert.equal(r1.added.length, 1, 'new to search B counts as new for B');
   assert.deepEqual(store.adverts['1'].searches, ['A', 'B']);
-  const r2 = mergeSearchResults(store, 'A', [], '2026-10-02');
+  const opts = { missesToGone: 1 };
+  const r2 = mergeSearchResults(store, 'A', [], '2026-10-02', opts);
   assert.equal(r2.gone.length, 0);
   assert.equal(store.adverts['1'].status, 'active');
-  const r3 = mergeSearchResults(store, 'B', [], '2026-10-02');
+  const r3 = mergeSearchResults(store, 'B', [], '2026-10-02', opts);
   assert.equal(r3.gone.length, 1);
 });
 
-test('advert that comes back is reported as new again', () => {
+test('advert missed for one run is neither gone nor new when it returns', () => {
+  const store = { adverts: {}, searches: {} };
+  mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-01');
+  const r1 = mergeSearchResults(store, 'S', [], '2026-10-02');
+  assert.equal(r1.gone.length, 0);
+  const r2 = mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-02');
+  assert.equal(r2.added.length, 0);
+  assert.equal(r2.back.length, 0);
+  assert.equal(store.adverts['1'].misses, undefined, 'the miss count resets');
+  mergeSearchResults(store, 'S', [], '2026-10-03');
+  assert.equal(store.adverts['1'].status, 'active', 'misses must be in a row');
+});
+
+test('advert that comes back after going is "back", not new', () => {
   const store = { adverts: {}, searches: {} };
   mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-01');
   mergeSearchResults(store, 'S', [], '2026-10-02');
-  const r = mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-03');
-  assert.equal(r.added.length, 1);
+  mergeSearchResults(store, 'S', [], '2026-10-03');
+  assert.equal(store.adverts['1'].status, 'gone');
+  const r = mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-04');
+  assert.equal(r.added.length, 0);
+  assert.deepEqual(r.back.map((a) => a.id), ['1']);
   assert.equal(store.adverts['1'].status, 'active');
   assert.equal(store.adverts['1'].goneSince, undefined);
+});
+
+test('a truncated search marks nothing as missed', () => {
+  const store = { adverts: {}, searches: {} };
+  mergeSearchResults(store, 'S', [advert('1', 100), advert('2', 100)], '2026-10-01');
+  mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-02', { complete: false });
+  mergeSearchResults(store, 'S', [advert('1', 100)], '2026-10-03', { complete: false });
+  assert.equal(store.adverts['2'].status, 'active');
+  assert.equal(store.adverts['2'].misses, undefined);
 });
 
 test('prune removes long-gone adverts only', () => {
   const store = { adverts: {}, searches: {} };
   mergeSearchResults(store, 'S', [advert('1', 100), advert('2', 100)], '2026-01-01');
   mergeSearchResults(store, 'S', [advert('2', 100)], '2026-01-02');
+  mergeSearchResults(store, 'S', [advert('2', 100)], '2026-01-03');
   assert.equal(pruneStore(store, '2026-10-01', 90), 1);
   assert.deepEqual(Object.keys(store.adverts), ['2']);
 });

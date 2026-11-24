@@ -29,10 +29,18 @@ export async function saveStore(store, path = STORE_PATH, { indent = 1 } = {}) {
 
 /**
  * Merge one search's fresh listings into the store.
- * Returns { added, priceDrops, priceRises, gone } for notification.
+ * Returns { added, back, priceDrops, priceRises, gone } for notification.
+ *
+ * Autotrader's results sometimes leave an advert out for a run and show it again
+ * next time. So an advert only counts as gone once a search has missed it on
+ * `missesToGone` runs in a row; goneSince is then the first run it was missed.
+ * An advert that does come back after being marked gone is reported in `back`,
+ * not `added`: it is not a new listing.
+ * `complete: false` (the search hit its page limit) records no misses at all.
  */
-export function mergeSearchResults(store, searchName, listings, today) {
+export function mergeSearchResults(store, searchName, listings, today, { missesToGone = 2, complete = true } = {}) {
   const added = [];
+  const back = [];
   const priceDrops = [];
   const priceRises = [];
   const gone = [];
@@ -66,6 +74,10 @@ export function mergeSearchResults(store, searchName, listings, today) {
       priceHistory: existing.priceHistory,
     });
     delete existing.goneSince;
+    if (existing.misses) {
+      delete existing.misses[searchName];
+      if (!Object.keys(existing.misses).length) delete existing.misses;
+    }
 
     if (l.price != null && lastPrice != null && l.price !== lastPrice) {
       existing.priceHistory.push({ date: today, price: l.price });
@@ -75,22 +87,29 @@ export function mergeSearchResults(store, searchName, listings, today) {
       existing.priceHistory.push({ date: today, price: l.price });
     }
 
-    // Treat "new to this search" (or back from the dead) as new for the reader.
-    if (!alreadyInSearch || wasGone) added.push(existing);
+    if (wasGone) back.push(existing);
+    else if (!alreadyInSearch) added.push(existing); // new to this search
   }
 
-  // Anything this search used to return but did not today is gone from it.
+  // Anything this search used to return but did not today has been missed once more.
+  if (!complete) return { added, back, priceDrops, priceRises, gone };
   for (const advert of Object.values(store.adverts)) {
     if (advert.status !== 'active' || !advert.searches.includes(searchName) || seenNow.has(advert.id)) continue;
+    advert.misses ||= {};
+    const miss = (advert.misses[searchName] ||= { since: today, n: 0 });
+    miss.n++;
+    if (miss.n < missesToGone) continue;
     advert.searches = advert.searches.filter((s) => s !== searchName);
+    delete advert.misses[searchName];
     if (advert.searches.length === 0) {
       advert.status = 'gone';
-      advert.goneSince = today;
+      advert.goneSince = miss.since;
+      delete advert.misses;
       gone.push(advert);
-    }
+    } else if (!Object.keys(advert.misses).length) delete advert.misses;
   }
 
-  return { added, priceDrops, priceRises, gone };
+  return { added, back, priceDrops, priceRises, gone };
 }
 
 /** Drop adverts that have been gone for longer than `keepDays`. */
