@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T18:43:07.643Z",
+ "generatedAt": "2026-11-24T21:42:25.813Z",
  "searches": {
   "6.25–7 m, all body types (Autotrader length)": {
    "name": "6.25–7 m, all body types (Autotrader length)",
@@ -16,8 +16,8 @@
    "name": "Campervans and van conversions (length from advert)",
    "url": "https://www.autotrader.co.uk/motorhome-search?body-type=Campervan&body-type=Van+Conversion&exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-11-24",
-   "total": 2661,
-   "read": 1572,
+   "total": 2660,
+   "read": 1571,
    "truncated": false,
    "error": null,
    "firstRun": "2026-11-09"
@@ -26,8 +26,8 @@
    "name": "All motorhomes (star spec research)",
    "url": "https://www.autotrader.co.uk/motorhome-search?exclude-writeoff-categories=on&price-to=70000&price-from=25000&year-from=2016&postcode=SW1A1AA&sort=datedesc",
    "lastRun": "2026-11-24",
-   "total": 6759,
-   "read": 5423,
+   "total": 6752,
+   "read": 5416,
    "truncated": false,
    "error": null,
    "firstRun": "2026-11-09"
@@ -51764,10 +51764,10 @@
     }
    ],
    "value": {
-    "pct": -3.7,
-    "expected": 65647,
+    "pct": -1.8,
+    "expected": 64410,
     "net": 63250,
-    "comps": 17,
+    "comps": 18,
     "basis": "model",
     "adjusted": true
    },
@@ -51779,8 +51779,8 @@
       "pts": 2.5
      },
      {
-      "label": "price +6% vs sold and live similar",
-      "pts": 6.6
+      "label": "price +7% vs sold and live similar",
+      "pts": 6
      },
      {
       "label": "seller motivation 6/100",
@@ -141693,10 +141693,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.2,
-    "expected": 45474,
+    "pct": -3.2,
+    "expected": 45971,
     "net": 44495,
-    "comps": 20,
+    "comps": 21,
     "basis": "make",
     "adjusted": true
    },
@@ -141708,8 +141708,8 @@
       "pts": 2.5
      },
      {
-      "label": "price -2% vs live similar",
-      "pts": 11.3
+      "label": "price -3% vs live similar",
+      "pts": 11.9
      },
      {
       "label": "seller motivation 38/100",
@@ -145568,8 +145568,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.3,
-    "expected": 59153,
+    "pct": 7.4,
+    "expected": 59102,
     "net": 63495,
     "comps": 17,
     "basis": "make",
@@ -168280,10 +168280,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.7,
-    "expected": 50816,
+    "pct": 7,
+    "expected": 51190,
     "net": 54750,
-    "comps": 27,
+    "comps": 28,
     "basis": "model",
     "adjusted": true
    },
@@ -168292,7 +168292,7 @@
     "pickParts": [
      {
       "label": "price +3% vs sold and live similar",
-      "pts": 8
+      "pts": 8.2
      },
      {
       "label": "seller motivation 16/100",
@@ -171681,6 +171681,16 @@
      "quality": 36,
      "n": 86,
      "body": "van"
+    }
+   },
+   "misses": {
+    "Campervans and van conversions (length from advert)": {
+     "since": "2026-11-24",
+     "n": 1
+    },
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
     }
    }
   },
@@ -198761,10 +198771,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 1.6,
-    "expected": 58780,
+    "pct": -1,
+    "expected": 60278,
     "net": 59700,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -198776,8 +198786,8 @@
       "pts": 2.5
      },
      {
-      "label": "price +6% vs sold and live similar",
-      "pts": 6.6
+      "label": "price +4% vs sold and live similar",
+      "pts": 7.4
      },
      {
       "label": "seller motivation 23/100",
@@ -210732,23 +210742,23 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -10.3,
-    "expected": 54302,
+    "pct": -10.6,
+    "expected": 54444,
     "net": 48695,
     "comps": 21,
     "basis": "make",
     "adjusted": true
    },
    "deal": {
-    "pickScore": 26,
+    "pickScore": 27,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price -10% vs live similar",
-      "pts": 16.2
+      "label": "price -11% vs live similar",
+      "pts": 16.4
      },
      {
       "label": "seller motivation 53/100",
@@ -264856,10 +264866,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.4,
-    "expected": 42163,
+    "pct": 10.4,
+    "expected": 42936,
     "net": 47395,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -264867,8 +264877,8 @@
     "pickScore": 0,
     "pickParts": [
      {
-      "label": "price +16% vs sold and live similar",
-      "pts": 0.3
+      "label": "price +15% vs sold and live similar",
+      "pts": 0.9
      },
      {
       "label": "seller motivation 30/100",
@@ -273640,7 +273650,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -281836,7 +281846,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -290387,7 +290397,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -291375,7 +291385,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -305656,7 +305666,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -308098,7 +308108,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -312782,7 +312792,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -314803,7 +314813,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -317207,7 +317217,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -320102,7 +320112,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -324006,7 +324016,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -325059,7 +325069,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -329444,7 +329454,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -336473,7 +336483,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -338783,7 +338793,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -342443,7 +342453,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -345835,7 +345845,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -347564,7 +347574,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -348820,7 +348830,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -360104,7 +360114,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -362427,7 +362437,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -370700,7 +370710,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -385649,7 +385659,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -395817,7 +395827,7 @@
     "peer": {
      "price": 58995,
      "quality": 44,
-     "n": 484,
+     "n": 485,
      "body": "all"
     }
    }
@@ -399464,7 +399474,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -408903,7 +408913,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -421900,7 +421910,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -429471,7 +429481,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -429694,7 +429704,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -432361,7 +432371,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -433480,7 +433490,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -433823,7 +433833,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -436055,7 +436065,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -450504,7 +450514,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -452818,7 +452828,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -462930,7 +462940,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -468780,7 +468790,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -480515,10 +480525,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -12.1,
-    "expected": 26781,
+    "pct": -12.5,
+    "expected": 26913,
     "net": 23550,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -520646,10 +520656,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 17.3,
-    "expected": 40760,
+    "pct": 15.3,
+    "expected": 41466,
     "net": 47799,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -545952,7 +545962,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -547992,10 +548002,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -24.3,
-    "expected": 43618,
+    "pct": -24.7,
+    "expected": 43858,
     "net": 33040,
-    "comps": 31,
+    "comps": 32,
     "basis": "model",
     "adjusted": true
    },
@@ -566465,7 +566475,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -593572,10 +593582,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -1.1,
-    "expected": 38916,
+    "pct": -2.6,
+    "expected": 39514,
     "net": 38495,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -593588,7 +593598,7 @@
      },
      {
       "label": "price -1% vs sold and live similar",
-      "pts": 10.3
+      "pts": 10.8
      },
      {
       "label": "seller motivation 2/100",
@@ -671217,6 +671227,12 @@
      "quality": 39,
      "n": 322,
      "body": "coach"
+    }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
     }
    },
    "lengthOutside": "6 m (spec sheet)"
@@ -752014,6 +752030,12 @@
      "n": 234,
      "body": "coach"
     }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
+    }
    }
   },
   "202610136949083": {
@@ -758739,7 +758761,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -778677,7 +778699,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -785775,7 +785797,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -791699,7 +791721,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -799327,7 +799349,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -802561,7 +802583,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -805212,10 +805234,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -7.6,
-    "expected": 54091,
+    "pct": -8.4,
+    "expected": 54610,
     "net": 50000,
-    "comps": 27,
+    "comps": 28,
     "basis": "model",
     "adjusted": true
    },
@@ -805227,8 +805249,8 @@
       "pts": 2.5
      },
      {
-      "label": "price -7% vs sold and live similar",
-      "pts": 14.4
+      "label": "price -8% vs sold and live similar",
+      "pts": 14.7
      },
      {
       "label": "seller motivation 36/100",
@@ -805376,7 +805398,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -810861,6 +810883,12 @@
      "n": 77,
      "body": "coach"
     }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
+    }
    }
   },
   "202609015602234": {
@@ -812281,7 +812309,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -826288,7 +826316,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -829856,7 +829884,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -843954,7 +843982,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -844398,7 +844426,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -844627,7 +844655,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -845560,7 +845588,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -847348,7 +847376,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -847639,6 +847667,12 @@
      "quality": 36,
      "n": 132,
      "body": "van"
+    }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
     }
    },
    "lengthOutside": "5.93 m (sprinter L2)"
@@ -848213,7 +848247,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -867459,10 +867493,10 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 10.7,
-    "expected": 42833,
+    "pct": 8.6,
+    "expected": 43641,
     "net": 47395,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -867470,8 +867504,8 @@
     "pickScore": 0,
     "pickParts": [
      {
-      "label": "price +15% vs sold and live similar",
-      "pts": 0.8
+      "label": "price +14% vs sold and live similar",
+      "pts": 1.4
      },
      {
       "label": "seller motivation 30/100",
@@ -869441,7 +869475,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -873321,7 +873355,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -877123,7 +877157,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -879128,7 +879162,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -882386,7 +882420,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -885805,7 +885839,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -886856,7 +886890,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -888062,7 +888096,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -888360,7 +888394,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -889458,7 +889492,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -890226,7 +890260,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -890472,7 +890506,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -892746,7 +892780,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -893716,7 +893750,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -905691,7 +905725,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -907732,7 +907766,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -908648,7 +908682,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -910704,7 +910738,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -910977,7 +911011,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -911444,7 +911478,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -913639,7 +913673,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -918588,7 +918622,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -919211,7 +919245,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -921509,7 +921543,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -922078,7 +922112,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -927901,7 +927935,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -928541,7 +928575,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -932303,7 +932337,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -933026,7 +933060,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -935184,7 +935218,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -936509,7 +936543,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -940175,7 +940209,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -943286,7 +943320,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -946574,7 +946608,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -946885,7 +946919,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -949686,7 +949720,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -950551,7 +950585,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -953116,7 +953150,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -953404,7 +953438,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -953763,7 +953797,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -954398,7 +954432,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -954997,7 +955031,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -955683,7 +955717,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -959251,7 +959285,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -959751,7 +959785,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -960623,7 +960657,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -962238,7 +962272,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -962661,7 +962695,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -962997,7 +963031,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -966889,7 +966923,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -969578,7 +969612,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -969836,7 +969870,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -975864,7 +975898,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -978356,7 +978390,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -978806,7 +978840,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -980878,7 +980912,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -981425,8 +981459,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 16.4,
-    "expected": 50443,
+    "pct": 16.3,
+    "expected": 50489,
     "net": 58695,
     "comps": 8,
     "basis": "model",
@@ -982777,15 +982811,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -2.3,
-    "expected": 51970,
+    "pct": -3.7,
+    "expected": 52779,
     "net": 50800,
-    "comps": 24,
+    "comps": 25,
     "basis": "make",
     "adjusted": true
    },
    "deal": {
-    "pickScore": 22,
+    "pickScore": 23,
     "pickParts": [
      {
       "label": "star spec 1/4",
@@ -982796,8 +982830,8 @@
       "pts": 5
      },
      {
-      "label": "price -2% vs live similar",
-      "pts": 11.4
+      "label": "price -4% vs live similar",
+      "pts": 12.2
      },
      {
       "label": "seller motivation 12/100",
@@ -982935,8 +982969,14 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
+    }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
     }
    }
   },
@@ -983194,15 +983234,15 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 7.3,
-    "expected": 55645,
+    "pct": 7.1,
+    "expected": 55742,
     "net": 59695,
     "comps": 27,
     "basis": "make",
     "adjusted": true
    },
    "deal": {
-    "pickScore": 2,
+    "pickScore": 3,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
@@ -983210,7 +983250,7 @@
      },
      {
       "label": "price +7% vs live similar",
-      "pts": 5.6
+      "pts": 5.7
      },
      {
       "label": "seller motivation 2/100",
@@ -986746,7 +986786,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -987020,7 +987060,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -990763,7 +990803,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -991674,8 +991714,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 16.7,
-    "expected": 52177,
+    "pct": 16.2,
+    "expected": 52398,
     "net": 60895,
     "comps": 21,
     "basis": "make",
@@ -991687,6 +991727,10 @@
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
+     },
+     {
+      "label": "price +16% vs live similar",
+      "pts": 0.3
      },
      {
       "label": "seller motivation 4/100",
@@ -991825,7 +991869,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -992772,7 +992816,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -994784,7 +994828,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -996519,7 +996563,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -996618,23 +996662,23 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 8.6,
-    "expected": 52010,
+    "pct": 6.5,
+    "expected": 53030,
     "net": 56490,
-    "comps": 24,
+    "comps": 25,
     "basis": "make",
     "adjusted": true
    },
    "deal": {
-    "pickScore": 2,
+    "pickScore": 3,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price +9% vs live similar",
-      "pts": 4.8
+      "label": "price +7% vs live similar",
+      "pts": 6.1
      },
      {
       "label": "seller motivation 30/100",
@@ -996757,7 +996801,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -997067,7 +997111,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -999122,7 +999166,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -999740,7 +999784,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1001368,7 +1001412,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1002905,7 +1002949,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1006314,8 +1006358,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.6,
-    "expected": 52744,
+    "pct": 5.5,
+    "expected": 52792,
     "net": 55695,
     "comps": 21,
     "basis": "make",
@@ -1006330,7 +1006374,7 @@
      },
      {
       "label": "price +6% vs live similar",
-      "pts": 6.6
+      "pts": 6.7
      },
      {
       "label": "seller motivation 66/100",
@@ -1006471,7 +1006515,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1007403,7 +1007447,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1007748,7 +1007792,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1009484,7 +1009528,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1013360,7 +1013404,7 @@
    "redFlags": [],
    "value": {
     "pct": -4.5,
-    "expected": 58609,
+    "expected": 58605,
     "net": 55995,
     "comps": 14,
     "basis": "make",
@@ -1015357,7 +1015401,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1017503,7 +1017547,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1019003,7 +1019047,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1020357,7 +1020401,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1020669,8 +1020713,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 12.6,
-    "expected": 55410,
+    "pct": 12.4,
+    "expected": 55508,
     "net": 62395,
     "comps": 27,
     "basis": "make",
@@ -1020680,8 +1020724,8 @@
     "pickScore": 0,
     "pickParts": [
      {
-      "label": "price +13% vs live similar",
-      "pts": 2.4
+      "label": "price +12% vs live similar",
+      "pts": 2.6
      },
      {
       "label": "seller motivation 13/100",
@@ -1021060,7 +1021104,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1023039,7 +1023083,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1024812,7 +1024856,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1027552,7 +1027596,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1030356,7 +1030400,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1030769,8 +1030813,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 0.4,
-    "expected": 60976,
+    "pct": 0.5,
+    "expected": 60917,
     "net": 61199,
     "comps": 21,
     "basis": "make",
@@ -1030784,8 +1030828,8 @@
       "pts": 5
      },
      {
-      "label": "price +0% vs live similar",
-      "pts": 9.8
+      "label": "price +1% vs live similar",
+      "pts": 9.7
      },
      {
       "label": "seller motivation 16/100",
@@ -1032225,7 +1032269,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1034760,7 +1034804,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1040335,7 +1040379,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1040626,7 +1040670,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1045049,7 +1045093,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1046612,7 +1046656,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1047469,7 +1047513,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1048960,7 +1049004,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1050343,7 +1050387,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1053263,7 +1053307,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1064581,8 +1064625,8 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": -3.2,
-    "expected": 59591,
+    "pct": -3.1,
+    "expected": 59551,
     "net": 57699,
     "comps": 17,
     "basis": "make",
@@ -1064743,7 +1064787,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1069668,7 +1069712,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1069909,7 +1069953,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1071779,23 +1071823,23 @@
    ],
    "redFlags": [],
    "value": {
-    "pct": 5.6,
-    "expected": 57788,
+    "pct": 3.9,
+    "expected": 58730,
     "net": 61000,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
    "deal": {
-    "pickScore": 8,
+    "pickScore": 9,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price +8% vs sold and live similar",
-      "pts": 5.1
+      "label": "price +7% vs sold and live similar",
+      "pts": 5.7
      },
      {
       "label": "seller motivation 30/100",
@@ -1073131,7 +1073175,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1080065,7 +1080109,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1080332,7 +1080376,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1082392,6 +1082436,12 @@
      "n": 326,
      "body": "coach"
     }
+   },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
+    }
    }
   },
   "202610167056041": {
@@ -1084041,7 +1084091,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1086733,7 +1086783,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1098211,7 +1098261,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1099535,7 +1099585,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1113542,7 +1113592,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1121282,7 +1121332,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1122174,7 +1122224,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1136276,7 +1136326,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1137390,7 +1137440,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1139718,7 +1139768,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1142580,7 +1142630,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1144596,7 +1144646,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1144898,7 +1144948,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1148851,7 +1148901,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1150769,7 +1150819,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1152824,7 +1152874,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1158838,7 +1158888,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1161335,7 +1161385,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1164279,7 +1164329,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1168138,7 +1168188,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1182726,7 +1182776,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1182995,7 +1183045,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1188987,7 +1189037,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1192485,7 +1192535,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1195421,7 +1195471,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1198414,7 +1198464,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1205351,7 +1205401,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1207933,7 +1207983,7 @@
     "peer": {
      "price": 58995,
      "quality": 44,
-     "n": 484,
+     "n": 485,
      "body": "all"
     }
    },
@@ -1211664,7 +1211714,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1214891,7 +1214941,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1215194,7 +1215244,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1255107,6 +1255157,12 @@
      "body": "coach"
     }
    },
+   "misses": {
+    "All motorhomes (star spec research)": {
+     "since": "2026-11-24",
+     "n": 1
+    }
+   },
    "lengthOutside": "6 m (stated in advert)"
   },
   "202610157017473": {
@@ -1258726,7 +1258782,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1260647,7 +1260703,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1265457,7 +1265513,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1268167,7 +1268223,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1268718,7 +1268774,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1275906,7 +1275962,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1276932,7 +1276988,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1288639,7 +1288695,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1300385,7 +1300441,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1301026,7 +1301082,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1308100,7 +1308156,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1308421,7 +1308477,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1327497,7 +1327553,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1331522,7 +1331578,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1336383,7 +1336439,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1336621,7 +1336677,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1341665,10 +1341721,10 @@
     "drive": null
    },
    "value": {
-    "pct": 13.6,
-    "expected": 47710,
+    "pct": 12.3,
+    "expected": 48263,
     "net": 54195,
-    "comps": 20,
+    "comps": 21,
     "basis": "make",
     "adjusted": true
    },
@@ -1341687,8 +1341743,8 @@
       "pts": 5
      },
      {
-      "label": "price +14% vs live similar",
-      "pts": 1.8
+      "label": "price +12% vs live similar",
+      "pts": 2.6
      },
      {
       "label": "seller motivation 1/100",
@@ -1350294,7 +1350350,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1351478,7 +1351534,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1352297,7 +1352353,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1352915,7 +1352971,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1358669,7 +1358725,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1368958,7 +1369014,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1370015,7 +1370071,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1370256,7 +1370312,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1376704,7 +1376760,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1378055,10 +1378111,10 @@
     "source": "spec sheet"
    },
    "value": {
-    "pct": 23.9,
-    "expected": 50207,
+    "pct": 22.5,
+    "expected": 50783,
     "net": 62195,
-    "comps": 24,
+    "comps": 25,
     "basis": "make",
     "adjusted": true
    },
@@ -1378268,7 +1378324,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1379787,7 +1379843,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1380740,7 +1380796,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1386056,7 +1386112,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1386311,7 +1386367,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1392010,7 +1392066,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1392767,7 +1392823,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1397941,7 +1397997,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1398816,7 +1398872,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1404273,10 +1404329,10 @@
     "drive": null
    },
    "value": {
-    "pct": -6,
-    "expected": 58959,
+    "pct": -7.9,
+    "expected": 60154,
     "net": 55400,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1404297,15 +1404353,15 @@
     "lastPrice": 56500
    },
    "deal": {
-    "pickScore": 23,
+    "pickScore": 24,
     "pickParts": [
      {
       "label": "nice-to-have ×4",
       "pts": 10
      },
      {
-      "label": "price -3% vs sold and live similar",
-      "pts": 11.6
+      "label": "price -4% vs sold and live similar",
+      "pts": 12.2
      },
      {
       "label": "seller motivation 30/100",
@@ -1407995,7 +1408051,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1420055,7 +1420111,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    }
@@ -1434599,7 +1434655,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1438172,10 +1438228,10 @@
     "drive": null
    },
    "value": {
-    "pct": -5.6,
-    "expected": 52910,
+    "pct": -6.4,
+    "expected": 53371,
     "net": 49950,
-    "comps": 27,
+    "comps": 28,
     "basis": "model",
     "adjusted": true
    },
@@ -1438216,7 +1438272,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1438225,7 +1438281,7 @@
     "pickParts": [
      {
       "label": "price -8% vs sold and live similar",
-      "pts": 14.7
+      "pts": 14.9
      },
      {
       "label": "seller motivation 67/100",
@@ -1439200,10 +1439256,10 @@
     "drive": null
    },
    "value": {
-    "pct": 7.3,
-    "expected": 33348,
+    "pct": 6,
+    "expected": 33773,
     "net": 35799,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -1439256,8 +1439312,8 @@
       "pts": 5
      },
      {
-      "label": "price 0% vs sold and live similar",
-      "pts": 10.1
+      "label": "price -1% vs sold and live similar",
+      "pts": 10.5
      },
      {
       "label": "one owner",
@@ -1442812,10 +1442868,10 @@
     "drive": null
    },
    "value": {
-    "pct": 5.9,
-    "expected": 42297,
+    "pct": 4,
+    "expected": 43059,
     "net": 44800,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -1442861,11 +1442917,11 @@
     }
    },
    "deal": {
-    "pickScore": 7,
+    "pickScore": 8,
     "pickParts": [
      {
-      "label": "price +9% vs sold and live similar",
-      "pts": 4.5
+      "label": "price +8% vs sold and live similar",
+      "pts": 5.1
      },
      {
       "label": "seller motivation 50/100",
@@ -1446798,10 +1446854,10 @@
     "drive": null
    },
    "value": {
-    "pct": -1.7,
-    "expected": 51860,
+    "pct": -2.4,
+    "expected": 52272,
     "net": 50995,
-    "comps": 27,
+    "comps": 28,
     "basis": "model",
     "adjusted": true
    },
@@ -1446847,12 +1446903,12 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
    "deal": {
-    "pickScore": 16,
+    "pickScore": 17,
     "pickParts": [
      {
       "label": "nice-to-have ×2",
@@ -1446860,7 +1446916,7 @@
      },
      {
       "label": "price -3% vs sold and live similar",
-      "pts": 11.9
+      "pts": 12.1
      },
      {
       "label": "seller motivation 10/100",
@@ -1457166,7 +1457222,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1459588,7 +1459644,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1469866,10 +1469922,10 @@
     "drive": null
    },
    "value": {
-    "pct": -26.6,
-    "expected": 36741,
+    "pct": -27.6,
+    "expected": 37231,
     "net": 26950,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -1470162,7 +1470218,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1470750,10 +1470806,10 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": -14.2,
-    "expected": 57914,
+    "pct": -14.9,
+    "expected": 58403,
     "net": 49700,
-    "comps": 24,
+    "comps": 25,
     "basis": "make",
     "adjusted": true
    },
@@ -1470795,15 +1470851,15 @@
     }
    },
    "deal": {
-    "pickScore": 16,
+    "pickScore": 17,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price -14% vs live similar",
-      "pts": 18.5
+      "label": "price -15% vs live similar",
+      "pts": 18.9
      },
      {
       "label": "one owner",
@@ -1474283,7 +1474339,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1474721,7 +1474777,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1476096,7 +1476152,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1476604,7 +1476660,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1485987,7 +1486043,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1487284,7 +1487340,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1488540,7 +1488596,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1488772,7 +1488828,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1489045,7 +1489101,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1492308,8 +1492364,8 @@
     "drive": null
    },
    "value": {
-    "pct": -2.6,
-    "expected": 57979,
+    "pct": -2.8,
+    "expected": 58140,
     "net": 56500,
     "comps": 19,
     "basis": "make",
@@ -1492361,7 +1492417,7 @@
      },
      {
       "label": "price -3% vs live similar",
-      "pts": 11.6
+      "pts": 11.7
      },
      {
       "label": "seller motivation 68/100",
@@ -1498065,7 +1498121,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1498611,7 +1498667,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1499067,7 +1499123,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1499658,7 +1499714,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1503437,7 +1503493,7 @@
    },
    "value": {
     "pct": -16.5,
-    "expected": 59139,
+    "expected": 59157,
     "net": 49395,
     "comps": 17,
     "basis": "make",
@@ -1503476,7 +1503532,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1503959,8 +1504015,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": -3.1,
-    "expected": 55207,
+    "pct": -3.2,
+    "expected": 55253,
     "net": 53495,
     "comps": 27,
     "basis": "make",
@@ -1504450,7 +1504506,7 @@
    },
    "value": {
     "pct": 0.5,
-    "expected": 61583,
+    "expected": 61586,
     "net": 61895,
     "comps": 11,
     "basis": "make",
@@ -1505463,8 +1505519,8 @@
    "category": "motorhome",
    "year": 2025,
    "registeredYear": "2025 (25 reg)",
-   "mileageText": "29,000 miles",
-   "mileage": 29000,
+   "mileageText": "29,507 miles",
+   "mileage": 29507,
    "price": 69995,
    "priceText": "£69,995",
    "location": "Stevenage (27 miles)",
@@ -1505602,8 +1505658,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": 21.2,
-    "expected": 56009,
+    "pct": 21.4,
+    "expected": 55922,
     "net": 67895,
     "comps": 21,
     "basis": "make",
@@ -1505619,12 +1505675,7 @@
     "n": 6,
     "basis": "model"
    },
-   "relisted": {
-    "of": "202609256389231",
-    "goneSince": "2026-11-05",
-    "listedDate": "2026-09-25",
-    "lastPrice": 69995
-   },
+   "relisted": null,
    "quality": {
     "score": 64,
     "grade": "A",
@@ -1505671,7 +1505722,7 @@
     }
    },
    "deal": {
-    "pickScore": 12,
+    "pickScore": 10,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
@@ -1505684,10 +1505735,6 @@
      {
       "label": "quality for money 60 (quality A 64)",
       "pts": 5
-     },
-     {
-      "label": "re-listed (room to negotiate)",
-      "pts": 2
      }
     ],
     "underpriced": false,
@@ -1505734,8 +1505781,7 @@
     },
     "nearMiss": false,
     "isDeal": false
-   },
-   "inheritedFrom": "202609256389231"
+   }
   },
   "202611047627131": {
    "id": "202611047627131",
@@ -1505747,8 +1505793,8 @@
    "category": "motorhome",
    "year": 2025,
    "registeredYear": "2025 (25 reg)",
-   "mileageText": "22,000 miles",
-   "mileage": 22000,
+   "mileageText": "24,509 miles",
+   "mileage": 24509,
    "price": 51995,
    "priceText": "£51,995",
    "location": "Stevenage (27 miles)",
@@ -1505826,12 +1505872,7 @@
     {
      "label": "Automatic",
      "value": 1500,
-     "evidence": "…this a68 is fitted with an automatic gearbox, making driving effortless wheth…"
-    },
-    {
-     "label": "Awning",
-     "value": 600,
-     "evidence": "…side, the motorhome is equipped with an awning and bike rack, making it perfect for those…"
+     "evidence": "gearbox: automatic"
     }
    ],
    "redFlags": [],
@@ -1505859,8 +1505900,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": -6,
-    "expected": 53696,
+    "pct": -5.3,
+    "expected": 53328,
     "net": 50495,
     "comps": 27,
     "basis": "make",
@@ -1505872,12 +1505913,7 @@
     "n": 52,
     "basis": "make"
    },
-   "relisted": {
-    "of": "202609085839871",
-    "goneSince": "2026-11-05",
-    "listedDate": "2026-09-08",
-    "lastPrice": 51995
-   },
+   "relisted": null,
    "quality": {
     "score": 43,
     "grade": "C",
@@ -1505909,15 +1505945,15 @@
     }
    },
    "deal": {
-    "pickScore": 10,
+    "pickScore": 8,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price -6% vs live similar",
-      "pts": 13.6
+      "label": "price -5% vs live similar",
+      "pts": 13.2
      },
      {
       "label": "one owner",
@@ -1505934,10 +1505970,6 @@
      {
       "label": "brand you avoid (Sunlight (budget build))",
       "pts": -15
-     },
-     {
-      "label": "re-listed (room to negotiate)",
-      "pts": 2
      }
     ],
     "underpriced": false,
@@ -1505984,8 +1506016,7 @@
     },
     "nearMiss": false,
     "isDeal": false
-   },
-   "inheritedFrom": "202609085839871"
+   }
   },
   "202611047627127": {
    "id": "202611047627127",
@@ -1506161,7 +1506192,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1508361,8 +1508392,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": -10.9,
-    "expected": 56019,
+    "pct": -11.1,
+    "expected": 56095,
     "net": 49895,
     "comps": 27,
     "basis": "make",
@@ -1508419,7 +1508450,7 @@
      },
      {
       "label": "price -11% vs live similar",
-      "pts": 16.5
+      "pts": 16.7
      },
      {
       "label": "low mileage for its age",
@@ -1508871,7 +1508902,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1509571,8 +1509602,8 @@
    "category": "motorhome",
    "year": 2025,
    "registeredYear": "2025 (25 reg)",
-   "mileageText": "27,000 miles",
-   "mileage": 27000,
+   "mileageText": "25,200 miles",
+   "mileage": 25200,
    "price": 62996,
    "priceText": "£62,996",
    "location": "Stevenage (27 miles)",
@@ -1509673,8 +1509704,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": 17.9,
-    "expected": 52179,
+    "pct": 17.2,
+    "expected": 52479,
     "net": 61496,
     "comps": 27,
     "basis": "make",
@@ -1509686,12 +1509717,7 @@
     "n": 52,
     "basis": "make"
    },
-   "relisted": {
-    "of": "202609055753634",
-    "goneSince": "2026-11-05",
-    "listedDate": "2026-09-05",
-    "lastPrice": 62996
-   },
+   "relisted": null,
    "quality": {
     "score": 43,
     "grade": "C",
@@ -1509740,10 +1509766,6 @@
      {
       "label": "brand you avoid (Sunlight (budget build))",
       "pts": -15
-     },
-     {
-      "label": "re-listed (room to negotiate)",
-      "pts": 2
      }
     ],
     "underpriced": false,
@@ -1509790,8 +1509812,7 @@
     },
     "nearMiss": false,
     "isDeal": false
-   },
-   "inheritedFrom": "202609055753634"
+   }
   },
   "202611047627114": {
    "id": "202611047627114",
@@ -1513313,7 +1513334,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1519809,7 +1519830,7 @@
     "peer": {
      "price": 58995,
      "quality": 44,
-     "n": 484,
+     "n": 485,
      "body": "all"
     }
    },
@@ -1520066,7 +1520087,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1521526,7 +1521547,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1523341,7 +1523362,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1523578,7 +1523599,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1530297,7 +1530318,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1532998,7 +1533019,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1534661,7 +1534682,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1540416,10 +1540437,10 @@
     "drive": null
    },
    "value": {
-    "pct": -20,
-    "expected": 56897,
+    "pct": -18.8,
+    "expected": 56036,
     "net": 45495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1541414,7 +1541435,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1543341,7 +1543362,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1543790,7 +1543811,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1544842,7 +1544863,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1555977,10 +1555998,10 @@
     "drive": null
    },
    "value": {
-    "pct": -2,
-    "expected": 55635,
+    "pct": -1.2,
+    "expected": 55144,
     "net": 54495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1556039,7 +1556060,7 @@
      },
      {
       "label": "price -1% vs sold and live similar",
-      "pts": 10.9
+      "pts": 10.6
      },
      {
       "label": "full service history",
@@ -1556529,7 +1556550,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1557480,7 +1557501,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1558197,10 +1558218,10 @@
     "drive": null
    },
    "value": {
-    "pct": 4.6,
-    "expected": 55905,
+    "pct": 5,
+    "expected": 55723,
     "net": 58495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1558258,8 +1558279,8 @@
       "pts": 2.5
      },
      {
-      "label": "price +5% vs sold and live similar",
-      "pts": 6.8
+      "label": "price +6% vs sold and live similar",
+      "pts": 6.6
      },
      {
       "label": "full service history",
@@ -1558446,10 +1558467,10 @@
     "drive": null
    },
    "value": {
-    "pct": 13,
-    "expected": 55295,
+    "pct": 13.6,
+    "expected": 55026,
     "net": 62495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1558508,7 +1558529,7 @@
      },
      {
       "label": "price +13% vs sold and live similar",
-      "pts": 2.1
+      "pts": 1.9
      },
      {
       "label": "full service history",
@@ -1558695,10 +1558716,10 @@
     "drive": null
    },
    "value": {
-    "pct": 12.1,
-    "expected": 55744,
+    "pct": 12.3,
+    "expected": 55643,
     "net": 62495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1558757,7 +1558778,7 @@
      },
      {
       "label": "price +13% vs sold and live similar",
-      "pts": 2.4
+      "pts": 2.3
      },
      {
       "label": "full service history",
@@ -1558954,10 +1558975,10 @@
     "drive": null
    },
    "value": {
-    "pct": 8.7,
-    "expected": 53833,
+    "pct": 10.8,
+    "expected": 52795,
     "net": 58495,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1559008,15 +1559029,15 @@
     }
    },
    "deal": {
-    "pickScore": 7,
+    "pickScore": 6,
     "pickParts": [
      {
       "label": "nice-to-have ×3",
       "pts": 7.5
      },
      {
-      "label": "price +7% vs sold and live similar",
-      "pts": 5.5
+      "label": "price +9% vs sold and live similar",
+      "pts": 4.9
      },
      {
       "label": "full service history",
@@ -1563144,7 +1563165,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1570624,7 +1570645,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1574039,7 +1574060,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1575807,7 +1575828,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1576187,7 +1576208,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1578996,7 +1579017,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1583478,7 +1583499,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1585531,8 +1585552,8 @@
    "category": "motorhome",
    "year": 2024,
    "registeredYear": "2024 (24 reg)",
-   "mileageText": "14,969 miles",
-   "mileage": 14969,
+   "mileageText": "14,525 miles",
+   "mileage": 14525,
    "price": 51995,
    "priceText": "£51,995",
    "location": "Stevenage (27 miles)",
@@ -1585634,7 +1585655,12 @@
     {
      "label": "Cab air conditioning",
      "value": 0,
-     "evidence": "air con in cab, cruise control, dab radio with bluetooth"
+     "evidence": "cab air conditioning"
+    },
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "…ucato 2.2l 140bhp chassis with a smooth 9-speed automatic gearbox. this model offers a sup…"
     },
     {
      "label": "Solar panel",
@@ -1585649,7 +1585675,7 @@
     {
      "label": "Awning",
      "value": 600,
-     "evidence": "…n step, and pre-installed bike rack and awning.…"
+     "evidence": "awning"
     }
    ],
    "redFlags": [],
@@ -1585657,12 +1585683,7 @@
     {
      "label": "Part exchange welcome",
      "weight": 0,
-     "evidence": "…arranty, nationwide delivery available. part exchange welc…"
-    },
-    {
-     "label": "One owner",
-     "weight": 0,
-     "evidence": "owners: 1"
+     "evidence": "…arranty, nationwide delivery available. part exchange welcome.…"
     }
    ],
    "fit": {
@@ -1585700,10 +1585721,10 @@
     "basis": "model"
    },
    "relisted": {
-    "of": "202609266407187",
-    "goneSince": "2026-11-16",
-    "listedDate": "2026-09-26",
-    "lastPrice": 51995
+    "of": "202609256386640",
+    "goneSince": "2026-10-24",
+    "listedDate": "2026-09-25",
+    "lastPrice": 53995
    },
    "quality": {
     "score": 56,
@@ -1585731,7 +1585752,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1585739,8 +1585760,8 @@
     "pickScore": 37,
     "pickParts": [
      {
-      "label": "nice-to-have ×1",
-      "pts": 2.5
+      "label": "nice-to-have ×2",
+      "pts": 5
      },
      {
       "label": "price -11% vs sold and live similar",
@@ -1585749,10 +1585770,6 @@
      {
       "label": "seller motivation 26/100",
       "pts": 3.9
-     },
-     {
-      "label": "one owner",
-      "pts": 2
      },
      {
       "label": "modest mileage for its age",
@@ -1585780,9 +1585797,10 @@
     ],
     "wantedHits": [],
     "niceHits": [
+     "Automatic",
      "Solar panel"
     ],
-    "kitScore": 1,
+    "kitScore": 2,
     "staleNoCut": false,
     "starCount": 0,
     "starOf": 4,
@@ -1585818,7 +1585836,7 @@
     "nearMiss": false,
     "isDeal": false
    },
-   "inheritedFrom": "202609266407187"
+   "inheritedFrom": "202609256386640"
   },
   "202611097739669": {
    "id": "202611097739669",
@@ -1586098,7 +1586116,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1593683,7 +1593701,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1595084,7 +1595102,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1595496,7 +1595514,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1605807,7 +1605825,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1609381,7 +1609399,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1617750,7 +1617768,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1618721,7 +1618739,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1619008,7 +1619026,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1628468,7 +1628486,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1629258,7 +1629276,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1633243,7 +1633261,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1639485,7 +1639503,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1639911,7 +1639929,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1655796,7 +1655814,7 @@
     "peer": {
      "price": 58995,
      "quality": 44,
-     "n": 484,
+     "n": 485,
      "body": "all"
     }
    },
@@ -1663435,7 +1663453,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1664270,7 +1664288,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1664595,7 +1664613,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1683719,7 +1683737,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1685357,7 +1685375,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1691043,7 +1691061,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1691294,7 +1691312,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1693501,7 +1693519,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1694704,7 +1694722,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1694981,7 +1694999,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1698081,7 +1698099,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1704827,10 +1704845,10 @@
     "drive": null
    },
    "value": {
-    "pct": -25.2,
-    "expected": 52380,
+    "pct": -25.7,
+    "expected": 52771,
     "net": 39195,
-    "comps": 27,
+    "comps": 28,
     "basis": "model",
     "adjusted": true
    },
@@ -1710819,10 +1710837,10 @@
     "drive": null
    },
    "value": {
-    "pct": -5.7,
-    "expected": 58314,
+    "pct": -7.1,
+    "expected": 59221,
     "net": 55000,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1710868,11 +1710886,11 @@
     }
    },
    "deal": {
-    "pickScore": 9,
+    "pickScore": 10,
     "pickParts": [
      {
-      "label": "price -4% vs sold and live similar",
-      "pts": 12.5
+      "label": "price -5% vs sold and live similar",
+      "pts": 12.9
      },
      {
       "label": "seller motivation 10/100",
@@ -1713256,7 +1713274,7 @@
    },
    "value": {
     "pct": 0,
-    "expected": 62502,
+    "expected": 62476,
     "net": 62495,
     "comps": 11,
     "basis": "make",
@@ -1718460,7 +1718478,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1719442,7 +1719460,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1731463,7 +1731481,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1734001,7 +1734019,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1734528,7 +1734546,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1741334,7 +1741352,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1751283,7 +1751301,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1751725,8 +1751743,8 @@
     "drive": null
    },
    "value": {
-    "pct": -6.3,
-    "expected": 60307,
+    "pct": -6.2,
+    "expected": 60241,
     "net": 56495,
     "comps": 17,
     "basis": "make",
@@ -1751784,7 +1751802,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1753102,7 +1753120,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1753869,7 +1753887,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1756209,10 +1756227,10 @@
     "drive": null
    },
    "value": {
-    "pct": -5.2,
-    "expected": 66994,
+    "pct": -4.3,
+    "expected": 66371,
     "net": 63500,
-    "comps": 17,
+    "comps": 18,
     "basis": "model",
     "adjusted": true
    },
@@ -1756271,7 +1756289,7 @@
      },
      {
       "label": "price +5% vs sold and live similar",
-      "pts": 7.1
+      "pts": 6.8
      },
      {
       "label": "seller motivation 10/100",
@@ -1768861,7 +1768879,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1770864,7 +1770882,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1771138,7 +1771156,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1771881,7 +1771899,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1777266,7 +1777284,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1781698,10 +1781716,10 @@
     "drive": null
    },
    "value": {
-    "pct": 0.4,
-    "expected": 37345,
+    "pct": -1,
+    "expected": 37887,
     "net": 37500,
-    "comps": 23,
+    "comps": 24,
     "basis": "model",
     "adjusted": true
    },
@@ -1781747,15 +1781765,15 @@
     }
    },
    "deal": {
-    "pickScore": 11,
+    "pickScore": 12,
     "pickParts": [
      {
       "label": "nice-to-have ×1",
       "pts": 2.5
      },
      {
-      "label": "price -1% vs sold and live similar",
-      "pts": 10.6
+      "label": "price -2% vs sold and live similar",
+      "pts": 11.1
      },
      {
       "label": "seller motivation 10/100",
@@ -1788760,7 +1788778,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1797990,10 +1798008,10 @@
     "drive": null
    },
    "value": {
-    "pct": -11.9,
-    "expected": 57883,
+    "pct": -12.7,
+    "expected": 58404,
     "net": 50995,
-    "comps": 24,
+    "comps": 25,
     "basis": "make",
     "adjusted": true
    },
@@ -1798052,8 +1798070,8 @@
       "pts": 2.5
      },
      {
-      "label": "price -12% vs live similar",
-      "pts": 17.1
+      "label": "price -13% vs live similar",
+      "pts": 17.6
      },
      {
       "label": "low mileage for its age",
@@ -1799667,7 +1799685,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1803485,7 +1803503,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1807146,7 +1807164,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1807467,7 +1807485,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1808228,7 +1808246,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1811855,7 +1811873,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1816530,7 +1816548,7 @@
    },
    "value": {
     "pct": -11.7,
-    "expected": 58753,
+    "expected": 58783,
     "net": 51895,
     "comps": 17,
     "basis": "make",
@@ -1816569,7 +1816587,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1819575,7 +1819593,7 @@
    "sellerType": "PRIVATE",
    "condition": "used",
    "image": "https://m.atcdn.co.uk/a/media/w480h360/d000b6542c2e45a194bfa725ac883a37.jpg",
-   "imageCount": 4,
+   "imageCount": 6,
    "url": "https://www.autotrader.co.uk/motorhome-details/202611218115979",
    "firstSeen": "2026-11-21",
    "lastSeen": "2026-11-24",
@@ -1823803,7 +1823821,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1826416,7 +1826434,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1832509,7 +1832527,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1834709,10 +1834727,10 @@
     "drive": null
    },
    "value": {
-    "pct": 7.5,
-    "expected": 58120,
+    "pct": 5.1,
+    "expected": 59479,
     "net": 62500,
-    "comps": 18,
+    "comps": 19,
     "basis": "model",
     "adjusted": true
    },
@@ -1834765,8 +1834783,8 @@
       "pts": 2.5
      },
      {
-      "label": "price +10% vs sold and live similar",
-      "pts": 3.8
+      "label": "price +9% vs sold and live similar",
+      "pts": 4.5
      },
      {
       "label": "seller motivation 10/100",
@@ -1835270,7 +1835288,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1836312,7 +1836330,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1837292,7 +1837310,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1840689,7 +1840707,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1841372,7 +1841390,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1841624,7 +1841642,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1849757,8 +1849775,8 @@
     "drive": "Front Wheel Drive"
    },
    "value": {
-    "pct": -10.2,
-    "expected": 59604,
+    "pct": -10.4,
+    "expected": 59729,
     "net": 53495,
     "comps": 21,
     "basis": "make",
@@ -1849816,7 +1849834,7 @@
      },
      {
       "label": "price -10% vs live similar",
-      "pts": 16.1
+      "pts": 16.2
      },
      {
       "label": "three years old or less",
@@ -1852357,7 +1852375,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1854128,7 +1854146,6 @@
     "metres": 5.3,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.3 m (spec sheet)",
    "specs": [
     {
      "label": "Cruise control",
@@ -1854265,7 +1854282,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.3 m (spec sheet)"
   },
   "202611248188494": {
    "id": "202611248188494",
@@ -1854569,7 +1854587,6 @@
     "metres": 5.99,
     "source": "relay L3"
    },
-   "lengthOutside": "5.99 m (relay L3)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1854712,7 +1854729,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (relay L3)"
   },
   "202611248187809": {
    "id": "202611248187809",
@@ -1854823,7 +1854841,6 @@
     "metres": 6,
     "source": "spec sheet"
    },
-   "lengthOutside": "6 m (spec sheet)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1854981,7 +1854998,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "6 m (spec sheet)"
   },
   "202611248187297": {
    "id": "202611248187297",
@@ -1855078,7 +1855096,6 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.99 m (spec sheet)",
    "specs": [
     {
      "label": "Awning",
@@ -1855229,7 +1855246,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (spec sheet)"
   },
   "202611248183455": {
    "id": "202611248183455",
@@ -1855829,7 +1855847,6 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.99 m (spec sheet)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1855966,7 +1855983,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (spec sheet)"
   },
   "202611248190107": {
    "id": "202611248190107",
@@ -1856067,7 +1856085,6 @@
     "metres": 7.9,
     "source": "spec sheet"
    },
-   "lengthOutside": "7.9 m (spec sheet)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1856227,7 +1856244,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "7.9 m (spec sheet)"
   },
   "202611248190063": {
    "id": "202611248190063",
@@ -1857038,7 +1857056,6 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.99 m (spec sheet)",
    "specs": [
     {
      "label": "Reversing camera",
@@ -1857215,12 +1857232,13 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (spec sheet)"
   },
   "202611248190045": {
    "id": "202611248190045",
    "title": "Auto-Trail Expedition 66",
-   "subTitle": "2.2",
+   "subTitle": "Tow Bar and Thule Tow Bar Mounted Cargo Box Included In Sale 2.2",
    "attentionGrabber": "Solar and Gaslo System",
    "make": "Auto-Trail",
    "model": "Expedition 66",
@@ -1858391,7 +1858409,6 @@
     "metres": 5.44,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.44 m (spec sheet)",
    "specs": [
     {
      "label": "Automatic",
@@ -1858530,7 +1858547,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.44 m (spec sheet)"
   },
   "202611248182786": {
    "id": "202611248182786",
@@ -1858651,7 +1858669,6 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.99 m (spec sheet)",
    "specs": [
     {
      "label": "Alde heating",
@@ -1858831,7 +1858848,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (spec sheet)"
   },
   "202611238133094": {
    "id": "202611238133094",
@@ -1858939,7 +1858957,6 @@
     "metres": 8.12,
     "source": "spec sheet"
    },
-   "lengthOutside": "8.12 m (spec sheet)",
    "specs": [
     {
      "label": "Alde heating",
@@ -1859178,7 +1859195,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "8.12 m (spec sheet)"
   },
   "202611218108100": {
    "id": "202611218108100",
@@ -1859631,7 +1859649,7 @@
     "peer": {
      "price": 57995,
      "quality": 45,
-     "n": 322,
+     "n": 323,
      "body": "coach"
     }
    },
@@ -1859803,7 +1859821,6 @@
     "metres": 7.85,
     "source": "spec sheet"
    },
-   "lengthOutside": "7.85 m (spec sheet)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1859971,7 +1859988,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "7.85 m (spec sheet)"
   },
   "202611248185705": {
    "id": "202611248185705",
@@ -1860050,7 +1860068,6 @@
     "metres": 5.99,
     "source": "spec sheet"
    },
-   "lengthOutside": "5.99 m (spec sheet)",
    "specs": [
     {
      "label": "Automatic",
@@ -1860214,7 +1860231,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "5.99 m (spec sheet)"
   },
   "202611248177478": {
    "id": "202611248177478",
@@ -1860483,8 +1860501,8 @@
   "202611248190027": {
    "id": "202611248190027",
    "title": "Dreamer D68 Select Limited",
-   "subTitle": "2.2",
-   "attentionGrabber": "FSH & MOT until 07/03/27",
+   "subTitle": "Automatic 2.2",
+   "attentionGrabber": "Solar & 2 x Leisure batteries",
    "make": "Dreamer",
    "model": "Select",
    "category": "motorhome",
@@ -1860798,7 +1860816,7 @@
   "202611248190003": {
    "id": "202611248190003",
    "title": "Burstner Lyseo Harmony Line",
-   "subTitle": "2.2",
+   "subTitle": "Solar & 2 x leisure batteries 2.2",
    "attentionGrabber": "1 Owner & only 9,867 miles",
    "make": "Burstner",
    "model": "Lyseo TD Harmony Line",
@@ -1861446,7 +1861464,6 @@
     "metres": 6,
     "source": "spec sheet"
    },
-   "lengthOutside": "6 m (spec sheet)",
    "specs": [],
    "redFlags": [],
    "signals": [],
@@ -1861610,7 +1861627,8 @@
     },
     "nearMiss": false,
     "isDeal": false
-   }
+   },
+   "lengthOutside": "6 m (spec sheet)"
   },
   "202611248185706": {
    "id": "202611248185706",
@@ -1861689,7 +1861707,6 @@
     "metres": 4.98,
     "source": "spec sheet"
    },
-   "lengthOutside": "4.98 m (spec sheet)",
    "specs": [
     {
      "label": "Cab air conditioning",
@@ -1861865,10 +1861882,257 @@
     },
     "nearMiss": false,
     "isDeal": false
+   },
+   "lengthOutside": "4.98 m (spec sheet)"
+  },
+  "202611248196997": {
+   "id": "202611248196997",
+   "title": "Ford Transit",
+   "subTitle": "2.0",
+   "attentionGrabber": "V A T Q - IMMACULATE - AUTO",
+   "make": "Ford",
+   "model": "Transit",
+   "category": "motorhome",
+   "year": 2024,
+   "registeredYear": "2024 (24 reg)",
+   "mileageText": "8,000 miles",
+   "mileage": 8000,
+   "price": 64450,
+   "priceText": "£64,450",
+   "location": "Kidderminster (106 miles)",
+   "distanceMiles": 106,
+   "sellerType": "TRADE",
+   "condition": "used",
+   "image": "https://m.atcdn.co.uk/a/media/w480h360/02ff9c3333ae4733a091caa46f879416.jpg",
+   "imageCount": 21,
+   "url": "https://www.autotrader.co.uk/motorhome-details/202611248196997",
+   "firstSeen": "2026-11-24",
+   "lastSeen": "2026-11-24",
+   "status": "active",
+   "searches": [
+    "All motorhomes (star spec research)"
+   ],
+   "priceHistory": [
+    {
+     "date": "2026-11-24",
+     "price": 64450
+    }
+   ],
+   "details": {
+    "fetchedAt": "2026-11-24",
+    "description": "",
+    "descriptionLength": 0,
+    "features": [
+     "White exterior colour"
+    ],
+    "keySpec": {
+     "Mileage": "8,000 miles",
+     "Registration": "2024 (24 reg)",
+     "Gearbox": "Automatic",
+     "Engine size power": "2.0L",
+     "Seats": "5",
+     "Owners": "1"
+    },
+    "specs": {
+     "Seats": "5",
+     "Body type": "Motorhome",
+     "Fuel type": "Diesel",
+     "Colour": "White"
+    },
+    "chassis": null,
+    "bodyType": "Motorhome",
+    "owners": 1,
+    "serviceHistory": "Service history not provided",
+    "serviceHistoryType": "UNKNOWN",
+    "historyCheck": "PASSED (5 checks passed)",
+    "marketPriceRating": "NOANALYSIS",
+    "imported": false,
+    "refetched": true
+   },
+   "listedDate": "2026-11-24",
+   "length": null,
+   "specs": [
+    {
+     "label": "Automatic",
+     "value": 1500,
+     "evidence": "gearbox: automatic"
+    }
+   ],
+   "redFlags": [],
+   "signals": [
+    {
+     "label": "One owner",
+     "weight": 0,
+     "evidence": "owners: 1"
+    }
+   ],
+   "fit": {
+    "mtplmKg": null,
+    "payloadKg": null,
+    "heightM": null,
+    "widthM": null,
+    "bhp": null,
+    "engineL": 2,
+    "berth": null,
+    "seats": 5,
+    "gearbox": "Automatic",
+    "bedLayout": null,
+    "endLayout": null,
+    "bodyType": "Motorhome",
+    "euro": null,
+    "drive": null
+   },
+   "value": {
+    "pct": 18.3,
+    "expected": 53209,
+    "net": 62950,
+    "comps": 28,
+    "basis": "model",
+    "adjusted": true
+   },
+   "soldRef": {
+    "median": 55498,
+    "n": 20,
+    "pct": 16.1
+   },
+   "market": {
+    "median": 24,
+    "n": 34,
+    "basis": "model"
+   },
+   "relisted": null,
+   "quality": {
+    "score": 34,
+    "grade": "D",
+    "brand": null,
+    "group": null,
+    "tier": "unknown",
+    "parts": [
+     {
+      "label": "brand not in the owner surveys",
+      "pts": 15
+     },
+     {
+      "label": "unrated brand",
+      "pts": 12
+     },
+     {
+      "label": "Ford base vehicle",
+      "pts": 6.9
+     }
+    ],
+    "awards": [],
+    "forMoney": 34,
+    "priceIndex": 1.11,
+    "peer": {
+     "price": 57995,
+     "quality": 45,
+     "n": 323,
+     "body": "coach"
+    }
+   },
+   "deal": {
+    "pickScore": 0,
+    "pickParts": [
+     {
+      "label": "nice-to-have ×1",
+      "pts": 2.5
+     },
+     {
+      "label": "one owner",
+      "pts": 2
+     },
+     {
+      "label": "low mileage for its age",
+      "pts": 3
+     },
+     {
+      "label": "three years old or less",
+      "pts": 2
+     },
+     {
+      "label": "brand you avoid (Ford (unknown build))",
+      "pts": -15
+     }
+    ],
+    "underpriced": false,
+    "highSpec": false,
+    "motivated": false,
+    "desperation": 0,
+    "motivationReasons": [],
+    "wantedHits": [],
+    "niceHits": [
+     "Automatic"
+    ],
+    "kitScore": 1,
+    "staleNoCut": false,
+    "starCount": 0,
+    "starOf": 4,
+    "starMissing": [
+     "Alde heating",
+     "360° camera",
+     "Habitation air conditioning",
+     "Self-levelling"
+    ],
+    "starChecked": true,
+    "fullStarSpec": false,
+    "daysListed": 0,
+    "listedReliable": true,
+    "drops": 0,
+    "totalDropPct": 0,
+    "redFlags": 0,
+    "brief": {
+     "ok": false,
+     "near": false,
+     "met": [
+      "used"
+     ],
+     "missing": [
+      "end lounge",
+      "good heating",
+      "self-levelling"
+     ],
+     "unknown": [
+      "up to 7.5 m"
+     ],
+     "avoided": "Ford (unknown build)",
+     "bonus": []
+    },
+    "nearMiss": false,
+    "isDeal": false
    }
   }
  },
  "runs": [
+  {
+   "date": "2026-11-24T21:42:25.813Z",
+   "searches": [
+    {
+     "name": "6.25–7 m, all body types (Autotrader length)",
+     "error": null,
+     "added": 0,
+     "back": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "Campervans and van conversions (length from advert)",
+     "error": null,
+     "added": 0,
+     "back": 0,
+     "priceDrops": 0,
+     "gone": 0
+    },
+    {
+     "name": "All motorhomes (star spec research)",
+     "error": null,
+     "added": 1,
+     "back": 0,
+     "priceDrops": 0,
+     "gone": 0
+    }
+   ]
+  },
   {
    "date": "2026-11-24T18:43:07.643Z",
    "searches": [
@@ -1863400,32 +1863664,6 @@
      "added": 27,
      "priceDrops": 14,
      "gone": 29
-    }
-   ]
-  },
-  {
-   "date": "2026-11-09T13:48:09.686Z",
-   "searches": [
-    {
-     "name": "6.25–7 m, all body types (Autotrader length)",
-     "error": null,
-     "added": 10,
-     "priceDrops": 13,
-     "gone": 0
-    },
-    {
-     "name": "Campervans and van conversions (length from advert)",
-     "error": null,
-     "added": 15,
-     "priceDrops": 23,
-     "gone": 0
-    },
-    {
-     "name": "All motorhomes (star spec research)",
-     "error": null,
-     "added": 41,
-     "priceDrops": 30,
-     "gone": 52
     }
    ]
   }
