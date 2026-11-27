@@ -12,7 +12,7 @@ It runs on GitHub Actions, so nothing needs to be switched on at home.
 2. `.github/workflows/daily.yml` runs `src/run.js` once a day (and whenever you press **Run workflow**) on a self-hosted runner, see "Where it runs".
 3. The job fetches every search, compares the results with `docs/data/listings.json`, and commits the updated file back to the repo.
 4. It reads each new advert's page for its kit and description, scores it, and if anything is new sends a Telegram message and/or an email. If nothing changed, it stays quiet.
-5. `docs/index.html` is the dashboard. GitHub Pages serves it from the `docs/` folder.
+5. `docs/index.html` is the simple dashboard (the used quality-brand vans closest to the brief, and what is new or reduced this week); `docs/full.html` is the full view with every filter. GitHub Pages serves it from the `docs/` folder.
 
 ## Spotting the good ones
 
